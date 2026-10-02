@@ -1,0 +1,4 @@
+target_utilization,nominal_utilization,scale_factor,earliest_late_it_mwh,earliest_closing_it_mwh,physically_feasible_24h,implication
+0.4,0.05191486804809399,7.704921827585878,3119.9848861407368,0.0,False,No flexible/rigid split can make the unchanged total arrivals feasible at the same capacity and 24 h deadline
+0.6,0.05191486804809399,11.557382741378815,11468.225495140396,0.0,False,No flexible/rigid split can make the unchanged total arrivals feasible at the same capacity and 24 h deadline
+0.8,0.05191486804809399,15.409843655171755,27679.043026907548,22.316006460449145,False,No flexible/rigid split can make the unchanged total arrivals feasible at the same capacity and 24 h deadline

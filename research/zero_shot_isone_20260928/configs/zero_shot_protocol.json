@@ -1,0 +1,80 @@
+{
+  "experiment_id": "STRICT_ZERO_SHOT_EXTERNAL_MARKET_TRANSFER_20260928",
+  "status": "complete_zero_shot_replay",
+  "strict_zero_shot": true,
+  "market_training_domain": "NYISO",
+  "external_market": "ISO-NE",
+  "evaluation_interval": {
+    "start_local": "2025-01-01T00:00:00",
+    "end_local_exclusive": "2026-01-01T00:00:00",
+    "timezone": "America/New_York",
+    "lag_history_start_local": "2024-12-01T00:00:00"
+  },
+  "market_inputs": {
+    "day_ahead": "official hourly DA LMP",
+    "real_time": "official final hourly RT LMP",
+    "hourly_to_quarter_hour_rule": "copy each official hourly value to the four quarter-hour executor slots within that same market hour",
+    "interpolate": false,
+    "add_noise": false,
+    "fit_external_normalization": false,
+    "fit_external_residual": false,
+    "demand_features_required_by_frozen_57_feature_list": false,
+    "publication_gate_source": "per-operating-date official ISO-NE DA result notice timestamps"
+  },
+  "portfolios": {
+    "primary": {
+      "name": "ISO-NE-SOUTH",
+      "ordered_load_zones": ["CONNECTICUT", "NEMASSBOST", "SEMASS", "WCMASS"],
+      "ordered_market_zone_codes": ["CONNECTICUT", "NEMASSBOST", "SEMASS", "WCMASS"]
+    },
+    "secondary": {
+      "name": "ISO-NE-NORTH",
+      "ordered_load_zones": ["MAINE", "NEWHAMPSHIRE", "VERMONT", "RHODEISLAND"],
+      "ordered_market_zone_codes": ["MAINE", "NEWHAMPSHIRE", "VERMONT", "RHODEISLAND"]
+    }
+  },
+  "workload_and_executor": {
+    "workload": "frozen Eagle workload",
+    "site_order_maps_to_portfolio_order": true,
+    "service_window_hours": 24,
+    "deadline_convention": "existing inclusive deadline",
+    "capacity_and_idle_assumptions": "reuse frozen NYISO main-case values",
+    "pv_pue_and_executor": "reuse the frozen primary replay settings",
+    "reference": "recompute condition-matched earliest service under ISO-NE prices",
+    "continuous_full_year_replay": true
+  },
+  "frozen_model": {
+    "primary_seed": 20260920,
+    "seeds": [20260920, 20260921, 20260922],
+    "epochs": {
+      "20260920": 6,
+      "20260921": 2,
+      "20260922": 0
+    },
+    "selection_year": 2024,
+    "training_years": [2021, 2022, 2023],
+    "external_market_used_for_selection": false,
+    "checkpoint_directory": "ExecutableServiceCommitments_Revision_20260928/engine/checkpoints"
+  },
+  "ood_mapping": {
+    "primary_rule": "mean of the four frozen NYISO zone embedding rows",
+    "all_iso_ne_sites_share_one_primary_embedding": true,
+    "external_scaler_fit": false,
+    "external_checkpoint_selection": false,
+    "sensitivity": {
+      "planned_cyclic_assignments": 4,
+      "test_all_24_permutations_only_if_runtime_is_low": true,
+      "never_select_best_assignment": true,
+      "report_sensitivity_summary": ["mean", "median", "min", "max"]
+    }
+  },
+  "inference_guard": {
+    "gradient_updates": false,
+    "requires_grad": false,
+    "optimizer_creation": false,
+    "backward_calls": false,
+    "iso_ne_calibration": false,
+    "iso_ne_checkpoint_selection": false,
+    "iso_ne_normalization_fit": false
+  }
+}

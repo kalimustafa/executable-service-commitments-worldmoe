@@ -1,0 +1,276 @@
+project:
+  version: R3
+  variant: solver_free_constrained_policy_formal
+  model_name: E2E-MoE-DART-VPP
+  implementation_namespace: e2e_moe_r3
+  output_root: artifacts/e2e_moe_solver_free_r3_formal
+  locked_test_year: 2025
+
+protocol:
+  training_semantics_revision: b512_full_coverage_weighted_epoch500_v5
+  name: e2e_moe_solver_free_r3_formal_v1
+  active_seed: 20240813
+  seeds: [20240813, 20240829, 20240917]
+  splits:
+    train:
+      start: "2022-01-01"
+      end: "2023-06-30"
+    validation:
+      start: "2023-07-01"
+      end: "2023-12-31"
+    formal_selection:
+      start: "2024-01-01"
+      end: "2024-12-31"
+      sealed_until_all_methods_frozen: true
+  initial_validation_day: earliest_eligible
+  formal_test_year: 2024
+  locked_test_year: 2025
+  root_metadata:
+    split_manifest: formal_split_manifest.json
+    provenance_manifest: provenance_manifest.json
+    price_aware_edf_calibration: price_aware_edf_calibration.json
+  reports:
+    markdown: reports/MAINLINE_SEED1_REPORT.md
+    results_json: reports/MAINLINE_SEED1_RESULTS.json
+  validation_gate:
+    feasibility_rate: 1.0
+    max_non_exogenous_rejected_origins: 0
+    min_cost_reduction_vs_price_aware_edf_usd: 0.0
+    require_strictly_positive_cost_reduction: true
+    max_normalized_sla_shortfall_increase: 0.001
+    require_finite_metrics: true
+    require_finite_resumable_checkpoints: true
+
+run:
+  seed: 20240813
+  resume: true
+  initial_rollout_workers: 4
+  max_rollout_workers: 8
+  monitor_interval_seconds: 30
+  run_id_format: "{phase}_{split}_{timestamp}"
+
+data:
+  selection_bundle_root: artifacts/dart_value_select/counterfactual_inputs/v1/selection/daily_bundles
+  realized_settlement_root: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/nyiso_replay_by_date/selection
+  realized_settlement_index: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/selection_nyiso_replay_by_date_index.json
+  physical_artifact: artifacts/research/physical/run_id=paper-physical-v1/frozen_physical_artifact.json
+  train_start_date: "2022-01-01"
+  train_end_date: "2023-06-30"
+  validation_start_date: "2023-07-01"
+  validation_end_date: "2023-12-31"
+  formal_selection_start_date: "2024-01-01"
+  formal_selection_end_date: "2024-12-31"
+  pilot_month: "2023-07"
+
+model:
+  profile: base_local
+  fallback_profile: compact
+  hidden_dim: 64
+  expert_hidden_dim: 96
+  experts: 8
+  top_k: 2
+  shared_expert: false
+  router_noise: true
+  router_balance_weight: 0.02
+  router_stability_weight: 0.01
+  forecast_heads: [da, rt, dart, workload, pv, pue]
+  policy_heads: [day_ahead, real_time, battery, compute, migration]
+  auxiliary_heads: [value, feasibility, fallback_confidence]
+
+policy:
+  state_conditioned_per_origin: true
+  refinement_steps: 2
+  day_ahead_issued_at_origin: 0
+  freeze_day_ahead_after_issue: true
+  use_revealed_information_only: true
+  migration_selection_contract: fixed_zero
+
+physical_twin:
+  source: nlr_calibrated
+  freeze_core_after_representation: true
+  trainable_in_a2: [bounded_residual_adapter, uncertainty_adapter]
+
+scenarios:
+  count: 20
+  learned_weights: true
+  common_random_numbers: true
+  losses:
+    marginal: 1.0
+    energy_score: 0.5
+    variogram: 0.25
+    tail_coverage: 0.5
+    diversity: 0.1
+    weight_entropy: 0.02
+    downstream_decision: 1.0
+
+risk:
+  cvar_alpha: 0.95
+  expected_cost_weight: 1.0
+  cvar_weight: 0.25
+  sla_weight: 10.0
+  migration_weight: 1.0
+  feasibility_weight: 20.0
+  interpretation: exact_weighted_tail_over_20_learned_particles
+
+runtime:
+  backend: neural_constraint_shield
+  external_solver: false
+  constraint_by_construction: true
+  validation_tolerance: 1.0e-5
+  terminal_soc_reserve_fraction: 0.5
+  reject_policy: reject_and_record
+  empirical_migration: fixed_zero
+  counterfactual_migration_label: COUNTERFACTUAL_ENGINEERING_STRESS
+  battery:
+    signed_net_power: true
+    simultaneous_charge_discharge_forbidden: true
+    charge_efficiency: 0.95
+    discharge_efficiency: 0.95
+  workload:
+    allocation: earliest_deadline_first_waterfill
+    deadline_intervals: 4
+    expose_exogenous_infeasibility: true
+  grid:
+    derive_from_energy_identity: true
+  independent_validation:
+    energy_balance: true
+    soc_bounds_and_transition: true
+    terminal_soc_reachability: true
+    battery_exclusivity: true
+    grid_and_compute_capacity: true
+    workload_release_and_deadline: true
+    migration: true
+    settlement_identity: true
+
+rolling:
+  intervals_per_day: 96
+  scenario_count: 20
+  freeze_day_ahead_schedule: true
+  execute_first_action_only: true
+  reveal_realized_values_at_current_origin_only: true
+
+training:
+  mode: formal
+  seed: 20240813
+  phases: [representation, scenario, policy, a1, a2]
+  device: auto
+  max_phase_epochs: 500
+  learning_rate: 0.001
+  forecast_amp: false
+  policy_amp: false
+  microbatch_size: 512
+  default_batch_size: 512
+  batch_size_fallback: [512, 256, 128, 64, 32, 4, 2, 1]
+  gradient_accumulation: 1
+  gradient_clip_norm: 1.0
+  short_horizon_curriculum: [8, 24, 48, 96]
+  formal:
+    enabled: true
+    curriculum: [8, 24, 48, 96]
+    microbatch_size: 512
+    default_batch_size: 512
+    batch_size_fallback: [512, 256, 128, 64, 32, 4, 2, 1]
+    gradient_accumulation: 1
+    validation_horizon: 96
+    early_stopping_min_delta: 1.0e-6
+    seed_offset: 1000003
+  representation:
+    epochs: 500
+    early_stopping_patience: 10
+    early_stopping_min_delta: 1.0e-6
+    learning_rate: 0.001
+  scenario:
+    epochs: 500
+    early_stopping_patience: 10
+    early_stopping_min_delta: 1.0e-6
+    learning_rate: 0.001
+  policy_training:
+    epochs: 500
+    early_stopping_patience: 10
+    early_stopping_min_delta: 1.0e-6
+    learning_rate: 0.0005
+    short_horizon_curriculum: [8, 24, 48, 96]
+    active_sampling: true
+    sample_regimes: [normal, price_spike, negative_price, high_pv, workload_burst, price_volatility, tight_sla, temporal_diversity]
+    preserve_rejected_samples: true
+    losses:
+      realized_settlement: 1.0
+      expected_particle_cost: 1.0
+      particle_cvar: 0.25
+      sla: 10.0
+      battery_degradation: 1.0
+      migration: 1.0
+      constraint_intervention: 20.0
+      confidence_calibration: 5.0
+      value_consistency: 0.5
+      router_balance: 0.02
+      router_stability: 0.01
+  a1:
+    epochs: 500
+    early_stopping_patience: 10
+    early_stopping_min_delta: 1.0e-6
+    learning_rate: 0.00025
+    short_horizon_curriculum: [8, 24, 48, 96]
+    trainable: [dart_head, dart_scenario_adapter, dart_calibration]
+    frozen: [workload, physical_twin_core, pv, policy_core, engineering_assumptions]
+    baseline: frozen_policy_checkpoint
+    losses:
+      supervised: 1.0
+      realized_decision: 1.0
+      baseline_consistency: 0.5
+      noninferiority: 1.0
+    noninferiority:
+      margin_fraction_of_mean_absolute_baseline_daily_cost: 0.01
+      confidence_level: 0.95
+      paired_one_sided: true
+  a2:
+    epochs: 500
+    early_stopping_patience: 10
+    early_stopping_min_delta: 1.0e-6
+    learning_rate: 0.0001
+    short_horizon_curriculum: [8, 24, 48, 96]
+    trainable:
+      - market_encoder
+      - workload_encoder
+      - bounded_residual_adapter
+      - uncertainty_adapter
+      - moe_router
+      - experts
+      - scenario_head
+      - risk_head
+      - policy
+      - feasibility_head
+      - value_head
+    frozen: [physical_twin_core, engineering_assumptions, locked_test]
+
+benchmark:
+  primary: price_aware_edf_shield
+  calibration:
+    split: train
+    price_field: rt_price_pool
+    low_quantile: 0.35
+    high_quantile: 0.65
+    battery_fraction_candidates: [0.0, 0.5, 1.0]
+    battery_candidate_grid_selection_split: validation
+    battery_candidate_selection_order: [feasibility, sla_noninferiority, lowest_cost]
+    refit_on_validation: false
+    refit_on_formal_selection: false
+
+checks:
+  minimal_only: true
+  no_external_solver_dependency: true
+  one_formal_preflight: true
+  one_day_96_origin_validation_before_full_validation: true
+  independent_constraint_residuals: true
+  a1_a2_scope_and_locked_test: true
+  repeat_only_when_relevant_inputs_change: true
+
+artifacts:
+  per_run: [config_used.yaml, state.json, metrics.parquet, runtime.log, summary.md, checkpoints]
+  protocol_root_files: [formal_split_manifest.json, provenance_manifest.json, price_aware_edf_calibration.json]
+
+status_contract:
+  complete: requested_stage_completed_with_measured_evidence
+  partial: resumable_work_remains
+  blocked: mandatory_protocol_data_checkpoint_or_device_unavailable
+  failed: internal_defect_prevents_execution

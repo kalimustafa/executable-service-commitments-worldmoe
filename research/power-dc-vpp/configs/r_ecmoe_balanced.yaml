@@ -1,0 +1,22 @@
+extends: r_ecmoe_fast.yaml
+
+schema: dcvpp.r_ecmoe.training.v1
+phase: r_ecmoe
+
+model:
+  profile: balanced
+  active_top_k: 2
+  adapter_bottleneck: 32
+  temporal_rank: 16
+  tune_w1_action_response: false
+
+# Formal main profile. Fast remains the latency-oriented Top-1 profile.
+training:
+  # Measured capacity smoke on RTX 3080: batch 64 peaked near 8.2 GiB and
+  # completed one true backward update.  Batch 80 would leave too little
+  # reserve on the 10 GiB device, so 64 is the formal throughput point.
+  batch_size: 64
+  validation_batch_size: 32
+
+outputs:
+  root: artifacts/r_ecmoe_balanced

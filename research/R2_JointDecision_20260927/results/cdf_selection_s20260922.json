@@ -1,0 +1,34 @@
+{
+  "frozen_at_utc": "2026-09-28T01:39:35.809478+00:00",
+  "selection_year": 2024,
+  "target_year": 2025,
+  "seed": 20260922,
+  "family": "CdfR2",
+  "refinement_epoch": 0,
+  "forecast_epoch": 0,
+  "eta": 0.0,
+  "safety": 0.9,
+  "opportunity_weight": 1.0,
+  "cost_bias_weight": 1.0,
+  "exact_action": false,
+  "current_coupling": true,
+  "continuous_cost": true,
+  "forecast_checkpoint_sha256": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17",
+  "observer_sha256": "cecf583329bb16087a5be56033cf94da63106510f5f26ecf96de70ccb3278a0b",
+  "selected_2024_saving_usd": 52768.029471363436,
+  "selection_source": "CdfR2_Eagle_2024_s20260922_ep00_coupled_cdf.json",
+  "selection_rule": "maximum eligible 2024 annual savings after completed training; 50 USD min-delta controls stopping only",
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "physical_training_years": [
+    2022,
+    2023
+  ],
+  "parent_checkpoint": "QPR2_seed20260920_epoch10.pt",
+  "replication_scope": "optimization seeds from shared pretrained initialization and frozen WorldMoE/R2 feature cache",
+  "evaluation_role": "2025 temporal holdout; excluded from parameter fitting and this seed checkpoint selection",
+  "development_disclosure": "2025 replay outcomes were inspected during earlier method development; this is not a never-inspected blind evaluation"
+}

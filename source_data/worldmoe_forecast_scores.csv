@@ -1,0 +1,4 @@
+seed,epoch,post_rt_pinball_usd_mwh,post_rt_median_mae_usd_mwh,post_rt_coverage90_pct,post_rt_interval_width_usd_mwh,quarter_hour_zone_targets,forecast_scope
+20260920,6,5.594791685198457,16.72774178475972,89.39783105022832,75.46862030029297,140160,queue-independent APIC-preserving RT quantiles; excludes task-only price bias and opportunity score
+20260921,2,5.5932438814845735,16.721302968046977,89.44920091324201,75.46862030029297,140160,queue-independent APIC-preserving RT quantiles; excludes task-only price bias and opportunity score
+20260922,0,5.59485819665335,16.729178787946154,89.46632420091323,75.46862030029297,140160,queue-independent APIC-preserving RT quantiles; excludes task-only price bias and opportunity score

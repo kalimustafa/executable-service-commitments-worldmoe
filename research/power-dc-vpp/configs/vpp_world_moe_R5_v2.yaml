@@ -1,0 +1,377 @@
+schema_version: dcvpp.vpp_world_moe.r5.v2
+
+project:
+  version: R5-V2
+  architecture_version: causal_action_conditioned_world_moe_r5_v2_proper_score
+  implementation_namespace: dcvpp.vpp_world_moe
+  experiment_id: vpp_world_moe_r5_v2_2025final
+  output_root: artifacts/vpp_world_moe_r5_v2_2025final
+  predecessor: R5-V1_frozen_legacy_loss_baseline_no_resume
+
+protocol:
+  seed: 20240813
+  seeds: [20240813, 20240829, 20240917]
+  phase_order: [w0, w1, u0, p1, j1, c1]
+  splits:
+    train: {start: "2022-01-01", end: "2023-12-31", days: 722, role: development_fit}
+    validation: {start: "2024-01-01", end: "2024-12-31", days: 364, role: development_validation}
+    trainval_refit:
+      start: "2022-01-01"
+      end: "2024-12-31"
+      days: 1086
+      role: frozen_method_refit
+      allowed_only_after_method_selection: true
+    final_test:
+      start: "2025-01-01"
+      end: "2025-12-31"
+      days: 362
+      calendar_days: 365
+      missing_or_pending_days: 3
+      role: unique_final_test
+      sealed_until_all_methods_frozen: true
+      execute_once: true
+  locked:
+    year: 2025
+    reject_path_before_open: true
+    release_only_after_refit_freeze: true
+
+data:
+  intervals_per_day: 96
+  zones: [WEST, CAPITL, N.Y.C., LONGIL]
+  verify_daily_hashes: false
+  selection_bundle_root: artifacts/dart_value_select/counterfactual_inputs/v1/selection/daily_bundles
+  official_settlement_root: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/nyiso_replay_by_date/selection
+  frozen_physical_twin: artifacts/research/physical/run_id=paper-physical-v1/frozen_physical_artifact.json
+  frozen_physical_surrogate: artifacts/research/physical/run_id=paper-physical-v1/frozen_piecewise_surrogate.json
+  physical_calibration_manifest: artifacts/research/physical/run_id=paper-physical-v1/physical_calibration_manifest.json
+  causal_contexts:
+    fast:
+      tokens: 96
+      resolution_hours: 0.25
+      history_cutoff: source_day_completed_no_later_than_issue_time
+    medium:
+      tokens: 168
+      resolution_hours: 1.0
+      history_cutoff: source_day_completed_no_later_than_issue_time
+    slow:
+      tokens: 56
+      resolution_hours: 24.0
+      history_cutoff: source_day_completed_no_later_than_issue_time
+  normalization:
+    fit_split: train_2022_2023_only
+    validation_statistics_allowed: false
+    final_test_statistics_allowed: false
+    artifact_path: artifacts/vpp_world_moe_r5_v2_2025final/data/train_only_normalization_queue_hurdle_r1.json
+  lineage_path: artifacts/vpp_world_moe_r5_v2_2025final/data/data_lineage_queue_hurdle_r1.json
+  weather:
+    enabled: true
+    primary_source: nasa_power_lag_persistence
+    source_path: data/processed/nyiso_zone_weather_15m.parquet
+    source_product: NASA_POWER_referenced_hourly_reconstruction
+    source_window: {start: "2021-01-01T00:00:00Z", end_exclusive: "2025-01-01T00:00:00Z"}
+    operational_weather_forecast_claimed: false
+    evidence_role: reconstructed
+    quality: frozen_derived
+    required_features: [air_temperature_2m_k, downward_shortwave_wm2]
+    site_order: [WEST, CAPITL, N.Y.C., LONGIL]
+    slot: 34
+    source_id: 9
+    refresh: per_rolling_origin
+    unit_transform:
+      temperature_center_k: 273.15
+      temperature_scale_k: 40.0
+      downward_shortwave_scale_wm2: 1000.0
+    availability: complete_source_day_max_deployable_available_at_utc_lte_origin
+    source_day_policy: latest_complete_visible_day_strictly_before_operating_day
+    coherent_source_day_required: true
+    feature_complete_mask_required: true
+    coverage_gate:
+      formal_non_smoke_required: true
+      criterion: origin0_all_96_slots_complete_per_day
+      train_required_days: 722
+      validation_required_days: 364
+    affects_day_ahead_commitment: false
+    future_realized_values_allowed: false
+    final_test_2025_opened: false
+    optional_ablation:
+      hrrr_store_root: data/processed/vpp_world_weather
+      independent_nbm: not_hard_fused
+      formal_coverage_gate: false
+  migration:
+    enabled: true
+    mode: evidence_backed_operational_proxy_sensitivity
+    enabled_routes:
+      - [WEST, N.Y.C.]
+      - [N.Y.C., WEST]
+    evidence_path: artifacts/vpp_world_moe_r5_v1_2025final/data/migration/ripe_direct_routes_15min.parquet
+    manifest_path: artifacts/vpp_world_moe_r5_v1_2025final/data/migration/migration_evidence_manifest.json
+    frozen_source_lineage: R5-V1_development_only_migration_evidence
+    latency_source: ripe_atlas_direct_anchor_mesh_ipv4
+    capacity_source: ub_nysernet_published_100gbps_upper_bound
+    action_mask: ripe_asof_origin_gated
+    availability:
+      selection: latest_result_timestamp_lte_origin
+      future_horizon: hold_forward_latest_origin_observation
+      future_results_allowed: false
+      require_simultaneous_reverse_anchor_measurement: false
+      directed_routes_independently_gated: true
+      max_age_minutes: 30.0
+      max_packet_loss_rate: 0.05
+      min_sent_packets: 3
+    capacity:
+      evidence_role: operational_proxy_sensitivity_not_execution_log
+      nominal_gbps: 100.0
+      interval_seconds: 900
+      measured_end_to_end_bandwidth: false
+      workload_events_path: data/processed/research/physical/run_id=paper-physical-v1/nlr295_workload_events.parquet
+      work_unit_bridge_path: artifacts/optimization_branch/paper-optimization-v1/workload_normalization_admission.json
+
+model:
+  input_dim: 8
+  graph_edge_dim: 6
+  constraint_dim: 8
+  action_dim: 6
+  horizon: 96
+  nodes: 4
+  entities_per_node: 8
+  global_slots: 8
+  d_model: 256
+  blocks: 10
+  heads: 8
+  regimes: 8
+  experts: 8
+  top_k: 2
+  # Seven general experts keep ordinary Top-2 specialization. The eighth is a
+  # causal residual expert outside that Top-2 set, activated only by its own
+  # issue-time risk probability and capped capacity. Teacher events supervise
+  # the auxiliary route loss and diagnostics; they never activate the route.
+  general_experts: 7
+  regular_top_k: 2
+  conditional_tail_expert: true
+  expert_assignment_schema: 7_general_top2_plus_conditional_tail_residual_v1
+  # Every sample always receives a 5% causal exploration floor. Above the
+  # probability threshold the causal gate may cover the complete time axis;
+  # no fixed 25% cap may truncate a persistent extreme-event day.
+  tail_capacity_fraction: 0.05
+  tail_capacity_max_fraction: 1.0
+  tail_min_tokens: 32
+  tail_risk_threshold_work_units: 0.0001
+  tail_activation_probability_threshold: 0.50
+  tail_route_aux_weight: 0.05
+  tail_route_aux_temperature: 1.0
+  tail_gate_input: causal_issue_time_only
+  tail_teacher_role: auxiliary_supervision_and_diagnostics_only
+  moe_blocks: [1, 3, 5, 7, 9]
+  expert_hidden_dim: 1024
+  ffn_hidden_dim: 1024
+  dropout: 0.0
+  stochastic_dim: 32
+  rollout_paths: 20
+  planner_candidates: 8
+  planner_refinements: 3
+  planner_temperature: 0.25
+  cvar_alpha: 0.95
+  gradient_checkpointing: true
+  planner_candidate_chunk: 2
+
+training:
+  seed: 20240813
+  run_id: vpp_world_moe_r5_v2_seed20240813
+  loss_profile: proper_joint_risk_r5_v2
+  comparison_profile: matched_architecture_legacy_loss_from_scratch
+  precision:
+    neural_forward: bf16
+    scientific_scores: strict_float32
+    cvar: strict_float32
+    physics: strict_float32
+  cuda_runtime:
+    # TF32 remains disabled globally because the R5-V2 score, risk, and
+    # physical-recursion boundaries are strict FP32. Neural autocast uses BF16.
+    allow_tf32: false
+    float32_matmul_precision: highest
+  target_horizons: [1, 4, 16, 96]
+  probabilistic_objective:
+    quantiles: [0.01, 0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95, 0.99]
+    monotone_parameterization: base_plus_softplus_positive_increments
+    dart_definition: deterministic_da_minus_rt_per_joint_path
+    target_family_weights:
+      price: 0.25
+      workload_volume: 0.25
+      pv: 0.25
+      pue: 0.25
+    price_family_weights: {da: 0.25, rt: 0.25, dart: 0.50}
+    scaling:
+      fit_split: train_2022_2023_only
+      signed_price: median_mad
+      workload: log1p
+      queue: bernoulli_occurrence_plus_positive_only_log1p_severity
+      pv: per_node_capacity
+      pue: physical_bounds
+      soc: unit_interval
+    tail_thresholds: train_2022_2023_only_fixed
+    reduction: global_numerator_over_valid_count
+    mae_rmse_role: final_reporting_only
+  phase_objectives:
+    w0:
+      weights: {quantile: 1.0, count: 0.25, state: 0.25, moe: 0.01}
+      count_labels: true_labels_only_never_volume_proxy
+      state:
+        soc: standardized_smooth_l1
+        queue: proper_brier_occurrence_plus_positive_only_log1p_smooth_l1
+    w1:
+      weights: {latent: 0.5, rollout: 0.5, state: 0.1, moe: 0.01}
+      horizon_weights: {h1: 0.25, h4: 0.25, h16: 0.25, h96: 0.25}
+      balanced_kl: {prior_stop_gradient: 0.8, posterior_stop_gradient: 0.2}
+      free_bits_nat: 1.0
+      h96_requires_real_next_day: true
+    u0:
+      weights: {crps: 0.30, energy: 0.30, variogram: 0.15, tail_crps: 0.15, mixture_nll: 0.10, moe: 0.01}
+      variogram_time_lags: [1, 4, 16]
+      variogram_relations: [within_variable_time, same_time_cross_node, registered_cross_variable]
+      coverage_and_duplicate_rate: validation_gates_only
+    p1:
+      cvar_alpha: 0.95
+      cvar_weight: 0.25
+      cvar_form: rockafellar_uryasev
+      path_chunks: {paths_per_chunk: 20, fixed_seed_chunks: 5, aggregate_paths: 100}
+      cost_normalization: train_frozen_baseline_daily_cost
+      constraint_method: raw_action_augmented_lagrangian
+      ramp_weight: 0.02
+      shield_weight: 0.05
+      moe_weight: 0.01
+    j1:
+      primary: policy
+      shared_gradient_method: pcgrad
+      objectives: [world, uncertainty, policy]
+      scalar_loss_aggregation: prohibited
+      parameter_scope: end_to_end_all_trainable
+  checkpoint_selection:
+    formal_validation_only: true
+    batch_reduction: global_numerator_over_valid_count
+    w0: hard_state_and_identity_then_group_balanced_crps
+    w1: worst_relative_proper_score_across_h1_h4_h16_h96
+    u0: energy_confidence_set_then_crps_then_tail_crps_then_earliest_epoch
+    p1: feasibility_and_sla_then_cost_and_cvar_upper_confidence_bound
+    j1: same_checkpoint_all_gates_then_conservative_closed_loop_value
+    early_stop:
+      stable_formal_evaluations: 3
+      relative_improvement_below: 0.001
+    prohibited_metrics: [mae, rmse]
+  checkpointing:
+    fixed_update_interval: 8
+    max_wall_clock_seconds: 180
+    sentinel_validation_batches: 4
+  phases:
+    w0:
+      # Eight deterministic shards target roughly 2--3 minutes per recoverable
+      # node at the measured batch-12 throughput.  Full validation remains once
+      # per complete traversal and is the only formal-best selection boundary.
+      short_epoch_factor: 8
+      formal_validation_interval_short_epochs: 8
+      target_update_budgets:
+        train_examples: 722
+        reference_batch_size: 8
+        reference_full_epoch_updates: 91
+        minimum: 122
+        maximum: 2440
+        patience_equivalent: 183
+      # A short epoch is one eighth of a full traversal. Two full traversals
+      # are enough before formal selection can act; three unchanged full-2024
+      # validations (24 short epochs) define patience.
+      min_epochs: 16
+      max_epochs: 320
+      learning_rate: 1.0e-4
+      weight_decay: 1.0e-4
+      gradient_clip_norm: 1.0
+      patience: 24
+      batch_size: 12
+      sample_count: 20
+      horizon: 96
+      cvar_alpha: 0.95
+    w1:
+      min_epochs: 10
+      max_epochs: 80
+      learning_rate: 8.0e-5
+      weight_decay: 1.0e-4
+      gradient_clip_norm: 1.0
+      patience: 16
+      batch_size: 2
+      sample_count: 20
+      horizon: 96
+      cvar_alpha: 0.95
+      require_exact_next_day_target: true
+    u0:
+      min_epochs: 10
+      max_epochs: 60
+      learning_rate: 6.0e-5
+      weight_decay: 1.0e-4
+      gradient_clip_norm: 1.0
+      patience: 16
+      batch_size: 1
+      sample_count: 20
+      horizon: 96
+      cvar_alpha: 0.95
+    p1:
+      min_epochs: 10
+      max_epochs: 50
+      learning_rate: 5.0e-5
+      weight_decay: 1.0e-4
+      gradient_clip_norm: 1.0
+      patience: 12
+      batch_size: 1
+      sample_count: 20
+      horizon: 96
+      cvar_alpha: 0.95
+    j1:
+      min_epochs: 10
+      max_epochs: 40
+      learning_rate: 2.5e-5
+      weight_decay: 1.0e-4
+      gradient_clip_norm: 0.75
+      patience: 12
+      batch_size: 1
+      sample_count: 20
+      horizon: 96
+      cvar_alpha: 0.95
+    c1:
+      min_epochs: 0
+      max_epochs: 0
+      learning_rate: 0.0
+      weight_decay: 0.0
+      gradient_clip_norm: 1.0
+      patience: 1
+      batch_size: 1
+      sample_count: 20
+      horizon: 96
+      cvar_alpha: 0.95
+
+capability_gates:
+  architecture:
+    entities: 40
+    interaction_blocks: 10
+    sparse_blocks: 5
+    top_k: 2
+  world_state:
+    validation_days: 364
+    required_reconstruction_outputs: [public_21, queue, soc]
+    identity_tolerance: 1.0e-6
+    queue_occurrence_threshold_work_units: 1.0e-4
+    queue_occurrence_probability_threshold: 0.50
+    queue_positive_target_count_min: 1
+    queue_paired_confidence: 0.95
+    queue_occurrence_paired_upper_max: 0.0
+    queue_severity_paired_upper_max: 0.0
+    soc_paired_upper_max: 0.0
+  dynamics:
+    horizons: [1, 4, 16, 96]
+    exact_next_day_h96_required: true
+  uncertainty:
+    paths: 20
+    identity_tolerance: 1.0e-6
+  policy:
+    feasibility_fraction: 1.0
+    maximum_non_exogenous_rejected_origins: 0
+  final:
+    validation_days: 364
+    same_checkpoint_required: true
+    final_test_execute_once: true

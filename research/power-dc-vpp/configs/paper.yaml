@@ -1,0 +1,174 @@
+profile: paper
+source_semantics: source_semantics.yaml
+seed: 20260809
+seed_list: [20260809, 20260819, 20260829]
+interval_minutes: 15
+sites: [DC1, DC2, DC3, DC4]
+contracts:
+  manuscript: ../Data_Center_VPP_English_Manuscript_and_Experimental_Protocol_NLR_NYISO_Revised.docx
+  specification: ../CODEX_Executable_Experiment_Specification_English_NLR_NYISO_Revised.md
+sources:
+  nlr295:
+    landing_url: https://data.nlr.gov/submissions/295
+    doi: 10.7799/3023273
+    preferred_resource: esif.hpc.eagle.job-anon-energy-metrics.zip
+    catalog_md5: cc60eac4d10b38a1bbfe3ef7dede5590
+    mandatory: true
+  nlr300:
+    landing_url: https://data.nlr.gov/submissions/300
+    doi: 10.7799/3015212
+    mandatory: true
+    require_authoritative_timezone: false
+    timezone:
+      policy: user_authorized_utc_source_local_analysis
+      source_clock_assumption: UTC
+      analysis_timezone: America/Denver
+      evidence_role: assumed
+      publisher_metadata_claimed: false
+      preserve_source_timestamp: true
+      timestamp_utc_rule: tz_localize_UTC
+      timestamp_local_rule: tz_convert_America_Denver
+      source_clock_sensitivity:
+        policy: fixed_offset_source_clock
+        timezone: fixed_MST_UTC-07:00
+        purpose: compare_overlap_twin_metrics_and_primary_economic_endpoint
+      direct_local_wall_clock_interpretation: structurally_invalid_not_run
+      strict_authoritative_option: strict_authoritative
+  srrl:
+    landing_url: https://data.nlr.gov/submissions/7
+    doi: 10.7799/1052221
+    timezone: fixed_MST_UTC-07:00
+    mandatory: true
+  xcel:
+    landing_url: https://www.xcelenergy.com/company/rates_and_regulations/rates/rate_books?state=Colorado
+    blocking_scope: local_subcase_only
+    evidence_role: observed
+    source_relationship: third_party_referenced_public_document
+    record_type: referenced_official_tariff_or_program_rule
+    measurement_relationship: not_measured_by_this_study
+    training_target: false
+    realized_response_claim: false
+    document_scopes:
+      current_summary: current_2026_document_snapshot
+      overlap_business_rates: overlap_era_2024_only
+      demand_management_summary: dated_program_context_only
+  nyiso:
+    start: 2021-01-01
+    end: 2025-12-31
+    zones: [WEST, CAPITL, N.Y.C., LONGIL]
+    mandatory: true
+  zone_weather:
+    source: nasa_power
+    mandatory: true
+splits:
+  physical: [0.60, 0.20, 0.20]
+  workload: [0.60, 0.20, 0.20]
+  nyiso_train_end: 2023-12-31
+  nyiso_validation_end: 2024-12-31
+  nyiso_test_end: 2025-12-31
+forecast:
+  history_steps: 672
+  horizon_steps: 96
+  quantiles: [0.05, 0.10, 0.50, 0.90, 0.95]
+  epochs: 100
+  batch_size: 32
+  batch_fallback: [32, 16, 8, 4]
+  device: auto
+  mixed_precision: true
+  gradient_accumulation_steps: 2
+  dataloader_workers: 4
+forecast_branch:
+  tasks: [nyiso_da, nyiso_rt, nlr_workload]
+  seeds: [20260809, 20260819, 20260829, 20260908]
+  seed_evidence_role: completed_pre_three_seed_amendment_v1_auxiliary
+  excluded_from_downstream_confirmatory_seed_panel: [20260908]
+  max_train_rows: null
+  advanced_n_estimators: 500
+  n_jobs: 8
+  nlr_batch_size: 200000
+  torch_epochs: 100
+  torch_batch_size: 32
+  torch_device: auto
+  forecast_draw_count: 100
+  keep_nlr_selected_jobs: false
+research_physical:
+  resume: true
+  download_srrl: true
+  nyiso_zone_weather_path: data/processed/nyiso_zone_weather_15m.parquet
+  srrl_workers: 8
+  srrl_retries: 3
+  minimum_srrl_usable_day_fraction: 0.90
+  batch_size: 65536
+  job_model_epochs: 3
+  surrogate_knots: 6
+  surrogate_acceptance_max_observed_rmse_ratio: 1.25
+  surrogate_acceptance_max_calibrated_mae_fraction: 0.01
+  surrogate_acceptance_min_calibrated_mae_kw: 5.0
+  physical_multiplier_draws: 256
+scenarios:
+  initial: 100
+  reduced: 20
+  sensitivity: [10, 20, 40, 80]
+  adverse_kappa: [0.0, 0.3, 0.6]
+optimization:
+  policies: [B0, B1, B2, B3, B4, B5, B6, B7, B8]
+  primary_days_per_month: 8
+  cvar_alpha: 0.95
+  risk_weight: 0.50
+  mip_gap: 0.01
+  time_limit_seconds: 1800
+  full_year_extension: true
+optimization_branch:
+  scenario_counts: [10, 20, 40, 80]
+  max_attempts_per_cell: 3
+  run_ofat_sensitivities: true
+  sensitivity_seed: 20260809
+  flexible_share: 0.30
+  migration_eligible: 1.0
+  migration_bandwidth_base_work_units_per_interval: 1.0
+  migration_bandwidth_multiplier: 1.0
+  transfer_energy_mwh_per_work_unit: 0.00002
+  checkpoint_overhead_fraction: 0.02
+  migration_energy_price_usd_per_mwh: 100.0
+  pue_slope_multiplier: 1.0
+  rt_sell_back_haircut: 0.0
+  climate_support_distance_thresholds: [0.05, 0.20, 0.30]
+  h6_constraints:
+    ramp_limit_mw_per_step: 2.0
+    concentration_share_limit: 0.55
+  acceptable_expected_cost_premium_fraction: 0.05
+  acceptable_sla_deterioration_work_units: 0.0
+  statistical_inference:
+    moving_block_length_days: 7
+    bootstrap_replicates: 2000
+    confidence_level: 0.95
+    holm_alpha: 0.05
+paper_execution:
+  physical_run_id: paper-physical-v1
+  forecast_run_id: paper-forecast-v1
+  forecast_recovery_enabled: true
+  forecast_recovery_required: true
+  forecast_recovery_run_id: paper-forecast-v1-recovery-v1
+  forecast_recovery_manifest_path: artifacts/real_forecasting_recovery/run_id=paper-forecast-v1-recovery-v1/run_manifest.json
+  forecast_extension_run_id: paper-forecast-extensions-v1
+  dart_enabled: true
+  dart_config_path: configs/dart_value_select.yaml
+  dart_v1_readiness_run_id: paper-dart-v1-readiness-v8
+  dart_forecast_run_id: paper-dart-forecast-v4
+  dart_replay_run_id: paper-dart-replay-v4
+  dart_value_select_run_id: paper-dart-value-select-v4
+  dart_anchor_source_run_id: paper-dart-forecast-v3
+  dart_anchor_source_mode: immutable_hash_pinned_read_only_import_without_copy_hardlink_or_rewrite
+  dart_checkpoint_candidate_grid: exact_common_persisted_five_epoch_anchors_only
+  dart_v4_full_immutable_checkpoint_interval_epochs: 1
+  dart_v4_non_five_epoch_checkpoint_role: audit_and_resume_only_not_formal_selection_candidate
+  dart_neural_training_schedule: warmup_each_group_to_40_then_global_assessment_then_active_groups_in_10_epoch_rounds
+  dart_neural_training_schedule_source: configs/dart_value_select.yaml
+  dart_neural_training_schedule_non_performance_informed: true
+  dart_neural_warmup_epoch: 40
+  dart_neural_active_group_round_epochs: 10
+  dart_neural_within_group_ledger_and_assessment_epochs: 5
+  dart_neural_global_assessment_epochs: [40, 50, 60, 70, 80, 90, 100]
+  dart_neural_individual_seed_stopping_forbidden: true
+  optimization_run_id: paper-optimization-v1
+  optimization_retry_rounds: 3

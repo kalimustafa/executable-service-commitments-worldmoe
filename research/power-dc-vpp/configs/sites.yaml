@@ -1,0 +1,14 @@
+defaults:
+  observed_facility: false
+  counterfactual: true
+  capacity_scale: 1.0
+  battery_power_mw: 1.0
+  battery_energy_mwh: 2.0
+  pv_capacity_mw: 1.0
+  grid_import_limit_mw: 8.0
+sites:
+  DC1: {zone: WEST, city: Buffalo, latitude: 42.8864, longitude: -78.8784}
+  DC2: {zone: CAPITL, city: Albany, latitude: 42.6526, longitude: -73.7562}
+  DC3: {zone: N.Y.C., city: New York City, latitude: 40.7128, longitude: -74.0060}
+  DC4: {zone: LONGIL, city: Long Island, latitude: 40.7891, longitude: -73.1350}
+

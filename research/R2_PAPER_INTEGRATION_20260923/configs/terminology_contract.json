@@ -1,0 +1,45 @@
+{
+  "user_instruction": "Find the earlier paper's own method name; remove all DART wording from the figure and paper presentation",
+  "method_name": "APIC",
+  "full_name": "anchored price-identity coupling",
+  "chinese_name": "锚定价格恒等耦合",
+  "quantity_name": "DA–RT spread",
+  "quantity_symbol": "D",
+  "quantity_definition": "D = DA - RT",
+  "author_visible_forbidden_term": "DART",
+  "applies_to": ["main manuscript", "supplement", "figure labels", "figure captions", "displayed metric labels"],
+  "naming_source": "NatureEnergy_R-ECMoE_投稿修订_20260829/round7_apic_naming_20260905/revise_apic.py",
+  "APIC_in_R2_source": "新论文_市场可交付灵活性_20260917/revision_20260920_r2_executable/R2_INTEGRATION_PLAN.md, section D",
+  "retraining_required": false,
+  "clarification_resolved": true
+  ,"framework_name": "R-ECMoE-EF"
+  ,"proposed_model_name": "R2"
+  ,"world_backbone_name": "frozen WorldMoE (W1)"
+  ,"display_labels": {
+    "R2_point": "R2 (point)",
+    "R2_interval": "R2 (interval)",
+    "RASC_point": "RASC (point)",
+    "RASC_interval": "RASC (interval)",
+    "Published_DA_persistent": "Published DA (persistent)",
+    "Published_DA_myopic": "Published DA (myopic)",
+    "Earliest": "Earliest service",
+    "Legacy_R2_point": "Previous R2 (point)",
+    "Legacy_R2_interval": "Previous R2 (interval)",
+    "R2_mean": "R2 (three-seed mean)",
+    "R2_no_residual": "R2 without residual correction",
+    "Base": "Base price model",
+    "fixed_point": "Fixed (point)",
+    "fixed_interval": "Fixed (interval)",
+    "recourse_point": "Recourse (point)",
+    "recourse_interval": "Recourse (interval)"
+  }
+  ,"metrics": {
+    "cost": "Service-adjusted electricity cost",
+    "saving": "Electricity cost saving",
+    "shifted_energy": "Shifted IT energy",
+    "late": "Late IT energy",
+    "closing": "Closing IT work",
+    "risk": "Service-adjusted daily-loss CVaR95",
+    "spread_score": "Spread pinball loss"
+  }
+}

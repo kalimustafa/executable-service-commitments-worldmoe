@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!*.example
+*.log
+reproduced_figures/
+research/**/cache/
+research/**/logs/
+research/**/tmp/
+research/**/checkpoints/

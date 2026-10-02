@@ -1,0 +1,17 @@
+{
+  "w0w1_identity_source": "power-dc-vpp/src/dcvpp/vpp_world_moe/losses.py:_assert_price_identity and _assert_joint_price_paths",
+  "r2_identity_source": "R2_PAPER_INTEGRATION_20260923/vendor/r2_market.py:from_latent and identity_errors",
+  "r2_postda_result": {
+    "stage": "R2 post-DA",
+    "seed": 20260920,
+    "rows": 35040,
+    "quantiles": 7,
+    "max_abs_identity_residual_usd_mwh": 4.3945312427240424e-05,
+    "mean_abs_identity_residual_usd_mwh": 1.8965494906776157e-06,
+    "q99_abs_identity_residual_usd_mwh": 1.1291503909660605e-05,
+    "formula": "q_RT(tau|DA)=DA-q_DART(1-tau|DA)",
+    "source_parquet": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\results\\predictions_2025\\R2_seed20260920_normal_native.parquet"
+  },
+  "final_shift_scope": "Final CdfR2 learned residual shift only; upstream APIC is retained in both branches",
+  "forbidden_inference": "The shift-zero diagnostic cannot establish APIC contribution or remove the APIC mechanism."
+}

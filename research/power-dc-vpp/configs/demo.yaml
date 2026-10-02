@@ -1,0 +1,28 @@
+profile: demo
+seed: 20260809
+interval_minutes: 15
+sites: [DC1, DC3]
+days: 14
+energy:
+  source: synthetic
+  allow_synthetic_fallback: true
+workload:
+  source: synthetic
+  allow_synthetic_fallback: true
+forecast:
+  history_steps: 96
+  horizon_steps: 96
+  epochs: 2
+  batch_size: 16
+scenarios:
+  initial: 20
+  reduced: 5
+  adverse_kappa: [0.0, 0.3, 0.6]
+optimization:
+  policies: [B0, B1, B2, B3, B4, B5, B6, B7, B8]
+  solver: highs
+  cvar_alpha: 0.95
+  risk_weight: 0.25
+  mip_gap: 0.05
+  time_limit_seconds: 180
+

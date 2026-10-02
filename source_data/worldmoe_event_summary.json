@@ -1,0 +1,38 @@
+{
+  "Joint WorldMoE vs original RASC-ME": {
+    "total_usd": 42908.9692914699,
+    "threshold": 284.59250000000003,
+    "extreme_days": 35,
+    "extreme_usd": 15190.240997818828,
+    "ordinary_usd": 27718.728293651067,
+    "extreme_positive_days": 31,
+    "extreme_median_usd": 137.5552492629085,
+    "ordinary_median_usd": 41.75058277610657,
+    "top_date": "2025-07-25",
+    "top_date_usd": 7515.925305886208,
+    "top_date_share": 0.17515977265341443,
+    "without_top_total_usd": 35393.04398558369,
+    "without_top_extreme_usd": 7674.315691932619,
+    "top_week_start": "2025-07-25",
+    "top_week_end": "2025-07-31",
+    "without_top_week_total_usd": 33797.383187672305
+  },
+  "Joint WorldMoE vs original Seasonal-ME": {
+    "total_usd": 38284.04516655535,
+    "threshold": 284.59250000000003,
+    "extreme_days": 35,
+    "extreme_usd": 13969.015661498512,
+    "ordinary_usd": 24315.02950505684,
+    "extreme_positive_days": 31,
+    "extreme_median_usd": 132.5775407473463,
+    "ordinary_median_usd": 45.163968438261726,
+    "top_date": "2025-07-25",
+    "top_date_usd": 7520.7338976816645,
+    "top_date_share": 0.19644564373912402,
+    "without_top_total_usd": 30763.311268873684,
+    "without_top_extreme_usd": 6448.281763816848,
+    "top_week_start": "2025-07-25",
+    "top_week_end": "2025-07-31",
+    "without_top_week_total_usd": 29320.96372829648
+  }
+}

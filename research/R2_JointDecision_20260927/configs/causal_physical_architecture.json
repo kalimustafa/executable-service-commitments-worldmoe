@@ -1,0 +1,29 @@
+{
+  "primary_seed": 20260920,
+  "architecture": [
+    "frozen WorldMoE and trained QPR2 market/physical cross-attention core",
+    "three causal dilated convolution blocks over 16 completed quarters",
+    "four-site attention on historical physical states",
+    "zero-initialized ordered location-scale PV decoder",
+    "exact current-action piecewise-linear breakpoint search under assessment"
+  ],
+  "train_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "new_physical_head_training_years": [
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "evaluation_year": 2025,
+  "target_capture": 0.8,
+  "parameter_count_new_physical_head": 26338,
+  "causal_input_check": "changing present and future observations leaves present inputs identical",
+  "identity_at_initialization": true,
+  "price_core_updated": false,
+  "current_best_2025_capture": 0.7913363890362888,
+  "other_seeds_started": false,
+  "paper_edits_allowed": false
+}

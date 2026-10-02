@@ -1,0 +1,14 @@
+extends: r_ecmoe_balanced.yaml
+
+# GPU-capacity smoke only; it never opens the locked test partition.
+training:
+  epochs: 1
+  ra_epochs: 1
+  batch_size: 64
+  validation_batch_size: 16
+  max_train_days: 64
+  max_validation_days: 4
+  smoke_max_days: 64
+
+outputs:
+  root: artifacts/r_ecmoe_balanced_smoke

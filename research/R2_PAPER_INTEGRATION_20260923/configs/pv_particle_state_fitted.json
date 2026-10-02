@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "fit_years": [
+    2022,
+    2023
+  ],
+  "training_days": 722,
+  "sigma": [
+    0.04068173982052117,
+    0.040228214139131656,
+    0.04056690030941037,
+    0.03827855964190838
+  ],
+  "unregularized_sigma": [
+    0.04068173982052117,
+    0.040228214139131656,
+    0.04056690030941037,
+    0.03827855964190838
+  ],
+  "sigma_floor": 0.02,
+  "forecast_input": "registered prior scenario pool",
+  "realized_development_data_not_used_for_parameter_fit": true,
+  "locked_targets_accessed": false
+}

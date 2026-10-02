@@ -1,0 +1,1053 @@
+﻿schema_version: dcvpp.dart_value_select.v12
+name: DART-ValueSelect
+frozen: true
+freeze_before_first_rolling_origin: 2022-01-01T00:00:00Z
+selection_scope: rolling_sample_out_of_decision_counterfactual_operational_value
+protocol_amendment:
+  effective_date: 2026-08-11
+  amendment: replace_prior_confirmatory_panels_with_three_seed_panel_before_formal_dart_training
+  confirmatory_study_seeds: [20260809, 20260819, 20260829]
+  excluded_legacy_seeds: [20260908, 20260918]
+  excluded_seed_20260908_role: completed_v1_auxiliary_retained_but_excluded_from_all_subsequent_confirmatory_experiments
+  excluded_seed_20260918_role: never_started_for_pending_cfc_or_formal_dart
+  prior_artifact_policy: retain_and_label_legacy_pre_amendment_excluded_from_confirmatory_three_seed_panel
+  amended_dart_annual_training_units:
+    neural: 144
+    lightgbm: 8
+    deterministic: 16
+    total: 168
+  amended_dart_top_level_replay_cells:
+    selection: 59184
+    locked_2025: 19710
+    shared_baseline: 4383
+    perfect_information: 1461
+    total: 84738
+  decision_value_selection_amendment:
+    amendment: replace_score_only_or_A1_primary_selection_with_common_quality_audit_and_A2_decision_value_selection_subject_to_A1_noninferiority
+    evidence_trigger: auxiliary_first_round_validation_audit_only
+    formal_dart_training_started_before_amendment: false
+    formal_dart_replay_started_before_amendment: false
+    locked_2025_dart_results_read_before_amendment: false
+    main_paper_comparison: [minimum_mae_select, DART-ValueSelect]
+    supplementary_diagnostics: [minimum_crps_select, q99_tail_f1_select, mean_validation_value_select]
+    arbitrary_weighted_composite_score_forbidden: true
+  checkpoint_selection_amendment:
+    amendment: replace_single_seed_minimum_validation_pinball_checkpoint_with_three_seed_hierarchical_epoch_confidence_set
+    evidence_trigger: auxiliary_first_round_validation_audit_only
+    formal_dart_training_started_before_amendment: false
+    formal_dart_replay_started_before_amendment: false
+    locked_2025_dart_results_read_before_amendment: false
+    outer_DART_ValueSelect_changed: false
+  anchor_only_checkpoint_amendment:
+    effective_date: 2026-08-12
+    amendment: restrict_all_provisional_and_final_neural_epoch_candidates_to_exact_common_persisted_five_epoch_anchors
+    evidence_trigger: fail_closed_cuda_selected_epoch_replay_nondeterminism_before_any_oos_materialization
+    performance_independent: true
+    formal_dart_training_anchors_existed_before_amendment: true
+    formal_dart_completed_oos_units_before_amendment: 0
+    formal_dart_replay_started_before_amendment: false
+    locked_2025_dart_results_read_before_amendment: false
+    market_value_milp_or_action_metrics_consumed: false
+    model_architecture_loss_hyperparameters_data_splits_and_seeds_changed: false
+    outer_DART_ValueSelect_changed: false
+    superseded_forecast_run_id: paper-dart-forecast-v3
+    replacement_forecast_run_id: paper-dart-forecast-v4
+
+sign_contract:
+  canonical_dart_field: dart_da_minus_rt
+  inverse_spread_field: rt_spread_rt_minus_da
+  canonical_dart_formula: da_lbmp - rt_lbmp
+  inverse_spread_formula: rt_lbmp - da_lbmp
+  bare_rt_spread_field_forbidden: true
+  gate: np.allclose(dart_da_minus_rt, -rt_spread_rt_minus_da, equal_nan=True)
+  positive_dart_semantics: da_more_expensive_decrease_da_procurement_minus_1_when_feasible
+  negative_dart_semantics: rt_more_expensive_increase_da_procurement_plus_1_when_feasible
+
+optimization_runtime:
+  solver: appsi_highs
+  interval_hours: 0.25
+  solver_threads: 1
+  time_limit_seconds: 600
+  mip_relative_gap: 0.0
+  mip_relative_gap_role: solve_toward_proven_optimality_not_admission_cap
+  feasible_mip_start: all_short_home_no_migration_zero_storage_v1
+
+candidate_contract:
+  frozen_deployable_pool:
+    - seasonal_naive
+    - persistence
+    - lightgbm_quantile
+    - lstm
+    - dlinear
+    - patchtst
+    - itransformer
+    - static_graph_patch_transformer
+    - dgpt_e
+  exact_pool_required: true
+  excluded_oracles:
+    - oracle_future_realized_weather
+    - ORACLE_POSTHOC_SELECTOR
+    - perfect_information
+  oracle_exclusion_reason: unavailable_at_gate_or_unattainable_upper_bound_only
+  tft:
+    included_in_frozen_pool: false
+    status: EXCLUDED_OPTIONAL_MODEL
+    disclosure_required: true
+    disclosure: optional_TFT_is_not_a_preregistered_deployable_candidate_and_must_not_be_listed_as_completed
+
+execution_order:
+  schema_version: dcvpp.dart_execution_order.v1
+  frozen_before_formal_dart_training: true
+  decision_basis: user_specified_resource_sequence_not_candidate_performance
+  immediate_phase: formal_full_date_main_and_control_candidate_training
+  immediate_candidate_pool: [seasonal_naive, persistence, lightgbm_quantile, lstm, dlinear, patchtst, itransformer, static_graph_patch_transformer, dgpt_e]
+  exact_frozen_nine_candidate_pool_required: true
+  all_rolling_origins_and_dates_required: true
+  ablations_deferred_until_immediate_phase_complete: true
+  oracle_variants_deferred_until_immediate_phase_complete: true
+  deferred_families: [ablations, ORACLE_variants]
+  deferred_families_excluded_from_immediate_run: true
+  oracle_variants_deployable: false
+  performance_informed_reordering_forbidden: true
+
+randomization_contract:
+  study_seeds: [20260809, 20260819, 20260829]
+  decision_replay_seed_slots:
+    - {slot: 0, study_seed: 20260809}
+    - {slot: 1, study_seed: 20260819}
+    - {slot: 2, study_seed: 20260829}
+  deterministic_seed_slots:
+    - {slot: 0, study_seed: 20260809}
+    - {slot: 1, study_seed: 20260819}
+    - {slot: 2, study_seed: 20260829}
+  deterministic_seed_slots_legacy_alias_role: decision_replay_slots_not_forecast_refit_requirements
+  forecast_training_seed_roles:
+    deterministic_one_fit: [seasonal_naive, persistence]
+    statistical_fixed_one_fit: [lightgbm_quantile]
+    neural_three_fit: [lstm, dlinear, patchtst, itransformer, static_graph_patch_transformer, dgpt_e]
+  forecast_fit_policy:
+    deterministic_one_fit: no_redundant_random_refits
+    statistical_fixed_one_fit: fixed_seed_20260809
+    neural_three_fit: exact_three_study_seeds_all_completed
+  decision_replay_seed_contract:
+    study_seeds: [20260809, 20260819, 20260829]
+    candidate_pool: [seasonal_naive, persistence, lightgbm_quantile, lstm, dlinear, patchtst, itransformer, static_graph_patch_transformer, dgpt_e]
+    every_candidate_uses_all_three_seed_slots: true
+    deterministic_and_statistical_forecasts_are_reused_across_replay_slots: true
+    candidate_name_may_not_change_replay_seed_slot: true
+
+forecast_issue_contract:
+  profile_id: COMMON_DA_GATE_DART_V1
+  comparison_gate: nyiso_day_ahead_market_gate
+  day_ahead_target_profile: da_lbmp_issued_at_common_da_gate
+  real_time_target_profile: rt_lbmp_distribution_issued_at_same_da_gate
+  both_targets_share_identical_information_cutoff: true
+  later_intraday_rt_updates_forbidden_in_selection_comparison: true
+  quantiles: [0.05, 0.10, 0.50, 0.90, 0.95]
+  unified_candidate_comparison_contract:
+    exact_common_date_zone_origin_panel: true
+    exact_common_missing_value_mask: true
+    exact_common_da_rt_information_clock: true
+    exact_common_calibration_panel: true
+    exact_common_three_replay_seed_panel: true
+    exact_common_test_target_hash: true
+    common_issue_time_panel_sha256_required: true
+    common_calibration_panel_sha256_required: true
+    candidate_specific_or_partition_specific_event_threshold_forbidden: true
+
+chronology:
+  initial_training_through_year: 2021
+  selection_years: [2022, 2023, 2024]
+  expanding_window: true
+  selection_evidence: rolling_origin_sample_out_of_sample_only
+  annual_expanding_fit_origins:
+    - {evaluation_year: 2022, fit_through: 2021-12-31T23:59:59Z}
+    - {evaluation_year: 2023, fit_through: 2022-12-31T23:59:59Z}
+    - {evaluation_year: 2024, fit_through: 2023-12-31T23:59:59Z}
+  final_refit_and_freeze_through_year: 2024
+  locked_test_year: 2025
+  locked_test_runs: 1
+  locked_test_may_update_selector: false
+  freeze_before_locked_test:
+    - model_forms_and_refit_rules
+    - hyperparameters_and_checkpoints
+    - calibration
+    - action_thresholds
+    - risk_budgets
+    - static_and_contextual_selectors
+    - user_and_twin_parameters
+    - scenario_counts_reduction_and_seeds
+    - optimizer_and_solver_limits
+    - statistical_rules
+  locked_once_only_guard:
+    namespace: dart_value_select.locked_test.2025.v2
+    run_id_template: dart-locked-2025-{frozen_fingerprint_sha256_first_16}
+    fingerprint_algorithm: sha256
+    fingerprint_components:
+      - frozen_dart_value_select_config
+      - exact_candidate_pool_and_seed_slots
+      - model_checkpoint_or_refit_rule_hashes
+      - calibration_and_action_threshold_hashes
+      - user_twin_and_baseline_hashes
+      - scenario_seed_count_reduction_hashes
+      - optimizer_solver_and_statistical_rule_hashes
+    once_guard_key_formula: sha256(namespace|run_id|frozen_fingerprint)
+    reject_existing_namespace_run: true
+    reject_changed_fingerprint: true
+    second_locked_test_run_forbidden: true
+
+checkpoint_selection:
+  schema_version: dcvpp.dart_checkpoint_selection_policy.v12
+  scope: within_model_neural_epoch_selection_only
+  applies_to: [lstm, dlinear, patchtst, itransformer, static_graph_patch_transformer, dgpt_e]
+  applies_separately_by: [annual_origin, target_head]
+  study_seeds: [20260809, 20260819, 20260829]
+  candidate_epoch_grid:
+    source: exact_common_persisted_training_anchors
+    applies_to: [provisional_assessment, final_selection]
+    anchor_interval_epochs: 5
+    positive_epoch_required: true
+    exact_anchor_required_for_all_three_seeds: true
+    eligible_epoch_formula: E_A_intersection_of_positive_epochs_divisible_by_5_with_hash_verified_persisted_anchor_for_each_study_seed
+    non_anchor_epoch_records_role: audit_only_not_selection_candidates
+    selected_checkpoint_source: exact_persisted_anchor_payload_no_replay_training
+    between_anchor_replay_forbidden: true
+    earliest_surviving_anchor_tie_rule: true
+  neural_training:
+    maximum_epoch_count: 100
+    minimum_epoch_count: 40
+    every_completed_epoch_recorded: true
+    v4_every_completed_epoch_full_immutable_checkpoint_required: true
+    v4_full_epoch_checkpoint_interval_epochs: 1
+    v4_full_epoch_checkpoint_required_state:
+      - model_state
+      - optimizer_state
+      - gradient_scaler_state
+      - python_numpy_torch_and_cuda_rng_state
+      - dataloader_generator_and_sampler_state
+      - training_health_record
+      - validation_epoch_ledger
+    v4_full_epoch_checkpoint_must_be_hash_pinned_and_append_only: true
+    v4_non_five_epoch_checkpoint_selection_role: audit_and_resume_only_not_formal_selection_candidate
+    v3_source_checkpoint_cadence_unchanged: true
+    individual_seed_early_stopping_selects_final_checkpoint: false
+    common_epoch_required_across_exact_three_seeds: true
+    synchronized_three_seed_group_early_stopping: true
+    provisional_assessment_interval_epochs: 5
+    provisional_bootstrap_resamples: 200
+    required_consecutive_stable_assessments: 3
+    minimum_stability_span_epochs: 15
+    stable_assessment_requires_unchanged:
+      - provisional_selected_epoch
+      - global_crps_confidence_set
+      - proper_tail_twcrps_confidence_set
+      - selected_epoch_health_status
+      - selected_epoch_simultaneous_80_90_coverage_status
+    maximum_best_mean_global_crps_improvement_for_stability: 1.0e-8
+    maximum_best_mean_proper_tail_twcrps_improvement_for_stability: 1.0e-8
+    stop_all_three_seeds_together: true
+    final_selection_uses_exact_common_persisted_anchor_panel: true
+    provisional_selection_uses_exact_common_persisted_anchor_panel: true
+    cross_model_scheduler:
+      strategy: warmup_each_group_to_40_then_global_assessment_then_active_groups_in_10_epoch_rounds
+      scheduling_basis: efficiency_not_candidate_performance
+      group_definition: candidate_by_annual_origin_by_target_head_exact_three_seed_group
+      strict_cross_model_rotation_every_5_epochs: false
+      warmup_target_epoch: 40
+      every_group_reaches_warmup_target_before_first_global_assessment: true
+      active_group_round_increment_epochs: 10
+      active_group_definition: group_not_stopped_by_frozen_synchronized_three_seed_rule
+      all_active_groups_receive_one_increment_before_next_global_assessment: true
+      within_group_ledger_interval_epochs: 5
+      within_group_provisional_assessment_interval_epochs: 5
+      global_assessment_and_summary_epochs: [40, 50, 60, 70, 80, 90, 100]
+      stop_decisions_materialized_only_at_global_round_boundaries: true
+      stable_groups_skipped_in_later_rounds: true
+      maximum_epoch_count: 100
+      individual_seed_scheduling_or_stopping_forbidden: true
+  pre_cutoff_internal_holdout:
+    total_days: 112
+    checkpoint_calibration_days: 56
+    checkpoint_selection_days: 28
+    final_calibration_and_coupling_days: 28
+    chronological_order: [core_training, checkpoint_calibration, checkpoint_selection, final_calibration_and_coupling, annual_cutoff]
+    every_panel_strictly_before_annual_cutoff: true
+    panel_overlap_forbidden: true
+    core_training_uses_all_earlier_eligible_history: true
+  tail_thresholds:
+    quantiles: [0.01, 0.05, 0.95, 0.99]
+    source: core_training_history_only
+    scope: per_annual_origin_target_and_nyiso_zone_common_across_epochs_seeds_and_candidates
+    contract_sha256_required: true
+  epoch_health_gate:
+    finite_training_loss_required: true
+    finite_gradient_diagnostics_required: true
+    finite_predictions_required: true
+    nonfinite_gradient_step_count_required: 0
+    maximum_raw_quantile_crossing_rate: 0.05
+    post_calibration_quantile_crossing_count_required: 0
+  simultaneous_coverage_gate:
+    nominal_levels: [0.80, 0.90]
+    maximum_absolute_coverage_error: 0.05
+    simultaneous_across_levels: true
+  score_confidence_sets:
+    ordered_scores: [global_crps, proper_q01_q05_q95_q99_threshold_weighted_crps]
+    global_score: crps_from_common_quantile_grid
+    tail_score: proper_q01_q05_q95_q99_threshold_weighted_crps
+    arbitrary_weighted_composite_forbidden: true
+    lower_is_better: true
+  inference:
+    seed_aggregation: within_operating_date_mean_across_exact_three_seeds
+    seed_values_are_not_independent_date_samples: true
+    confidence_level: 0.95
+    bootstrap: circular_moving_block
+    block_length_days: 7
+    resamples: 1000
+    seed: 20260809
+    simultaneous_one_sided_confidence_sets: true
+    exact_common_epoch_and_date_panel_required: true
+  selection_order:
+    - epoch_health_gate
+    - simultaneous_80_90_coverage_gate
+    - global_crps_epoch_confidence_set
+    - proper_q01_q05_q95_q99_twcrps_epoch_confidence_set
+    - earliest_surviving_epoch
+  tie_rule: earliest_epoch
+  empty_set_policy: fail_annual_origin_target_candidate_cell_closed
+  forbidden_inputs:
+    - action_metrics
+    - MILP_outputs
+    - operating_cost
+    - profit
+    - regret
+    - CVaR
+    - rolling_evaluation_year_OOS_outcomes
+    - locked_2025_targets_predictions_or_metrics
+  outer_selection_contract:
+    unchanged: true
+    minimum_MAE_comparator_unchanged: true
+    DART_ValueSelect_A2_primary_A1_noninferiority_unchanged: true
+
+probabilistic_credibility:
+  selects_final_winner_alone: false
+  metrics:
+    - mae
+    - rmse
+    - crps
+    - pinball_loss
+    - proper_positive_and_negative_threshold_weighted_crps
+    - interval_coverage_80_90
+    - interval_width_80_90
+    - absolute_calibration_error_80_90
+    - pit_or_quantile_calibration_error
+    - q99_event_brier
+    - q99_event_pooled_panel_pr_auc
+    - q99_event_precision_recall_f1_and_miss_rate
+    - positive_and_negative_exceedance_calibration
+    - energy_score
+    - variogram_score
+    - temporal_autocorrelation_error
+    - cross_zone_rank_correlation_error
+    - spike_duration_error
+    - joint_spike_frequency_error
+  tail_threshold_source: current_rolling_origin_training_history_only
+  tail_threshold_scope: per_evaluation_year_and_nyiso_zone_common_across_candidates
+  tail_quantiles: [0.01, 0.05, 0.95, 0.99]
+  tail_threshold_contract_sha256_required: true
+  threshold_weighted_crps_definition: integral_w_u_times_F_u_minus_indicator_y_le_u_squared_du
+  threshold_weighted_crps_weight: indicator_u_le_zone_q05_plus_indicator_u_ge_zone_q95_plus_indicator_u_le_zone_q01_plus_indicator_u_ge_zone_q99
+  q01_q99_threshold_role: common_extreme_event_definition_and_extra_tail_emphasis
+  legacy_realized_outcome_reweighted_crps_role: auxiliary_nonproper_diagnostic_only
+  global_strict_credibility_score: crps
+  threshold_weighted_score_claim: proper_local_tail_score_not_global_strict_score
+  quantile_levels: [0.05, 0.10, 0.50, 0.90, 0.95]
+
+actionability:
+  selects_final_winner_alone: false
+  physical_flexible_energy_field: gate_time_feasible_flexible_energy_mwh
+  feasible_flexibility_field: gate_time_candidate_independent_feasibility_weight
+  feasible_flexibility_range: [0.0, 1.0]
+  feasible_flexibility_normalization: frozen_common_gate_time_capacity_normalization
+  candidate_independent_feasibility_hash_required: true
+  feasible_flexibility_sources:
+    - available_task_queue
+    - task_deadlines
+    - server_capacity
+    - current_battery_soc_and_power_limits
+    - migration_eligibility_and_bandwidth
+    - other_declared_gate_time_constraints
+  forbidden_feasible_flexibility_inputs:
+    - future_realized_price
+    - future_realized_workload
+    - future_realized_pv
+    - locked_test_outcome
+  awcrps_formula: sum(F * proper_threshold_weighted_CRPS) / sum(F)
+  zero_awcrps_denominator_value: null
+  zero_awcrps_denominator_status: NO_FEASIBLE_FLEXIBILITY
+  action_class_order: [-1, 0, 1]
+  action_semantics:
+    -1: decrease_da_procurement_inc_like_demand_side_action
+    0: no_action_inside_time_varying_cost_band
+    1: increase_da_procurement_dec_like_demand_side_action
+  no_action_band_components:
+    - battery_degradation_cost
+    - migration_energy_and_bandwidth_cost
+    - transaction_cost
+    - engineered_sla_risk
+    - minimum_dispatch_quantity
+    - settlement_asymmetry
+  universal_usd_per_mwh_threshold_primary: false
+  metrics:
+    - multiclass_economic_action_brier
+    - feasible_flexibility_weighted_precision
+    - feasible_flexibility_weighted_recall
+    - feasible_flexibility_weighted_f1
+    - wrong_action_rate
+    - wrong_action_economic_loss_usd
+    - missed_opportunity_rate
+    - missed_opportunity_economic_loss_usd
+    - q99_spike_pr_auc
+    - feasible_opportunity_ranking_loss
+  forl_formula: sum(F_a * abs(G_a) * indicator(G_hat_a * G_a < 0)) / sum(F_a * abs(G_a))
+  realized_net_gain_definition: realized_DART_net_of_frozen_time_varying_no_action_band
+  predicted_net_gain_definition: candidate_predictive_net_gain_net_of_same_frozen_no_action_band
+  forl_realized_gain_usage: post_decision_scoring_only
+  zero_forl_denominator_value: null
+  zero_forl_denominator_status: NO_FEASIBLE_OPPORTUNITY
+
+decision_value:
+  primary_ranking: true
+  selection_metric: profit_lcb
+  selection_metric_semantics: counterfactual_incremental_operational_value_lcb_not_commercial_profit
+  realized_replay_timing: freeze_DA_schedule_before_operating_day_then_reveal_only_current_15_minute_price_and_physical_state
+  future_price_workload_pv_and_physical_state_remain_hidden: true
+  counterfactual: true
+  evidence_role: counterfactual_replayed
+  task_value_policy: invariant_or_explicit_engineering_assumption_only
+  realized_operational_value_components:
+    - day_ahead_settlement_cost
+    - real_time_deviation_settlement_cost
+    - battery_degradation_cost
+    - migration_cost
+    - sla_penalty
+    - transaction_cost
+    - other_cost
+  incremental_value_formula: Pi_real_model - Pi_real_baseline
+  prescriptive_regret_formula: Pi_perfect_information - Pi_real_model
+  profit_capture_ratio_formula: sum(Pi_real_model - Pi_real_baseline) / sum(Pi_perfect_information - Pi_real_baseline)
+  pcr_null_when_denominator_nonpositive_or_numerically_zero: true
+  perfect_information_label: UNATTAINABLE_UPPER_BOUND_ONLY
+  perfect_information_deployable: false
+  risk_alpha: 0.95
+  metrics:
+    - cumulative_and_mean_incremental_operational_value
+    - equivalent_operating_cost_reduction_and_rate
+    - value_per_mwh_feasible_flexibility
+    - prescriptive_regret
+    - profit_capture_ratio
+    - probability_below_baseline
+    - cvar_0_95_of_negative_incremental_value
+    - worst_5_percent_mean_loss
+    - maximum_drawdown
+    - maximum_daily_loss
+    - longest_loss_run
+    - positive_day_share
+
+identical_replay:
+  common_user_and_twin_parameters: true
+  common_initial_soc_and_task_queue: true
+  common_sla_mapping_and_migration_constraints: true
+  common_raw_and_reduced_scenario_counts: true
+  common_scenario_reduction_method: true
+  common_scenario_seeds: true
+  common_stochastic_milp: true
+  common_solver_time_limit_and_mip_gap: true
+  common_rolling_update_rules: true
+  common_realized_replay_path: true
+  common_validation_day_denominator: true
+  hash_mismatch_invalidates_pairing: true
+
+decision_pipeline_contract:
+  optimization_policy_id: B6
+  raw_scenario_count: 100
+  reduced_scenario_count: 20
+  common_uniform_draws_across_candidates: true
+  common_scenario_seeds_across_candidates: true
+  scenario_seed_slot_source: randomization_contract.decision_replay_seed_slots
+  common_reduction_algorithm_across_candidates: true
+  common_reduction_budget_across_candidates: true
+  reduction_budget: 20
+  candidate_distribution_transforms_common_uniforms: true
+  preregistered_baseline:
+    baseline_id: DART_BASELINE_B6_SEASONAL_NAIVE_V1
+    forecast_source: seasonal_naive
+    optimization_policy_id: B6
+    candidate_independent: true
+    one_common_baseline_value_per_day_seed_and_replay: true
+    baseline_may_not_be_recomputed_to_favor_a_candidate: true
+
+feasibility:
+  minimum_sla_satisfaction: 0.99
+  minimum_sla_satisfaction_role: preregistered_engineering_assumption
+  cvar95_loss_budget_fraction_of_baseline_cost: 0.05
+  cvar95_loss_budget_role: preregistered_engineering_assumption
+  maximum_probability_below_baseline: 0.50
+  maximum_probability_below_baseline_role: preregistered_engineering_assumption
+  market_gate_budget_seconds: 3600
+  market_gate_budget_role: preregistered_engineering_assumption
+  require_zero_infeasible_days: true
+  require_zero_invalid_days: true
+  maximum_solver_relative_mip_gap: 0.05
+  require_solver_incumbent: true
+  require_finite_reported_solver_gap: true
+  require_zero_solver_gap_over_cap_days: true
+  require_zero_solver_missing_gap_days: true
+  require_zero_solver_no_incumbent_days: true
+  solver_timeout_day_field: solver_timeout_days
+  solver_nonzero_gap_day_field: solver_nonzero_gap_days
+  solver_gap_over_cap_day_field: solver_gap_over_cap_days
+  solver_missing_gap_day_field: solver_missing_gap_days
+  solver_no_incumbent_day_field: solver_no_incumbent_days
+  solver_feasibility_rule: incumbent_required_and_finite_relative_mip_gap_le_0_05
+  feasible_timeout_policy: accepted_only_with_incumbent_and_finite_relative_mip_gap_le_0_05
+  timeout_days_are_disclosed_but_not_automatically_excluded: true
+  nonzero_gap_days_are_disclosed_but_not_automatically_excluded: true
+  rejected_solver_outcomes:
+    - gap_strictly_greater_than_0_05
+    - missing_or_nonfinite_gap
+    - no_incumbent
+    - infeasible_or_nonfeasible_termination
+  bounded_gap_value_reporting:
+    primary_A1_A2_estimand: exact_ex_post_settlement_cost_of_executed_incumbent_actions
+    primary_estimand_uses_solver_bounds: false
+    supplementary_certificate_formula: baseline_planner_objective_lower_bound_minus_candidate_planner_objective_upper_bound
+    missing_explicit_planner_bound_policy: null_never_infer_or_fabricate
+    certificate_scope: issue_time_planner_objective_not_realized_settlement_value
+  timeout_and_gap_grain: operating_date_with_any_of_three_replay_seeds_flagged
+  timeout_nonzero_over_cap_missing_gap_no_incumbent_days_remain_disclosed: true
+
+bootstrap:
+  method: paired_circular_moving_block
+  confidence_level: 0.95
+  lower_confidence_bound_quantile: 0.05
+  blocks_days: [7, 14, 28]
+  primary_block_days: 7
+  robustness_block_days: [14, 28]
+  common_indices_across_models: true
+  preserve_weekly_and_value_autocorrelation: true
+  resamples: 2000
+  seed: 20260809
+
+model_confidence_set:
+  enabled: true
+  confidence_level: 0.95
+  primary_block_days: 7
+  resamples: 2000
+  seed: 20260809
+  loss_series: daily_realized_operating_cost_or_prescriptive_regret
+  statistic: centered_studentized_global_loss_range
+  null_hypothesis: equal_predictive_ability_over_all_surviving_pairwise_loss_differentials
+  bootstrap_centering: observed_pairwise_mean_loss_differentials
+  studentization: pairwise_moving_block_bootstrap_standard_error
+  range_definition: maximum_absolute_studentized_pairwise_loss_differential
+  elimination_rule: remove_current_highest_standardized_loss_only_after_global_null_rejection
+  sequential_step_down: true
+  eliminated_model_p_value: running_maximum_global_null_p_value_at_elimination
+  included_model_p_value: 1.0
+  apply_before_maximum_lcb: true
+  uncorrected_pairwise_tests_forbidden: true
+
+selection:
+  primary_experiment: A2_full_deployment_chain
+  candidate_pool: feasible_intersection_A1_noninferior_intersection_model_confidence_set
+  objective: maximum_A2_primary_7_day_lcb
+  point_error_selects_final_winner: false
+  A1_noninferiority:
+    required: true
+    lcb_definition: A1_primary_7_day_moving_block_bootstrap_lcb
+    epsilon_fraction_of_mean_baseline_daily_cost: 0.005
+    rule: A1_LCB_greater_than_or_equal_to_negative_epsilon
+    checked_before_A2_winner_set: true
+  winner_economic_tolerance_fraction_of_mean_baseline_daily_cost: 0.005
+  winner_set_rule: retain_every_eligible_A2_MCS_member_with_LCB_within_economic_tolerance_of_best_LCB
+  lcb_absolute_tolerance: 1.0e-9
+  lcb_relative_tolerance: 1.0e-9
+  tie_tolerance:
+    rule: abs_difference_le_absolute_plus_relative_times_max_abs_or_one
+    absolute: 1.0e-9
+    relative: 1.0e-9
+    frozen_before_2022: true
+  diagnostic_tie_order_report_only:
+    - lower_prescriptive_regret
+    - better_tail_calibration
+    - lower_forecast_plus_solve_latency
+    - lower_model_complexity
+  report_selected_model_separately_from_winner_set: true
+  no_forced_winner_when_indistinguishable: true
+  indistinguishable_status: STATISTICALLY_INDISTINGUISHABLE_WINNER_SET
+
+experiments:
+  A1_dart_only_replacement:
+    required: true
+    hold_fixed:
+      - day_ahead_price_forecast
+      - load_forecast
+      - pv_forecast
+      - workload_forecast
+      - dependence_model
+      - scenario_generator
+      - scenario_seeds
+      - optimization
+      - replay
+    replace_only: candidate_dart_predictive_distribution
+    rt_scenario_identity: fixed_da_minus_candidate_dart
+    claim_scope: pure_dart_decision_contribution
+  A2_full_deployment_chain:
+    required: true
+    candidate_specific:
+      - eligible_joint_forecast_distribution
+      - calibration
+      - dependence_reconstruction
+      - scenarios
+    exact_allowed_changed_blocks:
+      - candidate_forecast_distribution
+      - candidate_calibration
+      - candidate_dependence_reconstruction
+      - candidate_scenarios
+    any_other_changed_block_invalidates_A2_pairing: true
+    hold_fixed:
+      - physical_and_user_optimizer
+      - replay_rules
+    claim_scope: complete_deployed_system_value_not_pure_dart_effect
+  A3_metric_contradiction:
+    required: true
+    compare:
+      - mae_rank
+      - crps_rank
+      - q99_tail_f1_rank
+      - decision_value_rank
+    context:
+      - spike
+      - sign
+      - feasible_flexibility
+      - binding_constraints
+    null_result_must_be_retained: true
+
+selector_comparators:
+  main_paper:
+    - minimum_mae_with_crps_as_deterministic_tie_break_only
+    - DART-ValueSelect
+  supplementary_A3:
+    - minimum_crps
+    - q99_tail_f1
+    - mean_2022_2024_A2_operational_value
+    - contextual_DART-ValueSelect_if_enabled
+  all_comparators_use_same_locked_A2_replay_table: true
+  all_comparator_rows_derived_without_new_solves: true
+  locked_2025_may_not_update_any_selector: true
+
+contextual_selector:
+  enabled: false
+  status_when_disabled: SKIPPED_OPTIONAL_EXTENSION
+  training_evidence: rolling_2022_2024_model_day_value_table_only
+  candidates:
+    - lightgbm_ranker
+    - multi_model_quantile_regression
+    - regularized_multinomial_logit
+  large_deep_meta_model_forbidden: true
+  gate_time_features:
+    - month_weekday_holiday
+    - trailing_24h_and_168h_dart_volatility
+    - da_forecast_level
+    - candidate_disagreement
+    - positive_and_negative_spike_probabilities
+    - interval_width
+    - current_soc
+    - deferrable_and_migratable_work
+    - available_site_capacity
+    - load_and_pv_uncertainty
+  forbidden_features:
+    - future_realized_price
+    - future_realized_workload
+    - future_realized_pv
+    - solver_outcome
+    - daily_best_model_identity
+  first_second_gap_policy: retain_static_winner_or_validation_frozen_linear_pool
+  posthoc_oracle_label: ORACLE_POSTHOC_SELECTOR
+  posthoc_oracle_deployable: false
+
+claim_boundaries:
+  allowed:
+    - counterfactual_operational_cost_reduction
+    - incremental_objective_improvement
+    - regret_reduction
+    - profit_capture_ratio_with_declared_denominator
+  forbidden:
+    - invented_revenue
+    - realized_market_revenue
+    - assumed_commercial_profit
+    - actual_nlr_nyiso_participation
+
+implementation_freeze:
+  schema_version: dcvpp.dart_testing_selection_implementation_freeze.v4
+  required_code_paths:
+    - src/dcvpp/statistics/block_bootstrap.py
+    - src/dcvpp/statistics/model_confidence_set.py
+    - src/dcvpp/evaluation/dart_metrics.py
+    - src/dcvpp/evaluation/action_weighted_crps.py
+    - src/dcvpp/evaluation/profit_evaluator.py
+    - src/dcvpp/evaluation/dart_value_select.py
+    - src/dcvpp/optimization/replay_engine.py
+    - src/dcvpp/optimization/stochastic_milp.py
+    - src/dcvpp/experiments/dart_checkpoint_selection.py
+    - src/dcvpp/experiments/dart_checkpoint_training.py
+    - src/dcvpp/experiments/dart_checkpoint_replay_compat.py
+    - src/dcvpp/experiments/dart_training.py
+    - src/dcvpp/experiments/dart_forecast_oos.py
+    - src/dcvpp/experiments/paper_training.py
+    - src/dcvpp/models/energy/dgpt_e.py
+    - src/dcvpp/experiments/dart_replay.py
+    - src/dcvpp/experiments/dart_real_evidence.py
+    - src/dcvpp/experiments/dart_value_select.py
+    - src/dcvpp/experiments/dart_pipeline.py
+    - src/dcvpp/paper_tables_reports.py
+    - src/dcvpp/paper_artifacts.py
+    - scripts/run_dart_primary_selection.py
+  require_hash_match_before_reading_selection_or_locked_results: true
+  code_change_after_results_requires_new_protocol_and_run_id: true
+  exact_paired_day_panel_required: true
+  silent_nonfinite_day_filtering_forbidden: true
+
+pre_dart_v1_readiness:
+  schema_version: dcvpp.pre_dart_v1_readiness.v12
+  formal_run_id: paper-dart-v1-readiness-v8
+  formal_output_root: artifacts/dart_value_select/v1_readiness/run_id=paper-dart-v1-readiness-v8
+  anchor_only_checkpoint_amendment:
+    enabled: true
+    amendment_role: performance_independent_recovery_after_fail_closed_pre_oos_cuda_replay_defect
+    evidence_trigger: selected_epoch_replay_changed_its_validation_prediction_or_health_record
+    performance_independent: true
+    model_selection_performance_reviewed_for_this_amendment: false
+    locked_2025_dart_metrics_consumed: false
+    rolling_2022_2024_oos_predictions_or_metrics_materialized: false
+    market_replay_milp_action_or_value_results_consumed: false
+    formal_dart_training_anchors_existed: true
+    formal_dart_completed_oos_units: 0
+    formal_dart_replay_started: false
+    v4_full_immutable_checkpoint_every_completed_epoch_required: true
+    v4_full_epoch_checkpoint_interval_epochs: 1
+    v4_full_epoch_checkpoint_selection_role: exact_positive_five_epoch_grid_only
+    v4_full_epoch_checkpoint_required_state: [model_state, optimizer_state, gradient_scaler_state, python_numpy_torch_and_cuda_rng_state, dataloader_generator_and_sampler_state, training_health_record, validation_epoch_ledger]
+    v4_non_five_epoch_checkpoints_are_audit_and_resume_only: true
+    v3_checkpoint_cadence_or_bytes_changed: false
+    source_run_id: paper-dart-forecast-v3
+    destination_run_id: paper-dart-forecast-v4
+    source_reuse_mode: immutable_hash_pinned_read_only_anchor_import_without_copy_hardlink_or_rewrite
+    source_snapshot_manifest_path: artifacts/dart_value_select/protocol_amendments/anchor_only_v12/v3_pre_oos_anchor_snapshot_manifest.json
+    source_snapshot_manifest_byte_count: 1867213
+    source_snapshot_manifest_file_sha256: 02f767744454d1cef0e0a007106d939a2a312a29e557217242997d5175a81c61
+    source_snapshot_manifest_sha256: 4a8686597bf9facca86c738220986c7503ee808d8017c060af5b5b57fa848d42
+    source_anchor_record_count: 1266
+    source_anchor_total_bytes: 6726342704
+    source_anchor_record_core_schema: repository_relative_path_sha256_byte_count_epoch_seed
+    source_anchor_record_core_order: ascending_repository_relative_posix_path
+    source_anchor_record_core_hash_algorithm: sha256_of_utf8_canonical_json_sort_keys_compact_separators
+    source_anchor_records_sha256: 43030db511b7aa9591216753e3b76d2c73e7937f99b7d0183fd88c94c5d76a36
+    source_anchor_expanded_records_sha256: e250dde398183695acd498c4c38ca4440ae566024e1d751022c28623d9bebcaf
+    source_training_module_sha256: 8e43fc4f3c61be2aca7f8ec67ffc821a909aef50b23626955ca9caa2ae2d10a7
+    source_config_sha256: 8f31c15cfa8c2a273223b78b658150a45e9db25ab1beee61d77dea815fe640a9
+    source_selection_stage_manifest_path: artifacts/dart_value_select/run_id=paper-dart-forecast-v3/forecast_oos/selection_stage_manifest.json
+    source_selection_stage_manifest_byte_count: 4705
+    source_selection_stage_manifest_sha256: c02aeb8483890fe7d4d742552d3eb083b30037153a40edd30b1d11a4c786d42c
+    source_scheduler_state_path: artifacts/dart_value_select/run_id=paper-dart-forecast-v3/forecast_oos/checkpoint_scheduler/hybrid_scheduler_state.json
+    source_scheduler_state_byte_count: 2988675
+    source_scheduler_state_sha256: e8f68a6f91f201f191be7d9e6f33db83dc9760837a265d4f5fbaea307c0ec656
+    prior_run_id: paper-dart-v1-readiness-v7
+    prior_policy_schema_version: dcvpp.v1_dart_testing_selection_policy.v11
+    prior_freeze_path: artifacts/dart_value_select/v1_readiness/run_id=paper-dart-v1-readiness-v7/testing_selection_policy_freeze.json
+    prior_freeze_byte_count: 61467
+    prior_freeze_sha256: 92ca0de71db4f2cd59115f3741771cc71befb16fbc7f7e9dbf0149feb4131d21
+    prior_frozen_policy_sha256: f993b46f367c31d41987029cb86104e999ff2b646c739ccec84881f369c28d5f
+    prior_amendment_schema_version: dcvpp.v1_dart_testing_selection_amendment.v11
+    prior_amendment_status: AMENDED_PRE_FORMAL_DART_CHECKPOINT_SELECTION
+    prior_amendment_path: artifacts/dart_value_select/v1_readiness/run_id=paper-dart-v1-readiness-v7/testing_selection_policy_amendment_v11.json
+    prior_amendment_byte_count: 5002
+    prior_amendment_sha256: 47082bf4a040889f1241ab2257b61591d1a104e0ab252b76f947af7295812510
+    prior_readiness_manifest_path: artifacts/dart_value_select/v1_readiness/run_id=paper-dart-v1-readiness-v7/v1_dart_readiness_manifest.json
+    prior_readiness_manifest_byte_count: 12247
+    prior_readiness_manifest_sha256: e8ad0633d6b88b55294adc30d00d03e0ab6769f0986ffb981e0efb6e4745c2b5
+  validation_informed_selection_method_amendment:
+    enabled: true
+    amendment_role: pre_formal_dart_method_refinement_after_auxiliary_2024_validation_audit
+    auxiliary_validation_metrics_were_reviewed: true
+    locked_2025_dart_metrics_consumed: false
+    formal_dart_training_started: false
+    formal_dart_replay_started: false
+    formal_dart_selection_results_existed: false
+    changes:
+      - A2_is_primary_selection_and_A1_is_noninferiority_gate
+      - proper_zone_q01_q99_threshold_weighted_crps
+      - candidate_independent_normalized_feasibility_weight
+      - economic_winner_tolerance_and_set_valued_CSSA
+      - two_method_main_paper_comparison
+      - hierarchical_three_seed_validation_only_epoch_selection
+      - fixed_112_day_internal_holdout_and_synchronized_three_seed_group_early_stopping
+    requires_new_dart_forecast_replay_value_select_run_ids: true
+  post_recovery_structural_missingness_amendment:
+    enabled: true
+    three_seed_amendment_enabled: true
+    performance_independent: true
+    reason: native_RT_validation_has_candidate_independent_complete_target_day_gaps_user_reduced_all_subsequent_confirmatory_experiments_to_three_seeds_96_step_operating_dates_are_canonical_UTC_days_and_all_evidence_paths_are_repository_relative
+    prior_run_id: paper-dart-v1-readiness-v6
+    prior_policy_schema_version: dcvpp.v1_dart_testing_selection_policy.v10
+    prior_freeze_path: artifacts/dart_value_select/v1_readiness/run_id=paper-dart-v1-readiness-v6/testing_selection_policy_freeze.json
+    prior_freeze_byte_count: 50355
+    prior_freeze_sha256: ca7838b0600a378cfe4fe2c1551da49c5441e19f73d6e8c0ee71d64fbedcb9a9
+    prior_amendment_schema_version: dcvpp.v1_dart_testing_selection_amendment.v10
+    prior_amendment_status: AMENDED_POST_RESULT_STRUCTURAL_MISSINGNESS_AND_THREE_SEED_PANEL
+    prior_amendment_path: artifacts/dart_value_select/v1_readiness/run_id=paper-dart-v1-readiness-v6/testing_selection_policy_amendment_v10.json
+    prior_amendment_byte_count: 3920
+    prior_amendment_sha256: 60e3077a42e281c9404de90c8ee398d8fba44a6b360a5cad9a9cf71482e591ee
+  native_validation_common_panel:
+    policy: intersection_after_explicit_complete_operating_day_exclusion_ledger
+    exclusions_must_be_candidate_independent_complete_target_days: true
+    required_zones: 4
+    required_intervals_per_day: 96
+    operating_date_timezone: UTC
+    imputation_forbidden: true
+    cross_task_metric_ranking_forbidden: true
+    task_specific_metrics_remain_within_task_only: true
+  required_before_formal_dart_training: true
+  evaluation_role: auxiliary_native_issue_pipeline_readiness
+  policy_must_be_frozen_before_v1_metrics_are_evaluated: true
+  policy_may_not_change_after_v1_evaluation: true
+  evaluation_split: validation
+  evaluation_calendar_years: [2024]
+  evaluation_year_timezone: UTC
+  locked_2025_metrics_may_not_be_consumed: true
+  locked_2025_metrics_may_not_be_materialized_by_the_validation_loader: true
+  locked_2025_metrics_may_not_update_policy: true
+  v1_performance_is_not_a_go_no_go_threshold: true
+  integrity_failures_block_formal_dart_training: true
+  accepted_v1_manifest_schema_versions:
+    - paper_forecast_v1_recovery_manifest/v1
+  current_run_requires_hash_verified_recovery_lineage: true
+  recovery_run_id: paper-forecast-v1-recovery-v1
+  recovery_run_kind: paper_forecast_v1_integrity_recovery
+  recovery_measurement_relationship: not_measured_by_this_study
+  recovery_manifest_path: artifacts/real_forecasting_recovery/run_id=paper-forecast-v1-recovery-v1/run_manifest.json
+  recovery_requirements:
+    formal_readiness_allowed: true
+    terminal: true
+    actionable_pending_count: 0
+    integrity_failures: []
+    task_failures: []
+    tasks_requested: 3
+    tasks_completed: 3
+    tasks_failed: 0
+    failed_seeds: 0
+    require_incident_corruption_ledger_hash: true
+    require_physical_recovery_contract_hash: true
+    workload_events_contract_sha256: 999d12d3223d968d96feca64fafe6f2e1f3fbeba6ffd6c096dcd54f89927e1cc
+    workload_events_artifact_sha256: b1a90b0274e5bc2e2959a24ed0cb762ccffa1f347a9461e9ac9b133ab2923b1a
+    require_mixed_lineage_disclosure: true
+    require_every_intact_and_recovered_output_hash: true
+    exclude_corrupt_outputs_from_canonical_outputs: true
+    locked_2025_metrics_consumed: false
+    locked_2025_metrics_materialized: false
+    locked_2025_policy_decisions_consumed: false
+  native_issue_contract:
+    nyiso_da:
+      profile_id: native_day_ahead_issue_profile
+      audited_candidate: dgpt_e
+      artifact: nyiso_da_dgpt_e_quantiles.parquet
+      storage_timezone: UTC
+      market_timezone: America/New_York
+      minimum_issue_lead_seconds: 86400
+      chronology_claim_scope: audited_dgpt_native_issue_artifact_only
+    nyiso_rt:
+      profile_id: native_intraday_real_time_issue_profile
+      audited_candidate: dgpt_e
+      artifact: nyiso_rt_dgpt_e_quantiles.parquet
+      storage_timezone: UTC
+      market_timezone: America/New_York
+      minimum_issue_lead_seconds: 300
+      chronology_claim_scope: audited_dgpt_native_issue_artifact_only
+    nlr_workload:
+      profile_id: native_submission_history_issue_profile
+      market_timezone: America/Denver
+      chronology_numerically_audited_here: false
+  eligibility_labels:
+    compatible_native_probabilistic_metrics: AUXILIARY_NATIVE_ISSUE_ELIGIBLE
+    cross_head_dart_metrics: AUXILIARY_NOT_DA_GATE_ELIGIBLE
+    cross_head_actionability_metrics: AUXILIARY_NOT_DA_GATE_ELIGIBLE
+    cross_head_decision_value_metrics: AUXILIARY_NOT_DA_GATE_ELIGIBLE
+  required_completion_gates:
+    - v1_manifest_immutable
+    - v1_output_hashes_verified
+    - v1_recovery_incident_and_lineage_verified
+    - v1_recovery_locked_metric_nonconsumption_verified
+    - forecast_training_seed_roles_verified
+    - all_candidate_three_replay_seed_contract_frozen
+    - validation_only_projection
+    - required_metric_denominator_matrix_verified
+    - audited_dgpt_native_issue_chronology_verified
+    - audited_dgpt_cutoff_issue_target_order_verified
+    - audited_dgpt_timezone_and_issue_profile_verified
+    - audited_dgpt_exact_da_rt_key_panel_verified
+    - testing_selection_contract_frozen_v12
+    - hierarchical_checkpoint_selection_contract_frozen
+    - pre_oos_anchor_import_contract_frozen
+    - v4_full_epoch_checkpoint_contract_frozen
+    - formal_execution_order_contract_frozen
+    - testing_selection_implementation_hashes_verified
+    - centered_studentized_global_mcs_contract_frozen
+    - solver_timeout_and_nonzero_gap_contract_frozen
+    - native_rt_cross_head_auxiliary_only
+    - native_rt_excluded_from_dart_selection
+    - common_da_gate_retraining_required
+    - locked_metric_loader_nonconsumption_verified
+  compatible_validation_metrics:
+    - mae
+    - rmse
+    - crps_quantile_approximation
+    - mean_pinball
+    - pinball_by_quantile
+    - interval_coverage_80_90
+    - interval_width_80_90
+    - absolute_calibration_error
+    - spike_precision_recall_f1
+    - quantile_crossing_count_and_rate
+  readiness_outputs:
+    policy_freeze: testing_selection_policy_freeze.json
+    amendment_ledger: testing_selection_policy_amendment_v12.json
+    native_common_panel_exclusions: v1_native_validation_common_panel_exclusions.json
+    superseded_policy_pattern: testing_selection_policy_freeze.*.superseded_pre_result_amendment.json
+    validation_projection: v1_validation_only_projection.json
+    native_metrics_table: v1_native_validation_metrics.csv
+    eligibility_table: v1_dart_eligibility_matrix.csv
+    manifest: v1_dart_readiness_manifest.json
+
+aggregation_contract:
+  exact_common_operating_date_panel_required: true
+  silent_inner_join_forbidden: true
+  candidate_date_seed_experiment_key_unique: true
+  first_average_common_three_seed_values_within_date: true
+  then_apply_time_block_inference_across_dates: true
+  primary_daily_value_unit: joint_four_zone_counterfactual_operating_cost
+  equal_zone_weight_for_forecast_only_metrics: true
+  no_cross_zone_row_count_weighting: true
+  actionability_weight: gate_time_candidate_independent_feasibility_weight_in_0_1
+  awcrps_and_forl_zero_denominator_policy: explicit_null_with_reason_not_failure
+  missing_metric_policy: preserve_null_and_reason_never_impute
+  missing_replay_cell_policy: invalidate_candidate_common_panel_and_record_actionable_failure
+  solver_cell_policy: retain_and_disclose_all_cells; fail_gate_only_for_over_cap_missing_gap_no_incumbent_or_infeasible
+  seed_failure_policy: retain_failure_and_disallow_three_seed_common_panel_completion
+  candidate_performance_aggregation:
+    forecast_metrics: equal_weight_over_common_date_zone_horizon_panel
+    decision_metrics: daily_joint_system_value_after_within_day_seed_average
+    risk_metrics: empirical_daily_value_distribution_on_exact_common_dates
+
+selection_freeze_contract:
+  freeze_before_reading_selection_outcomes: true
+  feasibility_precedes_statistical_ranking: true
+  mcs_precedes_lcb_selection: true
+  daily_three_seed_average_precedes_bootstrap: true
+  common_bootstrap_indices_across_candidates: true
+  primary_loss_orientation: lower_realized_operating_cost_or_regret_is_better
+  primary_value_orientation: higher_incremental_operational_value_is_better
+  primary_lcb_definition: percentile_0_05_of_paired_7_day_block_bootstrap_mean_daily_incremental_value
+  A2_is_primary_selection_experiment: true
+  A1_is_noninferiority_safety_gate_not_primary_ranking: true
+  A1_epsilon_fraction_of_mean_baseline_daily_cost: 0.005
+  economic_winner_tolerance_fraction_of_mean_baseline_daily_cost: 0.005
+  robustness_lcb_definitions:
+    - percentile_0_05_of_paired_14_day_block_bootstrap_mean_daily_incremental_value
+    - percentile_0_05_of_paired_28_day_block_bootstrap_mean_daily_incremental_value
+  mcs_and_lcb_use_same_exact_daily_panel: true
+  selector_comparators_use_same_replay_table: true
+  null_or_no_feasible_flexibility_days_remain_in_denominator_audit: true
+  winner_set_retained_before_tie_break_reporting: true
+  tie_break_does_not_convert_statistical_indistinguishability_into_a_causal_claim: true
+  conventional_and_value_select_primary_comparison:
+    conventional: minimum_MAE_with_CRPS_only_as_deterministic_tie_break
+    proposed: feasibility_plus_A1_noninferiority_plus_95_percent_MCS_plus_A2_7_day_LCB
+    locked_table: same_2025_A2_replay_rows_no_new_solve
+
+hypothesis_contract:
+  frozen_before_v1_and_dart_selection_results: true
+  H4a_material_rank_disagreement:
+    top_choice_disagreement_required: true
+    normalized_kendall_distance_definition: discordant_candidate_pairs_divided_by_total_candidate_pairs
+    minimum_normalized_kendall_distance: 0.20
+    counterfactual_value_gap_definition: absolute_mean_daily_value_gap_divided_by_positive_baseline_operating_cost
+    minimum_counterfactual_value_gap_fraction: 0.001
+    all_three_conditions_required: true
+  H4b_conservative_set_valued_dominance:
+    target_policy: frozen_pre_tie_winner_set
+    comparison_policy: every_target_member_against_every_feasible_comparator_member
+    all_target_members_must_be_feasible: true
+    infeasible_comparator_policy: disclose_and_do_not_count_as_dominance_evidence
+    value_difference_orientation: target_minus_comparator
+    regret_difference_orientation: comparator_minus_target
+    support_rule: every_paired_value_and_regret_7_day_block_bootstrap_lcb_strictly_above_zero
+    statistic_name: conservative_set_valued_selection_advantage_CSSA
+    formula: Q_0_05_of_each_common_block_bootstrap_replicates_minimum_over_i_in_target_set_j_in_comparator_set_of_mean_daily_value_i_minus_j
+    block_days_primary: 7
+    block_days_robustness: [14, 28]
+    confidence_level: 0.95
+    resamples: 2000
+    seed: 20260809
+    primary_comparator: MAE-Select
+    same_locked_A2_replay_table_required: true
+    no_new_solve: true
+    positive_result_required_for_completion: false
+  H4c_incremental_explanatory_test:
+    unit: selection_oos_candidate_day
+    years: [2022, 2023, 2024]
+    validation: rolling_forward_blocked_cross_validation
+    folds: 6
+    repeats: 3
+    repeat_seeds: [20260809, 20260819, 20260829]
+    point_error_features: [mae, rmse]
+    incremental_features: [tail_crps, tail_calibration_error, economic_action_brier, action_f1, forl]
+    response: daily_counterfactual_incremental_operational_value
+    improvement_score: paired_out_of_sample_squared_error_point_error_only_minus_augmented
+    support_rule: paired_7_day_block_bootstrap_lcb_of_improvement_strictly_above_zero
+    block_days: 7
+    confidence_level: 0.95
+    resamples: 2000
+    seed: 20260809
+  A3_date_level_contradiction:
+    required_grain: operating_date_candidate_experiment
+    required_context: [spike, dart_sign, feasible_flexibility, binding_constraint, regime]
+    contradiction_rule: lowest_mae_or_crps_or_highest_q99_tail_f1_model_differs_from_highest_A2_decision_value_model
+    explicit_null_status: NO_QUALIFYING_CONTRADICTION
+    null_finding_must_be_retained: true
+
+locked_test_exposure_disclosure:
+  preexisting_auxiliary_v1_2025_results_may_exist: true
+  formal_dart_code_may_not_read_v1_2025_metric_values: true
+  formal_dart_selector_may_not_consume_v1_2025_predictions_or_metrics: true
+  algorithmic_loader_nonconsumption_is_the_only_blindness_claim: true
+  no_prior_human_exposure_claimed: true
+  locked_2025_status: post_amendment_algorithmically_once_locked
+  original_human_blindness_claimed: false
+  required_paper_disclosure: DART_2025_is_algorithmically_once_locked_after_the_protocol_amendment_but_prior_auxiliary_v1_2025_results_existed
+
+required_outputs:
+  mandatory_artifact_count_policy: derive_dynamically_from_mandatory_artifact_registry
+  hard_coded_pre_patch_mandatory_artifact_count_forbidden: true
+  all_listed_dart_outputs_are_mandatory_in_paper_mode: true
+  tables:
+    - artifacts/tables/dart_probability_quality.csv
+    - artifacts/tables/dart_decision_value.csv
+    - artifacts/tables/dart_selection_methods.csv
+    - artifacts/tables/dart_regime_value.csv
+  figures:
+    - artifacts/figures/dart_accuracy_value_contradiction.png
+    - artifacts/figures/dart_value_selection_lcb.png
+  manifests:
+    - artifacts/manifests/dart_value_select_manifest.json
+    - artifacts/manifests/dart_replay_manifest.json
+    - artifacts/manifests/dart_statistical_selection_manifest.json

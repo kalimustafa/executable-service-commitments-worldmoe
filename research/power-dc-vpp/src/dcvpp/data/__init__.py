@@ -1,0 +1,2 @@
+"""Independent data-domain adapters."""
+

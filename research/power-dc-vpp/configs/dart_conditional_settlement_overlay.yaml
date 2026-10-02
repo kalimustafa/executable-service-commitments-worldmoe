@@ -1,0 +1,31 @@
+schema_version: dcvpp.dart_conditional_settlement_overlay.v1
+status: PRE_RESULT_PROTOCOL_OVERLAY
+protocol_manifest: artifacts/dart_value_select/protocol_amendments/conditional_settlement_v1/conditional_settlement_protocol_manifest.json
+claim_scope: conditional_decision_value_on_fully_observed_settlement_days
+terminal_paper_cap: PARTIAL_PAPER
+date_panel:
+  source: hash_pinned_post_recovery_settlement_coverage_ledgers
+  counts_are_derived_not_hard_coded: true
+  complete_four_zone_96_interval_DA_RT_required: true
+  full_calendar_ledger_retained: true
+  invalid_status: INVALID_MISSING_SETTLEMENT
+  invalid_date_solver_launch: false
+  invalid_date_candidate_cost: false
+  price_imputation_or_substitution: false
+candidate_panel:
+  exact_eligible_candidate_count: 8
+  same_valid_dates_for_every_candidate: true
+  per_candidate_date_deletion: false
+inference:
+  solver_scenario_replay_seeds: [20260809, 20260819, 20260829]
+  exact_three_replay_cells_per_candidate_date_experiment: true
+  three_training_artifacts_per_candidate_required: false
+  deterministic_and_statistical_single_forecast_fit_reused_across_replay_seeds: true
+  within_date_seed_average_first: true
+  model_confidence_set_confidence_level: 0.95
+  moving_block_bootstrap_days: [7, 14, 28]
+  only_common_valid_dates_enter_MCS_or_LCB: true
+claim_boundary:
+  complete_calendar_winner_claim: false
+  conditional_winner_set_after_complete_replay: true
+  locked_2025_is_not_opened_by_protocol_preparation: true

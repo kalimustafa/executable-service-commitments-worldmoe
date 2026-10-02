@@ -1,0 +1,461 @@
+schema_version: dcvpp.e2e_moe_hybrid_r4.formal.v1
+
+project:
+  version: R4
+  architecture_name: Hybrid-CfC-Transformer-MoE E2E-DART-VPP R4
+  architecture_version: hybrid_cfc_transformer_moe_r4
+  training_semantics_revision: r4_paper_paired_nmae_physics_linked_pue_v5
+  experiment_id: e2e_moe_hybrid_r4_formal_v1
+  implementation_namespace: dcvpp.e2e_moe_r4
+  output_root: artifacts/e2e_moe_hybrid_r4_v5_formal
+  preserve_r3_read_only: true
+  initialize_from_r3: false
+
+protocol:
+  active_seed: 20240813
+  seeds: [20240813, 20240829, 20240917]
+  mainline_first: true
+  continue_after_seed1_only_on: R4_MAINLINE_PASS
+  bounded_validation_correction_cycles: 1
+  splits:
+    train: {start: "2022-01-01", end: "2023-06-30"}
+    validation: {start: "2023-07-01", end: "2023-12-31"}
+    final_temporal_test:
+      start: "2024-01-01"
+      end: "2024-12-31"
+      sealed_until_all_methods_frozen: true
+      execute_once: true
+    locked:
+      year: 2025
+      reject_path_before_open: true
+  day_is_primary_statistical_unit: true
+  acknowledge_2024_prior_pilot_contact: true
+  prohibit_2024_for:
+    - normalization
+    - architecture_selection
+    - hyperparameter_selection
+    - checkpoint_selection
+    - capability_gate_repair
+    - baseline_calibration
+    - failure_analysis
+
+data:
+  selection_bundle_root: artifacts/dart_value_select/counterfactual_inputs/v1/selection/daily_bundles
+  official_settlement_root: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/nyiso_replay_by_date/selection
+  canonical_selection_index: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/selection_nyiso_replay_by_date_index.json
+  frozen_physical_twin: artifacts/research/physical/run_id=paper-physical-v1/frozen_physical_artifact.json
+  frozen_physical_surrogate: artifacts/research/physical/run_id=paper-physical-v1/frozen_piecewise_surrogate.json
+  physical_calibration_manifest: artifacts/research/physical/run_id=paper-physical-v1/physical_calibration_manifest.json
+  intervals_per_day: 96
+  zones: [WEST, CAPITL, N.Y.C., LONGIL]
+  availability_contract:
+    strict: true
+    allowed_when: feature_available_at <= decision_time
+    unknown_provenance: exclude
+    future_realizations_in_plan_stream: forbidden
+  history:
+    completed_day_summary_tokens: 7
+    raw_history_tokens: false
+    features:
+      - da_mean
+      - da_std
+      - rt_mean
+      - rt_std
+      - dart_mean
+      - dart_std
+      - dart_p05
+      - dart_p95
+      - dart_min
+      - dart_max
+      - positive_dart_fraction
+      - spike_fraction
+  normalization:
+    fit_split: train
+    freeze_after_fit: true
+    per_zone: true
+    price_transform: asinh_train_scale
+    nonnegative_transform: log1p_robust
+    soc_transform: unit_interval
+    physical_multiplier_center: 1.0
+    persist_inverse_transform: true
+
+model:
+  parameter_budget:
+    expected_min_trainable: 2500000
+    expected_max_trainable: 3500000
+    hard_stop_above_trainable: 5000000
+  sequence_length: 96
+  latent_width: 128
+  market:
+    input_features: 16
+    compatibility_input_features: 4
+    zonal_feature_order: [da, rt_ensemble_mean, dart, rt_ensemble_std]
+    history_tokens: 7
+    total_tokens: 103
+    transformer_layers: 2
+    attention_heads: 4
+    feedforward_width: 384
+    pre_layer_norm: true
+    activation: gelu
+    dropout: 0.1
+    learned_interval_embedding: true
+    relative_time_bias: true
+    calendar_features: [hour_harmonic_1, hour_harmonic_2, hour_harmonic_4, day_of_week, month, holiday, dst]
+    issue_plan_attention: bidirectional_within_available_curve
+  workload:
+    input_features: [mean, std, p10, p50, p90]
+    encoder: closed_form_liquid
+    hidden_width: 128
+    tau_min_hours: 0.25
+    tau_max_hours: 24.0
+    delta_hours: 0.25
+    keep_all_tokens: true
+  physical:
+    frozen_twin_core: true
+    dynamic_liquid_requires_provenance: true
+    dynamic_features: [pv_issue_mean_z4, pv_issue_std_z4, issue_utilization_z4]
+    input_features: 12
+    hidden_width: 128
+    tau_min_hours: 0.25
+    tau_max_hours: 48.0
+    fallback_without_dynamic_provenance: frozen_core_plus_static_bounded_adapter
+    residual_bound_fraction: 0.1
+    immutable_invariants: [battery_capacity, battery_efficiency, soc_transition, power_limits]
+  rolling_state:
+    encoder: closed_form_liquid
+    hidden_width: 128
+    reset_at_origin_zero: true
+    update_from_shield_executed_state: true
+    incremental_prefix_replay_equivalence_tolerance: 1.0e-6
+    empirical_migration: fixed_zero
+    fields:
+      - soc_z4
+      - backlog_and_deadline_state
+      - previous_executed_grid_z4
+      - previous_executed_signed_battery_z4
+      - previous_executed_compute_z4
+      - revealed_rt_workload_pv_innovations
+      - origin_and_remaining_horizon
+  fusion:
+    streams: [market, workload, physical, rolling_state]
+    layers: 1
+    attention_heads: 4
+    feedforward_width: 256
+    pre_layer_norm: true
+    learned_softmax_stream_gate: true
+    state_film: true
+  moe:
+    experts: 8
+    top_k: 2
+    token_level: true
+    expert_hidden_width: 256
+    activation: swiglu
+    dropless: true
+    normalize_top_k_weights: true
+    router_jitter_std_train: 0.05
+    deterministic_eval: true
+    router_conditions: [token, market_regime, rolling_state, origin, remaining_horizon]
+  forecasts:
+    decode_per_token: true
+    zonal_feature_count: 21
+    outputs: {da: 4, rt: 4, dart: 4, workload: 1, pv: 4, pue: 4}
+    causal_anchors:
+      da: latest_fully_completed_operating_day_before_issue
+      da_warmup_fallback: issue_time_da_curve
+      pv: issue_time_ensemble_mean
+      pue: frozen_physical_twin_core
+    bounded_neural_residuals: {da: 0.1, pv: 0.01, pue: 0.04}
+    formal_pue_mapping: learned_total_workload_through_frozen_piecewise_twin
+    free_price_outputs: [dart]
+    exact_identity: rt = da - dart
+    forward_closure_for_float_exactness: dart = da - rt
+    positive_outputs: [workload, pv]
+    pue_path: frozen_core_plus_bounded_residual
+    expose_legacy_zone_mean_six_variable_view: true
+  scenarios:
+    count: 20
+    weighted: true
+    zonal_shape: [B, 20, 96, 21]
+    legacy_shape: [B, 20, 96, 6]
+    scenario_code_width: 32
+    decoder: shared_closed_form_liquid
+    decoder_hidden_width: 64
+    persistent_particle_identity: true
+    exact_identity: rt = da - dart
+    reveal_prefix_through_current_origin: true
+    generate_unrevealed_suffix_only: true
+    optional_internal_candidate_count: 100
+    formal_output_count_fixed: 20
+  risk:
+    cvar_alpha: 0.95
+    compute_from_differentiable_particle_rollout: true
+    exact_forward_weighted_particle_cvar: true
+    learned_eta_is_auxiliary_only: true
+  policy:
+    state_conditioned_per_origin: true
+    plan_cross_attention_heads: 4
+    hidden_width: 256
+    residual_refinement_steps: 2
+    neural_outputs: [origin0_day_ahead_schedule, signed_battery, compute_edf_priority, fallback_confidence]
+    structurally_derived_outputs: [grid, pv_used]
+    issue_day_ahead_at_origin: 0
+    freeze_day_ahead_after_origin_zero: true
+    empirical_migration: fixed_zero
+
+runtime:
+  backend: deterministic_analytic_constraint_shield
+  external_solver: false
+  forbidden_active_imports: [pyomo, gurobipy, cvxpy, cvxpylayers, optnet]
+  validation_tolerance: 1.0e-5
+  independent_validator: true
+  execute_current_action_only: true
+  rolling_origins: 96
+  structural_mapping:
+    grid_and_pv_from_energy_identity: true
+    count_as_corrective_intervention: false
+  corrective_intervention:
+    only_on_envelope_conflict_beyond_tolerance: true
+    report_rate_mean_p95_and_categories: true
+  constraints:
+    energy_balance: true
+    grid_capacity: true
+    pv_bounds: true
+    signed_battery_exclusivity: true
+    soc_bounds_and_transition: true
+    terminal_soc_reachability: true
+    compute_capacity: true
+    edf_release_deadline_accounting: true
+    sla_shortfall_accounting: true
+    migration_fixed_zero: true
+  infeasible_input_policy: reject_and_record
+
+training:
+  optimizer: adamw
+  weight_decay: 0.01
+  gradient_clip_norm: 1.0
+  scheduler: cosine_with_linear_warmup
+  warmup_fraction: 0.05
+  mixed_precision: false
+  effective_batch_size_days: 512
+  optimizer_effective_batch_days: 543
+  physical_microbatch_fallback: [512, 256, 128, 64, 32, 16, 8, 4, 2, 1]
+  gradient_accumulation: one_step_per_complete_543_day_coverage_cycle
+  unbiased_partial_tail_normalization: true
+  every_coverage_cycle_uses_all_training_days_once: true
+  preload_to_host_memory: true
+  pinned_host_to_device_transfers: true
+  windows_preload_worker_copies: 0
+  cheap_validation_during_gradient_epochs: true
+  full_hard_validation_during_gradient_epochs: false
+  fixed_training_cost_scale: train_price_aware_edf_median_absolute_daily_cost
+  phases:
+    representation:
+      max_epochs: 800
+      minimum_epochs: 100
+      patience: 30
+      min_delta: 1.0e-5
+      learning_rate: 3.0e-4
+      primary_loss: dart
+      loss_weights: {da: 1.0, dart: 2.0, workload: 1.0, pv: 1.0, pue: 1.0}
+    scenario:
+      max_epochs: 200
+      minimum_epochs: 50
+      patience: 15
+      min_delta: 1.0e-5
+      learning_rate: 2.0e-4
+      loss_weights:
+        energy_score: 1.0
+        marginal_crps: 1.0
+        variogram: 0.25
+        tail: 0.5
+        coverage: 0.5
+        diversity: 0.05
+        weight_entropy: 0.02
+        decision_consistency: 0.0
+      decision_consistency_status: disabled_until_checkpoint_bound_canonical_policy_rollout
+    policy:
+      max_epochs: 320
+      learning_rate: 1.0e-4
+      k96_patience: 20
+      k96_min_delta: 1.0e-5
+      curriculum:
+        - {origins: 8, max_epochs: 40}
+        - {origins: 24, max_epochs: 60}
+        - {origins: 48, max_epochs: 80}
+        - {origins: 96, max_epochs: 140, save_every_epoch_as_hard_gate_candidate: true}
+      loss_weights:
+        realized_settlement: 1.0
+        expected_particle_cost: 0.5
+        particle_cvar: 0.25
+        normalized_sla: 10.0
+        battery_degradation: 0.1
+        raw_envelope_violation: 2.0
+        corrective_intervention: 1.0
+        value_consistency: 0.1
+        router_balance: 0.02
+        router_stability: 0.01
+    a1:
+      max_epochs: 120
+      patience: 15
+      min_delta: 1.0e-5
+      learning_rate: 5.0e-5
+      curriculum:
+        - {origins: 8, max_epochs: 15}
+        - {origins: 24, max_epochs: 25}
+        - {origins: 48, max_epochs: 30}
+        - {origins: 96, max_epochs: 50, save_every_epoch_as_hard_gate_candidate: true}
+      trainable_scope: dart_modules_and_policy_bridge_only
+      frozen_behavioral_baseline: selected_policy_checkpoint
+      loss_weights:
+        dart_supervised: 2.0
+        realized_settlement: 1.0
+        expected_particle_cost: 0.5
+        particle_cvar: 0.25
+        normalized_sla: 10.0
+        baseline_action_consistency: 0.5
+        cost_noninferiority: 1.0
+    a2:
+      max_epochs: 180
+      patience: 20
+      min_delta: 1.0e-5
+      learning_rate: 3.0e-5
+      curriculum:
+        - {origins: 8, max_epochs: 20}
+        - {origins: 24, max_epochs: 30}
+        - {origins: 48, max_epochs: 40}
+        - {origins: 96, max_epochs: 90, save_every_epoch_as_hard_gate_candidate: true}
+      frozen: [physical_twin_core, engineering_invariants, locked_test]
+      loss_weights:
+        representation: 0.5
+        scenario: 0.5
+        realized_settlement: 1.0
+        expected_particle_cost: 0.5
+        particle_cvar: 0.25
+        normalized_sla: 10.0
+        battery_degradation: 0.1
+        raw_envelope_violation: 2.0
+        corrective_intervention: 1.0
+        value_consistency: 0.1
+        router_balance: 0.02
+        router_stability: 0.01
+
+capability_gates:
+  common:
+    validation_dates_expected: 179
+    persist_daily_paired_rows: true
+    bootstrap:
+      block_days: 7
+      replicates: 10000
+      confidence: 0.95
+      seed: 20240813
+  representation:
+    baselines: [causal_persistence, seasonal_naive]
+    baseline_selection: stronger_aggregate_training_split_only
+    primary_metric: dart_raw_nmae
+    primary_paired_upper_ci_strictly_below_zero: true
+    other_heads: [da, rt, workload, pv, pue]
+    decision_rule: paired_daily_nmae_model_minus_baseline_one_sided_95_upper_lt_zero
+    noninferiority_margin_fraction: 0.0
+    require_identity_tolerance: 1.0e-6
+    require_no_future_leakage: false
+  scenario:
+    baseline: frozen_training_residual_sampling
+    primary_metric: energy_score
+    primary_paired_upper_ci_strictly_below_zero: true
+    variogram_and_tail_noninferiority_margin_fraction: 0.01
+    coverage_levels: [0.90, 0.95]
+    max_absolute_coverage_error: 0.03
+    minimum_effective_sample_size: 10.0
+    require_non_degenerate_particles: true
+    require_revealed_prefix_identity: true
+    require_no_future_leakage: false
+  policy:
+    candidates: all_k96_epochs
+    validation_days: 179
+    validation_origins: 17184
+    feasibility_fraction: 1.0
+    maximum_non_exogenous_rejected_origins: 0
+    maximum_normalized_sla_increase: 0.001
+    paired_daily_cost_upper_ci_at_most_zero: true
+    require_finite_and_resumable: true
+    require_day_ahead_frozen: true
+    require_no_future_leakage: false
+    selection_order: [lowest_operating_cost, lower_cvar_for_close_cost, lower_corrective_magnitude, lower_epoch]
+  a1:
+    require_representation_dart_gate_retained: true
+    require_all_allowed_gradients_finite_nonzero: true
+    require_frozen_parameters_unchanged: true
+    require_policy_cost_and_sla_noninferiority: true
+  a2:
+    inherit_full_policy_gate_without_relaxation: true
+
+benchmarks:
+  primary:
+    name: price_aware_edf_shield
+    calibrate_on: [train, validation]
+    freeze_before_final_test: true
+  secondary: [passive_edf_shield, certified_safe_policy]
+
+ablations:
+  architecture: [gru64_last_hidden, token_gru128, market_transformer_token_branches, transformer_liquid_dense, full_r4_top2_moe]
+  operational: [dense_no_moe, one_scenario, no_cvar, no_a1, raw_proposal_audit_vs_shielded_execution]
+  all_learned_final_claim_methods_use_three_seeds: true
+
+statistics:
+  primary_unit: day
+  paired_daily_differences: true
+  hierarchical_moving_block_bootstrap: true
+  block_days: 7
+  outer_resample_training_seeds: true
+  inner_resample_date_blocks: true
+  replicates: 10000
+  confidence: 0.95
+  holm_secondary_comparisons: true
+  superiority_requires_cost_difference_ci_below_zero: true
+  noninferiority_margin_fraction_of_benchmark_cost: 0.01
+
+artifacts:
+  root: artifacts/e2e_moe_hybrid_r4_v4_formal
+  per_phase:
+    - config_used.yaml
+    - state.json
+    - metrics.parquet
+    - runtime.log
+    - summary.md
+    - checkpoints
+    - capability_gate.json
+    - capability_daily.parquet
+  seed1_reports:
+    - reports/R4_MAINLINE_SEED1_REPORT.md
+    - reports/R4_MAINLINE_SEED1_RESULTS.json
+  final_outputs:
+    - reports/R4_FINAL_THREE_SEED_REPORT.md
+    - reports/R4_FINAL_THREE_SEED_RESULTS.json
+    - tables/r4_final_method_comparison.parquet
+    - tables/r4_paired_daily_deltas.parquet
+    - statistics/r4_bootstrap_confidence_intervals.json
+  provenance_hashes:
+    - governing_config
+    - split_manifest
+    - canonical_data_index
+    - active_r4_source_manifest
+    - selected_best_checkpoints
+    - final_metrics
+    - final_reports
+
+preflight:
+  execute_once: true
+  checks:
+    - fixed_temporal_split
+    - locked_2025_path_before_open
+    - active_import_graph_has_no_external_solver
+    - verified_python_cuda_environment
+    - one_complete_96_origin_r4_day
+    - independent_residual_validation
+    - incremental_liquid_state_matches_prefix_replay
+
+status_contract:
+  COMPLETE: training_and_required_capability_gate_passed
+  PARTIAL: resumable_work_remains
+  BLOCKED: required_data_checkpoint_or_device_unavailable
+  FAILED: correctness_or_capability_gate_failed

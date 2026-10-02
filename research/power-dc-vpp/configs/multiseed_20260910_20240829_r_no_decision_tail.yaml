@@ -1,0 +1,27 @@
+extends: r_ecmoe_balanced_continue_earlystop.yaml
+source:
+  world_config: C:\Users\Kali\Desktop\电力市场\power-dc-vpp\configs\multiseed_20260910_20240829_w1.yaml
+  w1_checkpoint: C:\Users\Kali\Desktop\电力市场\power-dc-vpp\artifacts\r_ecmoe_multiseed_20260910\world_moe\run=multiseed-20260910-seed20240829\phase=w1\checkpoints\formal_primary_best.pt
+  w1_checkpoint_role: independently_trained_formal_primary_best
+model:
+  mechanism_variant: no_decision_tail
+  active_top_k: 2
+training:
+  seed: 20240829
+  epochs: 208
+  first_full_validation_epoch: 78
+  enable_sentinel_validation: false
+  checkpoint_interval_updates: 0
+  save_latest_every_epoch: false
+  resume_checkpoint_epochs: []
+  early_stop_start_epoch: 0
+  full_validation_interval_epochs: 13
+  early_stop_patience: 2
+  early_stop_min_relative_improvement: 0.0
+  coalesce_checkpoint_roles: true
+  save_on_exception: true
+  selection_policy: validation_score_only
+  save_only_on_improvement: true
+outputs:
+  root: C:\Users\Kali\Desktop\电力市场\power-dc-vpp\artifacts\r_ecmoe_multiseed_20260910\r
+  save_best_speed_feasible: false

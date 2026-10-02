@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this versioned software archive when using the code or derived results."
+title: "Executable service commitments and WorldMoE"
+type: software
+authors:
+  - family-names: Xiang
+    given-names: Yi
+    affiliation: Northwest Minzu University
+    email: 1130575372@gmail.com
+version: 1.0.0
+date-released: 2026-10-02
+repository-code: "https://github.com/kalimustafa/executable-service-commitments-worldmoe"
+url: "https://github.com/kalimustafa/executable-service-commitments-worldmoe"
+license: MIT
+abstract: "Research code, selected decision-module checkpoints and derived source data for computing flexibility under executable service commitments."

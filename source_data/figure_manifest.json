@@ -1,0 +1,170 @@
+[
+  {
+    "figure": "Fig1_Executable_Service_Commitments",
+    "source_script": "figures/source/build_figure1_from_0927.py",
+    "source_data": [
+      "fig1_framework_components.csv"
+    ],
+    "scope": "Previous 27 September original vector with current architecture labels",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "figure": "Fig2_WorldMoE_results",
+    "source_script": "figures/source/build_0927_comparisons.py",
+    "source_data": [
+      "0927_adapted_fluid_comparisons.csv",
+      "0927_adapted_window_contrasts.csv",
+      "0927_hourly_workload.csv",
+      "0927_capacity_floor.csv"
+    ],
+    "scope": "Old comparative figure code; only current final WorldMoE rows inserted",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  },
+  {
+    "figure": "Fig3_benchmarks_and_bounds",
+    "source_script": "figures/source/build_0927_comparisons.py",
+    "source_data": [
+      "fig3_ablation.csv",
+      "0927_adapted_forecast_controls.csv",
+      "0927_adapted_mixed_comparisons.csv"
+    ],
+    "scope": "Old comparative figure code; only current final WorldMoE rows inserted",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  },
+  {
+    "figure": "Fig4_information_timing",
+    "source_script": "figures/source/build_revision_figures.py",
+    "source_data": [
+      "fig4_information_gate.csv",
+      "worldmoe_daily_by_seed.csv",
+      "paired_financial_intervals.csv"
+    ],
+    "scope": "Current final same-checkpoint publication intervention in previous series palette",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  },
+  {
+    "figure": "Fig5_electrical_delivery",
+    "source_script": "figures/source/build_revision_figures.py",
+    "source_data": [
+      "fig5_electrical_constraints.csv",
+      "worldmoe_grid_raw.csv"
+    ],
+    "scope": "Current final physical delivery cases in previous series palette",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  },
+  {
+    "figure": "Fig6_event_influence",
+    "source_script": "figures/source/build_revision_figures.py",
+    "source_data": [
+      "fig6_event_influence.csv",
+      "paired_daily_comparisons.csv",
+      "worldmoe_event_summary.json"
+    ],
+    "scope": "Current final event-influence cases in previous series palette",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  },
+  {
+    "figure": "ExtFig1_Service_Realism",
+    "source_script": "figures/source/build_extended_figures.py",
+    "source_data": [
+      "extfig1_heterogeneous_deadlines.csv",
+      "extfig1_frontier.csv"
+    ],
+    "scope": "New current-model service realism in previous series palette",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  },
+  {
+    "figure": "ExtFig2_Generalization",
+    "source_script": "figures/source/build_extended_figures.py",
+    "source_data": [
+      "extfig2_workload_scaling.csv",
+      "extfig2_workload_feasibility.csv",
+      "extfig2_physical_sensitivity.csv",
+      "extfig2_numerical_convergence.csv"
+    ],
+    "scope": "New current-model physical and numerical sensitivities in previous series palette",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  },
+  {
+    "figure": "ExtFig3_Comparative_Frontier",
+    "source_script": "figures/source/build_0927_comparisons.py",
+    "source_data": [
+      "0927_adapted_frontier_comparisons.csv",
+      "0927_adapted_frontier_completion_cdf.csv"
+    ],
+    "scope": "Old multi-model job layout with current final WorldMoE rows at 24/30/48 h",
+    "formats": [
+      "PNG",
+      "PDF",
+      "SVG"
+    ],
+    "png_dpi": [
+      499.99899999999997,
+      499.99899999999997
+    ]
+  }
+]

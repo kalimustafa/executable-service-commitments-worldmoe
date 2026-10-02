@@ -1,0 +1,102 @@
+[
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\causal_error_memory.py",
+    "local": "src\\models\\causal_error_memory.py",
+    "sha256": "3d3214ec4bec77eba34bc0492d35a62e85612392ebad232ad06e5fa8e6cd64cc"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\cross_attention.py",
+    "local": "src\\models\\cross_attention.py",
+    "sha256": "fca1f1bd61802fbd1d3a40a3364af8dccc31a201b8eb0cc7c85c763a36f1165f"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\factory.py",
+    "local": "src\\models\\factory.py",
+    "sha256": "216d0b70d5da0c309d97f67086b058d180a2ec16faa5c2a314ee78098c4b5ab7"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\market_query.py",
+    "local": "src\\models\\market_query.py",
+    "sha256": "c491c657d6ff5f4d527294890be29ce3eea81c9bb08d031731aa93ada8f1703d"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\ordered_quantile_head.py",
+    "local": "src\\models\\ordered_quantile_head.py",
+    "sha256": "7b5dfc676ca0e0c39151ee811aa0d27ad95d660035eefd53e2288a53b673479f"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\ordered_residual_trees.py",
+    "local": "src\\models\\ordered_residual_trees.py",
+    "sha256": "978b43a007f91faf79d7eba3010d2b9c122b207ee46a643c072f3b5cadd78358"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\profile_residual.py",
+    "local": "src\\models\\profile_residual.py",
+    "sha256": "f802342c1fa9758447b6f5da1ed4ec26c168d53ae660b99e03d683a95576e95e"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\r2_base.py",
+    "local": "src\\models\\r2_base.py",
+    "sha256": "e6f1f0ca3a2853d325e7c891126e2ec81c3af24fe9a8116561ac5e63f12d4d7c"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\r2_repaired.py",
+    "local": "src\\models\\r2_repaired.py",
+    "sha256": "eee8359135d1dd6032e70e5b4fbc9a31982017c69ee1d93b57d3aa27379a28ed"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\r2_shallow.py",
+    "local": "src\\models\\r2_shallow.py",
+    "sha256": "d492e9271f5b229e871f3f6b60c4cca06558510f9d1f99456a43cdea01d0075d"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\temporal_world.py",
+    "local": "src\\models\\temporal_world.py",
+    "sha256": "4117811b0eb59b14d97ea9693703421da03c2ebb38eee0ee258d7330410aa5b2"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\world_gate.py",
+    "local": "src\\models\\world_gate.py",
+    "sha256": "7eb555cde164c3be6006ec98d61687016b10f1cbb8858f565dc59a299b4c9df6"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\world_multiscale_adapter.py",
+    "local": "src\\models\\world_multiscale_adapter.py",
+    "sha256": "7cd7c2976b778d268eeeb22047d0d81ce2bea01d790930f6fe98a7ac58b93650"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\models\\world_site_cost.py",
+    "local": "src\\models\\world_site_cost.py",
+    "sha256": "afcdec7677f148386d69d8e00e84fb8cd93a60e9ef66b1453975a0b4f8cb9cfc"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\data\\r2_data.py",
+    "local": "src\\data\\r2_data.py",
+    "sha256": "b1c4a3dfa1282db984caebee63b4ef9f06b259453f03c5562f025978380fddf4"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\training\\losses.py",
+    "local": "src\\training\\losses.py",
+    "sha256": "398824dffc5c8fc7fd4b27f68d3638fd3cb67da1024d2cfdea577cc7ad1afb09"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\src\\calibration\\native_affine.py",
+    "local": "src\\calibration\\native_affine.py",
+    "sha256": "de4b66029d0428cd43b2998df009d8d64b443666aaf6e9b07c973955f959d799"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\vendor\\r2_market.py",
+    "local": "vendor\\r2_market.py",
+    "sha256": "05764ed9bde0346848d42088becf39f892af51c48add99d7c159a84706006c49"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\configs\\splits_2024_frozen.json",
+    "local": "configs\\splits_2024_frozen.json",
+    "sha256": "cd2ed7aac288c4b1b0f33214b01491e7857aea461e681b11f0f74f3ed751ccad"
+  },
+  {
+    "source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\configs\\selected_w1.json",
+    "local": "configs\\selected_w1.json",
+    "sha256": "1429e73f1d61b1db91dd68ac6c5dffda0be9dae4281817fe33347e555a31560f"
+  }
+]

@@ -1,0 +1,19 @@
+extends: r_ecmoe_balanced.yaml
+
+schema: dcvpp.r_ecmoe.baseline.training.v1
+phase: r_ecmoe
+
+model:
+  baseline_type: dense_direct
+
+# Dense Direct R has neither a sparse route nor a dedicated tail expert.  The
+# shared upper-tail decision objective remains enabled for a fair risk-aware
+# comparison with R-ECMoE.
+loss:
+  route_continuation: 0.0
+  load_balance: 0.0
+  tail_expert: 0.0
+
+outputs:
+  root: artifacts/r_ecmoe_dense_direct_baseline
+  run_id_prefix: r-ecmoe-dense-direct-baseline

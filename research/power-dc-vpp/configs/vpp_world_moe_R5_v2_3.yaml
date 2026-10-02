@@ -1,0 +1,84 @@
+extends: vpp_world_moe_R5_v2_2.yaml
+
+schema_version: dcvpp.vpp_world_moe.r5.v2.3
+
+project:
+  version: R5-V2.3
+  architecture_version: causal_continuous_action_conditioned_world_moe_r5_v2_3_calibrated_u0
+  experiment_id: vpp_world_moe_r5_v2_3_2025final
+  output_root: artifacts/vpp_world_moe_r5_v2_3_2025final
+  predecessor: R5-V2.2_W1_epoch56_formal_primary_best
+
+protocol:
+  revision: r5_v2_3_u0_fair_ensemble_calibrated_dynamics
+
+model:
+  # Match the frozen 2022--2023 route prevalence instead of forcing a 5% floor.
+  tail_capacity_fraction: 0.019967682659626007
+  tail_min_tokens: 11
+  dynamics_regime_temperature: 0.75
+
+training:
+  run_id: r5v23-u0-recalibrated-from-w1e56-seed20240813
+  protocol_revision: r5_v2_3_u0_fair_ensemble_calibrated_dynamics
+  parent_checkpoint:
+    run_id: r5v22-w1-continuous-action-formal-20260824-seed20240813
+    phase: w1
+    role: formal_primary_best
+    epoch: 56
+    update: 3360
+    sha256: a97003e1ec3d92c3d814653b743c21fd646da70c1b85778e1bd71edbb3f1f250
+    gate_status: PASS
+    load_model_only: true
+    load_optimizer: false
+    load_rng: false
+  probabilistic_objective:
+    training_paths: 20
+    formal_paths: 100
+    formal_seed_chunks: 5
+    ensemble_score_estimator: fair_off_diagonal_v1
+    formal_coverage_interval: rank_corrected_order_statistics_v1
+    coverage_family_reduction: equal_price_workload_pv_pue
+  phase_objectives:
+    u0:
+      weights: {crps: 0.30, energy: 0.30, variogram: 0.15, tail_crps: 0.15, mixture_nll: 0.0, moe: 0.01}
+      mixture_role: legacy_diagnostic_only_not_scenario_likelihood
+      scale_source: dynamics_residual_log_scale_only
+      variogram_time_lags: [1, 4, 16]
+      variogram_relations: [within_variable_time, same_time_cross_node, registered_cross_variable]
+      coverage_and_duplicate_rate: validation_gates_only
+  checkpoint_selection:
+    u0: eligible_energy_confidence_set_then_balanced_crps_then_tail_then_earliest
+    early_stop:
+      stable_formal_evaluations: 3
+      relative_improvement_below: 0.001
+  uncertainty_validation:
+    training_paths: 20
+    formal_paths: 100
+    seed_offsets: [0, 104729, 209759, 314159, 419431]
+    concatenate_before_scoring: true
+    coverage_method: rank_corrected_order_statistics_v1
+    family_reduction: equal_price_workload_pv_pue
+    global_point_error_max: 0.02
+    family_point_error_max: 0.04
+    bootstrap_resamples: 2000
+    global_bootstrap_ucb_max: 0.03
+    family_bootstrap_ucb_max: 0.05
+    validation_days: 364
+    zero_update_reference_required: true
+    tail_route_aucpr_required: true
+    tail_route_all_blocks_required: true
+    locked_2025_opened: false
+
+capability_gates:
+  uncertainty:
+    paths: 100
+    training_paths: 20
+    identity_tolerance: 1.0e-6
+    duplicate_rate_max: 0.01
+    coverage_targets: [0.5049505, 0.8019802, 0.9009901]
+    global_point_error_max: 0.02
+    every_family_point_error_max: 0.04
+    family_names: [price, workload, pv, pue]
+    require_nested_intervals: true
+    require_tail_route_capability: true

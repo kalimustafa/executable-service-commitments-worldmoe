@@ -1,0 +1,27 @@
+{
+  "structure": "ordered PV distribution and exact expected segment costs; pooled 96-slot context; bounded 5 USD/MWh opportunity and decision-price corrections",
+  "observation_lag_quarters": 1,
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "physical_training_years": [
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "max_epochs": 24,
+  "min_epochs": 6,
+  "economic_evaluation_every_epochs": 2,
+  "early_stop_patience_evaluations": 3,
+  "economic_min_delta_usd": 50,
+  "forecast_degradation_limit_fraction": 0.02,
+  "best_checkpoint_restored": true,
+  "price_base_frozen": true,
+  "world_backbone_frozen": true,
+  "gradient": "hard feasible segment allocation forward, explicitly approximate straight-through soft allocation backward",
+  "other_seeds_condition": "User corrected gate on 2026-09-28: primary seed must reach 80% of the fixed attainable-savings ceiling, with zero late and closing work; positive gain alone is insufficient",
+  "paper": "no manuscript edits until training outcomes are established; continue primary optimization toward 80%",
+  "second_seed_status": "stopped at user instruction; partial outputs retained"
+}

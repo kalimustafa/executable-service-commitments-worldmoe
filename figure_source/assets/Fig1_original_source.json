@@ -1,0 +1,8 @@
+{
+  "title": "Executable service commitments convert computing flexibility into electricity-market value",
+  "visual_source": "NatureEnergy_Revised_Comparisons_20260927/figures/Fig1_new_R2_architecture.svg",
+  "editable_source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_PAPER_INTEGRATION_20260923\\scripts\\build_architecture_figure.py",
+  "method": "Original 2026-09-27 vector drawing, icon assets, geometry and palette; current R2 decision content substituted at source rendering",
+  "current_architecture": "Frozen W0/W1 and R2 features; APIC-preserving market adapter; market\u2013physics and work-to-time attention; state-cost decoder; executable current-action service; independent settlement",
+  "old_R2_architecture_reused": false
+}

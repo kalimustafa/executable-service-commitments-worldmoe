@@ -1,0 +1,18 @@
+{
+  "start_utc": "2024-08-21T00:00:00+00:00",
+  "end_exclusive_utc": "2025-01-01T00:00:00+00:00",
+  "days": 133,
+  "criterion": "longest contiguous available physical block after calibration; source select_2024_economics.configure_validation",
+  "rows": 12768,
+  "local_days": 134,
+  "windows_h": [
+    12,
+    24
+  ],
+  "diagnostic_h": 7,
+  "initial_queue": 0,
+  "continuous": true,
+  "selector": "zero late first; maximize value_usd - .1 * local_days * mtm_daily_loss_cvar95_usd; if none feasible minimize late then maximize score",
+  "evaluation_role": "2024 development-year decision value",
+  "locked_targets_accessed": false
+}

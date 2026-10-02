@@ -1,0 +1,70 @@
+extends: vpp_world_moe_R5_v2.yaml
+
+schema_version: dcvpp.vpp_world_moe.r5.v2.1
+
+project:
+  version: R5-V2.1
+  architecture_version: causal_action_conditioned_world_moe_r5_v2_1_calibrated_training
+  experiment_id: vpp_world_moe_r5_v2_1_2025final
+  output_root: artifacts/vpp_world_moe_r5_v2_1_2025final
+  predecessor: R5-V2_tail_top2plus1_paused_update200_diagnostic_baseline_no_resume
+
+data:
+  normalization:
+    artifact_path: artifacts/vpp_world_moe_r5_v2_1_2025final/data/train_only_typed_normalization_v1.json
+    feature_axis: typed_slot_feature_40x8
+  lineage_path: artifacts/vpp_world_moe_r5_v2_1_2025final/data/data_lineage_v1.json
+
+model:
+  dropout: 0.10
+  # Provisional W0 threshold is 2.5x the frozen 2022-2023 event prevalence.
+  # It applies to calibrated probabilities and must be replaced by the frozen
+  # train-only OOF/FPR threshold before W1 or deployment.
+  tail_activation_probability_threshold: 0.05
+  tail_route_aux_weight: 0.02
+  queue_occurrence_train_prevalence: 0.019967682659626007
+  tail_route_train_prevalence: 0.019967682659626007
+  tail_route_positive_weight: 49.08092411354107
+  tail_smooth_activation_temperature: 1.0
+  tail_residual_min_scale: 0.08
+  tail_residual_max_scale: 0.12
+  tail_probability_semantics: weighted_ranking_logit_plus_train_prior_calibration
+  tail_activation_policy: train_oof_calibrated_smooth_gate
+  tail_threshold_role: provisional_w0_train_prevalence_multiple
+
+training:
+  run_id: vpp_world_moe_r5_v2_1_seed20240813
+  protocol_revision: r5_v2_1_typed_anchor_calibrated_tail_pcgrad
+  checkpoint_selection:
+    early_stop:
+      stable_formal_evaluations: 2
+      relative_improvement_below: 0.001
+  phase_objectives:
+    w0:
+      state:
+        soc: train_baseline_normalized_standardized_smooth_l1
+        queue: train_baseline_normalized_proper_brier_plus_positive_severity
+      shared_gradient_method: general_rare_pcgrad_on_negative_conflict
+  phases:
+    w0:
+      formal_validation_interval_short_epochs: 8
+      early_formal_interval_short_epochs: 4
+      early_formal_until_short_epoch: 32
+      target_update_budgets:
+        minimum: 122
+        maximum: 732
+        patience_equivalent: 122
+      min_epochs: 16
+      max_epochs: 96
+      learning_rate: 3.0e-5
+      head_learning_rate: 1.0e-4
+      router_learning_rate: 5.0e-5
+      tail_learning_rate: 3.0e-5
+      weight_decay: 0.0
+      matrix_weight_decay: 1.0e-2
+      warmup_updates: 30
+      cosine_decay_updates: 366
+      minimum_learning_rate_ratio: 0.10
+      adamw_beta2: 0.95
+      w0_pcgrad: true
+      patience: 16

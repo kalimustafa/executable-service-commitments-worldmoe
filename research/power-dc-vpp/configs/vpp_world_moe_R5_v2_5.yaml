@@ -1,0 +1,140 @@
+extends: vpp_world_moe_R5_v2_4.yaml
+
+schema_version: dcvpp.vpp_world_moe.r5.v2.5
+
+project:
+  version: R5-V2.5
+  architecture_version: causal_action_conditioned_distribution_world_moe_r5_v2_5_low_rank_student_t
+  experiment_id: vpp_world_moe_r5_v2_5_2025final
+  output_root: artifacts/vpp_world_moe_r5_v2_5_2025final
+  predecessor: R5-V2.4_diagnostic_U0_plus_W1_epoch56_clean_parent
+
+protocol:
+  revision: r5_v2_5_distribution_native_action_conditioned_u0
+
+model:
+  # ``rollout_paths`` remains the registered 20-path formal chunk width.
+  # U0's dynamic training-particle count is controlled by the phase spec below.
+  rollout_paths: 20
+  dynamic_particle_count_enabled: true
+  maximum_dynamic_particle_count: 256
+  innovation_distribution: low_rank_student_t
+  innovation_rank: 8
+  innovation_student_t_df: 5.0
+  innovation_scale_parameterization: diagonal_plus_low_rank_factor
+  innovation_action_conditioned: true
+  analytic_mixed_support_enabled: true
+  pv_night_support_mode: mixed_zero_rare_positive
+  support_atom_pv_night_positive_train_prevalence: 0.0034156279961649
+  u0_action_conditioned: true
+  u0_action_source: causal_packet_action_sequence
+  # The critic is part of the registered P1/J1 architecture but is not an
+  # independent solver and is not trained during U0.
+  cost_risk_critic_enabled: true
+  cost_risk_critic_parameterization: monotone_fixed_grid_quantile
+  cost_risk_critic_hidden_dim: 128
+  cost_risk_critic_num_layers: 2
+  cost_risk_critic_quantile_count: 64
+  cost_risk_critic_distillation_weight: 0.50
+  cost_risk_critic_train_phases: [p1, j1]
+  cost_risk_critic_optimizer_group: planner
+
+training:
+  run_id: r5v25-u0-distribution-native-from-w1e56-seed20240813
+  protocol_revision: r5_v2_5_distribution_native_action_conditioned_u0
+  # The R5-V2.4 U0 checkpoint remains diagnostic only.  V2.5 starts from the
+  # same released PASS W1 epoch-56 parent and initializes only registered new
+  # distribution/critic parameters.
+  parent_checkpoint:
+    run_id: r5v22-w1-continuous-action-formal-20260824-seed20240813
+    phase: w1
+    role: formal_primary_best
+    epoch: 56
+    update: 3360
+    sha256: a97003e1ec3d92c3d814653b743c21fd646da70c1b85778e1bd71edbb3f1f250
+    gate_status: PASS
+    load_model_only: true
+    load_optimizer: false
+    load_rng: false
+  parent_model_upgrade:
+    strict: false
+    unexpected_keys: prohibited
+    missing_parameter_policy: registered_new_modules_only
+    initialization: registered_per_module_deterministic_initialization
+    innovation_initialization: exact_zero
+    neural_head_initialization: construction_seed_20240813
+    allowed_missing_prefixes:
+      - dynamics.innovation_
+      - planner.dynamics.innovation_
+      - observation_queries.pv_night_positive_
+      - dynamics.observation_queries.pv_night_positive_
+      - planner.observation_queries.pv_night_positive_
+      - planner.dynamics.observation_queries.pv_night_positive_
+      - observation_queries.workload_interior_quantile_query.
+      - observation_queries.pv_interior_quantile_query.
+      - observation_queries.pue_interior_quantile_query.
+      - dynamics.observation_queries.workload_interior_quantile_query.
+      - dynamics.observation_queries.pv_interior_quantile_query.
+      - dynamics.observation_queries.pue_interior_quantile_query.
+      - planner.observation_queries.workload_interior_quantile_query.
+      - planner.observation_queries.pv_interior_quantile_query.
+      - planner.observation_queries.pue_interior_quantile_query.
+      - planner.dynamics.observation_queries.workload_interior_quantile_query.
+      - planner.dynamics.observation_queries.pv_interior_quantile_query.
+      - planner.dynamics.observation_queries.pue_interior_quantile_query.
+      - cost_risk_critic.
+  probabilistic_objective:
+    training_paths: 16
+    sentinel_paths: 32
+    formal_paths: 100
+    formal_seed_chunks: 5
+    formal_paths_per_seed_chunk: 20
+    scenario_role: dynamic_score_particles_not_distribution_definition
+    common_random_numbers: fixed_formal_seed_offsets
+    analytic_marginal_distribution: true
+    joint_innovation_distribution: low_rank_student_t
+  phase_objectives:
+    u0:
+      distribution_representation: analytic_mixed_marginals_plus_low_rank_student_t_joint_innovation
+      action_conditioning: causal_packet_action_sequence
+      dynamic_particle_role: proper_joint_score_monte_carlo_only
+      analytic_mixed_support: true
+      conditional_coverage_source: analytic_conditional_interior_distribution
+  uncertainty_validation:
+    training_paths: 16
+    sentinel_paths: 32
+    formal_paths: 100
+    formal_paths_per_seed_chunk: 20
+    common_random_numbers: true
+    conditional_coverage:
+      enabled: true
+      families: [workload, pv, pue]
+      conditioning: analytic_mixed_support_cdf
+      conditioning_encoder_sample_stochastic: false
+      interior_distribution: direct_conditional_not_filtered_unconditional_particles
+      moving_block_bootstrap:
+        method: moving_block_bootstrap
+        block_length_days: 14
+        resamples: 2000
+        confidence: 0.95
+  phases:
+    u0:
+      sample_count: 16
+      optimizer_group_contract:
+        backbone: 1.0e-5
+        support_atom_heads: 6.0e-5
+        stochastic_scale: 6.0e-5
+        innovation_heads: 6.0e-5
+        router: 2.0e-5
+        tail_expert: 3.0e-5
+    p1:
+      optimizer_group_contract:
+        planner: 5.0e-5
+        cost_risk_critic: 5.0e-5
+
+capability_gates:
+  uncertainty:
+    paths: 100
+    training_paths: 16
+    scenario_role: dynamic_score_particles_not_distribution_definition
+    analytic_mixed_support_required: true

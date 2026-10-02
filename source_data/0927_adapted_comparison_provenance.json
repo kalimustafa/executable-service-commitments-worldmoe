@@ -1,0 +1,16 @@
+{
+  "source_paper": "NatureEnergy_Integrated_20260927.docx",
+  "retained_comparator_scope": "Frozen old-paper complete pipelines, same 2025 calendar and earliest-service reference; distinct methods and calibration",
+  "current_worldmoe_windows": [
+    12,
+    16,
+    24
+  ],
+  "current_frontier_windows": [
+    24,
+    30,
+    48
+  ],
+  "current_mixed_contract": "25/50/25% 4/12/24 h only",
+  "missing_worldmoe_cells": "Intentionally blank; no interpolation or earlier World-ME values retained"
+}

@@ -1,0 +1,41 @@
+{
+  "sources": [
+    {
+      "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\\u65b0\u8bba\u6587_\u5e02\u573a\u53ef\u4ea4\u4ed8\u7075\u6d3b\u6027_20260917\\revision_20260920_market_expansion\\experiment\\run_screen.py",
+      "sha256": "922a4bb86a70325d53fde29a66aa820cbaf4af5f2f1a26c5766427a2059fca83",
+      "functions": [
+        "cash",
+        "record",
+        "risk"
+      ],
+      "function_code_unmodified": true
+    },
+    {
+      "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\\u65b0\u8bba\u6587_\u5e02\u573a\u53ef\u4ea4\u4ed8\u7075\u6d3b\u6027_20260917\\revision_20260920_market_expansion\\experiment\\deepen_scheduling.py",
+      "sha256": "e96fe67e33465b46e0aaf60febcdac3dac1c781b9ef0a0f356f19167c303b9a7",
+      "functions": [
+        "rank",
+        "reference",
+        "schedule"
+      ],
+      "function_code_unmodified": true
+    },
+    {
+      "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\\u65b0\u8bba\u6587_\u5e02\u573a\u53ef\u4ea4\u4ed8\u7075\u6d3b\u6027_20260917\\revision_20260920_r2_executable\\experiment\\ef_forecast_provider.py",
+      "sha256": "68c9d057815c55d93b86448ec344f2a01d4dc4bb1271202882e77b56fb362718",
+      "functions": [
+        "ForecastProvider"
+      ],
+      "function_code_unmodified": true
+    },
+    {
+      "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\\u65b0\u8bba\u6587_\u5e02\u573a\u53ef\u4ea4\u4ed8\u7075\u6d3b\u6027_20260917\\revision_20260920_r2_executable\\experiment\\calibrate_r2.py",
+      "sha256": "c31cbdab7af894a52dd93ad8a76b6bdb18956e852ba31de4dd0c97726df355b5",
+      "functions": [
+        "NativeCalibration"
+      ],
+      "function_code_unmodified": true
+    }
+  ],
+  "changes": "Only module globals/import destinations; extracted function bodies unchanged; no original mains imported."
+}

@@ -1,0 +1,55 @@
+{
+  "authorized_at_utc": "2026-09-28T00:30:18.789376+00:00",
+  "authorized": true,
+  "user_instruction": "\u8fd9\u4e2a\u5f04\u5b8c\u5982\u8fd8\u6ca1\u523080%\u5c31\u7b97\u4e86\uff0c\u5c06\u6700\u4f18\u65b9\u6848\u8bad\u5b8c\u5e76\u4e14\u7f16\u5199\u8bba\u6587",
+  "threshold_80_waived": true,
+  "selected_family": "CdfR2",
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "selected_primary_epoch": 6,
+  "selection_scope": "Final architecture explicitly fixed to CdfR2 by the user. Each refinement checkpoint is selected using 2024 only; 2025 never enters parameter fitting. Repeated developmental inspections are retained in the audit history.",
+  "primary_saving_2025_usd": 105565.66546172019,
+  "primary_capture": 0.7960886123048224,
+  "shared_initial_checkpoint": "QPR2_seed20260920_epoch10.pt",
+  "shared_initial_checkpoint_sha256": "97637a07f6b6fbb3b1d3336c66920dbbb4d297a9efb624b4e65f5dec874e285c",
+  "replication_scope": "Independent CdfR2 optimization seeds from the identical pretrained QPR2 initialization and frozen WorldMoE/R2 feature cache; not independent backbone training.",
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "physical_training_years": [
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "evaluation_year": 2025,
+  "epochs_max": 12,
+  "batch": 32,
+  "qp_regularization": 2.0,
+  "early_stopping": "2024 annual savings every two epochs; patience three; min_delta 50 USD; minimum six epochs; restore actual eligible maximum; price-score guard two percent",
+  "controller": {
+    "eta": 0.0,
+    "safety": 0.9,
+    "current_coupling": true,
+    "continuous_cost": true,
+    "exact_action": false,
+    "mass_aware": false,
+    "native_mean": false
+  },
+  "paper_authorized_after_replications": true,
+  "innovation_4_excluded": true,
+  "innovation_6_excluded": true,
+  "innovation_5_role": "event-dependence diagnostic",
+  "updated_at_utc": "2026-09-28T00:36:40.365471+00:00",
+  "selected_2024_saving_usd": 52842.394584705944,
+  "reason_for_superseding": "User explicitly selected CdfR2 as the final family; no further architecture search. The 80 percent continuation requirement was waived.",
+  "final_user_choice": "\u4f7f\u7528cdfr2",
+  "paper_model_name": "WorldMoE",
+  "paper_module_name": "prediction- and state-conditioned joint decision module",
+  "internal_run_family": "CdfR2",
+  "naming_rule": "Do not present CdfR2 as a separate model in the paper; report the frozen WorldMoE backbone and the trainable decision module explicitly."
+}

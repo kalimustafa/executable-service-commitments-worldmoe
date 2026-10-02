@@ -1,0 +1,40 @@
+architecture: one_way_observed_calibrated_counterfactual
+nlr_is_in_nyiso: false
+cross_domain_nominal: product_of_marginals
+cross_domain_dependence_is_observed: false
+market_outcome_role: counterfactual
+engineered_fields:
+  - deadline
+  - preemptibility
+  - migration_eligibility
+  - checkpoint_cost
+  - data_residency
+  - sla_penalty
+physical_transfer:
+  capacity_scale: 1.0
+  parameter_uncertainty: true
+time_alignment:
+  nlr300:
+    policy: user_authorized_utc_source_local_analysis
+    source_clock_assumption: UTC
+    analysis_timezone: America/Denver
+    evidence_role: assumed
+    publisher_metadata_claimed: false
+    preserve_source_timestamp: true
+    timestamp_utc_rule: tz_localize_UTC
+    timestamp_local_rule: tz_convert_America_Denver
+    source_clock_sensitivity:
+      policy: fixed_offset_source_clock
+      timezone: fixed_MST_UTC-07:00
+      purpose: compare_overlap_twin_metrics_and_primary_economic_endpoint
+    direct_local_wall_clock_interpretation: structurally_invalid_not_run
+    strict_authoritative_option: strict_authoritative
+xcel:
+  role: exogenous_local_tariff_and_dr_rule
+  evidence_role: observed
+  source_relationship: third_party_referenced_public_document
+  record_type: referenced_official_tariff_or_program_rule
+  measurement_relationship: not_measured_by_this_study
+  training_target: false
+  realized_response_claim: false
+  event_call_records_available: false

@@ -1,0 +1,2 @@
+stage,seed,rows,quantiles,max_abs_identity_residual_usd_mwh,mean_abs_identity_residual_usd_mwh,q99_abs_identity_residual_usd_mwh,formula,source_parquet
+R2 post-DA,20260920,35040,7,4.3945312427240424e-05,1.8965494906776157e-06,1.1291503909660605e-05,q_RT(tau|DA)=DA-q_DART(1-tau|DA),C:\Users\Kali\Desktop\电力市场\R2_PAPER_INTEGRATION_20260923\results\predictions_2025\R2_seed20260920_normal_native.parquet

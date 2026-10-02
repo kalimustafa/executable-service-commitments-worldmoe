@@ -1,0 +1,34 @@
+status: declared_before_training
+seed: 20260920
+purpose: separate_information_lost_by_daily_pooling_from_training_distribution_shift
+matched_factors:
+  C0_Repaired: daily_mean_world_tokens_and_uniform_training_existing_control
+  C3_TemporalWorld: hourly_world_tokens_and_uniform_training
+  C4_RecentReplay: daily_mean_world_tokens_and_recent_replay_training
+  C5_TemporalReplay: hourly_world_tokens_and_recent_replay_training
+hourly_world:
+  frozen_blocks_one_based: [3, 6, 10]
+  local_entities: [market_slot_0, PV_slot_2, workload_slot_4]
+  global_entity: weather_slot_34
+  time_reduction: quarter_hours_averaged_only_within_each_UTC_hour
+  attention: target_query_hourly_pool_per_scale_then_scale_and_expert_attention
+  timestamp_encoding: true_token_UTC_hour_and_offset_from_target_no_wraparound
+  worlds_trainable: false
+training:
+  identical_loss: original_normalized_price_pinball_and_regime_CE_plus_existing_light_regularizers
+  identical_initialization: zero_residual_exact_Base_equivalence
+  warmup: 10_epochs_full_2021_2023_training_with_entire_Base_frozen
+  joint_start: restore_best_warmup_weights_and_optimizer_moments
+  uniform: uniform_over_existing_training_rows
+  recent_replay: 80_percent_2023_and_20_percent_2021_2022_training_rows
+  recent_replay_is_a_training_amendment: true
+  calibration: same_24_parameter_native_affine_2024_April_June
+  selection: same_2024_selection_rows_and_FP32_proper_price_score
+  effective_batch_size: 4096
+  microbatch_size: 1024
+  max_joint_epochs: 30
+  joint_patience: 12
+  primary_loss_change: false
+  same_optimizer_group_rates_as_repaired_pilot: true
+primary_cost_target_usd: 4346.513196032541
+remaining_seeds: not_started

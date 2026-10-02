@@ -1,0 +1,56 @@
+extends: vpp_world_moe_R5_v2_1.yaml
+
+schema_version: dcvpp.vpp_world_moe.r5.v2.2
+
+project:
+  version: R5-V2.2
+  architecture_version: causal_continuous_action_conditioned_world_moe_r5_v2_2
+  experiment_id: vpp_world_moe_r5_v2_2_2025final
+  output_root: artifacts/vpp_world_moe_r5_v2_2_2025final
+  predecessor: R5-V2.1_W0_formal_parent_W1_retrain_required
+
+protocol:
+  revision: r5_v2_2_w1_continuous_action_handoff_efficiency
+
+data:
+  normalization:
+    artifact_path: artifacts/vpp_world_moe_r5_v2_1_2025final/data/train_only_typed_normalization_v1.json
+  lineage_path: artifacts/vpp_world_moe_r5_v2_1_2025final/data/data_lineage_v1.json
+  frozen_source_lineage: R5-V2.1_train_only_typed_data_contract
+
+model:
+  gradient_checkpointing: true
+  gradient_checkpointing_phases: [w1]
+
+training:
+  protocol_revision: r5_v2_2_w1_continuous_action_handoff_efficiency
+  checkpointing:
+    fixed_update_interval: 32
+    max_wall_clock_seconds: 180
+    sentinel_validation_batches: 4
+  phases:
+    w1:
+      # The measured continuous-action W1 update uses 5.55 GiB allocated and
+      # 6.45 GiB reserved at batch 12 on the registered RTX 3080, leaving safe
+      # headroom while delivering about 2.6x the batch-4 sample throughput.
+      batch_size: 12
+      validation_batch_size: 12
+      formal_validation_interval_short_epochs: 2
+      learning_rate: 2.5e-5
+      # In W1 this rate covers observation heads plus exogenous, action,
+      # stochastic, latent-prior and latent-posterior dynamics groups.
+      head_learning_rate: 7.0e-5
+      router_learning_rate: 2.0e-5
+      tail_learning_rate: 2.5e-5
+      weight_decay: 0.0
+      matrix_weight_decay: 1.0e-2
+      warmup_updates: 64
+      cosine_decay_updates: 1790
+      minimum_learning_rate_ratio: 0.10
+      adamw_beta2: 0.95
+    u0:
+      # Batch 3 reached 7.82 GiB reserved before desktop GPU overhead. Batch 2
+      # preserves recovery headroom; inference-only validation safely uses 3.
+      batch_size: 2
+      validation_batch_size: 3
+      formal_validation_interval_short_epochs: 2

@@ -1,0 +1,144 @@
+project:
+  version: R3
+  model_name: E2E-MoE-DART-VPP
+  implementation_namespace: e2e_moe_r3
+  output_root: artifacts/e2e_moe_gurobi_r3
+  locked_test_year: 2025
+
+run:
+  seed: 3407
+  resume: true
+  initial_workers: 4
+  max_workers: 8
+  threads_per_worker: 1
+  monitor_interval_seconds: 30
+  run_id_format: "{phase}_{split}_{timestamp}"
+
+data:
+  selection_bundle_root: artifacts/dart_value_select/counterfactual_inputs/v1/selection/daily_bundles
+  realized_settlement_root: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/nyiso_replay_by_date/selection
+  realized_settlement_index: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/selection_nyiso_replay_by_date_index.json
+  physical_artifact: artifacts/research/physical/run_id=paper-physical-v1/frozen_physical_artifact.json
+  selection_years: [2022, 2023, 2024]
+  pilot_month: "2022-01"
+
+model:
+  profile: base_local
+  fallback_profile: compact
+  hidden_dim: 64
+  expert_hidden_dim: 96
+  experts: 8
+  top_k: 2
+  shared_expert: false
+  router_noise: true
+  router_balance_weight: 0.02
+  router_stability_weight: 0.01
+  forecast_heads: [da, rt, dart, workload, pv, pue]
+  policy_heads: [day_ahead, real_time, battery, compute, migration]
+  auxiliary_heads: [value, feasibility, fallback_confidence]
+
+physical_twin:
+  source: nlr_calibrated
+  freeze_core_after_representation: true
+  trainable_in_a2: [bounded_residual_adapter, uncertainty_adapter]
+
+scenarios:
+  count: 20
+  learned_weights: true
+  common_random_numbers: true
+  losses:
+    marginal: 1.0
+    energy_score: 0.5
+    variogram: 0.25
+    tail_coverage: 0.5
+    diversity: 0.1
+    weight_entropy: 0.02
+    downstream_decision: 1.0
+
+risk:
+  cvar_alpha: 0.95
+  expected_cost_weight: 1.0
+  cvar_weight: 0.25
+  sla_weight: 10.0
+  migration_weight: 1.0
+  feasibility_weight: 20.0
+
+solver:
+  backend: appsi_gurobi
+  persistent: true
+  build_once_per_rolling_sequence: true
+  set_instance_once: true
+  keep_model_loaded: true
+  use_user_initial_solution: false
+  formal_time_limit_seconds: 600
+  formal_target_relative_gap: 0.0
+  accepted_timeout_relative_gap: 0.05
+  threads: 1
+  modes:
+    guided_repair:
+      enabled: true
+      deviation_penalty: 1.0
+      time_limit_seconds: 30
+    full_optimize:
+      enabled: true
+      time_limit_seconds: 600
+  rebuild_only_on_structure_change: true
+
+rolling:
+  intervals_per_day: 96
+  formal_scenarios: 20
+  freeze_day_ahead_schedule: true
+  execute_first_action_only: true
+
+training:
+  phases: [representation, scenario, distillation, a1, a2, selection_evaluation]
+  device: auto
+  smoke_days: 2
+  smoke_epochs: 1
+  learning_rate: 0.001
+  forecast_amp: true
+  policy_amp: true
+  solver_amp: false
+  batch_size_fallback: [4, 2, 1]
+  gradient_accumulation: 4
+  gradient_clip_norm: 1.0
+  short_horizon_curriculum: [8, 24, 48, 96]
+  a1:
+    trainable: [dart_head, dart_scenario_adapter, dart_calibration]
+    frozen: [workload, physical_twin_core, pv, policy_core, engineering_assumptions]
+    losses:
+      supervised: 1.0
+      realized_decision: 1.0
+      teacher_imitation: 0.5
+      noninferiority: 1.0
+  a2:
+    trainable:
+      - market_encoder
+      - workload_encoder
+      - bounded_residual_adapter
+      - uncertainty_adapter
+      - moe_router
+      - experts
+      - scenario_head
+      - risk_head
+      - policy
+      - feasibility_head
+    frozen: [physical_twin_core, engineering_assumptions, locked_test]
+
+teacher:
+  backend: appsi_gurobi
+  split: selection
+  active_sampling: true
+  sample_regimes: [normal, price_spike, negative_price, high_pv, workload_burst, migration_congestion, tight_sla]
+  preserve_failed_samples: true
+
+checks:
+  minimal_only: true
+  environment_and_license: true
+  one_day_persistent_rolling: true
+  a1_a2_scope_and_locked_test: true
+  one_month_pilot: true
+  repeat_only_when_relevant_inputs_change: true
+
+artifacts:
+  per_run: [config_used.yaml, state.json, metrics.parquet, solver.log, summary.md, checkpoints]

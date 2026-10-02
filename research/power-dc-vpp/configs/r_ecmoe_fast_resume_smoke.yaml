@@ -1,0 +1,32 @@
+extends: r_ecmoe_fast.yaml
+
+# Isolated C8 continuity evidence only. Both invocations use the same frozen
+# contract: the first smoke writes update 1; --mode resume --resume-smoke
+# restores it and writes update 2. Train/validation loaders never open 2025.
+training:
+  batch_size: 1
+  validation_batch_size: 1
+  epochs: 2
+  ra_epochs: 1
+  warmup_updates: 0
+  cosine_decay_updates: 2
+  max_train_days: 1
+  max_validation_days: 1
+  smoke_max_days: 1
+  checkpoint_interval_updates: 1
+  validation_interval_epochs: 1
+  sentinel_validation_days: 1
+  full_validation_interval_epochs: 2
+  selection_latency_warmup: 0
+  selection_latency_repeats: 1
+
+runtime:
+  warmup_repeats: 0
+  measured_repeats: 1
+  throughput_batch_size: 1
+  torch_compile: off
+  return_diagnostics: false
+  cuda_graph: false
+
+outputs:
+  root: artifacts/r_ecmoe_fast_resume_evidence

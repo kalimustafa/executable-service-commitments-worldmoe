@@ -1,0 +1,32 @@
+status: declared_before_training
+model: C6_CausalErrorMemory
+seed: 20260920
+source_forecaster: frozen_raw_C0_Repaired_seed20260920_epoch11
+hypothesis: a_causal_state_of_previous_forecasting_errors_can_adapt_location_and_uncertainty_to_market_changes
+new_information:
+  source: already_legal_completed_historical_DA_DART_prices_and_reconstructed_raw_source_predictions
+  latest_source_day: target_local_day_minus_2
+  prohibited: unfinished_current_hour_prices_future_targets_or_2024_parameter_fitting
+  calibration_of_source_for_memory: none
+  features: same_hour_error_lags_2_3_7_and_7_28_day_rolling_error_and_coverage_states
+normalization_fit: 2021_2023_train_rows_only
+architecture:
+  frozen_source: true
+  market_error_state_encoder: 64_hidden_units
+  residual_location: native_median_and_increment_logits
+  final_residual_projection: zero_initialized
+  memory_gate: learned_from_causal_error_state_and_market_latent
+  quantile_order_and_price_identity: unchanged_formal_decoder
+loss: unchanged_primary_forecasting_loss_with_existing_light_regularizers
+training:
+  epochs_max: 40
+  selection_patience: 10
+  residual_learning_rate: 0.0005
+  source_frozen_for_entire_training: true
+  sampling: uniform_original_training_rows
+  epoch_zero_source_equivalence: true
+selection: original_2024_selection_dates_and_FP32_proper_price_score
+calibration: identical_native_affine_24_parameters_250_iterations
+executor: unchanged
+other_seeds: not_started
+target_savings_usd: 4346.513196032541

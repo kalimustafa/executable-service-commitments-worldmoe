@@ -1,0 +1,112 @@
+"""Public API for the solver-free R4-V8 three-plane architecture."""
+
+from .checkpoint_upgrade import (
+    CheckpointUpgradeError,
+    CheckpointUpgradeReport,
+    REGISTERED_NEW_PREFIXES,
+    REGISTERED_RETIRED_V7_PREFIXES,
+    UPGRADE_SCHEMA,
+    upgrade_checkpoint_payload,
+    upgrade_v7_checkpoint,
+)
+from .gates import (
+    GATE_SCHEMA,
+    UNIFIED_GATE_SCHEMA,
+    ScientificGateError,
+    ScientificGateResult,
+    UnifiedScientificGateResult,
+    evaluate_all_scientific_gates,
+    evaluate_distribution_gate,
+    evaluate_policy_gate,
+    evaluate_representation_gate,
+    evaluate_unified_gate,
+)
+from .evaluation import (
+    BOOTSTRAP_REPLICATIONS,
+    DEFAULT_BATCH_SIZE,
+    EXPECTED_VALIDATION_DAYS,
+    R0EvaluationError,
+    materialize_r0_checkpoint,
+    materialize_r0_representation_capability,
+)
+from .model import (
+    ARCHITECTURE_VERSION,
+    PARAMETER_GROUPS,
+    R4V8Model,
+    TriPlaneCausalWorldModelV8,
+    V8ModelConfig,
+)
+from .packets import (
+    CanonicalWorkspacePacket,
+    DecisionWorkspacePacket,
+    DistributionSamplePacket,
+    DistributionTruthPacket,
+    PolicyPacket,
+    RepresentationPacket,
+    close_public_channels,
+    independent_from_public,
+)
+from .sparse_moe import SparseTop2MoE
+from .rollout import (
+    ROLLOUT_ADAPTER_SCHEMA,
+    V8RolloutError,
+    distribution_scenarios_to_mapping,
+    rollout_fn,
+)
+from .trifusion import (
+    DecisionBridge,
+    DistributionPlane,
+    PolicyPlane,
+    RepresentationPlane,
+    TriFusionWorkspace,
+)
+
+
+__all__ = [
+    "ARCHITECTURE_VERSION",
+    "CanonicalWorkspacePacket",
+    "CheckpointUpgradeError",
+    "CheckpointUpgradeReport",
+    "BOOTSTRAP_REPLICATIONS",
+    "DEFAULT_BATCH_SIZE",
+    "DecisionBridge",
+    "DecisionWorkspacePacket",
+    "DistributionPlane",
+    "DistributionSamplePacket",
+    "DistributionTruthPacket",
+    "EXPECTED_VALIDATION_DAYS",
+    "GATE_SCHEMA",
+    "PARAMETER_GROUPS",
+    "PolicyPacket",
+    "PolicyPlane",
+    "R4V8Model",
+    "R0EvaluationError",
+    "REGISTERED_NEW_PREFIXES",
+    "REGISTERED_RETIRED_V7_PREFIXES",
+    "RepresentationPacket",
+    "RepresentationPlane",
+    "ROLLOUT_ADAPTER_SCHEMA",
+    "ScientificGateError",
+    "ScientificGateResult",
+    "SparseTop2MoE",
+    "TriFusionWorkspace",
+    "TriPlaneCausalWorldModelV8",
+    "UPGRADE_SCHEMA",
+    "UNIFIED_GATE_SCHEMA",
+    "UnifiedScientificGateResult",
+    "V8ModelConfig",
+    "V8RolloutError",
+    "close_public_channels",
+    "independent_from_public",
+    "materialize_r0_checkpoint",
+    "materialize_r0_representation_capability",
+    "distribution_scenarios_to_mapping",
+    "evaluate_all_scientific_gates",
+    "evaluate_distribution_gate",
+    "evaluate_policy_gate",
+    "evaluate_representation_gate",
+    "evaluate_unified_gate",
+    "rollout_fn",
+    "upgrade_checkpoint_payload",
+    "upgrade_v7_checkpoint",
+]

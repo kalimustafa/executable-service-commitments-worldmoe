@@ -1,0 +1,23 @@
+extends: vpp_world_moe_R5_v2_2.yaml
+project:
+  output_root: C:\Users\Kali\Desktop\电力市场\power-dc-vpp\artifacts\r_ecmoe_multiseed_20260910\world_moe
+  seed: 20240917
+training:
+  seed: 20240917
+  run_id: multiseed-20260910-seed20240917
+  phases:
+    w1:
+      max_epochs: 80
+      formal_validation_interval_short_epochs: 4
+      efficient_schedule:
+        enabled: true
+        first_formal_epoch: 48
+        recovery_interval_seconds: 1800
+        progress_interval_seconds: 60
+        fixed_budget: false
+        early_stop_start_epoch: 0
+        early_stop_evaluations: 2
+        relative_improvement: 0.0
+        defer_w1_reference: true
+        selection_policy: validation_score_only
+        checkpoint_policy: best_only

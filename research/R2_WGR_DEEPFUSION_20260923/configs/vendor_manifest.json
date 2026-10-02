@@ -1,0 +1,17 @@
+{
+  "causal_helpers_source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\\u65b0\u8bba\u6587_\u5e02\u573a\u53ef\u4ea4\u4ed8\u7075\u6d3b\u6027_20260917\\revision_20260920_r2_executable\\experiment\\prepare_frozen_cache.py",
+  "causal_helpers_source_sha256": "674acbe30700008450bae2cc2747edd44feaa40a73d35e37b2e5241a3c68efa4",
+  "transformations": [
+    "AST-selected causal helpers only",
+    "original globals replaced with read-only source paths",
+    "evaluation_panel forbidden"
+  ],
+  "preserved": [
+    "disable_inactive_slots",
+    "causal_weather",
+    "MarketContext.overlay",
+    "reduce_features",
+    "cutoff",
+    "generation"
+  ]
+}

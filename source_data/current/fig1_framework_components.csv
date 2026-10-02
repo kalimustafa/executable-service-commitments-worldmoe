@@ -1,0 +1,7 @@
+panel,component,current_role,visual_source
+Inputs,"Market, physical and service inputs",Causal information and executable obligations,2026-09-27 Figure 1
+Backbone,Frozen W0/W1 WorldMoE,Shared representation; no evaluation-year updates,2026-09-27 Figure 1
+3,State-conditioned valuation,"R2 cache, APIC adapter, market physics attention, work-to-time attention, state-cost decoder",Edited R2 panel
+4,APIC market representation,Queue-independent RT price path and price-PV coupling,Edited R2-linked panel
+5,Valuation and execution,"Current action, deadline-prefix feasibility, work conservation and physical balance",Edited R2-linked panel
+Settlement,Continuous electricity account,"Energy value, closing work and daily risk",2026-09-27 Figure 1

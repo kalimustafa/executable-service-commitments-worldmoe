@@ -1,0 +1,138 @@
+extends: vpp_world_moe_R5_v2_3.yaml
+
+schema_version: dcvpp.vpp_world_moe.r5.v2.4
+
+project:
+  version: R5-V2.4
+  architecture_version: causal_continuous_action_conditioned_world_moe_r5_v2_4_atom_aware_u0
+  experiment_id: vpp_world_moe_r5_v2_4_2025final
+  output_root: artifacts/vpp_world_moe_r5_v2_4_2025final
+  predecessor: R5-V2.3_U0_epoch14_diagnostic_plus_W1_epoch56_clean_parent
+
+protocol:
+  revision: r5_v2_4_u0_atom_aware_conditional_calibration
+
+model:
+  support_atom_enabled: true
+  support_atom_prevalence_source: train_2022_2023_only
+  support_atom_global_prevalence_role: diagnostic_evidence_only_not_head_initialization
+  support_atom_workload_zero_prevalence: 0.1657222985
+  support_atom_pv_zero_prevalence: 0.4820570055
+  support_atom_pv_capacity_prevalence: 0.0038276
+  support_atom_pue_minimum_prevalence: 0.0045787546
+  support_atom_pue_maximum_prevalence: 0.1657222985
+  support_atom_train_fit_artifact: artifacts/vpp_world_moe_r5_v2_4_2025final/support_atom_train_fit.json
+  support_atom_train_fit_sha256: 9575bdd67fc162936f35211d881fbab38c8485e040d67f94ab1179ec14c821e8
+  support_atom_workload_zero_train_prevalence: 0.25613169436749766
+  support_atom_pv_daylight_zero_prevalence: 0.003116651825467498
+  support_atom_pv_daylight_capacity_prevalence: 0.00889080587711487
+  support_atom_pv_night_zero_train_prevalence: 0.9965843720038351
+  support_atom_pue_residual_minimum_prevalence: 0.018328516844779767
+  # All sampled PUE maxima are the workload-zero structural branch; there is
+  # no residual-max event and therefore no residual-max Bernoulli head.
+  support_atom_pue_residual_maximum_prevalence: null
+  support_atom_pue_residual_maximum_role: structural_only_no_residual_head
+  support_atom_pue_maximum_given_zero_workload_prevalence: 1.0
+  pv_night_capacity_fraction_threshold: 1.0e-4
+  # Conditioning must describe the issue-time state, not inject a second draw.
+  u0_conditioning_encoder_sample_stochastic: false
+
+training:
+  run_id: r5v24-u0-atom-aware-from-w1e56-seed20240813
+  protocol_revision: r5_v2_4_u0_atom_aware_conditional_calibration
+  # The formal lineage remains a clean cross-phase handoff from the released W1.
+  parent_checkpoint:
+    run_id: r5v22-w1-continuous-action-formal-20260824-seed20240813
+    phase: w1
+    role: formal_primary_best
+    epoch: 56
+    update: 3360
+    sha256: a97003e1ec3d92c3d814653b743c21fd646da70c1b85778e1bd71edbb3f1f250
+    gate_status: PASS
+    load_model_only: true
+    load_optimizer: false
+    load_rng: false
+  # This is smoke metadata only. It cannot authorize a formal parent or P1 release.
+  diagnostic_repair_probe:
+    run_id: r5v23-u0-recalibrated-from-w1e56-seed20240813
+    phase: u0
+    role: score_best
+    epoch: 14
+    update: 5054
+    sha256: 20761385f4d0aa08bd07f35611694159a1d905d44253eac143e0de145b0a0146
+    eligible: false
+    weights_only: true
+    smoke_only: true
+    formal_parent_allowed: false
+    p1_release_authority: false
+  phase_objectives:
+    u0:
+      weights: {crps: 0.30, energy: 0.30, variogram: 0.15, tail_crps: 0.15, mixture_nll: 0.0, atom_brier: 0.10, moe: 0.01}
+      mixture_role: legacy_diagnostic_only_not_scenario_likelihood
+      scale_source: dynamics_residual_log_scale_only
+      support_atoms:
+        enabled: true
+        prevalence_source: train_2022_2023_only
+        global_evidence_only:
+          workload_zero: 0.1657222985
+          pv_zero: 0.4820570055
+          pv_capacity: 0.0038276
+          pue_minimum: 0.0045787546
+          pue_maximum: 0.1657222985
+        head_initialization_from_global_evidence: prohibited
+        conditional_train_resolved:
+          artifact: artifacts/vpp_world_moe_r5_v2_4_2025final/support_atom_train_fit.json
+          artifact_sha256: 9575bdd67fc162936f35211d881fbab38c8485e040d67f94ab1179ec14c821e8
+          workload_zero: 0.25613169436749766
+          pv_daylight_zero: 0.003116651825467498
+          pv_daylight_capacity: 0.00889080587711487
+          pv_night_zero: 0.9965843720038351
+          pue_residual_minimum: 0.018328516844779767
+          pue_residual_maximum: null
+          pue_residual_maximum_role: structural_only_no_residual_head
+          pue_maximum_given_zero_workload: 1.0
+        missing_conditional_train_stat_action: fail_closed
+        pv_night_capacity_fraction_threshold: 1.0e-4
+      conditioning_encoder_sample_stochastic: false
+  checkpoint_selection:
+    u0: eligible_energy_confidence_set_then_balanced_crps_then_tail_then_earliest
+    early_stop:
+      stable_formal_evaluations: 3
+      relative_improvement_below: 0.001
+      failure_plateau:
+        formal_evaluations: 3
+        relative_improvement_below: 0.001
+        jointly_stable_metrics: [gate_gap, proper_score]
+        terminal_status: FAIL_NO_RELEASE
+  uncertainty_validation:
+    conditional_coverage:
+      enabled: true
+      families: [workload, pv, pue]
+      conditioning: support_atom_state
+      conditioning_encoder_sample_stochastic: false
+      moving_block_bootstrap:
+        method: moving_block_bootstrap
+        block_length_days: 14
+        resamples: 2000
+        confidence: 0.95
+  phases:
+    u0:
+      # Lower shared/backbone rate protects the released W1 state. Atom/process
+      # heads retain calibration capacity through the explicit group contract.
+      learning_rate: 1.0e-5
+      head_learning_rate: 6.0e-5
+      router_learning_rate: 2.0e-5
+      tail_learning_rate: 3.0e-5
+      weight_decay: 0.0
+      matrix_weight_decay: 1.0e-2
+      warmup_updates: 64
+      cosine_decay_updates: 5054
+      minimum_learning_rate_ratio: 0.10
+      adamw_beta2: 0.95
+      formal_validation_interval_short_epochs: 2
+      optimizer_group_contract:
+        backbone: 1.0e-5
+        support_atom_heads: 6.0e-5
+        stochastic_scale: 6.0e-5
+        router: 2.0e-5
+        tail_expert: 3.0e-5

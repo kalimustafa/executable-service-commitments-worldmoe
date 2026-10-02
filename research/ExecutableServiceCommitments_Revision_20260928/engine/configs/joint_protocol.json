@@ -1,0 +1,23 @@
+{
+  "stage": "primary seed only",
+  "primary_seed": 20260920,
+  "later_seeds_conditional_on_improvement": [20260921, 20260922],
+  "training_years": [2021, 2022, 2023],
+  "physical_training_years_available": [2022, 2023],
+  "selection_year": 2024,
+  "evaluation_year": 2025,
+  "evaluation_role": "already examined calendar; exploratory frozen-model evaluation",
+  "world_backbone": "frozen W0/W1 cached representations; zero trainable backbone parameters",
+  "trainable": ["R2 fusion and residual layers", "price heads with auxiliary proper scoring", "state-conditioned marginal cost and ranking head"],
+  "hard_execution": ["fixed work arrivals", "fixed capacity", "24h service contract", "conserved task ledger", "unchanged settlement and terminal liability"],
+  "training_objective": "price proper score plus incremental-cost regression and within-query ranking regret surrogate",
+  "gradient_scope": "shared R2 fusion and decision head; no claim of backpropagation through complete annual NumPy dispatch",
+  "state_augmentation": "Causal published-price behavior-policy reservation states and known work by deadline; realized future outcomes are training labels only",
+  "first_round": {"epochs": 20, "initial_price_batch_size": 512, "initial_decision_groups": 8, "fast_price_batch_size": 2048, "fast_decision_groups": 32, "fast_validation_groups": 64, "switch_after_epoch": 4, "optimizer_moments_restarted_at_resume": true, "price_weight": 1.0, "cost_weight": 1.0, "rank_weight": 1.0},
+  "screening_checkpoint_selection": "2024 surrogate regret minimum subject to normalized prediction score within 2% of epoch 0; development screening threshold, not a pre-registered confirmatory test",
+  "actual_effect_gate": "Superseded on 2026-09-28: do not train additional seeds until the primary seed reaches 80% of the fixed savings ceiling, with zero late and closing work. Positive improvement alone is insufficient. The prematurely started second seed has been stopped; its partial outputs are retained and excluded from final replication claims.",
+  "target_savings_usd": 106084.33667311305,
+  "fixed_savings_ceiling_usd": 132605.4208413913,
+  "manuscript_exclusions": ["previous innovation 4 adaptive-locking experiment", "innovation 6 entirely"],
+  "innovation5_status": "single-event dependence; not a general extreme-state superiority claim"
+}

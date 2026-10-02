@@ -1,0 +1,34 @@
+{
+  "frozen_at_utc": "2026-09-28T01:08:59.425600+00:00",
+  "selection_year": 2024,
+  "target_year": 2025,
+  "seed": 20260921,
+  "family": "CdfR2",
+  "refinement_epoch": 2,
+  "forecast_epoch": 2,
+  "eta": 0.0,
+  "safety": 0.9,
+  "opportunity_weight": 1.0,
+  "cost_bias_weight": 1.0,
+  "exact_action": false,
+  "current_coupling": true,
+  "continuous_cost": true,
+  "forecast_checkpoint_sha256": "2f281002e8ccafb859c197c7745c366e945e1b9ce8568e5ccd514ebdebf78448",
+  "observer_sha256": "cecf583329bb16087a5be56033cf94da63106510f5f26ecf96de70ccb3278a0b",
+  "selected_2024_saving_usd": 52797.363853291594,
+  "selection_source": "CdfR2_Eagle_2024_s20260921_ep02_coupled_cdf.json",
+  "selection_rule": "maximum eligible 2024 annual savings after completed training; 50 USD min-delta controls stopping only",
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "physical_training_years": [
+    2022,
+    2023
+  ],
+  "parent_checkpoint": "QPR2_seed20260920_epoch10.pt",
+  "replication_scope": "optimization seeds from shared pretrained initialization and frozen WorldMoE/R2 feature cache",
+  "evaluation_role": "2025 temporal holdout; excluded from parameter fitting and this seed checkpoint selection",
+  "development_disclosure": "Author-corrected chronology: the complete 2025 market calendar and its outcomes remained sealed throughout architecture development, parameter fitting, hyperparameter selection and 2024-only checkpoint selection; the first 2025 evaluation followed final architecture and checkpoint freeze."
+}

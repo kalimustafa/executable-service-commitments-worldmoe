@@ -1,0 +1,4 @@
+action_grid_work_units,saving_usd,saving_pct,seconds,late_IT_mwh,closing_it_mwh,source_json,difference_from_fine_usd
+0.05,105570.4698373262,19.015943073817585,308.3370910999947,8.706302816476031e-10,0.0,C:\Users\Kali\Desktop\电力市场\ExecutableServiceCommitments_Revision_20260928\engine\results\CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_grid0.05.json,-2.8541467102477327
+0.025,105565.66546172019,19.015077682831166,228.13896229999955,7.39572511193517e-10,0.0,C:\Users\Kali\Desktop\电力市场\ExecutableServiceCommitments_Revision_20260928\engine\results\CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24.json,-7.658522316269227
+0.0125,105573.32398403645,19.01645717867522,320.1626982000016,3.968738962210135e-10,0.0,C:\Users\Kali\Desktop\电力市场\ExecutableServiceCommitments_Revision_20260928\engine\results\CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_grid0.0125.json,0.0

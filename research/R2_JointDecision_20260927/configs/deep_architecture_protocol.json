@@ -1,0 +1,29 @@
+{
+  "primary_seed_only": true,
+  "seed_gate_fraction": 0.8,
+  "world_and_original_market_encoder": "frozen",
+  "trainable_architecture": [
+    "market residual adapter and APIC-preserving price shift",
+    "market and physical encoders",
+    "bidirectional cross-modal attention",
+    "two hourly temporal attention layers",
+    "workload-query attention and quarter-hour refinement",
+    "price/PV cross-moment decoder"
+  ],
+  "rollout_arrivals": 16,
+  "candidate_quarters": 96,
+  "solar_decay_hours": 6,
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "physical_training_years": [
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "price_branch_queue_independent": true,
+  "gradient": "hard feasible forward, soft straight-through gradient, unrolled through sequential reservation states",
+  "paper_edits_allowed": false
+}

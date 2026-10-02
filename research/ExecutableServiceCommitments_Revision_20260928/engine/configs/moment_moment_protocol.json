@@ -1,0 +1,53 @@
+{
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "seven_quantiles_unchanged": true,
+  "baseline_selection_rmse": 23.32020378112793,
+  "base_excess": [
+    [
+      [
+        2.597324848175049,
+        0.4061529338359833
+      ],
+      [
+        4.401578426361084,
+        0.17735444009304047
+      ],
+      [
+        3.501518726348877,
+        0.16071556508541107
+      ],
+      [
+        5.037470817565918,
+        0.6191601753234863
+      ]
+    ],
+    [
+      [
+        1.7900199890136719,
+        0.47055917978286743
+      ],
+      [
+        2.985865592956543,
+        0.34018027782440186
+      ],
+      [
+        2.4709692001342773,
+        0.20113886892795563
+      ],
+      [
+        3.7084574699401855,
+        0.7559861540794373
+      ]
+    ]
+  ],
+  "identity": "mean = clipped central expectation + expected upper excess - expected lower excess",
+  "central_completion": true,
+  "central_constraint": "left/right quantile Riemann sums",
+  "objective": "quasi-Poisson loss for nonnegative conditional tail means; squared loss for the central clipped mean when enabled",
+  "forecast_core_sha256": "97637a07f6b6fbb3b1d3336c66920dbbb4d297a9efb624b4e65f5dec874e285c"
+}

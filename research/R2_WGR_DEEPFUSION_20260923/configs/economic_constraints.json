@@ -1,0 +1,50 @@
+{
+  "constraints": {
+    "work_power_per_unit": [
+      1.639059066772461,
+      1.639059066772461,
+      1.639059066772461,
+      1.639059066772461
+    ],
+    "idle_power": [
+      0.23069976270198822,
+      0.23069976270198822,
+      0.23069976270198822,
+      0.23069976270198822
+    ],
+    "grid_import_limit": [
+      2.1502225399017334,
+      2.1502225399017334,
+      2.1502225399017334,
+      2.1502225399017334
+    ],
+    "compute_capacity": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "pue_min": [
+      1.0236979722976685,
+      1.0236979722976685,
+      1.0236979722976685,
+      1.0236979722976685
+    ],
+    "pue_max": [
+      1.0929484367370605,
+      1.0929484367370605,
+      1.0929484367370605,
+      1.0929484367370605
+    ],
+    "grid_export_limit": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "physical_source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\power-dc-vpp\\artifacts\\research\\physical\\run_id=paper-physical-v1\\frozen_physical_artifact.json",
+  "envelope_source": "2022-2023 physical-reference PUE, same amin/amax as data._fit_empirical_envelopes",
+  "precision": "FP32 tensor constants widened to NumPy float64, as in formal executor",
+  "locked_results_accessed": false
+}

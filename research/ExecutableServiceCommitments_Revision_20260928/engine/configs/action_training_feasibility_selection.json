@@ -1,0 +1,6 @@
+{
+  "original_states": 320,
+  "retained_states": 320,
+  "excluded_infeasible_states": 0,
+  "criterion": "known-work cumulative deadline demand fits available capacity; annual evaluation workloads remain unchanged"
+}

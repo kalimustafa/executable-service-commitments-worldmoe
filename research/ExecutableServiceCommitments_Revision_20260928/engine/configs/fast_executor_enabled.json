@@ -1,0 +1,9 @@
+{
+  "original_query_seconds": 0.0015239397999976063,
+  "cached_query_seconds": 0.0012266210000016144,
+  "microbenchmark_speedup": 1.242388480219726,
+  "annual_savings_difference_usd": 0.0007478432307834737,
+  "zero_late": true,
+  "zero_closing": true,
+  "architecture_changed": false
+}

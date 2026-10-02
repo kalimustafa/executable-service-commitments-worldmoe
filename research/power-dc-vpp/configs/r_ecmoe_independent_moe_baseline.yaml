@@ -1,0 +1,17 @@
+extends: r_ecmoe_balanced.yaml
+
+schema: dcvpp.r_ecmoe.baseline.training.v1
+phase: r_ecmoe
+
+model:
+  baseline_type: independent_r_moe
+
+# Independent R-MoE retains its own routing auxiliaries but has no dedicated
+# decision-tail expert.  The shared upper-tail decision objective stays fixed.
+loss:
+  route_continuation: 0.0
+  tail_expert: 0.0
+
+outputs:
+  root: artifacts/r_ecmoe_independent_moe_baseline
+  run_id_prefix: r-ecmoe-independent-moe-baseline

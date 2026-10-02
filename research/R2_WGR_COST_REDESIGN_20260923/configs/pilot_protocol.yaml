@@ -1,0 +1,53 @@
+status: preregistered_before_pilot_training
+objective: substantial operating decision cost advantage under unchanged executor and service constraints
+pilot_seed: 20260920
+remaining_seeds: [20260921, 20260922]
+remaining_seeds_status: do_not_start_before_primary_seed_evaluation
+models: [C0_Repaired, C1_ProfileResidual]
+primary_new_architecture: C1_ProfileResidual
+controls: [A0_Base, A1_Shallow, RASC]
+primary_economic_window_h: 24
+secondary_economic_window_h: 12
+substantial_success:
+  minimum_net_operating_cost_reduction_pct: 1.0
+  comparator: lowest-cost zero-late existing control in the same 24h window and fixed primary seed
+  full_cost_denominator: original cash cost plus original fees and terminal work liability
+  zero_late_required: true
+  forecast_pinball_noninferiority_relative_pct: 1.0
+  risk_selection_score_not_worse_required: true
+  pilot_is_robust_three_seed_evidence: false
+  do_not_weaken_threshold_after_results: true
+training:
+  warmup_epochs: 10
+  max_joint_epochs: 30
+  patience_joint: 12
+  batch_size: 4096
+  fusion_lr: 0.001
+  joint_fusion_lr: 0.0003
+  base_encoder_lr: 0.00002
+  original_heads_lr: 0.00005
+  freeze_entire_base_in_warmup: true
+  base_dropout_disabled: true
+  restore_best_warmup_weights_and_optimizer: true
+  preserve_fusion_optimizer_moments_into_joint: true
+  consider_equivalent_epoch_zero_for_selection: true
+  selection_precision: FP32
+  calibration_precision: FP32
+  evaluation_precision: FP32
+  training_precision: BF16
+  primary_loss: unchanged normalized DA/DART/RT pinball plus 0.05 regime CE
+  lambda_gate: 0.0001
+  lambda_res: 0.00001
+  world_dropout: 0.10
+architecture:
+  new_full_latent_layernorm: false
+  zero_initialized_final_residual_projection: true
+  gate_zero_continuous_base_limit: true
+  profile_inputs: existing issue-causal numerical features plus masked pre-DA / published post-DA daily DA curve
+  residual_location: median and positive-increment decoder logits, before native monotone transform
+  world_foundation: frozen seed20240829 epoch80
+  extra_decision_loss: false
+  executor_modified: false
+  calibration_extra_freedom: false
+candidate_expansion_after_results: false
+locked_target_max_year: 2024

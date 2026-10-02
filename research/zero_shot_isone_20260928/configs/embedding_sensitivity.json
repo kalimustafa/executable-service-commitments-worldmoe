@@ -1,0 +1,17 @@
+{
+  "primary": {
+    "rule": "neutral_mean",
+    "formula": "e_OOD = (e_WEST + e_CAPITL + e_N.Y.C. + e_LONGIL) / 4",
+    "apply_same_vector_to_every_iso_ne_external_site": true,
+    "external_outcome_used_to_construct_or_select_vector": false
+  },
+  "predeclared_cyclic_sensitivities": {
+    "P1": ["WEST", "CAPITL", "N.Y.C.", "LONGIL"],
+    "P2": ["CAPITL", "N.Y.C.", "LONGIL", "WEST"],
+    "P3": ["N.Y.C.", "LONGIL", "WEST", "CAPITL"],
+    "P4": ["LONGIL", "WEST", "CAPITL", "N.Y.C."]
+  },
+  "summary_only": ["mean", "median", "min", "max"],
+  "best_permutation_selection_forbidden": true,
+  "all_24_permutations": "run only if the added runtime is low; never replace the neutral-mean primary result"
+}

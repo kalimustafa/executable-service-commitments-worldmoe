@@ -1,0 +1,33 @@
+extends: vpp_world_moe_R5_v2_1.yaml
+project:
+  output_root: C:\Users\Kali\Desktop\电力市场\power-dc-vpp\artifacts\r_ecmoe_multiseed_20260910\world_moe
+  seed: 20240917
+training:
+  seed: 20240917
+  run_id: multiseed-20260910-seed20240917
+  phases:
+    w0:
+      max_epochs: 96
+      formal_validation_interval_short_epochs: 16
+      efficient_schedule:
+        enabled: true
+        first_formal_epoch: 32
+        recovery_interval_seconds: 1800
+        progress_interval_seconds: 60
+        fixed_budget: true
+        early_stop_start_epoch: 96
+        early_stop_evaluations: 4
+        relative_improvement: 0.001
+        defer_w1_reference: false
+        selection_policy: validation_score_only
+        checkpoint_policy: best_only
+      early_formal_interval_short_epochs: 16
+      early_formal_until_short_epoch: 0
+      target_update_budgets:
+        minimum: 122
+        maximum: 732
+        patience_equivalent: 122
+data:
+  normalization:
+    artifact_path: C:\Users\Kali\Desktop\电力市场\power-dc-vpp\artifacts\r_ecmoe_multiseed_20260910\world_moe\data\train_only_typed_normalization_v1.json
+  lineage_path: C:\Users\Kali\Desktop\电力市场\power-dc-vpp\artifacts\r_ecmoe_multiseed_20260910\world_moe\data\data_lineage_v1.json

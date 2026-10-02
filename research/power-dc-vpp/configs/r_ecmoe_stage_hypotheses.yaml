@@ -1,0 +1,124 @@
+schema: dcvpp.r_ecmoe.stage_hypotheses.v1
+architecture: risk_conditioned_expert_continuation_moe_v1
+model_lineage: W0_R5-V2.1__W1_R5-V2.2_epoch56__R-ECMoE_balanced_Top2_epoch130
+registration_timing: post_architecture_revision_stage_aligned_reporting
+locked_final_year_used_for_training_or_selection: false
+
+evidence_reconciliation:
+  w0_native_state_status: CAPABILITY_GATE_FAILED
+  w0_native_next_phase_released: false
+  w0_release_artifact_consistency: false
+  w0_manuscript_scope_amendment: queue_occurrence_reclassified_as_diagnostic_after_the_run
+  comparison_budget_system: architecture_specific_early_stop_and_checkpoint_selection
+  equal_selected_epoch_required: false
+  selected_checkpoint_epochs:
+    main_top2: 130
+    retrained_top1: 80
+    dense_direct: 78
+    independent_r_moe: 78
+
+hypotheses:
+  H0:
+    stage: W0_causal_state_foundation
+    proposition: W0 provides a usable causal state and an internally consistent native release artifact before action-conditioned dynamics training.
+    native_executable_gate:
+      dart_identity_tolerance: 1.0e-6
+      soc_paired_one_sided_upper_max: 0.0
+      queue_positive_severity_paired_one_sided_upper_max: 0.0
+      queue_occurrence_paired_one_sided_upper_max: 0.0
+      queue_occurrence_required: true
+      finite_outputs_required: true
+    post_run_manuscript_amendment:
+      queue_occurrence_role: diagnostic_only
+      native_gate_reexecuted_after_amendment: false
+      amended_release_artifact_available: false
+    checkpoint_selector: minimum_group_balanced_crps_among_gate_eligible_full_2024_candidates
+    prohibited_selectors: [mae, rmse]
+    measured_status: partially_supported_protocol_amended
+
+  H1:
+    stage: W1_action_conditioned_dynamics
+    proposition: W1 learns non-degenerate action-conditioned dynamics across all registered horizons.
+    gate:
+      horizons: [1, 4, 16, 96]
+      each_horizon_proper_score_below_zero_update_reference: true
+      dart_identity_tolerance: 1.0e-6
+      latent_kl_non_degenerate: true
+      queue_rollout_non_degenerate: true
+      dynamics_gradient_nonzero: true
+      dynamics_parameters_updated: true
+      locked_2025_opened: false
+    checkpoint_selector: minimum_worst_horizon_proper_score
+    measured_status: supported_conditional_on_authorized_w0_continuation
+
+  H2:
+    stage: R-A_safe_action_expansion
+    proposition: The 13-epoch R-A curriculum improves decision quality while retaining finite and physically feasible actions.
+    evaluation:
+      compare: [sentinel_epoch_2, sentinel_epoch_12]
+      decision_value_must_decrease: true
+      hard_residual_max: 1.0e-4
+      finite_outputs_required: true
+      action_range_schedule: 0.10_to_1.00
+
+  H3:
+    stage: R-B_formal_checkpoint_selection
+    proposition: A full-2024 R-B checkpoint is eligible and minimizes the registered decision value under all deployment gates.
+    eligibility:
+      validation_days: 364
+      decisions_per_day: 6
+      finite_outputs_required: true
+      hard_residual_max: 1.0e-4
+      worst_origin_sla_max: 0.02
+      batch1_h96_p95_latency_ms_max: 1900.0
+    decision_value:
+      mean_realized_cost_weight: 1.0
+      empirical_cvar95_weight: 0.25
+      worst_origin_sla_weight: 1.0
+      constraint_residual_weight: 1.0
+      latency_budget_excess_weight: 1.0
+    checkpoint_selector: minimum_decision_value_among_eligible_full_2024_checkpoints
+    early_stop:
+      patience_full_evaluations: 4
+      minimum_relative_improvement: 0.0005
+      role: training_control_not_hypothesis_acceptance
+
+  H4:
+    stage: sealed_2025_value
+    proposition: The selected balanced Top-2 checkpoint improves paired sealed-year value over the deployable safe tensor.
+    gate:
+      paired_main_minus_safe_cost_ci95_upper_below_zero: true
+      main_cvar95_below_safe: true
+      main_mean_unserved_energy_max: 0.0
+      main_hard_residual_max: 1.0e-4
+
+  H5:
+    stage: sparse_design_comparison
+    proposition: Under the registered architecture-matched budget and checkpoint-selection system, balanced Top-2 expert continuation improves paired value over separately retrained Top-1, dense-direct R, and independent R-MoE without expert collapse.
+    comparison_design:
+      architecture_matched: true
+      common_source_w1: true
+      common_data_and_rolling_origins: true
+      common_objective_family_and_final_suite: true
+      budget_system: architecture_specific_early_stop_and_best_checkpoint_selection
+      identical_selected_epoch_required: false
+      selected_checkpoint_epochs: [130, 80, 78, 78]
+    gate:
+      comparators: [retrained_top1, dense_direct, independent_r_moe]
+      comparator_minus_main_cost_ci95_lower_above_zero_for_each: true
+      main_cvar95_below_each_comparator: true
+      every_general_expert_has_positive_load: true
+      conditional_tail_activation_strictly_between_zero_and_one: true
+    measured_status: supported_under_registered_budget_system
+
+  H6:
+    stage: deployment_efficiency
+    proposition: The selected model remains one-pass, solver-free, sparse, and deployable on the registered 10 GB GPU.
+    gate:
+      w1_backbone_calls_per_decision: 1
+      external_solver: false
+      candidate_search: false
+      batch1_h96_p95_latency_ms_max: 1900.0
+      peak_gpu_memory_gib_max: 10.0
+      active_parameter_count_reported: true
+    measured_status: partially_supported_missing_final_checkpoint_memory_and_active_parameters

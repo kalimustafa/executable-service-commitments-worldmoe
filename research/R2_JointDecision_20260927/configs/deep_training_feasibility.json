@@ -1,0 +1,8 @@
+{
+  "original_episodes": 2376,
+  "retained_episodes": 2349,
+  "excluded": 27,
+  "criterion": "Total new work fits the free intersection of all 16 service windows; a sufficient guarantee under any within-window placement",
+  "evaluation_workloads_changed": false,
+  "prototype_epoch1_invalid": true
+}

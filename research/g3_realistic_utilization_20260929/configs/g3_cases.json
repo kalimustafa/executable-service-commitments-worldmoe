@@ -1,0 +1,40 @@
+{
+  "experiment": "G3_MINIMAL_REALISTIC_UTILIZATION",
+  "year": 2025,
+  "workload": "Eagle",
+  "service_window_hours": 24,
+  "deadline_convention": "inclusive existing formal convention",
+  "total_utilizations": [0.2, 0.4, 0.6],
+  "flexible_energy_shares": [0.1, 0.3],
+  "cases": [
+    {"case_id": "G3-20-10", "total_utilization": 0.2, "flexible_share": 0.1},
+    {"case_id": "G3-20-30", "total_utilization": 0.2, "flexible_share": 0.3},
+    {"case_id": "G3-40-10", "total_utilization": 0.4, "flexible_share": 0.1},
+    {"case_id": "G3-40-30", "total_utilization": 0.4, "flexible_share": 0.3},
+    {"case_id": "G3-60-10", "total_utilization": 0.6, "flexible_share": 0.1},
+    {"case_id": "G3-60-30", "total_utilization": 0.6, "flexible_share": 0.3}
+  ],
+  "native_reference": {
+    "source_csv": "ExecutableServiceCommitments_Revision_20260928/source_data/fig3_service_windows.csv",
+    "service_window_hours": 24,
+    "utilization": 0.05191486804809399,
+    "flexible_share": 1.0,
+    "seeds": [20260920, 20260921, 20260922]
+  },
+  "frozen_checkpoints": [
+    {"seed": 20260920, "epoch": 6},
+    {"seed": 20260921, "epoch": 2},
+    {"seed": 20260922, "epoch": 0}
+  ],
+  "frozen_controller": {
+    "eta": 0.0,
+    "safety": 0.9,
+    "current_coupling": true,
+    "continuous_cost": true,
+    "exact_action": false,
+    "opportunity_weight": 1.0,
+    "cost_bias_weight": 1.0
+  },
+  "structural_late_tolerance_it_mwh": 1e-8,
+  "smoke": {"case_id": "G3-40-10", "days": 7, "site_index": 0, "seed": 20260920}
+}

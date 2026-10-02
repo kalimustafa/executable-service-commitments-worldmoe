@@ -1,0 +1,19 @@
+extends: r_ecmoe_balanced.yaml
+
+schema: dcvpp.r_ecmoe.training.v1
+phase: r_ecmoe
+
+# Continue the frozen epoch-80 balanced lineage.  Full validation is performed
+# once per complete 13-decision curriculum cycle.  Four consecutive full
+# evaluations without a 0.05% decision-value improvement trigger early stop.
+training:
+  epochs: 300
+  early_stop_patience: 4
+  early_stop_min_relative_improvement: 0.0005
+
+selection:
+  sla_tolerance: 0.02
+
+outputs:
+  root: artifacts/r_ecmoe_balanced_continued
+  save_best_speed_feasible: true

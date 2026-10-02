@@ -1,0 +1,58 @@
+experiment: R2-WGR
+development_target_max_year: 2024
+seeds: [20260920, 20260921, 20260922]
+primary_seed: 20260920
+models: [A0_Base, A1_Shallow, A2_Deep_NoGate, A3_WGR]
+foundation: multiseed_20240829_epoch80
+d_model: 128
+attention_heads: 4
+attention_layers: 2
+dropout: 0.05
+world_blocks_one_based: [3, 6, 10]
+world_token_reduction: average time within each slot, preserve all 40 slot tokens per scale
+cache_precision: float16_storage_from_bfloat16_inference
+training:
+  batch_size: 4096
+  max_epochs: 100
+  patience: 12
+  warmup_epochs: 8
+  fusion_lr: 0.002
+  base_lr: 0.0003
+  weight_decay: 0.0001
+  gradient_clip: 1.0
+  shuffle_rule: separate CUDA generator, seed + epoch; identical rows across architectures
+  publication_states: duplicate each row at pre-DA and post-DA
+  sobol_samples: 64
+  sobol_seed_rule: model seed, unchanged formal implementation
+  precision: bfloat16_autocast
+  selection_score: mean(0.5 * normalized_DA_pinball + normalized_DART_pinball + 0.5 * normalized_RT_pinball)
+  regime_loss_weight: 0.05
+  selection_tie_break: lower raw weighted pinball, then fewer trainable parameters
+  min_improvement: 0.000001
+  w1_trainable: false
+  early_stop_during_warmup: false
+candidate_set:
+  - id: fixed_small_regularization
+    lambda_gate: 0.0001
+    lambda_res: 0.00001
+    world_modality_dropout: 0.10
+candidate_search_policy: single preregistered WGR setting; no expansion based on results
+calibration:
+  evaluation_precision: FP32
+  kind: native_affine
+  parameters: 24
+  epochs: 250
+  learning_rate: 0.02
+  log_width_bounds: [-2, 2]
+  shift_bounds: unbounded_as_in_formal_implementation
+evaluation_protocol: fp32_v1
+economics:
+  windows_h: [12, 24]
+  diagnostic_window_h: 7
+  policies: [point, interval]
+  interval: central_50_percent
+  selector: zero_late_first_then_value_minus_0.1_times_local_dates_times_service_adjusted_daily_CVaR95
+  executor: unchanged formal reservation schedule and accounting functions
+ablations:
+  seed: 20260920
+  variants: [normal, force_gate_0, force_gate_1, no_expert_tokens, late_scale_only]

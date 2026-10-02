@@ -1,0 +1,22 @@
+[
+  {
+    "path": "C:\\Users\\Kali\\Desktop\\电力市场\\R2_PAPER_INTEGRATION_20260923\\vendor\\economic_core.py",
+    "sha256": "c73b5d553e02f880b45479ee1fe507e4ef5cd8d5baba65b0ac4a3b6a0ea2658a"
+  },
+  {
+    "path": "C:\\Users\\Kali\\Desktop\\电力市场\\R2_PAPER_INTEGRATION_20260923\\vendor\\reservation.py",
+    "sha256": "3a9b4091abc141b9a8da6f05f9913fa849b7fcef6fdeaf4c936ec96d399b7949"
+  },
+  {
+    "path": "C:\\Users\\Kali\\Desktop\\电力市场\\R2_PAPER_INTEGRATION_20260923\\vendor\\forecast_provider.py",
+    "sha256": "374305c572621d62f006f11bb7150a37094f885a7850744a0db335b05d323559"
+  },
+  {
+    "path": "C:\\Users\\Kali\\Desktop\\电力市场\\R2_PAPER_INTEGRATION_20260923\\src\\reservation_state_cost.py",
+    "sha256": "49e58a92c879bbd1a5163323b98c40f700db265ec8a0090c560d07ffb6b12241"
+  },
+  {
+    "path": "C:\\Users\\Kali\\Desktop\\电力市场\\NatureEnergy_最终修订版_20260927\\NatureEnergy_Integrated_20260927.docx",
+    "sha256": "ab578b8fd98cbd8415f749377d7f06ef8a59a2673511d348d51ab8cbd180b103"
+  }
+]

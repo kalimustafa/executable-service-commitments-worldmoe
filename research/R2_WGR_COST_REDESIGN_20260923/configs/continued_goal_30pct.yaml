@@ -1,0 +1,32 @@
+status: measured_target_met_search_stopped
+user_stop_condition: at_least_30_percent_increase_in_savings_amount
+primary_seed: 20260920
+primary_window_h: 24
+fixed_reference_model: C0_Repaired
+fixed_reference_checkpoint_epoch: 11
+fixed_reference_policy: interval
+fixed_reference_savings_usd: 3343.471689255801
+target_savings_usd: 4346.513196032541
+reference_net_operating_cost_usd: 113379.79065664356
+target_denominator: savings_usd_not_total_operating_cost
+executor_changes_allowed: false
+service_constraint_changes_allowed: false
+locked_target_max_year: 2024
+additional_seeds_before_primary_evaluation: false
+truthfulness: report_actual_cost_risk_forecasting_and_failed_revisions
+next_revision:
+  name: gate_invocation_diagnostics
+  models:
+  - C0_Repaired
+  - C1_ProfileResidual
+  gates:
+  - normal
+  - force_gate_0
+  - force_gate_1
+  calibration: identical_frozen_native_calibrator
+  retraining: false
+  purpose: determine_whether_marginal_forecast_selection_suppresses_useful_world_residuals_for_the_unchanged_executor
+selected_model: C7_IssueSiteCost
+measured_savings_usd: 5158.850885212217
+measured_savings_gain_pct: 54.29623351650044
+additional_seeds_started: false

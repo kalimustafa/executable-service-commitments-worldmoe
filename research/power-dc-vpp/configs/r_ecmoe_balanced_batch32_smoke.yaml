@@ -1,0 +1,13 @@
+extends: r_ecmoe_balanced.yaml
+
+# Construction-only GPU capacity smoke.  It executes one true batch-32
+# optimizer step, then limits each DA/RT validation decision to four days.
+training:
+  epochs: 1
+  ra_epochs: 1
+  max_train_days: 32
+  max_validation_days: 4
+  smoke_max_days: 32
+
+outputs:
+  root: artifacts/r_ecmoe_balanced_smoke

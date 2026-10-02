@@ -1,0 +1,13 @@
+{
+  "forecast_epoch": 10,
+  "safety": 0.9,
+  "training_years": [
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "forecast_parameters_updated": false,
+  "features": "frozen shared R2 market, physical and workload-query representation; causal observer and known-work state",
+  "targets": "realized pre-2024 known-work current cost plus a perfect-information future-completion surrogate; future realizations are labels only",
+  "scope": "decision-focused continuation head; the forecast heads stay frozen"
+}

@@ -1,0 +1,15 @@
+{
+  "year": 2025,
+  "source_jobs": 977884,
+  "included_jobs": 977884,
+  "node_power_mw": 3.507276650693632e-05,
+  "mapping_development_year": 2024,
+  "development_eagle_it_mwh": 3006.506796152049,
+  "development_slotted_node_hours": 85721974.5,
+  "job_energy_mwh": 3089.844713546355,
+  "matched_fluid_energy_mwh": 3089.8447135463316,
+  "site_assignment": "job_id modulo 4",
+  "release_rounding": "ceil to next 15-minute boundary",
+  "runtime_rounding": "ceil to 15-minute slots",
+  "source": "external_validation/data/frontier_2025/parsed_jobs.parquet"
+}

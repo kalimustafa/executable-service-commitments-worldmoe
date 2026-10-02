@@ -1,0 +1,15 @@
+{
+  "source": "User color card codex-clipboard-ddd135b2-13a6-437c-867a-0c2483469a8a.png",
+  "hex": ["#B6B3D6", "#CFCCE3", "#D5D3DE", "#D5D1D1", "#F6DFD6", "#F8B2A2", "#F1837A", "#E9687A"],
+  "R2_point": "#B6B3D6",
+  "R2_interval": "#E9687A",
+  "RASC": "#F1837A",
+  "Published_DA": "#D5D1D1",
+  "Earliest_service": "#D5D3DE",
+  "all_primary_and_comparator_series_use_card": true,
+  "uncertainty": "#CFCCE3",
+  "secondary": "#D5D3DE",
+  "released_work": "#F8B2A2",
+  "heatmap": ["#F6DFD6", "#F8B2A2", "#F1837A", "#E9687A"],
+  "overlap_handling": "True difference strips, distinct line/marker styles, nested markers at coincident points, and annotated heatmaps; data coordinates remain unchanged"
+}

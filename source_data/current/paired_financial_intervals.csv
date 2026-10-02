@@ -1,0 +1,4 @@
+contrast,difference_usd,lower95_usd,upper95_usd,block_days,resamples,scope
+Joint WorldMoE vs earliest service,105271.06184163212,78261.97128230565,137854.63173172437,7,2000,same-calendar paired financial variability; not across-market inference
+Joint WorldMoE vs original RASC-ME,42908.9692914699,28683.083715235964,63147.87868065894,7,2000,same-calendar paired financial variability; not across-market inference
+Joint WorldMoE vs original Seasonal-ME,38284.04516655535,25669.853157803554,58049.79272759115,7,2000,same-calendar paired financial variability; not across-market inference

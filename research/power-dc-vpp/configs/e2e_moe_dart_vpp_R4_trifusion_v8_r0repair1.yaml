@@ -1,0 +1,226 @@
+schema_version: dcvpp.e2e_moe_trifusion_r4.v8.1
+
+project:
+  version: R4-V8.1
+  architecture_version: causal_trifusion_joint_moe_r4_v8
+  method_revision: v8_1_r0repair1
+  experiment_id: e2e_moe_trifusion_r4_v8_1_r0repair1_seed1
+  implementation_namespace: dcvpp.e2e_moe_r4_v8
+  output_root: artifacts/e2e_moe_trifusion_r4_v8_1_r0repair_2025final
+
+protocol:
+  active_seed: 20240813
+  seeds: [20240813, 20240829, 20240917]
+  phase_order: [r0, d0, p0, j1, j2, j3, c0]
+  splits:
+    train: {start: "2022-01-01", end: "2023-12-31", days: 722, role: development_fit}
+    validation: {start: "2024-01-01", end: "2024-12-31", days: 364, role: development_validation}
+    trainval_refit:
+      {start: "2022-01-01", end: "2024-12-31", days: 1086, role: frozen_method_refit, allowed_only_after_method_selection: true}
+    final_test:
+      start: "2025-01-01"
+      end: "2025-12-31"
+      days: 362
+      calendar_days: 365
+      missing_or_pending_days: 3
+      role: unique_final_test
+      sealed_until_all_methods_frozen: true
+      execute_once: true
+  locked:
+    year: 2025
+    reject_path_before_open: true
+    release_only_for_final_test_after_freeze: true
+
+lineage:
+  representation_checkpoint: artifacts/e2e_moe_hybrid_r4_v5_formal/seed=20240813/phase=representation/checkpoints/representation_seed20240813_selected_best.pt
+  source_residual_anchor: artifacts/e2e_moe_distributional_r4_v6_formal/capability/distribution/frozen_training_residual_baseline_n256.pt
+  frozen_residual_anchor: artifacts/e2e_moe_trifusion_r4_v8_1_r0repair_2025final/data/frozen_training_residual_anchor_2022_2023_722.pt
+  repair_parent_checkpoint: artifacts/e2e_moe_trifusion_r4_v8_2025final/seed=20240813/phase=r0/checkpoints/best.pt
+  repair_parent_gate: artifacts/e2e_moe_trifusion_r4_v8_2025final/seed=20240813/phase=r0/gate.json
+  predecessor_v7_failure_read_only: artifacts/e2e_moe_joint_world_policy_r4_v7/seed=20240813/phase=d0/state.json
+
+data:
+  intervals_per_day: 96
+  verify_daily_hashes: false
+  zones: [WEST, CAPITL, N.Y.C., LONGIL]
+  zonal_features: 21
+  selection_bundle_root: artifacts/dart_value_select/counterfactual_inputs/v1/selection/daily_bundles
+  official_settlement_root: artifacts/dart_value_select/real_input_preparation/v1/official_rt_recovery/nyiso_replay_by_date/selection
+  frozen_physical_twin: artifacts/research/physical/run_id=paper-physical-v1/frozen_physical_artifact.json
+  frozen_physical_surrogate: artifacts/research/physical/run_id=paper-physical-v1/frozen_piecewise_surrogate.json
+  physical_calibration_manifest: artifacts/research/physical/run_id=paper-physical-v1/physical_calibration_manifest.json
+
+model:
+  parameter_groups: [representation, distribution_truth, decision, shared, router, frozen]
+  shared_tokens: 96
+  experts: 8
+  top_k: 2
+  hierarchical_router: true
+  policy_actions: [day_ahead, battery, compute]
+  migration: removed_from_scope
+  representation_repair:
+    enabled: true
+    baseline: causal_persistence
+    distribution_anchor_unchanged: true
+    detach_backbone: true
+    exact_price_identity: true
+    protected_outputs: [pv, pue]
+    residual_cap_quantile: 0.95
+    workload_zero_target_tolerance: 1.0e-6
+    workload_zero_threshold: 0.90
+    hidden_dim: 192
+  gradient_contract:
+    policy_to_distribution_truth: forbidden
+    policy_to_shared: closed_form_projected
+    distribution_to_shared: closed_form_projected
+    representation_to_shared: closed_form_projected
+    physical_core: frozen
+    baseline_anchor: frozen
+  runtime:
+    neural_actor: true
+    analytic_shield: true
+    external_solver: false
+
+sampling:
+  d0_warmup: 32
+  train: 64
+  calibration: 128
+  distribution_formal: 256
+  policy_formal: 512
+  common_paths_with_baseline: true
+
+training:
+  optimizer: adamw
+  microbatch_days:
+    representation: 181
+    distribution: 4
+    policy: 1
+    joint: 1
+  policy_reconditioned_origins_per_rollout: 8
+  learning_rates:
+    representation: 2.0e-4
+    distribution_truth: 1.0e-4
+    decision: 1.0e-4
+    shared: 5.0e-5
+    router: 2.5e-5
+  weight_decay: 1.0e-4
+  gradient_clip_norm: 1.0
+  precision: {neural_forward: bf16, scientific_scores: float32, shield: float32}
+  coverage_cycle:
+    days: 722
+    optimizer_updates: 4
+    update_day_counts: [181, 181, 180, 180]
+    each_day_exactly_once: true
+  gradient_router:
+    algorithm: sequential_closed_form_constraint_projection
+    passes: 2
+    epsilon: 1.0e-12
+    policy_truth_tolerance: 0.0
+  secondary_noninferiority_guard: 0.005
+  early_stopping:
+    patience_checks: 6
+    minimum_primary_improvement: 1.0e-3
+    feasible_candidates_only: true
+  phases:
+    r0:
+      min_cycles: 12
+      max_cycles: 30
+      primary_pattern: [representation]
+      active_tasks: [representation]
+      shared_updates: false
+      router_updates: false
+      trainable_subscope: ["representation.repair."]
+    d0:
+      min_cycles: 10
+      max_cycles: 40
+      primary_pattern: [distribution]
+      active_tasks: [distribution]
+      shared_updates: false
+    p0:
+      min_cycles: 10
+      max_cycles: 10
+      primary_pattern: [policy]
+      active_tasks: [policy]
+      shared_updates: false
+      horizons: [8, 24, 48, 96]
+    j1:
+      min_cycles: 10
+      max_cycles: 15
+      primary_pattern: [distribution, distribution, representation, policy]
+      active_tasks: [representation, distribution, policy]
+      shared_updates: true
+      shared_primary: distribution
+      shared_constraints: [representation]
+    j2:
+      min_cycles: 10
+      max_cycles: 25
+      primary_pattern: [representation, distribution, policy]
+      active_tasks: [representation, distribution, policy]
+      shared_updates: true
+      shared_primary: policy
+      shared_constraints: [representation, distribution]
+    j3:
+      min_cycles: 10
+      max_cycles: 15
+      primary_pattern: [policy, policy, representation, distribution]
+      active_tasks: [representation, distribution, policy]
+      shared_updates: true
+      shared_primary: policy
+      shared_constraints: [representation, distribution]
+    c0:
+      min_cycles: 5
+      max_cycles: 10
+      primary_pattern: [distribution]
+      active_tasks: [distribution]
+      shared_updates: false
+      trainable_subscope: ["distribution.log_scale_head", "distribution.tail_head"]
+
+losses:
+  representation:
+    objective: paired_daily_nmae_repair
+    baseline: causal_persistence
+    failed_outputs: [da, rt, dart, workload]
+    noninferiority_margin: 0.01
+    smooth_temperature: 0.05
+    tail_fraction: 0.10
+    tail_weight: 0.25
+    worst_head_temperature: 0.05
+    workload_zero_positive_weight: 8.04
+    workload_zero_focal_gamma: 2.0
+    workload_zero_raw: 1.0
+    workload_near_raw: 0.25
+    temporal: 0.0
+    router_health: 0.0
+  distribution:
+    primary: paired_energy_score
+    secondary_guard: [marginal_crps, interval90, interval95, tail, dependence]
+    coverage_is_training_loss: false
+  policy:
+    relative_cost: 1.0
+    ru_cvar: 0.25
+    sla: 10.0
+    terminal: 5.0
+    shield_intervention: 1.0
+    action_smoothness: 0.02
+    critic: 0.25
+
+capability_gates:
+  representation:
+    inherit_outputwise_paired_noninferiority: true
+    identity_tolerance: 1.0e-6
+  distribution:
+    energy_score_paired_one_sided_upper_strictly_below: 0.0
+    secondary_noninferiority_margin: 0.01
+    maximum_absolute_coverage_error: 0.03
+    identity_tolerance: 1.0e-6
+  policy:
+    daily_cost_paired_one_sided_upper_at_most: 0.0
+    maximum_normalized_sla_increase: 0.001
+    feasibility_fraction: 1.0
+    maximum_non_exogenous_rejected_origins: 0
+    formal_paths: 512
+  unified:
+    validation_days: 364
+    same_checkpoint_must_pass_all_three: true
+    candidate_top_k: 5
+    selection_order: [policy_cost_upper, distribution_energy_upper, representation_worst_upper, cvar, cycle]

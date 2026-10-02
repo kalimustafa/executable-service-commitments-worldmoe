@@ -1,0 +1,9 @@
+{
+  "seed": 20260920,
+  "work_conservation": true,
+  "economic_objective": "episode aggregate US-dollar cost difference divided by one training-only constant; no per-work-unit normalization",
+  "normalizer_usd": 38.104007720947266,
+  "pv_objective": "discrete-distribution CRPS",
+  "price_valuation_weights": "task-specific valuation, not advertised forecast probabilities",
+  "pv_distribution_queue_independent": true
+}

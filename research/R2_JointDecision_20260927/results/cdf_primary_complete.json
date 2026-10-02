@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "seed": 20260920,
+  "epochs": 12,
+  "best_epoch": 6,
+  "best_restored": true,
+  "early_stopped": false,
+  "best_2024_savings_usd": 52842.394584705944,
+  "capture_fraction": 0.7934837838748557,
+  "target_80_usd": 53276.34480609876,
+  "target_reached": false,
+  "other_seeds_active": false,
+  "only_primary_after_gate_correction": true,
+  "qp_regularization": 2.0,
+  "global_prediction_score_reference": 0.4193302094936371,
+  "seconds": 2822.5320101000034
+}

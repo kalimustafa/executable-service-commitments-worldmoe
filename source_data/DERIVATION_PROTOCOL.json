@@ -1,0 +1,18 @@
+{
+  "quarter_hours": 0.25,
+  "calendar_hours": 8760,
+  "sites": 4,
+  "time_column": "timestamp_utc; local date is America/New_York",
+  "high_price": "Top ceil(p*8760) hours of arithmetic mean across four zonal RT LMPs; stable chronological tie-break; ex-post diagnostic",
+  "top_price_cutoffs": {
+    "10": 120.85249999999999,
+    "5": 151.85000000000002,
+    "1": 246.73250000000002
+  },
+  "baseline": "Same-input earliest service",
+  "grid_import_equation": "max(0, PUE*(idle+k*compute)-PV)",
+  "same_grid_formula_recovered_from_archived_books": true,
+  "deadline_late_tolerance_mwh": 1e-08,
+  "financial_daily_account": "mtm_value_usd, including changes in valued service debt; both compared pathways use this field",
+  "forecast_and_control_models_refitted": false
+}

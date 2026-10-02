@@ -1,0 +1,97 @@
+{
+  "seed": 20260920,
+  "batch": 64,
+  "work_conservation": true,
+  "economic_objective": "aggregate episode USD difference divided by a single training-only constant",
+  "normalizer_usd": 38.104007720947266,
+  "market_scale": "exp(0.2*tanh(head(market-only R2 representation))); positive and initialized to one",
+  "apic_pre": "DA_new=s*DA; DART_new=s*DART-shift; RT_new=s*RT+shift",
+  "apic_post": "DA_anchor unchanged; DART_new=s*DART+(1-s)*DA_anchor-shift; RT_new=s*RT+shift",
+  "parent_checkpoint": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\R2_JointDecision_20260927\\checkpoints\\CdfR2_seed20260920_best.pt",
+  "parent_sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab",
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "physical_training_years": [
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "optimizer_reinitialized_for_new_objective": true,
+  "architecture": [
+    {
+      "module": "frozen WorldMoE and R2 feature cache",
+      "role": "retain pretrained market representations and original ordered forecast evidence"
+    },
+    {
+      "module": "market residual adapter",
+      "dimensions": [
+        128,
+        64,
+        128
+      ],
+      "trainable": true
+    },
+    {
+      "module": "APIC-compatible location-scale heads",
+      "shift_bound": 8,
+      "scale_log_bound": 0.2,
+      "queue_independent": true,
+      "initial_scale": 1
+    },
+    {
+      "module": "market and physical encoders",
+      "input_dimensions": [
+        135,
+        13
+      ],
+      "width": 64
+    },
+    {
+      "module": "bidirectional market-physical attention",
+      "heads": 4,
+      "hourly_tokens": 24
+    },
+    {
+      "module": "temporal transformer",
+      "layers": 2,
+      "width": 64,
+      "heads": 4,
+      "feedforward_width": 128
+    },
+    {
+      "module": "workload queries and slot refinement",
+      "work_features": 9,
+      "quarters": 96,
+      "query_width": 64,
+      "refinement_output": 128
+    },
+    {
+      "module": "continuous physical-cost decoder",
+      "distribution": "lower-clipped Gaussian PV",
+      "mean_price_PV_relation": "learned cross-moment approximation, not a full calibrated joint copula",
+      "training": "Gaussian-CDF derivatives and 15 slot segments",
+      "execution": "analytic expected grid and price-PV partial moments"
+    },
+    {
+      "module": "differentiable training allocator",
+      "type": "capped equality QP with implicit derivatives",
+      "unrolled_arrivals": 16,
+      "work_conserved": true
+    },
+    {
+      "module": "execution and accounting",
+      "capacity_deadline_and_queue_constraints": "deterministic",
+      "future_plan": "forecast-only and hypothetical; only the current service executes",
+      "reported_cash": "independently computed from realized prices and physics under the fixed ledger"
+    }
+  ],
+  "trainable_parameters": 227656,
+  "initial_forecast_equivalence_max_error": 0.0,
+  "float32_APIC_affine_test_max_error": 1.52587890625e-05,
+  "observed_first_epoch_train_and_validation_seconds": 61.64281770000525,
+  "paper_modified": false,
+  "candidate_status": "primary seed training; not yet accepted by the original 2025 80 percent gate"
+}

@@ -1,0 +1,71 @@
+frozen_before_locked_test: true
+family: H0-H6
+hypotheses:
+  H0:
+    direction: calibrated_physical_twin_improves_core_errors
+    confirmatory: true
+    evaluation_scope: chronologically_held_out_nlr_period
+    decision_rules:
+      component_closure_excess_mae_kw_max: 0.25
+      component_closure_residual_after_documented_load_kw_max: 0.25
+      ramp_mae_ratio_max: 1.0
+      source_day_coverage_min: 0.90
+      uncertainty_coverage_absolute_error_max: 0.10
+  H1:
+    direction: dgpt_e_improves_proper_scores_without_calibration_harm
+    confirmatory: true
+    decision_rules:
+      required_tasks: [nyiso_da, nyiso_rt]
+      advanced_proper_score_strictly_lower: true
+      maximum_absolute_calibration_error_harm: 0.02
+      tail_f1_not_lower: true
+  H2:
+    direction: cfc_w_improves_count_distribution_and_calibration
+    confirmatory: true
+    decision_rules:
+      required_tasks: [nlr_workload]
+      advanced_distribution_score_strictly_lower: true
+      minimum_interval_calibration_improvement: 0.0
+  H3:
+    direction: joint_flexibility_reduces_cost_and_cvar_with_sla
+    confirmatory: true
+    decision_rules:
+      comparators: [B0, B1, B2, B4]
+      scenario_regime: independent
+      reduced_scenario_count: 20
+      expected_primary_days: 96
+      holm_alpha: 0.05
+      cost_and_cvar_block_interval_upper_below_zero: true
+      maximum_sla_deterioration_work_units: 0.0
+  H4:
+    direction: tail_and_scenario_quality_explain_decision_value
+    confirmatory: true
+    decision_rules:
+      expected_primary_days: 96
+      expected_seed_count: 4
+      decision_value_definition: paired_B0_expected_total_cost_minus_B6_expected_total_cost
+      require_hash_traceable_da_rt_and_optimization_results: true
+      tail_and_scenario_quality_r2_strictly_exceeds_point_error_r2: true
+  H5:
+    direction: transfer_and_adverse_coupling_erode_value_and_stress_policy_helps
+    confirmatory: true
+    decision_rules:
+      adverse_regimes: [kappa_0_3, kappa_0_6]
+      reduced_scenario_count: 20
+      expected_primary_days: 96
+      holm_alpha: 0.05
+      adverse_erosion_block_interval_lower_above_zero: true
+      stress_policy_cvar_block_interval_upper_below_zero: true
+      maximum_expected_cost_premium_fraction: 0.05
+  H6:
+    direction: grid_constraints_improve_proxies_with_bounded_tradeoff
+    confirmatory: true
+    decision_rules:
+      scenario_regime: independent
+      reduced_scenario_count: 20
+      expected_primary_days: 96
+      holm_alpha: 0.05
+      rebound_and_concentration_block_interval_upper_below_zero: true
+      maximum_expected_cost_premium_fraction: 0.05
+      maximum_sla_deterioration_work_units: 0.0
+multiple_testing: holm

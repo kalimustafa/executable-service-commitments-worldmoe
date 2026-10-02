@@ -1,0 +1,19 @@
+extends: r_ecmoe_balanced.yaml
+
+schema: dcvpp.r_ecmoe.training.v1
+phase: r_ecmoe
+
+# A separately optimized deployment-Top-1 model.  All other architecture,
+# training, data, loss and selector settings remain identical to balanced.
+model:
+  active_top_k: 1
+
+comparison:
+  role: separately_trained_top1_conditional_tail
+  separately_retrained: true
+  primary_comparator: main_top2
+  same_checkpoint_intervention: false
+
+outputs:
+  root: artifacts/r_ecmoe_top1_retrained
+  save_best_speed_feasible: true
