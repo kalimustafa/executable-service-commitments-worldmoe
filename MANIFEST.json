@@ -13,29 +13,9 @@
       "sha256": "3b0f74a0fd7793ecb2d5dbca91d86206bdd79f4ab0a46688719440e3a229a92e"
     },
     {
-      "path": "figure_source/assets/Fig1_original_source.json",
-      "bytes": 762,
-      "sha256": "64db8bab4aeefa90aa0e84a758e9643b6b827742822b00b49048d780900f636f"
-    },
-    {
-      "path": "figure_source/assets/Fig1_original_v2.pdf",
-      "bytes": 2160874,
-      "sha256": "bf23fee1d70c8f3bacff772e3f345d3521c5f2cdcd6fe1296b0818342ffed910"
-    },
-    {
-      "path": "figure_source/assets/Fig1_original_v2.png",
-      "bytes": 1019700,
-      "sha256": "af0f83bc10e138a8dcd0dd4a47c5e45533a5694d7c7c004e59f1349fd3a11cbd"
-    },
-    {
-      "path": "figure_source/assets/Fig1_original_v2.svg",
-      "bytes": 2070850,
-      "sha256": "26d84b21297b64d2afc70430e2076ebcda77e7e37b48bf5a8aec3d6773da5581"
-    },
-    {
       "path": "figure_source/compact_figures.py",
-      "bytes": 13152,
-      "sha256": "b5aed462544ce127b2beaf4d84e8191673e86d3690072ccba2fb80cdd6b2134c"
+      "bytes": 13627,
+      "sha256": "0698316916a5314c8b78eb5721da02acbfa360016e47592c4ddee733b076fb06"
     },
     {
       "path": "figure_source/derive_existing_evidence.py",
@@ -46,111 +26,6 @@
       "path": "figure_source/derive_pdf_requests.py",
       "bytes": 4134,
       "sha256": "ea547561d39b72bc4c6fb53bcada927cafa1113c29b69044e1984f8d59c0d445"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/annual_diurnal_imports.csv",
-      "bytes": 3379,
-      "sha256": "c53d438fd237724d5d22bd024358874730641cd44ed8cc5ea1aed3c093f8d751"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/build_fig1.py",
-      "bytes": 14702,
-      "sha256": "ae41c72643f293ef69c1e4ffc46bf95c26fffaa7aed9b16d616c6a61f02ec193"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/figure_inputs.json",
-      "bytes": 2337,
-      "sha256": "49ac3c9f51f0628062359d163e6581cfdf4313af5704d9ebf16861b09026e90b"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/geography_source.json",
-      "bytes": 608,
-      "sha256": "f539e14ffa3e76fae1f9af3998b55d88b5e0270762e6055150ab2e148123fc6c"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/input_manifest.json",
-      "bytes": 1110,
-      "sha256": "b8cc560a33e78448d3a0c9cff8dcf160ac699613ba54ac613ef9a2396e5036c8"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/northeast_states.geojson",
-      "bytes": 664283,
-      "sha256": "4c8bc9543d2fbf08553327ffaea88d73eeac9832264bd7b07ea81f7c97219e19"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/prepare_inputs.py",
-      "bytes": 6166,
-      "sha256": "8e470f2682ca4e53ba9de6edf199c1907820b1e5ec1f4b4df2c85a973d3262ef"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010/README.md",
-      "bytes": 1266,
-      "sha256": "d2cd38053de9931281f7efb8e2c11273ae83a454896b8d88f93c0ae4a170e7f4"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/additional_input_manifest.json",
-      "bytes": 7275,
-      "sha256": "a63ed4c7954f19a892edd93a74702d6bebc98ef53cc3c32fbd734832b54d53bf"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/annual_diurnal_imports.csv",
-      "bytes": 3379,
-      "sha256": "c53d438fd237724d5d22bd024358874730641cd44ed8cc5ea1aed3c093f8d751"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/build_fig1.py",
-      "bytes": 15253,
-      "sha256": "453261c9254d405af157c086943916202548f8711d28bf127cde032458287830"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/comparison_diurnal_imports.csv",
-      "bytes": 4406,
-      "sha256": "77eb45f7e096f60adbff33bb0ed4dc8d9ac8afd49b7451051240cb75f8bc4ff2"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/comparison_models.csv",
-      "bytes": 2253,
-      "sha256": "6a0e136e6032470b8576e42aba3d64f38bf358d2d7d59a1b8f78067bed7ee49f"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/figure_inputs.json",
-      "bytes": 2337,
-      "sha256": "49ac3c9f51f0628062359d163e6581cfdf4313af5704d9ebf16861b09026e90b"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/geography_source.json",
-      "bytes": 608,
-      "sha256": "f539e14ffa3e76fae1f9af3998b55d88b5e0270762e6055150ab2e148123fc6c"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/input_manifest.json",
-      "bytes": 1110,
-      "sha256": "b8cc560a33e78448d3a0c9cff8dcf160ac699613ba54ac613ef9a2396e5036c8"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/northeast_states.geojson",
-      "bytes": 664283,
-      "sha256": "4c8bc9543d2fbf08553327ffaea88d73eeac9832264bd7b07ea81f7c97219e19"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/palette.json",
-      "bytes": 402,
-      "sha256": "06ab0fe90f74b7133a8c75feb2307ded502c4ad5adcdcf98a053c6d075e6f08e"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/professional_architecture.py",
-      "bytes": 7553,
-      "sha256": "668a4bb6cc9321e3576e0da09fe37b4ccbbab903a44792bdca2098217e94ac34"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/README.md",
-      "bytes": 2736,
-      "sha256": "eeff7b8290c885bd3af6b4a1093eb493488235ac6ca824a4fc12e909de2865cb"
-    },
-    {
-      "path": "figure_source/Fig1_mechanism_20261010_v2/service_windows.csv",
-      "bytes": 2525,
-      "sha256": "d011c948aac8007b5f55668b7d089f8540df9768a3b0f770b47b2450efbc6b47"
     },
     {
       "path": "figure_source/Fig1_reference_20261010_v3/additional_input_manifest.json",
@@ -399,8 +274,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7413,
-      "sha256": "14f4ec0937d5ebc683d692331b94637e1ffb273103aa437ba2a71fef5c8f4982"
+      "bytes": 7812,
+      "sha256": "0037d432c62306dd4af40c90dadb67c8b0808f98566d1ceb4b54ad621a7668ae"
     },
     {
       "path": "requirements-figures.txt",

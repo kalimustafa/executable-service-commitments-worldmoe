@@ -18,7 +18,7 @@ Version: **v1.3.0**, 10 October 2026. This is a research software archive associ
 | `research/power-dc-vpp/` and other research folders | Upstream backbone, physical model and original supporting implementations |
 | `models/` | The three selected final decision-module checkpoints, with original bytes and SHA-256 hashes |
 | `source_data/` | Derived tabular results, daily accounts, source manifests and retained certificates |
-| `figure_source/` | Figure builders and archived Figure 1 artwork |
+| `figure_source/` | Current figure builders, drawing inputs and paper-result derivation scripts |
 | `figures/` | Figures used by the submission, with submission Extended Data numbering |
 
 ## Reproduce the figures and headline summaries
@@ -34,6 +34,8 @@ python tools/reproduce_figures.py
 The second command checks the release hashes and recalculates the nominal saving and certified capture fraction from the included result tables. The third writes figures to `reproduced_figures/`, preserving the released figures. Figure 1 is a Python-drawn mechanism figure with configured model-site coordinates on Census state outlines, archived three-refinement outcomes and full-year mean diurnal imports. The updated landscape figure centres the WorldMoE architecture: portfolio, market/weather observations, queue and service conditions enter as parallel inputs, followed by slot-cost decoding and a separate deterministic executor. Layer folds, stacked matrices and expert blocks depict structure rather than numerical observations. Three output groups retain measured 12/16/24 h outcomes and five archived pipeline comparisons, using the author's original eight-colour palette. A separate enlarged model architecture is included as `figures/main/WorldMoE_architecture_detail.{png,svg,pdf}`. Self-contained drawing source and inputs are in `figure_source/Fig1_reference_20261010_v3/`. Submission Extended Data Figure 1 is workload feasibility and Figure 2 is monthly savings; the original builder used the opposite numbering, which the wrapper maps explicitly.
 
 The retained nominal results are a three-refinement mean saving of approximately US$105,271, or 18.96% of the matched immediate-execution bill, and 79.39% of a US$132,605 certified ceiling. These are results from included records. Rebuilding the figures or summaries does **not** rerun training or independently validate the experiments.
+
+Repository cleanup removed two superseded Figure 1 source directories and the old Figure 1 artwork they replaced. The direct figure-builder entry points now use the same final WorldMoE-centred builder as the reproduction wrapper. Paper results, provenance data, research code, selected checkpoints and current figures are retained. This cleanup adds no new figures.
 
 ## Research code and full replay requirements
 

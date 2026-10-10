@@ -1,5 +1,5 @@
 """Compact displays requested by the author; existing results only."""
-import json,shutil
+import json,shutil,subprocess,sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -96,8 +96,12 @@ def ed2():
 
 def main():
     MANIFEST.clear();(F/'main').mkdir(parents=True,exist_ok=True)
-    for ext in ['png','pdf','svg']:shutil.copy2(ROOT/'figure_source/assets'/f'Fig1_original_v2.{ext}',F/'main'/f'Fig1.{ext}')
-    MANIFEST.append(dict(figure='Fig1',source_script='figure_source/assets/Fig1_original_v2.svg',sources=['Original v2 artwork'],comparison_scope='Restored architecture at author request',panels='original schematic',palette='Original v2',png_dpi=600))
+    builder=ROOT/'figure_source/Fig1_reference_20261010_v3/build_fig1.py'
+    subprocess.run([sys.executable,str(builder),'--output-dir',str(F/'main')],check=True)
+    for ext in ['png','pdf','svg']:
+        shutil.copy2(F/'main'/f'Fig1_mechanism_20261010_v3.{ext}',F/'main'/f'Fig1.{ext}')
+        shutil.copy2(F/'main'/f'WorldMoE_architecture_detail_20261010_v3.{ext}',F/'main'/f'WorldMoE_architecture_detail.{ext}')
+    MANIFEST.append(dict(figure='Fig1',source_script='figure_source/Fig1_reference_20261010_v3/build_fig1.py',sources=['figure_inputs.json','comparison_models.csv','comparison_diurnal_imports.csv','service_windows.csv'],comparison_scope='Archived full-pipeline comparisons; no architecture-isolated effect',panels='WorldMoE-centred architecture and parallel inputs',palette='Original eight-colour palette',png_dpi=450))
     for fn in [figure2,figure3,figure4,figure5,figure6,figure7,ed1,ed2]:print('Building',fn.__name__,flush=True);fn()
     for r in MANIFEST[1:]:r['source_script']='figure_source/compact_figures.py';r['palette']='Pink and purple';r['panels']=1 if r['figure'] in ['Fig2','Fig7','ExtendedDataFig1'] else 2
     (ROOT/'FIGURE_MANIFEST.json').write_text(json.dumps(MANIFEST,indent=2),encoding='utf-8')
