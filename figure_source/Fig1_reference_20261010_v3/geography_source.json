@@ -1,0 +1,9 @@
+{
+  "provider": "U.S. Census Bureau",
+  "dataset": "2024 cartographic state boundaries, 1:500,000",
+  "download_url": "https://www2.census.gov/geo/tiger/GENZ2024/kml/cb_2024_us_state_500k.zip",
+  "retrieved": "2026-10-10",
+  "archive_sha256": "70c21b67144e5005254dac6784236d2f5cb3a5f4e769234c4d4e79647f37f639",
+  "projection": "Albers equal-area conic; central meridian -74; latitude of origin 40; standard parallels 41 and 45 degrees",
+  "meaning": "State outlines; markers are configured modelled sites, not surveyed data-centre facilities. No grid lines or intermarket power flows are asserted."
+}
