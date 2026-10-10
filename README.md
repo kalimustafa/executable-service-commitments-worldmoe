@@ -2,9 +2,9 @@
 
 Code and derived source data for **Executable service commitments bound the electricity-market value of computing flexibility**.
 
-Author and contact: **Xiang Yi**, Northwest Minzu University, Lanzhou, Gansu, China. Email: **1130575372@gmail.com**.
+Author and contact: **Xiang Yi**, Northwest Minzu University, Lanzhou, Gansu, China. Email: **a1130575372@gmail.com**.
 
-Version: **v1.0.0**, 2 October 2026. This is a research software archive associated with a manuscript; it does not imply journal acceptance or publication.
+Version: **v1.1.0**, 10 October 2026. This is a research software archive associated with a manuscript; it does not imply journal acceptance or publication.
 
 ## Contents
 
@@ -31,7 +31,7 @@ python tools/verify_release.py
 python tools/reproduce_figures.py
 ```
 
-The second command checks the release hashes and recalculates the nominal saving, saving rate and certified capture fraction from the included result tables. The third writes figures to `reproduced_figures/`, preserving the released figures. Figure 1 is archived artwork rather than a numerical calculation. Submission Extended Data Figure 1 is workload feasibility and Figure 2 is monthly savings; the original builder used the opposite numbering, which the wrapper maps explicitly.
+The second command checks the release hashes and recalculates the nominal saving and certified capture fraction from the included result tables. The third writes figures to `reproduced_figures/`, preserving the released figures. Figure 1 is a Python-drawn mechanism figure with configured model-site coordinates on Census state outlines, archived three-refinement outcomes and full-year mean diurnal imports. Its self-contained source and inputs are in `figure_source/Fig1_mechanism_20261010/`. Submission Extended Data Figure 1 is workload feasibility and Figure 2 is monthly savings; the original builder used the opposite numbering, which the wrapper maps explicitly.
 
 The retained nominal results are a three-refinement mean saving of approximately US$105,271, or 18.96% of the matched immediate-execution bill, and 79.39% of a US$132,605 certified ceiling. These are results from included records. Rebuilding the figures or summaries does **not** rerun training or independently validate the experiments.
 

@@ -3,6 +3,7 @@ from pathlib import Path
 import importlib
 import json
 import shutil
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,8 +15,9 @@ compact = importlib.import_module('compact_figures')
 compact.F = OUTPUT
 base.MANIFEST.clear()
 (OUTPUT / 'main').mkdir(parents=True, exist_ok=True)
+subprocess.run([sys.executable, str(ROOT / 'figure_source/Fig1_mechanism_20261010/build_fig1.py'), '--output-dir', str(OUTPUT / 'main')], check=True)
 for ext in ['png', 'pdf', 'svg']:
-    shutil.copy2(ROOT / 'figure_source/assets' / f'Fig1_original_v2.{ext}', OUTPUT / 'main' / f'Fig1.{ext}')
+    shutil.copy2(OUTPUT / 'main' / f'Fig1_mechanism_20261010.{ext}', OUTPUT / 'main' / f'Fig1.{ext}')
 for fn in [compact.figure2, compact.figure3, compact.figure4, compact.figure5, compact.figure6, compact.figure7, compact.ed1, compact.ed2]:
     print('Building', fn.__name__, flush=True)
     fn()

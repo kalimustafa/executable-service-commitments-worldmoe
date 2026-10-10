@@ -1,0 +1,26 @@
+[
+  {
+    "path": "power-dc-vpp\\configs\\sites.yaml",
+    "sha256": "be86717f6b9a76d39429fc0ac8ac47b9bf81d27a5900c42ae90d997a469ef07e"
+  },
+  {
+    "path": "R2_PAPER_INTEGRATION_20260923\\configs\\economic_constraints.json",
+    "sha256": "7836fae0736bde2a8b7aed499d48033b803dff9c09532bd42bc6321f7024ed58"
+  },
+  {
+    "path": "revision_NE_20260930_Article_Submission\\source_data\\worldmoe_three_seed_results.csv",
+    "sha256": "d3094fbb2d44373ea12d0b60d3d455e4834678255d3fd321d26d75d538dc0257"
+  },
+  {
+    "path": "revision_NE_20260930_Article_Submission\\source_data\\current\\extensions\\certified_value_bounds.csv",
+    "sha256": "438b5bf9fe3a3df46165b34d6a40f1214b96d8d7282c90c5d65e1cfcf997d024"
+  },
+  {
+    "path": "revision_NE_20260930_Article_Submission\\source_data\\grid_metrics_all_models.csv",
+    "sha256": "15a2499765bc69804d59f50d879653b90efa2c4f3f33b4238908eaf5a17296c8"
+  },
+  {
+    "path": "revision_NE_20260930_Article_Submission\\source_data\\grid_metrics_inputs_2025.npz",
+    "sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72"
+  }
+]

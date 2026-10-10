@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "date": "2026-10-02",
+  "version": "1.1.0",
+  "date": "2026-10-10",
   "files": [
     {
       "path": ".gitignore",
@@ -9,8 +9,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 700,
-      "sha256": "98ca01eaf66fa63bbc69a85f7df1061a5ec9a87ffbedc29506775d87278e1dba"
+      "bytes": 701,
+      "sha256": "abd360fe00c9fd0a2489e670bf99ac95b49f0657180f89c5f730b7aaf1a4ea4a"
     },
     {
       "path": "figure_source/assets/Fig1_original_source.json",
@@ -46,6 +46,46 @@
       "path": "figure_source/derive_pdf_requests.py",
       "bytes": 4134,
       "sha256": "ea547561d39b72bc4c6fb53bcada927cafa1113c29b69044e1984f8d59c0d445"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/annual_diurnal_imports.csv",
+      "bytes": 3379,
+      "sha256": "c53d438fd237724d5d22bd024358874730641cd44ed8cc5ea1aed3c093f8d751"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/build_fig1.py",
+      "bytes": 14702,
+      "sha256": "ae41c72643f293ef69c1e4ffc46bf95c26fffaa7aed9b16d616c6a61f02ec193"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/figure_inputs.json",
+      "bytes": 2337,
+      "sha256": "49ac3c9f51f0628062359d163e6581cfdf4313af5704d9ebf16861b09026e90b"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/geography_source.json",
+      "bytes": 608,
+      "sha256": "f539e14ffa3e76fae1f9af3998b55d88b5e0270762e6055150ab2e148123fc6c"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/input_manifest.json",
+      "bytes": 1110,
+      "sha256": "b8cc560a33e78448d3a0c9cff8dcf160ac699613ba54ac613ef9a2396e5036c8"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/northeast_states.geojson",
+      "bytes": 664283,
+      "sha256": "4c8bc9543d2fbf08553327ffaea88d73eeac9832264bd7b07ea81f7c97219e19"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/prepare_inputs.py",
+      "bytes": 6166,
+      "sha256": "8e470f2682ca4e53ba9de6edf199c1907820b1e5ec1f4b4df2c85a973d3262ef"
+    },
+    {
+      "path": "figure_source/Fig1_mechanism_20261010/README.md",
+      "bytes": 1266,
+      "sha256": "d2cd38053de9931281f7efb8e2c11273ae83a454896b8d88f93c0ae4a170e7f4"
     },
     {
       "path": "figure_source/final_figures.py",
@@ -89,18 +129,18 @@
     },
     {
       "path": "figures/main/Fig1.pdf",
-      "bytes": 2160874,
-      "sha256": "bf23fee1d70c8f3bacff772e3f345d3521c5f2cdcd6fe1296b0818342ffed910"
+      "bytes": 264827,
+      "sha256": "10a1473377292cfd0e47d02ae671788eb555799364b5975fb24569a3fd626b31"
     },
     {
       "path": "figures/main/Fig1.png",
-      "bytes": 1019700,
-      "sha256": "af0f83bc10e138a8dcd0dd4a47c5e45533a5694d7c7c004e59f1349fd3a11cbd"
+      "bytes": 1655516,
+      "sha256": "510bd1d46eb05ee3c785a0df5a7b950d1e4186d69bffa9a09e0575e05f1291f3"
     },
     {
       "path": "figures/main/Fig1.svg",
-      "bytes": 2070850,
-      "sha256": "26d84b21297b64d2afc70430e2076ebcda77e7e37b48bf5a8aec3d6773da5581"
+      "bytes": 720494,
+      "sha256": "653c741e6bf06d94840971bf73df84fa8eec7142d6ad56059e237d2f63b33c26"
     },
     {
       "path": "figures/main/Fig2.pdf",
@@ -214,8 +254,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6628,
-      "sha256": "12cfdabd2b1c64c925fedf96bad6780535a0c654e75284f284cf25c1f47fe705"
+      "bytes": 6817,
+      "sha256": "7de0338bdf8e8317e551cfd56036cdcfee5f608694b2df0dfe1421a74dea5284"
     },
     {
       "path": "requirements-figures.txt",
@@ -5504,8 +5544,8 @@
     },
     {
       "path": "tools/reproduce_figures.py",
-      "bytes": 1269,
-      "sha256": "1a57d1a72e377fbce5afd83264d3fc7ed0c60c03c847f22f6a9e081ec03e2d7d"
+      "bytes": 1432,
+      "sha256": "d0e18f7dba44dd3450c257c307259d70a92638f247d21d3eab3972bbc193e8cd"
     },
     {
       "path": "tools/verify_release.py",

@@ -6,9 +6,9 @@ authors:
   - family-names: Xiang
     given-names: Yi
     affiliation: Northwest Minzu University
-    email: 1130575372@gmail.com
-version: 1.0.0
-date-released: 2026-10-02
+    email: a1130575372@gmail.com
+version: 1.1.0
+date-released: 2026-10-10
 repository-code: "https://github.com/kalimustafa/executable-service-commitments-worldmoe"
 url: "https://github.com/kalimustafa/executable-service-commitments-worldmoe"
 license: MIT
