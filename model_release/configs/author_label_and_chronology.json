@@ -1,0 +1,6 @@
+{
+  "epoch_label_source": "AppliedEnergy_Final_20261016/_build/revisions.json",
+  "epoch_correction": "Author display label for third refinement is 2; archived filename epoch00 and tensor bytes retained",
+  "chronology_source": "ExecutableServiceCommitments_Revision_20260928/source_data/author_chronology_correction.json",
+  "chronology_assertion": "Author-supplied correction: 2025 remained sealed through architecture and 2024 selection freeze; not an independent historical access reconstruction."
+}

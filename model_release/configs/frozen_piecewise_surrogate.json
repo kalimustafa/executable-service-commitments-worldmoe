@@ -1,0 +1,115 @@
+{
+  "acceptance": {
+    "accepted_for_optimization": true,
+    "extrapolation_policy": "linear_endpoint_extrapolation",
+    "gates": {
+      "locked_test": {
+        "above_training_knot_fraction": 0.8779424352664241,
+        "below_training_knot_fraction": 0.00032099293815536056,
+        "calibrated_observed_rmse_kw": 86.60658947689025,
+        "it_power_maximum_kw": 3910.538274922967,
+        "it_power_minimum_kw": 84.41014165228208,
+        "maximum_observed_rmse_excess_kw": 28.655201249549545,
+        "maximum_observed_rmse_ratio": 1.25,
+        "maximum_surrogate_vs_calibrated_mae_kw": 28.655201249549545,
+        "mean_calibrated_facility_kw": 2865.5201249549546,
+        "observed_error_gate": "rmse_ratio_or_absolute_excess_within_calibrated_approximation_allowance",
+        "observed_error_gate_passed": true,
+        "observed_rmse_excess_kw": 0.5023827716048572,
+        "observed_rmse_ratio_to_calibrated": 1.00580074535482,
+        "outside_training_knot_fraction": 0.8782634282045795,
+        "passed": true,
+        "row_count": 37384,
+        "surrogate_observed_rmse_kw": 87.1089722484951,
+        "surrogate_vs_calibrated_mae_kw": 1.6194552358172858
+      },
+      "validation": {
+        "above_training_knot_fraction": 0.04591139586433061,
+        "below_training_knot_fraction": 0.0023077156651383113,
+        "calibrated_observed_rmse_kw": 18.939086171159865,
+        "it_power_maximum_kw": 2343.6513333333337,
+        "it_power_minimum_kw": 138.57666666666665,
+        "maximum_observed_rmse_excess_kw": 12.648721025727427,
+        "maximum_observed_rmse_ratio": 1.25,
+        "maximum_surrogate_vs_calibrated_mae_kw": 12.648721025727427,
+        "mean_calibrated_facility_kw": 1264.8721025727427,
+        "observed_error_gate": "rmse_ratio_or_absolute_excess_within_calibrated_approximation_allowance",
+        "observed_error_gate_passed": true,
+        "observed_rmse_excess_kw": 1.9829983420073631,
+        "observed_rmse_ratio_to_calibrated": 1.1047040139152564,
+        "outside_training_knot_fraction": 0.04821911152946892,
+        "passed": true,
+        "row_count": 32933,
+        "surrogate_observed_rmse_kw": 20.922084513167228,
+        "surrogate_vs_calibrated_mae_kw": 2.292660616909764
+      }
+    },
+    "locked_test_used_to_fit_or_select": false,
+    "schema_version": 1,
+    "selection_policy": "thresholds_fixed_in_config_and_checked_on_validation_before_locked_test",
+    "status": "accepted",
+    "thresholds": {
+      "maximum_calibrated_approximation_mae_fraction": 0.01,
+      "maximum_observed_rmse_ratio_to_calibrated": 1.25,
+      "minimum_absolute_approximation_allowance_kw": 5.0
+    }
+  },
+  "calibration_model": "facility_ridge_selected_on_validation",
+  "clock_interpretation": "primary_raw_ts_assumed_utc",
+  "distillation_split": "train",
+  "domain_behavior": {
+    "above_last_knot": "linear_endpoint_extrapolation_using_last_segment",
+    "below_first_knot": "linear_endpoint_extrapolation_using_first_segment",
+    "facility_power_floor": "it_power_kw",
+    "locked_test_used_to_fit_or_select": false,
+    "within_knots": "linear_interpolation"
+  },
+  "evidence_role": "derived",
+  "facility_power_knots_kw": [
+    230.69976784532946,
+    558.5115701706553,
+    886.3233724959812,
+    1214.1351748213071,
+    1541.9469771466331,
+    1869.7587794719593
+  ],
+  "frozen": true,
+  "idle_facility_power_kw": 230.69976784532946,
+  "it_power_knots_kw": [
+    211.08020000000005,
+    534.1591466666663,
+    857.2380933333325,
+    1180.3170399999988,
+    1503.395986666665,
+    1826.4749333333314
+  ],
+  "measurement_relationship": "not_measured_by_this_study",
+  "milp_representation": "SOS2_piecewise_linear_segments_with_first_and_last_segment_rays",
+  "monotone": true,
+  "peak_facility_power_kw": 1869.7587794719593,
+  "reference_weather": {
+    "air_temp_c": 9.030666666666667,
+    "ghi_wm2": 3.2135846666666668,
+    "relative_humidity_pct": 37.53933333333334
+  },
+  "schema_version": 1,
+  "segment_slopes_kw_per_utilization": [
+    1639.0590116266294,
+    1639.0590116266299,
+    1639.0590116266294,
+    1639.0590116266303,
+    1639.0590116266305
+  ],
+  "selection_split": "validation",
+  "source_relationship": "third_party_referenced_public_data",
+  "synthetic": false,
+  "utilization_knots": [
+    0.0,
+    0.19999999999999998,
+    0.3999999999999999,
+    0.6,
+    0.7999999999999999,
+    1.0
+  ],
+  "x_axis": "normalized_it_power_between_train_q01_and_q99"
+}

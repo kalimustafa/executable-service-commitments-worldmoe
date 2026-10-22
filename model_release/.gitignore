@@ -1,0 +1,6 @@
+weights/
+__pycache__/
+*.pyc
+*.nbc
+*.nbi
+example_result.json

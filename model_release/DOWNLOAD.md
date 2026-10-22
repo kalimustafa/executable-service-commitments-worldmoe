@@ -1,0 +1,1 @@
+Download and extract [the full inference archive](https://github.com/kalimustafa/executable-service-commitments-worldmoe/releases/download/v1.4.0/worldmoe-v1.4.0-full-inference.zip) to obtain weights with the same relative paths. The ZIP SHA-256 is `5de96681364512d1d27f5dd1ec135d4f4ed93d5f214e952e2365f0c5f9cf097b`. Original v1.3.0 is retained.

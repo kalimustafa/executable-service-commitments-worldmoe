@@ -1,0 +1,48 @@
+{
+  "fixture": "synthetic_interface_test",
+  "scientific_performance_result": false,
+  "seed": 20260921,
+  "archive_epoch": 2,
+  "author_display_epoch": 2,
+  "upstream_parameters": 59156961,
+  "decision_parameters": 227527,
+  "action_work_units": [
+    0.05,
+    0.05,
+    0.05,
+    0.05
+  ],
+  "served_it_mwh": [
+    0.020488238334655764,
+    0.020488238334655764,
+    0.020488238334655764,
+    0.020488238334655764
+  ],
+  "remaining_work_units": [
+    2.0,
+    2.0,
+    2.0,
+    2.0
+  ],
+  "ledger_max_abs_residual": 2.220446049250313e-16,
+  "current_overdue_work": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "apic_post_quantile_identity_max_abs": 0.0,
+  "seconds": 6.4067345000003115,
+  "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
+  "loaded_weights": [
+    "weights/world_w1_inference.pt",
+    "weights/StructuredR2_seed20260920_epoch10.pt",
+    "weights/CdfR2_seed20260921_epoch02.pt"
+  ],
+  "ex_post_settlement_usd": [
+    0.744382793083787,
+    0.744382793083787,
+    0.744382793083787,
+    0.744382793083787
+  ]
+}

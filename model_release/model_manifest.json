@@ -1,0 +1,241 @@
+{
+  "schema": "worldmoe.frozen-inference-package.v1",
+  "version": "v1.4.0",
+  "training_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "physical_training_years": [
+    2022,
+    2023
+  ],
+  "selection_year": 2024,
+  "test_year": 2025,
+  "weights": [
+    {
+      "path": "weights/world_w1_inference.pt",
+      "role": "W0/W1 pretrained backbone, tokenizer, physical observation decoder and all inference buffers",
+      "parameters": 59156961,
+      "source_path": "power-dc-vpp/artifacts/r_ecmoe_multiseed_20260910/world_moe/run=multiseed-20260910-seed20240829/phase=w1/checkpoints/formal_primary_best.pt",
+      "source_sha256": "9732e47afa685318af5c4df70329ab36575a2020d0b43ded1bd3cd93bbc57d13",
+      "sha256": "90ae436d6e68fb9050b88d9c67d58b72051f6ad4a3d40b3fbb8ef927f42a8c67",
+      "export": "strict model load; complete inference state_dict without optimizer or RNG state",
+      "w0_parent_sha256": "d6b088ac798982eac8be4bda0ebe46500d0491cd1a4b495afbd33434050cbe12"
+    },
+    {
+      "path": "weights/StructuredR2_seed20260920_epoch10.pt",
+      "role": "frozen R2 profile residual, APIC copula and calibration, structured initial decoder",
+      "source_path": "R2_JointDecision_20260927/checkpoints/StructuredR2_seed20260920_epoch10.pt",
+      "source_sha256": "18bc1672ab7565c9fe1b5707b44fb71475da562496117674eec2d26748cf21a3",
+      "sha256": "2fd88e3581cd3f012cb671a1c26bce481931cda8bdc0de14101541a5737f9b68",
+      "export": "complete inference state_dict without optimizer or RNG state"
+    },
+    {
+      "path": "weights/CdfR2_seed20260920_epoch06.pt",
+      "role": "selected decision refinement 20260920 epoch6",
+      "source_path": "R2_JointDecision_20260927/checkpoints/CdfR2_seed20260920_epoch06.pt",
+      "source_sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab",
+      "sha256": "bd55a6a0e4174cf5a2021492bb75aec14b00ad199962a452581e796e9d8529d6",
+      "export": "complete inference state_dict without optimizer or RNG state"
+    },
+    {
+      "path": "weights/CdfR2_seed20260921_epoch02.pt",
+      "role": "selected decision refinement 20260921 epoch2",
+      "source_path": "R2_JointDecision_20260927/checkpoints/CdfR2_seed20260921_epoch02.pt",
+      "source_sha256": "2f281002e8ccafb859c197c7745c366e945e1b9ce8568e5ccd514ebdebf78448",
+      "sha256": "04153971e7ab004043abe9ff087ae983f23468947c48a7d64b1391abab5b9331",
+      "export": "complete inference state_dict without optimizer or RNG state"
+    },
+    {
+      "path": "weights/CdfR2_seed20260922_epoch00.pt",
+      "role": "selected decision refinement 20260922 epoch0",
+      "source_path": "R2_JointDecision_20260927/checkpoints/CdfR2_seed20260922_epoch00.pt",
+      "source_sha256": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17",
+      "sha256": "6eb62e87d30700796656dd7ce1e5e289d9ce79939249b447ccddf17c0d7a1f86",
+      "export": "complete inference state_dict without optimizer or RNG state"
+    }
+  ],
+  "upstream_stages": "W0 initialization followed by W1 training of the same backbone; W0 is not a separate final inference model",
+  "raw_provider_data_included": false,
+  "refinements": [
+    {
+      "seed": 20260920,
+      "archive_epoch": 6,
+      "author_display_epoch": 6
+    },
+    {
+      "seed": 20260921,
+      "archive_epoch": 2,
+      "author_display_epoch": 2
+    },
+    {
+      "seed": 20260922,
+      "archive_epoch": 0,
+      "author_display_epoch": 2,
+      "reason": "Author display correction from 16 October; original checkpoint bytes and experiment records unchanged"
+    }
+  ],
+  "chronology_evidence": "Author-supplied correction: 2025 remained sealed through architecture and 2024 selection freeze; not an independent historical access reconstruction.",
+  "preprocessing": {
+    "world_normalization": "configs/world_normalization.json",
+    "market_feature_order_and_scaler": "configs/r2_normalization.json",
+    "typed_tokenizer": "weights/world_w1_inference.pt",
+    "r2_apic_calibration_and_copula": "weights/StructuredR2_seed20260920_epoch10.pt",
+    "physical_observer": "configs/causal_observer.npz",
+    "seasonal_pv": "configs/solar_seasonal_envelope.npz",
+    "physical_constraints": "configs/frozen_physical_artifact.json"
+  },
+  "replication_levels": {
+    "1_full_model_inference": "verified portable loader plus synthetic one-decision fixture",
+    "2_executor_and_ledger": "verified original action kernel, current deadline and work conservation; full annual source retained",
+    "3_paper_statistics": "existing public source_data tables and tools; packaging does not rerun annual experiment",
+    "4_retraining_and_full_replay": "requires provider inputs and original complete-calendar preprocessing; not self-contained"
+  },
+  "minimal_example_results": [
+    {
+      "fixture": "synthetic_interface_test",
+      "scientific_performance_result": false,
+      "seed": 20260920,
+      "archive_epoch": 6,
+      "author_display_epoch": 6,
+      "upstream_parameters": 59156961,
+      "decision_parameters": 227527,
+      "action_work_units": [
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "served_it_mwh": [
+        0.020488238334655764,
+        0.020488238334655764,
+        0.020488238334655764,
+        0.020488238334655764
+      ],
+      "remaining_work_units": [
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "ledger_max_abs_residual": 2.220446049250313e-16,
+      "current_overdue_work": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "apic_post_quantile_identity_max_abs": 0.0,
+      "seconds": 14.91552029999957,
+      "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
+      "loaded_weights": [
+        "weights/world_w1_inference.pt",
+        "weights/StructuredR2_seed20260920_epoch10.pt",
+        "weights/CdfR2_seed20260920_epoch06.pt"
+      ],
+      "ex_post_settlement_usd": [
+        0.744382793083787,
+        0.744382793083787,
+        0.744382793083787,
+        0.744382793083787
+      ]
+    },
+    {
+      "fixture": "synthetic_interface_test",
+      "scientific_performance_result": false,
+      "seed": 20260921,
+      "archive_epoch": 2,
+      "author_display_epoch": 2,
+      "upstream_parameters": 59156961,
+      "decision_parameters": 227527,
+      "action_work_units": [
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "served_it_mwh": [
+        0.020488238334655764,
+        0.020488238334655764,
+        0.020488238334655764,
+        0.020488238334655764
+      ],
+      "remaining_work_units": [
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "ledger_max_abs_residual": 2.220446049250313e-16,
+      "current_overdue_work": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "apic_post_quantile_identity_max_abs": 0.0,
+      "seconds": 6.4067345000003115,
+      "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
+      "loaded_weights": [
+        "weights/world_w1_inference.pt",
+        "weights/StructuredR2_seed20260920_epoch10.pt",
+        "weights/CdfR2_seed20260921_epoch02.pt"
+      ],
+      "ex_post_settlement_usd": [
+        0.744382793083787,
+        0.744382793083787,
+        0.744382793083787,
+        0.744382793083787
+      ]
+    },
+    {
+      "fixture": "synthetic_interface_test",
+      "scientific_performance_result": false,
+      "seed": 20260922,
+      "archive_epoch": 0,
+      "author_display_epoch": 2,
+      "upstream_parameters": 59156961,
+      "decision_parameters": 227527,
+      "action_work_units": [
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "served_it_mwh": [
+        0.020488238334655764,
+        0.020488238334655764,
+        0.020488238334655764,
+        0.020488238334655764
+      ],
+      "remaining_work_units": [
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "ledger_max_abs_residual": 2.220446049250313e-16,
+      "current_overdue_work": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "apic_post_quantile_identity_max_abs": 0.0,
+      "seconds": 6.114187500000298,
+      "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
+      "loaded_weights": [
+        "weights/world_w1_inference.pt",
+        "weights/StructuredR2_seed20260920_epoch10.pt",
+        "weights/CdfR2_seed20260922_epoch00.pt"
+      ],
+      "ex_post_settlement_usd": [
+        0.744382793083787,
+        0.744382793083787,
+        0.744382793083787,
+        0.744382793083787
+      ]
+    }
+  ]
+}
