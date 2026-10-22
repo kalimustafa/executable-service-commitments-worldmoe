@@ -32,7 +32,7 @@
     0.0
   ],
   "apic_post_quantile_identity_max_abs": 0.0,
-  "seconds": 14.91552029999957,
+  "seconds": 8.162810100000115,
   "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
   "loaded_weights": [
     "weights/world_w1_inference.pt",

@@ -1,6 +1,6 @@
 # Reproduce the frozen WorldMoE system
 
-Download `worldmoe-v1.4.0-full-inference.zip` from the GitHub release and extract it into a clean folder. The archive is self-contained for the first two levels below. It intentionally excludes provider datasets. Verify `SHA256SUMS.txt` with `python verify_package.py`.
+Download `worldmoe-v1.4.1-full-inference.zip` from the GitHub release and extract it into a clean folder. The archive is self-contained for the first two levels below. It intentionally excludes provider datasets. Verify `SHA256SUMS.txt` with `python verify_package.py`.
 
 ## 1 Load all stages and run a decision
 
@@ -33,7 +33,7 @@ python tools/verify_release.py
 python tools/reproduce_figures.py
 ```
 
-These recalculate existing published statistics from derived annual/daily tables; they do not rerun training or regenerate provider inputs. The v1.4.0 model release preserves v1.3.0 and its checkpoint lineage.
+These recalculate existing published statistics from derived annual/daily tables; they do not rerun training or regenerate provider inputs. The v1.4.1 model release preserves v1.3.0 and its checkpoint lineage.
 
 ## 4 Full retraining and annual replay
 

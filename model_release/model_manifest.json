@@ -1,6 +1,6 @@
 {
   "schema": "worldmoe.frozen-inference-package.v1",
-  "version": "v1.4.0",
+  "version": "v1.4.1",
   "training_years": [
     2021,
     2022,
@@ -127,7 +127,7 @@
         0.0
       ],
       "apic_post_quantile_identity_max_abs": 0.0,
-      "seconds": 14.91552029999957,
+      "seconds": 8.162810100000115,
       "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
       "loaded_weights": [
         "weights/world_w1_inference.pt",
@@ -175,7 +175,7 @@
         0.0
       ],
       "apic_post_quantile_identity_max_abs": 0.0,
-      "seconds": 6.4067345000003115,
+      "seconds": 8.644163699999808,
       "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
       "loaded_weights": [
         "weights/world_w1_inference.pt",
@@ -223,7 +223,7 @@
         0.0
       ],
       "apic_post_quantile_identity_max_abs": 0.0,
-      "seconds": 6.114187500000298,
+      "seconds": 8.526274100000137,
       "input_time_contract": "all supplied feature availability times <= decision_at; historical source vintages remain caller responsibility",
       "loaded_weights": [
         "weights/world_w1_inference.pt",

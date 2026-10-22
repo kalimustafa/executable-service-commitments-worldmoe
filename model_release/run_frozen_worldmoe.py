@@ -29,8 +29,7 @@ def tensor(a,device,dtype=torch.float32):return torch.as_tensor(a,dtype=dtype,de
 
 def demo_inputs(normal,world_normal):
     """Deterministic synthetic inputs at the training median; no provider records."""
-    center=np.asarray(world_normal['fast_slot_feature_center'],np.float32)
-    x={key:np.broadcast_to(center,(1,n,40,8)).copy() for key,n in [('fast_raw',96),('medium_raw',4),('slow_raw',2)]}
+    x={key+'_raw':np.broadcast_to(np.asarray(world_normal[key+'_slot_feature_center'],np.float32),(1,n,40,8)).copy() for key,n in [('fast',96),('medium',4),('slow',2)]}
     x['market_raw']=np.broadcast_to(np.asarray(normal['feature_center'],np.float32),(24,4,len(normal['feature_names']))).copy()
     names=normal['feature_names']
     for h in range(24):
@@ -59,10 +58,9 @@ def issue_guard(meta):
     # Supplied timestamps enforce the input contract, not retrospective source-vintage proof.
 
 def make_packet(x,stats,device):
-    center=np.asarray(stats['fast_slot_feature_center'],np.float32)
-    scale=np.asarray(stats['fast_slot_feature_scale'],np.float32)
-    values={key:tensor((x[key+'_raw']-center)/np.maximum(scale,1e-8),device) for key in ['fast','medium','slow']}
+    values={key:tensor((x[key+'_raw']-np.asarray(stats[key+'_slot_feature_center'],np.float32))/np.maximum(np.asarray(stats[key+'_slot_feature_scale'],np.float32),1e-8),device) for key in ['fast','medium','slow']}
     masks={key:tensor(x.get(key+'_mask',np.ones(values[key].shape[:-1],bool)),device,torch.bool) for key in values}
+    values={key:torch.where(masks[key][...,None],value,torch.zeros_like(value)) for key,value in values.items()}
     # The synthetic topology is deliberately simple; a caller may supply the
     # actual registered graph arrays for a real observation packet.
     edges=np.asarray(x.get('graph_edge_index',np.stack([np.arange(40)]*2)),np.int64);nedge=edges.shape[1]
@@ -73,6 +71,10 @@ def make_packet(x,stats,device):
             object.__setattr__(c,f.name,tensor(x['constraint_'+f.name],device,torch.bool if f.name=='migration_allowed' else torch.float32))
     fast=values['fast'];n=fast.shape[1]
     packet=WorldInputPacket(fast_values=fast,fast_mask=masks['fast'],medium_values=values['medium'],medium_mask=masks['medium'],slow_values=values['slow'],slow_mask=masks['slow'],entity_ids=tensor(np.r_[np.tile(np.arange(8),4),np.arange(8,16)],device,torch.long),node_ids=tensor(np.r_[np.repeat(np.arange(4),8),np.full(8,4)],device,torch.long),source_ids=tensor(x.get('source_ids',np.zeros((1,n,40))),device,torch.long),quality_ids=tensor(x.get('quality_ids',np.zeros((1,n,40))),device,torch.long),graph_edge_index=tensor(edges,device,torch.long),graph_edge_type=tensor(x.get('graph_edge_type',np.zeros(nedge)),device,torch.long),graph_edge_features=tensor(x.get('graph_edge_features',np.zeros((nedge,6))),device),graph_edge_mask=tensor(x.get('graph_edge_mask',np.ones(nedge,bool)),device,torch.bool),previous_actions=tensor(x.get('previous_actions',np.zeros((1,n,4,6))),device),action_mask=tensor(x.get('action_mask',np.zeros((1,n,4,6),bool)),device,torch.bool),constraint_slacks=tensor(x.get('constraint_slacks',np.zeros((1,n,4,8))),device),constraints=c,origin_index=torch.zeros(1,dtype=torch.long,device=device),dt_hours=torch.full((1,n),.25,device=device))
+    for name in ['medium_source_ids','medium_quality_ids','slow_source_ids','slow_quality_ids','dynamic_graph_edge_features','dynamic_graph_edge_mask','known_future_mask']:
+        if name in x:
+            dtype=torch.bool if name.endswith('mask') else (torch.long if name.endswith('ids') else torch.float32)
+            object.__setattr__(packet,name,tensor(x[name],device,dtype))
     return packet.validate(WorldMoEConfig()),c
 
 def reduce_world(world,state,capture):
