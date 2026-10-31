@@ -6,7 +6,7 @@ TARGET=REPO/'revisions/20261031_seven_windows'
 assert (REPO/'.git').exists() and TARGET.resolve().is_relative_to(REPO.resolve())
 shutil.copytree(ROOT/'publication_package',TARGET,dirs_exist_ok=True)
 p=REPO/'README.md';s=p.read_text(encoding='utf-8')
-a=s.index('## Current manuscript and complete contract-value evidence');b=s.index('## Contents',a)
+a=s.index('## Current manuscript');b=s.index('## Contents',a)
 new='''## Current manuscript and completed seven-window evidence
 
 - [Current main manuscript](revisions/20261031_seven_windows/manuscript/EnergyEconomics_Seven_Window_Revision_20261031.docx), **18 pages**, with six readable figures in the original purple/pink palette and a concise economic literature comparison.
