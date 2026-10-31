@@ -1,0 +1,132 @@
+{
+  "run_date": "2026-10-31",
+  "protocol": "fixed 96-slot neural forecast with explicitly declared deterministic continuation beyond slot 95",
+  "started_epoch": 1793435886.5920951,
+  "python_executable": "C:\\Users\\Kali\\anaconda3\\python.exe",
+  "runs": {
+    "s20260920_w24": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 403.198278427124,
+      "log": "logs\\s20260920_w24.log",
+      "started_epoch": 1793435886.5928068,
+      "completed_epoch": 1793436289.791215
+    },
+    "s20260921_w24": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 399.3381013870239,
+      "log": "logs\\s20260921_w24.log",
+      "started_epoch": 1793435886.59318,
+      "completed_epoch": 1793436285.9314249
+    },
+    "s20260922_w24": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 401.3550765514374,
+      "log": "logs\\s20260922_w24.log",
+      "started_epoch": 1793435886.5934398,
+      "completed_epoch": 1793436287.9486597
+    },
+    "s20260921_w8": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 406.5559678077698,
+      "log": "logs\\s20260921_w8.log",
+      "started_epoch": 1793436285.9341638,
+      "completed_epoch": 1793436692.490279
+    },
+    "s20260922_w8": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 406.62242436408997,
+      "log": "logs\\s20260922_w8.log",
+      "started_epoch": 1793436287.951687,
+      "completed_epoch": 1793436694.5742126
+    },
+    "s20260920_w8": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 406.6619596481323,
+      "log": "logs\\s20260920_w8.log",
+      "started_epoch": 1793436289.793372,
+      "completed_epoch": 1793436696.4554625
+    },
+    "s20260921_w20": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 402.2015278339386,
+      "log": "logs\\s20260921_w20.log",
+      "started_epoch": 1793436692.4916997,
+      "completed_epoch": 1793437094.6933928
+    },
+    "s20260922_w20": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 402.70521807670593,
+      "log": "logs\\s20260922_w20.log",
+      "started_epoch": 1793436694.57632,
+      "completed_epoch": 1793437097.2816484
+    },
+    "s20260920_w20": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 403.6826319694519,
+      "log": "logs\\s20260920_w20.log",
+      "started_epoch": 1793436696.4576097,
+      "completed_epoch": 1793437100.1403232
+    },
+    "s20260921_w36": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 5.792737007141113,
+      "log": "logs\\s20260921_w36.log",
+      "started_epoch": 1793437094.6950169,
+      "completed_epoch": 1793437100.4878678
+    },
+    "s20260922_w36": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 5.874848127365112,
+      "log": "logs\\s20260922_w36.log",
+      "started_epoch": 1793437097.2839324,
+      "completed_epoch": 1793437103.1588619
+    },
+    "s20260920_w36": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 5.748427629470825,
+      "log": "logs\\s20260920_w36.log",
+      "started_epoch": 1793437100.142117,
+      "completed_epoch": 1793437105.890628
+    },
+    "s20260921_w48": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 260.6115005016327,
+      "log": "logs\\s20260921_w48.log",
+      "started_epoch": 1793437100.489924,
+      "completed_epoch": 1793437361.101569
+    },
+    "s20260922_w48": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 260.26055359840393,
+      "log": "logs\\s20260922_w48.log",
+      "started_epoch": 1793437103.160303,
+      "completed_epoch": 1793437363.4209476
+    },
+    "s20260920_w48": {
+      "status": "complete",
+      "exit_code": 0,
+      "seconds": 260.0035140514374,
+      "log": "logs\\s20260920_w48.log",
+      "started_epoch": 1793437105.8920422,
+      "completed_epoch": 1793437365.8956606
+    }
+  },
+  "updated_epoch": 1793437365.8956668,
+  "status": "complete",
+  "errors": [],
+  "completed_epoch": 1793437365.9010665
+}

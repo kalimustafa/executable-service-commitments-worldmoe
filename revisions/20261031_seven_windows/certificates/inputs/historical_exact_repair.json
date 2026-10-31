@@ -1,0 +1,695 @@
+{
+  "scope": "Exact feasible numerical repairs of recovered historical trajectories, not new trained-policy runs and not substitutions for the raw historical outputs.",
+  "original_inputs_preserved": true,
+  "all_nine_exact_feasible": true,
+  "terminal_policy_and_reference_cost_difference_exact": "0/1",
+  "mean_repaired_savings_usd_exact": {
+    "12": "844408522726093210344253244488230622434727071033267511/11692013098647223345629478661730264157247460343808",
+    "16": "1508945857107174556764196246503096218374016374165563575/17538019647970835018444217992595396235871190515712",
+    "24": "615415316980432282273993768801445412847025904724567045/5846006549323611672814739330865132078623730171904"
+  },
+  "mean_repaired_savings_enclosure": {
+    "12": {
+      "lower_integer": 72220969614188,
+      "upper_integer": 72220969614189,
+      "scale": 1000000000,
+      "lower": 72220.969614188,
+      "upper": 72220.969614189
+    },
+    "16": {
+      "lower_integer": 86038554374738,
+      "upper_integer": 86038554374739,
+      "scale": 1000000000,
+      "lower": 86038.554374738,
+      "upper": 86038.554374739
+    },
+    "24": {
+      "lower_integer": 105271061841632,
+      "upper_integer": 105271061841633,
+      "scale": 1000000000,
+      "lower": 105271.061841632,
+      "upper": 105271.061841633
+    }
+  },
+  "paired_12_to_24_mean_increment_exact": "386422111234771354203734293114660203259324738415866579/11692013098647223345629478661730264157247460343808",
+  "paired_12_to_24_mean_increment_enclosure": {
+    "lower_integer": 33050092227443,
+    "upper_integer": 33050092227444,
+    "scale": 1000000000,
+    "lower": 33050.092227443,
+    "upper": 33050.092227444
+  },
+  "max_repair_cost_bound_usd": 1.6562676474379727e-08,
+  "rows": [
+    {
+      "seed": 20260920,
+      "window_h": 12,
+      "exact_repaired_saving_usd": "423026654685180286275939259426027251920636613974717137/5846006549323611672814739330865132078623730171904",
+      "repaired_saving_lower_1e9": 72361645700538,
+      "repaired_saving_upper_1e9": 72361645700539,
+      "repair_l1_work_exact": "23104147689/2361183241434822606848",
+      "repair_l1_work": 9.784987155406151e-12,
+      "repair_cost_bound_usd_exact": "1262122526359940803409453224138041667947/91343852333181432387730302044767688728495783936",
+      "repair_cost_bound_usd": 1.3817268421702683e-08,
+      "observed_cost_change_usd_exact": "-178434238042566351078161469656468402855/5846006549323611672814739330865132078623730171904",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "39c2cad40a2899ab82cab8e00ec8fa2b696b231442e48f0774bf233b1cf81468"
+    },
+    {
+      "seed": 20260920,
+      "window_h": 16,
+      "exact_repaired_saving_usd": "31516309260278405421748331644590246118083155269667663/365375409332725729550921208179070754913983135744",
+      "repaired_saving_lower_1e9": 86257335483621,
+      "repaired_saving_upper_1e9": 86257335483622,
+      "repair_l1_work_exact": "762740447/147573952589676412928",
+      "repair_l1_work": 5.16853031049978e-12,
+      "repair_cost_bound_usd_exact": "73365636339152076606365334387576226785/11417981541647679048466287755595961091061972992",
+      "repair_cost_bound_usd": 6.425447096016675e-09,
+      "observed_cost_change_usd_exact": "-6059641602652684557008272304060706123/365375409332725729550921208179070754913983135744",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "53b650fcdf279f368fa6df2455f77b9ac594e1869b86e13a8936159661138ec9"
+    },
+    {
+      "seed": 20260920,
+      "window_h": 24,
+      "exact_repaired_saving_usd": "308568785836460777531631265083724343637481077605093193/2923003274661805836407369665432566039311865085952",
+      "repaired_saving_lower_1e9": 105565665461720,
+      "repaired_saving_upper_1e9": 105565665461721,
+      "repair_l1_work_exact": "2746687085/590295810358705651712",
+      "repair_l1_work": 4.653068913585746e-12,
+      "repair_cost_bound_usd_exact": "119728827834963960372684270768329317371/22835963083295358096932575511191922182123945984",
+      "repair_cost_bound_usd": 5.242994455642044e-09,
+      "observed_cost_change_usd_exact": "-39220001894210966599606746438335939911/2923003274661805836407369665432566039311865085952",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "e28710807fefaa9328ead73ba6f637905868b3828b1a3462e5e620ced294eaba"
+    },
+    {
+      "seed": 20260921,
+      "window_h": 12,
+      "exact_repaired_saving_usd": "105374236758071524824375253038723519472680841720751169/1461501637330902918203684832716283019655932542976",
+      "repaired_saving_lower_1e9": 72099978588127,
+      "repaired_saving_upper_1e9": 72099978588128,
+      "repair_l1_work_exact": "3388843139/590295810358705651712",
+      "repair_l1_work": 5.740923583619369e-12,
+      "repair_cost_bound_usd_exact": "89930753822689445594566177997594903129/11417981541647679048466287755595961091061972992",
+      "repair_cost_bound_usd": 7.876239201706744e-09,
+      "observed_cost_change_usd_exact": "-25775533047969882427328094099177527849/1461501637330902918203684832716283019655932542976",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "2ae56d5504dd7272129835230cd9aefd55dbeff69314ada2941d464a87c2e741"
+    },
+    {
+      "seed": 20260921,
+      "window_h": 16,
+      "exact_repaired_saving_usd": "1003571460899371161620738370624151345225015229160409851/11692013098647223345629478661730264157247460343808",
+      "repaired_saving_lower_1e9": 85833932311920,
+      "repaired_saving_upper_1e9": 85833932311921,
+      "repair_l1_work_exact": "15714239575/4722366482869645213696",
+      "repair_l1_work": 3.3276196652681035e-12,
+      "repair_cost_bound_usd_exact": "1547961513162478747107553931109032874201/365375409332725729550921208179070754913983135744",
+      "repair_cost_bound_usd": 4.236632990680667e-09,
+      "observed_cost_change_usd_exact": "-164499517628837147556831802111254002661/11692013098647223345629478661730264157247460343808",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "413cbf7894de74a10750843d6944856bc6e3b28ecea8dc24f9d955b752e71c5c"
+    },
+    {
+      "seed": 20260921,
+      "window_h": 24,
+      "exact_repaired_saving_usd": "613851250295592331164663586911102287637771557797577377/5846006549323611672814739330865132078623730171904",
+      "repaired_saving_lower_1e9": 105003517378305,
+      "repaired_saving_upper_1e9": 105003517378306,
+      "repair_l1_work_exact": "4487140631/1180591620717411303424",
+      "repair_l1_work": 3.800755953420451e-12,
+      "repair_cost_bound_usd_exact": "450672801262389612897075277113284616409/91343852333181432387730302044767688728495783936",
+      "repair_cost_bound_usd": 4.933805502515235e-09,
+      "observed_cost_change_usd_exact": "-78258692998005088986428740376190924355/5846006549323611672814739330865132078623730171904",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "994606df50b0207480ed05b70cd1f2f946fe0a669aad9e84437ac753a09238ff"
+    },
+    {
+      "seed": 20260922,
+      "window_h": 12,
+      "exact_repaired_saving_usd": "844178364743346859885879190302849207681461251384358907/11692013098647223345629478661730264157247460343808",
+      "repaired_saving_lower_1e9": 72201284553899,
+      "repaired_saving_upper_1e9": 72201284553900,
+      "repair_l1_work_exact": "31297223675/2361183241434822606848",
+      "repair_l1_work": 1.3254889805156157e-11,
+      "repair_cost_bound_usd_exact": "1512898674117999833937843189692078147233/91343852333181432387730302044767688728495783936",
+      "repair_cost_bound_usd": 1.6562676474379727e-08,
+      "observed_cost_change_usd_exact": "-471390790398139842719182051917159225781/11692013098647223345629478661730264157247460343808",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "f8d29328e4673126be90d6b66b32fe0d7e7798ce2f71f208ba2e38cf336b88c8"
+    },
+    {
+      "seed": 20260922,
+      "window_h": 16,
+      "exact_repaired_saving_usd": "1005798356986068978411707509755153215744356550541352083/11692013098647223345629478661730264157247460343808",
+      "repaired_saving_lower_1e9": 86024395328674,
+      "repaired_saving_upper_1e9": 86024395328675,
+      "repair_l1_work_exact": "18217488403/2361183241434822606848",
+      "repair_l1_work": 7.715406446782064e-12,
+      "repair_cost_bound_usd_exact": "55413578653712354457933747758760890315/5708990770823839524233143877797980545530986496",
+      "repair_cost_bound_usd": 9.706370333773698e-09,
+      "observed_cost_change_usd_exact": "-332977390476753275183406710793667387253/11692013098647223345629478661730264157247460343808",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "c60f4c85395833b78038e8be687a0c0517ca223e57827c55e6fb16676cbf635a"
+    },
+    {
+      "seed": 20260922,
+      "window_h": 24,
+      "exact_repaired_saving_usd": "153814282243195740148513797331446315907086000291484343/1461501637330902918203684832716283019655932542976",
+      "repaired_saving_lower_1e9": 105244002684870,
+      "repaired_saving_upper_1e9": 105244002684871,
+      "repair_l1_work_exact": "6182253629/1180591620717411303424",
+      "repair_l1_work": 5.236572512045464e-12,
+      "repair_cost_bound_usd_exact": "703814386043952395548503626609186307869/91343852333181432387730302044767688728495783936",
+      "repair_cost_bound_usd": 7.705109518227378e-09,
+      "observed_cost_change_usd_exact": "-9339411322531624473646612471825252001/730750818665451459101842416358141509827966271488",
+      "all_service_and_electrical_checks_exact": true,
+      "repaired_witness_sha256": "9277ec14abd8a5a029bf3666e503de00ab08541d823c40787b5a614d2fbe9bb1"
+    }
+  ],
+  "site_details": [
+    {
+      "seed": 20260920,
+      "window_h": 12,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "147573952589676412928",
+          "changed_slots": 1091,
+          "repair_l1_work_exact": "179311629/147573952589676412928",
+          "repair_l1_work": 1.2150628607107174e-12,
+          "cost_change_bound_usd_exact": "7505978162053769180797357747499860947/11417981541647679048466287755595961091061972992",
+          "cost_change_bound_usd": 6.573822294838474e-10,
+          "exact_raw_saving_usd": "441298215440704451216713074153331851007239309679787/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "7060771447051268190882722760336107518026060901760747/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "2361183241434822606848",
+          "changed_slots": 1381,
+          "repair_l1_work_exact": "8491845789/2361183241434822606848",
+          "repair_l1_work": 3.5964365831428447e-12,
+          "cost_change_bound_usd_exact": "319543930010965750523835366234738661011/91343852333181432387730302044767688728495783936",
+          "cost_change_bound_usd": 3.4982532688178368e-09,
+          "exact_raw_saving_usd": "1467813371679809823699469609559741465782366204099633/91343852333181432387730302044767688728495783936",
+          "exact_repaired_saving_usd": "93940055787507765221681721020486730106858114894863987/5846006549323611672814739330865132078623730171904",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "590295810358705651712",
+          "changed_slots": 1083,
+          "repair_l1_work_exact": "304882979/590295810358705651712",
+          "repair_l1_work": 5.164918565400819e-13,
+          "cost_change_bound_usd_exact": "2114808513635529512426994287186103655/2854495385411919762116571938898990272765493248",
+          "cost_change_bound_usd": 7.408694806246291e-10,
+          "exact_raw_saving_usd": "15940530915248359198511008746696763506088939920653943/730750818665451459101842416358141509827966271488",
+          "exact_repaired_saving_usd": "7970265457624178877916169803106974032626267412729847/365375409332725729550921208179070754913983135744",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "147573952589676412928",
+          "changed_slots": 1355,
+          "repair_l1_work_exact": "657736495/147573952589676412928",
+          "repair_l1_work": 4.456995855012507e-12,
+          "cost_change_bound_usd_exact": "25464278081756498595049224335417150075/2854495385411919762116571938898990272765493248",
+          "cost_change_bound_usd": 8.92076344277637e-09,
+          "exact_raw_saving_usd": "35418989257635642736714820194178293773046065033325/1427247692705959881058285969449495136382746624",
+          "exact_repaired_saving_usd": "72538089999637756740268519736570038573774866631044811/2923003274661805836407369665432566039311865085952",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260920,
+      "window_h": 16,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "147573952589676412928",
+          "changed_slots": 951,
+          "repair_l1_work_exact": "97634407/147573952589676412928",
+          "repair_l1_work": 6.615964761170871e-13,
+          "cost_change_bound_usd_exact": "4086972668164593251684896637930854201/11417981541647679048466287755595961091061972992",
+          "cost_change_bound_usd": 3.5794178272728404e-10,
+          "exact_raw_saving_usd": "70729582349977779019575160646703115494756816777225/5708990770823839524233143877797980545530986496",
+          "exact_repaired_saving_usd": "18106773081594309428947825771599283040118852254244103/1461501637330902918203684832716283019655932542976",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "73786976294838206464",
+          "changed_slots": 927,
+          "repair_l1_work_exact": "66053987/36893488147419103232",
+          "repair_l1_work": 1.7903969051682317e-12,
+          "cost_change_bound_usd_exact": "2485578650782213532557434489630210413/1427247692705959881058285969449495136382746624",
+          "cost_change_bound_usd": 1.7415187731498334e-09,
+          "exact_raw_saving_usd": "1716093505609417257909862288949135921509357635685211/91343852333181432387730302044767688728495783936",
+          "exact_repaired_saving_usd": "6864374022437666974496296103480291849944788515150741/365375409332725729550921208179070754913983135744",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "295147905179352825856",
+          "changed_slots": 953,
+          "repair_l1_work_exact": "72292515/36893488147419103232",
+          "repair_l1_work": 1.959492545436023e-12,
+          "cost_change_bound_usd_exact": "501454120841964817622931882042899175/178405961588244985132285746181186892047843328",
+          "cost_change_bound_usd": 2.8107475578607864e-09,
+          "exact_raw_saving_usd": "4747315981993898085883940390224119483450471445888227/182687704666362864775460604089535377456991567872",
+          "exact_repaired_saving_usd": "37978527855951173602719104174976657059710995988170019/1461501637330902918203684832716283019655932542976",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "147573952589676412928",
+          "changed_slots": 844,
+          "repair_l1_work_exact": "3491251/4611686018427387904",
+          "repair_l1_work": 7.57044383778438e-13,
+          "cost_change_bound_usd_exact": "135163833834718959112135323295766735/89202980794122492566142873090593446023921664",
+          "cost_change_bound_usd": 1.5152389822787714e-09,
+          "exact_raw_saving_usd": "1328826250431796052591224259955127635219081202764261/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "21261220006908735378670606108931938486361809387826783/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260920,
+      "window_h": 24,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "147573952589676412928",
+          "changed_slots": 505,
+          "repair_l1_work_exact": "281260897/147573952589676412928",
+          "repair_l1_work": 1.9058979722663856e-12,
+          "cost_change_bound_usd_exact": "11773570752188384179042955520144822271/11417981541647679048466287755595961091061972992",
+          "cost_change_bound_usd": 1.0311429134163227e-09,
+          "exact_raw_saving_usd": "2824769073733298507897182343120070766917390083130867/182687704666362864775460604089535377456991567872",
+          "exact_repaired_saving_usd": "11299076294933189367770554505913745932290395475758603/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "590295810358705651712",
+          "changed_slots": 615,
+          "repair_l1_work_exact": "436798211/590295810358705651712",
+          "repair_l1_work": 7.399649520374715e-13,
+          "cost_change_bound_usd_exact": "16436499252671373518165945680465494989/22835963083295358096932575511191922182123945984",
+          "cost_change_bound_usd": 7.197637863013874e-10,
+          "exact_raw_saving_usd": "1158717375752334748474272691396518879015638606390491/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "74157912048149416187862898968941074176845198935552523/2923003274661805836407369665432566039311865085952",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "295147905179352825856",
+          "changed_slots": 631,
+          "repair_l1_work_exact": "273434819/295147905179352825856",
+          "repair_l1_work": 9.264332024780646e-13,
+          "cost_change_bound_usd_exact": "1896669617445551278871600876186552455/1427247692705959881058285969449495136382746624",
+          "cost_change_bound_usd": 1.3289001111289947e-09,
+          "exact_raw_saving_usd": "2786830183378838702919250992275512786580847464063657/91343852333181432387730302044767688728495783936",
+          "exact_repaired_saving_usd": "44589282934061416462599998230205146279492115060914933/1461501637330902918203684832716283019655932542976",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "36893488147419103232",
+          "changed_slots": 667,
+          "repair_l1_work_exact": "19936739/18446744073709551616",
+          "repair_l1_work": 1.0807727868038242e-12,
+          "cost_change_bound_usd_exact": "771851143731046844288856250446708415/356811923176489970264571492362373784095686656",
+          "cost_change_bound_usd": 2.1631876447953394e-09,
+          "exact_raw_saving_usd": "781531271409810767418037170332626512077822538686803/22835963083295358096932575511191922182123945984",
+          "exact_repaired_saving_usd": "12504500342556971368435768953839749146561258330584549/365375409332725729550921208179070754913983135744",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260921,
+      "window_h": 12,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "147573952589676412928",
+          "changed_slots": 1285,
+          "repair_l1_work_exact": "19984459/18446744073709551616",
+          "repair_l1_work": 1.0833596931873746e-12,
+          "cost_change_bound_usd_exact": "836548715055502094563584513602535637/1427247692705959881058285969449495136382746624",
+          "cost_change_bound_usd": 5.861272148700871e-10,
+          "exact_raw_saving_usd": "1766670022127056304391097975512210488917752825326885/182687704666362864775460604089535377456991567872",
+          "exact_repaired_saving_usd": "7066680088508223298950217744345635436074419566359945/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "295147905179352825856",
+          "changed_slots": 1358,
+          "repair_l1_work_exact": "360536667/295147905179352825856",
+          "repair_l1_work": 1.221545742569009e-12,
+          "cost_change_bound_usd_exact": "13566815313046526773782079452102143733/11417981541647679048466287755595961091061972992",
+          "cost_change_bound_usd": 1.1881973414969068e-09,
+          "exact_raw_saving_usd": "5807455728648288500040252481272731913537063920987885/365375409332725729550921208179070754913983135744",
+          "exact_repaired_saving_usd": "23229822914593149076248125067192887277397656060536151/1461501637330902918203684832716283019655932542976",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "590295810358705651712",
+          "changed_slots": 1266,
+          "repair_l1_work_exact": "807065429/590295810358705651712",
+          "repair_l1_work": 1.3672220179058526e-12,
+          "cost_change_bound_usd_exact": "5598176867427259609625675349913193905/2854495385411919762116571938898990272765493248",
+          "cost_change_bound_usd": 1.9611791618361334e-09,
+          "exact_raw_saving_usd": "15940471626423039530384539516376380153606298098443255/730750818665451459101842416358141509827966271488",
+          "exact_repaired_saving_usd": "15940471626423035502863890679456448212023510221736391/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "147573952589676412928",
+          "changed_slots": 1259,
+          "repair_l1_work_exact": "152650211/73786976294838206464",
+          "repair_l1_work": 2.068796129957133e-12,
+          "cost_change_bound_usd_exact": "5909855164936232953221590129627462335/1427247692705959881058285969449495136382746624",
+          "cost_change_bound_usd": 4.140735483503616e-09,
+          "exact_raw_saving_usd": "1129065950425495846995294632708267966502252075463309/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "18065055206807929072249455561963232449543663042011173/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260921,
+      "window_h": 16,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "4722366482869645213696",
+          "changed_slots": 629,
+          "repair_l1_work_exact": "4284520007/4722366482869645213696",
+          "repair_l1_work": 9.072824022748064e-13,
+          "cost_change_bound_usd_exact": "179349849124534261327168465364282695001/365375409332725729550921208179070754913983135744",
+          "cost_change_bound_usd": 4.908645862404248e-10,
+          "exact_raw_saving_usd": "4445567662720956331858116754350019078423109421527185/365375409332725729550921208179070754913983135744",
+          "exact_repaired_saving_usd": "142258165207070565510592832635207939618384731705182779/11692013098647223345629478661730264157247460343808",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "73786976294838206464",
+          "changed_slots": 949,
+          "repair_l1_work_exact": "1781295/9223372036854775808",
+          "repair_l1_work": 1.9312839088375666e-13,
+          "cost_change_bound_usd_exact": "67029244165762515659757150907572705/356811923176489970264571492362373784095686656",
+          "cost_change_bound_usd": 1.8785595382867243e-10,
+          "exact_raw_saving_usd": "850736391105110031977034769434471336256081732277789/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "3402945564420440026569186622705513933823698712361747/182687704666362864775460604089535377456991567872",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "295147905179352825856",
+          "changed_slots": 951,
+          "repair_l1_work_exact": "468354167/295147905179352825856",
+          "repair_l1_work": 1.586845641731371e-12,
+          "cost_change_bound_usd_exact": "3248719830201726566036541704378998315/1427247692705959881058285969449495136382746624",
+          "cost_change_bound_usd": 2.27621305454163e-09,
+          "exact_raw_saving_usd": "4748077218450423710989570690996413995973946943621827/182687704666362864775460604089535377456991567872",
+          "exact_repaired_saving_usd": "18992308873801689268425321795024280772208631525489939/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "147573952589676412928",
+          "changed_slots": 917,
+          "repair_l1_work_exact": "94500933/147573952589676412928",
+          "repair_l1_work": 6.403632303781694e-13,
+          "cost_change_bound_usd_exact": "3658605011566888037808120835112282505/2854495385411919762116571938898990272765493248",
+          "cost_change_bound_usd": 1.28169939606994e-09,
+          "exact_raw_saving_usd": "1326749365580333741450557961418371616106985590119655/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "21227989849285337882182027838462626342910979716014765/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260921,
+      "window_h": 24,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "1180591620717411303424",
+          "changed_slots": 441,
+          "repair_l1_work_exact": "1154839911/1180591620717411303424",
+          "repair_l1_work": 9.781874534212239e-13,
+          "cost_change_bound_usd_exact": "48341555988173630266704919233977289273/91343852333181432387730302044767688728495783936",
+          "cost_change_bound_usd": 5.292261575726552e-10,
+          "exact_raw_saving_usd": "22398394498167020514373231121645892240873464983479929/1461501637330902918203684832716283019655932542976",
+          "exact_repaired_saving_usd": "89593577992668062372533547161814002601057558184226713/5846006549323611672814739330865132078623730171904",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "73786976294838206464",
+          "changed_slots": 565,
+          "repair_l1_work_exact": "42947517/73786976294838206464",
+          "repair_l1_work": 5.820473904282267e-13,
+          "cost_change_bound_usd_exact": "1616093686506859593307221125346752883/2854495385411919762116571938898990272765493248",
+          "cost_change_bound_usd": 5.661574002767736e-10,
+          "exact_raw_saving_usd": "2309645354631908750130702749597491266233164679652985/91343852333181432387730302044767688728495783936",
+          "exact_repaired_saving_usd": "2309645354631908609352878157401388795137302446056033/91343852333181432387730302044767688728495783936",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "147573952589676412928",
+          "changed_slots": 645,
+          "repair_l1_work_exact": "84057077/73786976294838206464",
+          "repair_l1_work": 1.1391858187022666e-12,
+          "cost_change_bound_usd_exact": "583058531683125722022836557486413265/356811923176489970264571492362373784095686656",
+          "cost_change_bound_usd": 1.6340780501180935e-09,
+          "exact_raw_saving_usd": "1387268593453127869786733640588126357478267331543051/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "22196297495250043210382815994039564881242840127183803/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "73786976294838206464",
+          "changed_slots": 677,
+          "repair_l1_work_exact": "81264201/73786976294838206464",
+          "repair_l1_work": 1.1013352908687338e-12,
+          "cost_change_bound_usd_exact": "3146144737423692043854580049245147485/1427247692705959881058285969449495136382746624",
+          "cost_change_bound_usd": 2.204343894547712e-09,
+          "exact_raw_saving_usd": "3107343588195028125387449663438876411044958064363757/91343852333181432387730302044767688728495783936",
+          "exact_repaired_saving_usd": "12429374352780110756905206857705180193623995128018383/365375409332725729550921208179070754913983135744",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260922,
+      "window_h": 12,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "147573952589676412928",
+          "changed_slots": 1571,
+          "repair_l1_work_exact": "373402151/147573952589676412928",
+          "repair_l1_work": 2.5302713957810023e-12,
+          "cost_change_bound_usd_exact": "15630600238816100375549213698978569593/11417981541647679048466287755595961091061972992",
+          "cost_change_bound_usd": 1.3689460069455075e-09,
+          "exact_raw_saving_usd": "1771749373094391826177529042937232881851647892124761/182687704666362864775460604089535377456991567872",
+          "exact_repaired_saving_usd": "28347989969510253007788773696307821650450336894126071/2923003274661805836407369665432566039311865085952",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "2361183241434822606848",
+          "changed_slots": 1496,
+          "repair_l1_work_exact": "11070651991/2361183241434822606848",
+          "repair_l1_work": 4.688603491981709e-12,
+          "cost_change_bound_usd_exact": "416583123726796475610080969896287377209/91343852333181432387730302044767688728495783936",
+          "cost_change_bound_usd": 4.5606038401718376e-09,
+          "exact_raw_saving_usd": "727674543860981718459331298934313080989756465167723/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "186284683228411152508260135191749159718201840598658463/11692013098647223345629478661730264157247460343808",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "590295810358705651712",
+          "changed_slots": 1275,
+          "repair_l1_work_exact": "1507322237/590295810358705651712",
+          "repair_l1_work": 2.55350319373611e-12,
+          "cost_change_bound_usd_exact": "10455480033864899185962678251538529465/2854495385411919762116571938898990272765493248",
+          "cost_change_bound_usd": 3.662812028808417e-09,
+          "exact_raw_saving_usd": "15959126337841244629981899893526558993944019375122935/730750818665451459101842416358141509827966271488",
+          "exact_repaired_saving_usd": "15959126337841237703280295137540790370467562856297923/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "147573952589676412928",
+          "changed_slots": 1415,
+          "repair_l1_work_exact": "128482005/36893488147419103232",
+          "repair_l1_work": 3.482511723657336e-12,
+          "cost_change_bound_usd_exact": "4974182714039045166973146923083822425/713623846352979940529142984724747568191373312",
+          "cost_change_bound_usd": 6.970314598453965e-09,
+          "exact_raw_saving_usd": "1129514454029043048421908276840234100736428665479281/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "18072231264464680755873702382826007214623566094276837/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260922,
+      "window_h": 16,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "1180591620717411303424",
+          "changed_slots": 691,
+          "repair_l1_work_exact": "2108824499/1180591620717411303424",
+          "repair_l1_work": 1.7862438306300433e-12,
+          "cost_change_bound_usd_exact": "88275315579771909850624514556137141357/91343852333181432387730302044767688728495783936",
+          "cost_change_bound_usd": 9.664067512478358e-10,
+          "exact_raw_saving_usd": "17875991452194208435873063268892838874430515180690745/1461501637330902918203684832716283019655932542976",
+          "exact_repaired_saving_usd": "35751982904388398126563036068289441852095576248886071/2923003274661805836407369665432566039311865085952",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "2361183241434822606848",
+          "changed_slots": 965,
+          "repair_l1_work_exact": "4639880717/2361183241434822606848",
+          "repair_l1_work": 1.965065919314453e-12,
+          "cost_change_bound_usd_exact": "174596401763776492950981020773597659683/91343852333181432387730302044767688728495783936",
+          "cost_change_bound_usd": 1.911419294282959e-09,
+          "exact_raw_saving_usd": "1708961598732973334501086575119626956308081108482863/91343852333181432387730302044767688728495783936",
+          "exact_repaired_saving_usd": "218747084637820512958464860317266834794237356395586175/11692013098647223345629478661730264157247460343808",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "295147905179352825856",
+          "changed_slots": 809,
+          "repair_l1_work_exact": "287727681/147573952589676412928",
+          "repair_l1_work": 1.9497186051526012e-12,
+          "cost_change_bound_usd_exact": "1995811479483765427973201967605760045/713623846352979940529142984724747568191373312",
+          "cost_change_bound_usd": 2.796727561282442e-09,
+          "exact_raw_saving_usd": "4753127542218288627710099004052355429723059259579443/182687704666362864775460604089535377456991567872",
+          "exact_repaired_saving_usd": "38025020337746297854640633625842656944142661046754537/1461501637330902918203684832716283019655932542976",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "147573952589676412928",
+          "changed_slots": 885,
+          "repair_l1_work_exact": "297269737/147573952589676412928",
+          "repair_l1_work": 2.014378091684966e-12,
+          "cost_change_bound_usd_exact": "11508802241935227929523893029903192445/2854495385411919762116571938898990272765493248",
+          "cost_change_bound_usd": 4.031816726960462e-09,
+          "exact_raw_saving_usd": "663756207087352704907281372036372441886548922391255/22835963083295358096932575511191922182123945984",
+          "exact_repaired_saving_usd": "21240198626795280631866589759874209874287225048511583/730750818665451459101842416358141509827966271488",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    },
+    {
+      "seed": 20260922,
+      "window_h": 24,
+      "sites": [
+        {
+          "site": 0,
+          "denominator": "1180591620717411303424",
+          "changed_slots": 651,
+          "repair_l1_work_exact": "746908895/1180591620717411303424",
+          "repair_l1_work": 6.326564426623028e-13,
+          "cost_change_bound_usd_exact": "31265578736746135240422190878120961985/91343852333181432387730302044767688728495783936",
+          "cost_change_bound_usd": 3.422844333596017e-10,
+          "exact_raw_saving_usd": "22550748021391106841321019824866433804344094123420681/1461501637330902918203684832716283019655932542976",
+          "exact_repaired_saving_usd": "45101496042782209103097373595566364349169647095742515/2923003274661805836407369665432566039311865085952",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 1,
+          "denominator": "590295810358705651712",
+          "changed_slots": 597,
+          "repair_l1_work_exact": "418164009/590295810358705651712",
+          "repair_l1_work": 7.083973859578875e-13,
+          "cost_change_bound_usd_exact": "15735303507052517460729037127443006791/22835963083295358096932575511191922182123945984",
+          "cost_change_bound_usd": 6.89058020003675e-10,
+          "exact_raw_saving_usd": "2308925921560877842549842066288487922632333269275211/91343852333181432387730302044767688728495783936",
+          "exact_repaired_saving_usd": "73885629489948085600774624764449901293335721000761829/2923003274661805836407369665432566039311865085952",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 2,
+          "denominator": "295147905179352825856",
+          "changed_slots": 681,
+          "repair_l1_work_exact": "584572219/295147905179352825856",
+          "repair_l1_work": 1.9806077181702252e-12,
+          "cost_change_bound_usd_exact": "4054861670634664207736687478249495455/1427247692705959881058285969449495136382746624",
+          "cost_change_bound_usd": 2.8410357160549584e-09,
+          "exact_raw_saving_usd": "1392097525591095244111760603959827692065079861616547/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "44547120818915041058135655615626765305785673514366179/1461501637330902918203684832716283019655932542976",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        },
+        {
+          "site": 3,
+          "denominator": "36893488147419103232",
+          "changed_slots": 689,
+          "repair_l1_work_exact": "70647745/36893488147419103232",
+          "repair_l1_work": 1.9149109652550483e-12,
+          "cost_change_bound_usd_exact": "2735128487174825634140760067291606325/713623846352979940529142984724747568191373312",
+          "cost_change_bound_usd": 3.8327313488091435e-09,
+          "exact_raw_saving_usd": "1555424958059861209176300318203079265242717560576087/45671926166590716193865151022383844364247891968",
+          "exact_repaired_saving_usd": "6221699832239443967305267816976427222505955341108249/182687704666362864775460604089535377456991567872",
+          "release_deadline_capacity_terminal_checks_exact": true,
+          "electrical_capacity_check_exact": true
+        }
+      ]
+    }
+  ]
+}

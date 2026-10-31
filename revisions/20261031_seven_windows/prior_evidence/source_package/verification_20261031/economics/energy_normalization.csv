@@ -1,0 +1,4 @@
+from_h,to_h,mean_historical_budget_usd_per_reference_IT_MWh,denominator_mwh,scope
+12,16,4.634273712641158726,2981.6073925153343935,"Optional normalization by common annual variable-IT execution; not shifted work, avoided MWh, or an observed tariff"
+16,24,6.450382272049747732,2981.6073925153343935,"Optional normalization by common annual variable-IT execution; not shifted work, avoided MWh, or an observed tariff"
+12,24,11.084655984690906458,2981.6073925153343935,"Optional normalization by common annual variable-IT execution; not shifted work, avoided MWh, or an observed tariff"

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checked_site_contracts": 1,
+  "window_hours": 24,
+  "site": 3,
+  "scope": "One saved annual certificate and witness reloaded and evaluated exactly; no LP solver invoked",
+  "input_sha256": {
+    "forcing": "c600c9e01e8236bd2e1cb4e2dc08591e3ee264d05f1c26b4c785ec355c3147c8",
+    "published_arrays": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72",
+    "constraints": "7836fae0736bde2a8b7aed499d48033b803dff9c09532bd42bc6321f7024ed58",
+    "core": "a80dcb0735170de89ef924cb7d13d0197282e7906948f6000b34bdfc8b267c5b"
+  },
+  "dual_sha256": "371468b12eb1ab4db080dd76327e45f3248a6b0af14efe638504bfea35441253",
+  "witness_sha256": "45440001ccb05c8388e7851de9d2a3f63f9beef270cb7fc9207bcb644da95d1d",
+  "verifier_sha256": "b16f830820f25ebb5c0e52b11ca12cce2d378c044e229b896e3be04fa3514756",
+  "outer_cost_lower_exact": "579407011093598485386342996248037176803359336897633/5192296858534827628530496329220096000000000000",
+  "witness_cost_lower_exact": "55818767238796347/500000000000",
+  "witness_cost_upper_exact": "55818767238813867/500000000000",
+  "all_prefix_capacity_import_terminal_checks_exact": true
+}

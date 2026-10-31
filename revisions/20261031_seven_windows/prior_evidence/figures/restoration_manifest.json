@@ -1,0 +1,62 @@
+[
+  {
+    "figure": 1,
+    "source_member": "word/media/image7.png",
+    "sha256": "e971d0761d7e5f0dcfc82d1c517511c53eed2045bfb4b2365e5bbe744ab12b1d",
+    "size": [
+      7000,
+      4523
+    ],
+    "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\figures\\original_main_figure_1.png"
+  },
+  {
+    "figure": 2,
+    "source_member": "word/media/image8.png",
+    "sha256": "6cda4e5a5ec92b791fc59c7e1cfe27c586cdb9c1c76450514dcc7b9f11db9dd8",
+    "size": [
+      2010,
+      2310
+    ],
+    "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\figures\\original_main_figure_2.png"
+  },
+  {
+    "figure": 3,
+    "source_member": "word/media/image9.png",
+    "sha256": "28161354ea39e399de15c99377892ede86c02d1d9073dfb1b14ea195987bd17b",
+    "size": [
+      6700,
+      4786
+    ],
+    "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\figures\\original_main_figure_3.png"
+  },
+  {
+    "figure": 4,
+    "source_member": "word/media/image10.png",
+    "sha256": "acd323e9d4caa23090fe1eaaa668970be7a1aa7737d91574c2d67c3cbfc6b6f4",
+    "size": [
+      6700,
+      3877
+    ],
+    "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\figures\\original_main_figure_4.png"
+  },
+  {
+    "figure": 5,
+    "source_member": "word/media/image11.png",
+    "sha256": "b0befc675341c5ab0aa9df4d1aa224732c5dc59ca7d192fc18f1da2743d8808b",
+    "size": [
+      6700,
+      3159
+    ],
+    "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\figures\\original_main_figure_5.png"
+  },
+  {
+    "figure": 6,
+    "source_member": "word/media/image12.png",
+    "sha256": "0c21e9d807d71f579009305f991a578eb1320e26dd0dbc0262afb266c5734f90",
+    "size": [
+      6700,
+      2791
+    ],
+    "path": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\figures\\original_main_figure_6.png"
+  }
+]

@@ -1,0 +1,185 @@
+building exact original physics for site 0
+W 8 site 0 H 12886.238517429416 U 12896.922605563957 seconds 7.29
+W 12 site 0 H 16062.105554380982 U 16076.937683019836 seconds 7.59
+W 16 site 0 H 18660.642144626436 U 18683.462609399394 seconds 7.4
+W 20 site 0 H 20735.513192763392 U 20762.728114467383 seconds 8.28
+W 24 site 0 H 22401.67592251989 U 22432.70638380325 seconds 7.96
+W 36 site 0 H 24561.432520095554 U 24611.188139675338 seconds 8.9
+W 48 site 0 H 26758.078439456734 U 26814.855162775253 seconds 9.08
+site complete 0 seconds 60.93
+building exact original physics for site 1
+W 8 site 1 H 18695.1197314561 U 18734.1876167036 seconds 8.68
+W 12 site 1 H 23187.48893728903 U 23240.14680754346 seconds 8.42
+W 16 site 1 H 26909.033967982785 U 26972.47812730584 seconds 8.57
+W 20 site 1 H 29917.40973710176 U 29992.344142989758 seconds 8.86
+W 24 site 1 H 32112.83888182154 U 32193.436394547483 seconds 8.53
+W 36 site 1 H 34558.76993033677 U 34655.65491269203 seconds 10.3
+W 48 site 1 H 37176.80701796239 U 37279.59509882256 seconds 9.29
+site complete 1 seconds 68.28
+building exact original physics for site 2
+W 8 site 2 H 22082.221765870596 U 22116.59962764514 seconds 8.01
+W 12 site 2 H 27366.79418193367 U 27412.699916151836 seconds 8.48
+W 16 site 2 H 31912.86351544326 U 31965.96832854869 seconds 9.24
+W 20 site 2 H 34932.56425414583 U 34991.585896104945 seconds 8.77
+W 24 site 2 H 36915.14891296107 U 36977.53355904325 seconds 9.32
+W 36 site 2 H 39272.3048919821 U 39334.83986524526 seconds 9.03
+W 48 site 2 H 42403.85723177992 U 42466.39476229478 seconds 9.17
+site complete 2 seconds 67.52
+building exact original physics for site 3
+W 8 site 3 H 25088.028400592084 U 25134.69504905788 seconds 14.01
+W 12 site 3 H 31022.946539663935 U 31066.62285829847 seconds 14.8
+W 16 site 3 H 35637.35236613071 U 35683.27880292701 seconds 9.41
+W 20 site 3 H 38942.68669269691 U 38987.3270341017 seconds 8.06
+W 24 site 3 H 40947.161895044264 U 40994.96510740017 seconds 7.73
+W 36 site 3 H 43604.10902536795 U 43654.72675087842 seconds 10.07
+W 48 site 3 H 46459.543841402316 U 46509.37855239843 seconds 8.67
+site complete 3 seconds 79.19
+[
+  {
+    "window_hours": 8,
+    "raw_witness_savings_floor_exact": "78751608415348197/1000000000000",
+    "raw_ceiling_exact": "163832345260238882199314386017960073630384378405791/2076918743413931051412198531688038400000000000",
+    "raw_witness_savings_floor_usd": 78751.6084153482,
+    "raw_ceiling_usd": 78882.40489897058,
+    "raw_witness_floor_down_cents": "78751.60",
+    "raw_ceiling_up_cents": "78882.41",
+    "witness_repair_l1_total_exact": "894558224073971/295147905179352825856",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": false,
+    "combined_floor_exact": "78751608415348197/1000000000000",
+    "combined_ceiling_exact": "163832345260238882199314386017960073630384378405791/2076918743413931051412198531688038400000000000",
+    "combined_floor_usd": 78751.6084153482,
+    "combined_ceiling_usd": 78882.40489897058,
+    "combined_floor_down_cents": "78751.60",
+    "combined_ceiling_up_cents": "78882.41",
+    "inherited_floor_window_hours": 8,
+    "inherited_ceiling_window_hours": 8,
+    "interval_width_up_cents": "130.80"
+  },
+  {
+    "window_hours": 12,
+    "raw_witness_savings_floor_exact": "19527867042653523/200000000000",
+    "raw_ceiling_exact": "1015575956436245443798479673633902866962516187050523/10384593717069655257060992658440192000000000000",
+    "raw_witness_savings_floor_usd": 97639.33521326761,
+    "raw_ceiling_usd": 97796.40726501361,
+    "raw_witness_floor_down_cents": "97639.33",
+    "raw_ceiling_up_cents": "97796.41",
+    "witness_repair_l1_total_exact": "453144948109/73786976294838206464",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": false,
+    "combined_floor_exact": "19527867042653523/200000000000",
+    "combined_ceiling_exact": "1015575956436245443798479673633902866962516187050523/10384593717069655257060992658440192000000000000",
+    "combined_floor_usd": 97639.33521326761,
+    "combined_ceiling_usd": 97796.40726501361,
+    "combined_floor_down_cents": "97639.33",
+    "combined_ceiling_up_cents": "97796.41",
+    "inherited_floor_window_hours": 12,
+    "inherited_ceiling_window_hours": 12,
+    "interval_width_up_cents": "157.08"
+  },
+  {
+    "window_hours": 16,
+    "raw_witness_savings_floor_exact": "113119891994183191/1000000000000",
+    "raw_ceiling_exact": "47065133681892345908014206313874591754009656752723/415383748682786210282439706337607680000000000",
+    "raw_witness_savings_floor_usd": 113119.89199418318,
+    "raw_ceiling_usd": 113305.18786818093,
+    "raw_witness_floor_down_cents": "113119.89",
+    "raw_ceiling_up_cents": "113305.19",
+    "witness_repair_l1_total_exact": "13172402067289/147573952589676412928",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": false,
+    "combined_floor_exact": "113119891994183191/1000000000000",
+    "combined_ceiling_exact": "47065133681892345908014206313874591754009656752723/415383748682786210282439706337607680000000000",
+    "combined_floor_usd": 113119.89199418318,
+    "combined_ceiling_usd": 113305.18786818093,
+    "combined_floor_down_cents": "113119.89",
+    "combined_ceiling_up_cents": "113305.19",
+    "inherited_floor_window_hours": 16,
+    "inherited_ceiling_window_hours": 16,
+    "interval_width_up_cents": "185.30"
+  },
+  {
+    "window_hours": 20,
+    "raw_witness_savings_floor_exact": "31132043469176971/250000000000",
+    "raw_ceiling_exact": "1295311758884872831622357472019928185572770464166427/10384593717069655257060992658440192000000000000",
+    "raw_witness_savings_floor_usd": 124528.17387670788,
+    "raw_ceiling_usd": 124733.98518766378,
+    "raw_witness_floor_down_cents": "124528.17",
+    "raw_ceiling_up_cents": "124733.99",
+    "witness_repair_l1_total_exact": "283755874321/73786976294838206464",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": false,
+    "combined_floor_exact": "31132043469176971/250000000000",
+    "combined_ceiling_exact": "1295311758884872831622357472019928185572770464166427/10384593717069655257060992658440192000000000000",
+    "combined_floor_usd": 124528.17387670788,
+    "combined_ceiling_usd": 124733.98518766378,
+    "combined_floor_down_cents": "124528.17",
+    "combined_ceiling_up_cents": "124733.99",
+    "inherited_floor_window_hours": 20,
+    "inherited_ceiling_window_hours": 20,
+    "interval_width_up_cents": "205.82"
+  },
+  {
+    "window_hours": 24,
+    "raw_witness_savings_floor_exact": "132376825612346763/1000000000000",
+    "raw_ceiling_exact": "1376983018839581381489154654039002918814762022236699/10384593717069655257060992658440192000000000000",
+    "raw_witness_savings_floor_usd": 132376.82561234676,
+    "raw_ceiling_usd": 132598.64144479416,
+    "raw_witness_floor_down_cents": "132376.82",
+    "raw_ceiling_up_cents": "132598.65",
+    "witness_repair_l1_total_exact": "6792411072519/147573952589676412928",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": false,
+    "combined_floor_exact": "132376825612346763/1000000000000",
+    "combined_ceiling_exact": "1376983018839581381489154654039002918814762022236699/10384593717069655257060992658440192000000000000",
+    "combined_floor_usd": 132376.82561234676,
+    "combined_ceiling_usd": 132598.64144479416,
+    "combined_floor_down_cents": "132376.82",
+    "combined_ceiling_up_cents": "132598.65",
+    "inherited_floor_window_hours": 24,
+    "inherited_ceiling_window_hours": 24,
+    "interval_width_up_cents": "221.82"
+  },
+  {
+    "window_hours": 36,
+    "raw_witness_savings_floor_exact": "70998308183891187/500000000000",
+    "raw_ceiling_exact": "1477275018056299039070070726151650361849143248319003/10384593717069655257060992658440192000000000000",
+    "raw_witness_savings_floor_usd": 141996.61636778238,
+    "raw_ceiling_usd": 142256.40966849105,
+    "raw_witness_floor_down_cents": "141996.61",
+    "raw_ceiling_up_cents": "142256.41",
+    "witness_repair_l1_total_exact": "377316800701/147573952589676412928",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": false,
+    "combined_floor_exact": "70998308183891187/500000000000",
+    "combined_ceiling_exact": "1477275018056299039070070726151650361849143248319003/10384593717069655257060992658440192000000000000",
+    "combined_floor_usd": 141996.61636778238,
+    "combined_ceiling_usd": 142256.40966849105,
+    "combined_floor_down_cents": "141996.61",
+    "combined_ceiling_up_cents": "142256.41",
+    "inherited_floor_window_hours": 36,
+    "inherited_ceiling_window_hours": 36,
+    "interval_width_up_cents": "259.80"
+  },
+  {
+    "window_hours": 48,
+    "raw_witness_savings_floor_exact": "76399143265300681/500000000000",
+    "raw_ceiling_exact": "1589572082020799219581322516669535749238355669316123/10384593717069655257060992658440192000000000000",
+    "raw_witness_savings_floor_usd": 152798.28653060136,
+    "raw_ceiling_usd": 153070.22357629103,
+    "raw_witness_floor_down_cents": "152798.28",
+    "raw_ceiling_up_cents": "153070.23",
+    "witness_repair_l1_total_exact": "277920792689/147573952589676412928",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": false,
+    "combined_floor_exact": "76399143265300681/500000000000",
+    "combined_ceiling_exact": "1589572082020799219581322516669535749238355669316123/10384593717069655257060992658440192000000000000",
+    "combined_floor_usd": 152798.28653060136,
+    "combined_ceiling_usd": 153070.22357629103,
+    "combined_floor_down_cents": "152798.28",
+    "combined_ceiling_up_cents": "153070.23",
+    "inherited_floor_window_hours": 48,
+    "inherited_ceiling_window_hours": 48,
+    "interval_width_up_cents": "271.94"
+  }
+]

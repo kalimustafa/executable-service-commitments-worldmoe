@@ -1,0 +1,23 @@
+Additional deadline points and interpretation
+
+Status: design only. No new WorldMoE executions or optimisation values for 8, 20, 36 or 48 hours have been computed in this proof-extension subtask. The exact-prefix screen establishes that the recovered original admissions admit feasible earliest service at all seven proposed durations; it is not a value experiment.
+
+1. Immediate extension within the existing 96-slot representation
+
+Add 8 h (32 eligible quarter-hours) and 20 h (80 slots) to the existing 12/16/24 h fixed-checkpoint comparisons. Preserve each checkpoint, source admissions, physics, tariffs, reference, initial state and terminal account. Restrict admissible placement to the selected contract window while retaining the original 96-slot internal representation. Do not rescale the horizon coordinate, retrain weights, refit normalisers or silently change observation masks. Record exactly which positional coordinates and masks reach the frozen model. This keeps the newly tested factor as the authorised duration, subject to the archived implementation's separate feasibility mechanisms.
+
+Run all three retained seeds at each new duration. Save original arrivals, complete compute books, per-slot reference and policy execution, queue/release/deadline records, tail execution, physical inputs and a decomposition of the common financial account. Apply the same exact cumulative-corridor verification and a stated sub-cent repair allowance where floating bookkeeping requires it. The new 8/20 h rows should join the historical paired policy results only after this execution and accounting work exists.
+
+2. Longer contracts require an explicit representation decision
+
+A 36 h contract has 144 eligible slots and a 48 h contract has 192. These exceed the existing 96-slot representation. Merely changing a duration label or padding forecast arrays does not establish a matched frozen-checkpoint experiment. Before generating policy values, specify and implement how future slots receive market/physical forecasts, masks, positional coordinates and reservation-state updates. Distinguish an unchanged policy with a documented structural extension from a newly trained or refitted model. If representation changes are required, show those results as a separate extended-horizon sensitivity, with the 24 h anchor rerun under that same representation.
+
+The offline perfect-information certificate can support longer windows without claiming such an operating-policy extension: use the recovered admissions and D=144 or 192 in the exact release/deadline corridor, include the complete admissible tail and common terminal account, and verify a witness and ceiling independently. Such certificate points must be labelled optimal-opportunity bounds, not realised WorldMoE savings.
+
+3. Common evidence scope for the seven-point certificate curve
+
+For a direct 8/12/16/20/24/36/48 h comparison, compute all points on the same recovered actual admission array and same original account. The 8 h case cannot inherit the existing A(b)-uniform nonemptiness proof: compatible streams can concentrate a 36-slot reference busy block at its first slot, exceeding the 32-slot deadline. The actual source stream is nevertheless exactly feasible at 8 h. Keep the already proved uniform 24 h witness and 12/16/24 h ceilings as a separate robustness result, rather than mixing actual-arrival and every-compatible-arrival claims in a single unlabeled curve.
+
+4. Economic interpretation
+
+Three points identify the reported increments for those durations; they do not establish the complete shape of the value curve. After adding points, report each adjacent increment and its per-hour slope, together with the seed range for policy differences and certified endpoint uncertainty for value bounds. Do not impose a smooth curve, claim global diminishing returns, or infer a unique optimal deadline solely from those points. A best deadline for procurement additionally depends on incremental fees, delay disutility and implementation costs under the chosen prospective information criterion.

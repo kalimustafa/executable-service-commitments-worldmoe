@@ -1,0 +1,242 @@
+{
+  "sources_sha256": {
+    "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Window_Extension_20261031\\analysis\\policy.csv": "d17db85f8f515def987d162a1f3982443a63f6e61840405da9819de4778c9e7a",
+    "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Window_Extension_20261031\\analysis\\certificates.csv": "be8c5e0f455798c66e26db7a4a91eb89f490d42a673b4c2cc6ebef08fd185f95",
+    "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Window_Extension_20261031\\analysis\\anchor.csv": "e3c5c145d5e9777d14e2453cef6a2a933e0c035c8d4e75507fa406e4e52c6392"
+  },
+  "windows_h": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    36,
+    48
+  ],
+  "seeds": [
+    "20260920",
+    "20260921",
+    "20260922"
+  ],
+  "palette": {
+    "purple": "#a34fbe",
+    "pink": "#e563a0",
+    "lightpink": "#edacd0",
+    "lavender": "#e6d5ed",
+    "text": "#38223f",
+    "axis": "#5d5662",
+    "grid": "#eeeaf0"
+  },
+  "summary": [
+    {
+      "window_h": 8,
+      "evidence_origin": "new_20261031",
+      "seed_count": 3,
+      "policy_mean_usd": "50735.34352170110833333333333333333333333333333333333333333333333333333",
+      "policy_seed_min_usd": "50629.013648929635",
+      "policy_seed_max_usd": "50947.4511869629",
+      "service_feasible": false,
+      "mean_late_it_mwh": "3.0114919954466035",
+      "maximum_late_it_mwh": "3.011988509450749",
+      "policy_value_status": "cash-only service failure",
+      "pi_lower_usd": "78751.6",
+      "pi_upper_usd": "78882.41",
+      "capture_percent_lower": "",
+      "capture_percent_upper": ""
+    },
+    {
+      "window_h": 12,
+      "evidence_origin": "recovered_historical",
+      "seed_count": 3,
+      "policy_mean_usd": "72220.96961418834298041712186789037012008460264549812328963046666666667",
+      "policy_seed_min_usd": "72099.9785881275968130445816390072300771451621297000033525973",
+      "policy_seed_max_usd": "72361.6457005380636742014444401574883739641051219562626119962",
+      "service_feasible": true,
+      "mean_late_it_mwh": "0",
+      "maximum_late_it_mwh": "0",
+      "policy_value_status": "contract-feasible saving",
+      "pi_lower_usd": "97639.33",
+      "pi_upper_usd": "97796.41",
+      "capture_percent_lower": "73.84828299340266476082007700271448626803847160186976524969624822288126",
+      "capture_percent_upper": "73.96708848185289983085414644681643157535452429415290261581113539663440"
+    },
+    {
+      "window_h": 16,
+      "evidence_origin": "recovered_historical",
+      "seed_count": 3,
+      "policy_mean_usd": "86038.5543747387110702147645556113563060605064396137631850265",
+      "policy_seed_min_usd": "85833.932311920288680237938369132029641322943078244310417789",
+      "policy_seed_max_usd": "86257.3354836213691213188585572742373319232578830188291408953",
+      "service_feasible": true,
+      "mean_late_it_mwh": "0",
+      "maximum_late_it_mwh": "0",
+      "policy_value_status": "contract-feasible saving",
+      "pi_lower_usd": "113119.89",
+      "pi_upper_usd": "113305.19",
+      "capture_percent_lower": "75.93522801094875801383393342847874515373965344360109469392046383753471",
+      "capture_percent_upper": "76.05961637227432865273716634237476389524468812656533098204612822731705"
+    },
+    {
+      "window_h": 20,
+      "evidence_origin": "new_20261031",
+      "seed_count": 3,
+      "policy_mean_usd": "98199.0226708958601350233177332911593649936107941432338544025",
+      "policy_seed_min_usd": "97853.9070468237326676754605982942072303129214738660181487124",
+      "policy_seed_max_usd": "98655.4390378111288156646537279077121376777684864274973105474",
+      "service_feasible": true,
+      "mean_late_it_mwh": "1.903149747280090066666666666666666666666666666666666666666666666666667E-9",
+      "maximum_late_it_mwh": "2.4248293374642114E-9",
+      "policy_value_status": "contract-feasible saving",
+      "pi_lower_usd": "124528.17",
+      "pi_upper_usd": "124733.99",
+      "capture_percent_lower": "78.72675496943203703739719841663940948653499402540016065741382922169009",
+      "capture_percent_upper": "78.85687444928794836945192219020897790836692677178443548508140768470299"
+    },
+    {
+      "window_h": 24,
+      "evidence_origin": "recovered_historical",
+      "seed_count": 3,
+      "policy_mean_usd": "105271.0618416321137536309193033757971529545600105076457701556666666667",
+      "policy_seed_min_usd": "105003.517378305962492078358151388594301981511935279196555424",
+      "policy_seed_max_usd": "105565.665461720178697561378921126792683643302037807681592227",
+      "service_feasible": true,
+      "mean_late_it_mwh": "0",
+      "maximum_late_it_mwh": "0",
+      "policy_value_status": "contract-feasible saving",
+      "pi_lower_usd": "132376.82",
+      "pi_upper_usd": "132598.65",
+      "capture_percent_lower": "79.39074933389752742854540321743531864989165425930629442317524851623052",
+      "capture_percent_upper": "79.52378810854658221403937585400208069128308113951343276727426045335331"
+    },
+    {
+      "window_h": 36,
+      "evidence_origin": "new_20261031",
+      "seed_count": 3,
+      "policy_mean_usd": "114251.1182432438261065456579471234857513321634241995545335903333333333",
+      "policy_seed_min_usd": "113954.916941682475761883264214000916737027709648490968006917",
+      "policy_seed_max_usd": "114602.196655678182608047226252362538942121232358968370319071",
+      "service_feasible": true,
+      "mean_late_it_mwh": "7.1510090164368481E-10",
+      "maximum_late_it_mwh": "8.939168888075742E-10",
+      "policy_value_status": "contract-feasible saving",
+      "pi_lower_usd": "141996.61",
+      "pi_upper_usd": "142256.41",
+      "capture_percent_lower": "80.31351152699820423314890200527588581163559759746471497037661314054903",
+      "capture_percent_upper": "80.46045482581860658965425861020448710101752670306675246232310287783159"
+    },
+    {
+      "window_h": 48,
+      "evidence_origin": "new_20261031",
+      "seed_count": 3,
+      "policy_mean_usd": "123101.2044968244794696050897906119590305726339014068333875346666666667",
+      "policy_seed_min_usd": "122891.835127785858250119682886030092609431401103482576278245",
+      "policy_seed_max_usd": "123247.542108765122867311278172439603354681116819092862556994",
+      "service_feasible": true,
+      "mean_late_it_mwh": "8.478279629336111833333333333333333333333333333333333333333333333333333E-10",
+      "maximum_late_it_mwh": "1.374573656700922E-9",
+      "policy_value_status": "contract-feasible saving",
+      "pi_lower_usd": "152798.28",
+      "pi_upper_usd": "153070.23",
+      "capture_percent_lower": "80.42138859843908215830412601497492950168862613024546535765619916208834",
+      "capture_percent_upper": "80.56452238652456000787776524095163834996875220153448938530896202932828"
+    }
+  ],
+  "marginals": [
+    {
+      "from_h": 8,
+      "to_h": 12,
+      "added_hours": 4,
+      "policy_gain_valid": false,
+      "policy_paired_mean_usd_per_h": "",
+      "policy_paired_seed_min_usd_per_h": "",
+      "policy_paired_seed_max_usd_per_h": "",
+      "pi_increment_lower_usd_per_h": "4689.23",
+      "pi_increment_upper_usd_per_h": "4761.2025",
+      "scope": "Historical paired difference quotient; not a derivative or future-year expected marginal value"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "added_hours": 4,
+      "policy_gain_valid": true,
+      "policy_paired_mean_usd_per_h": "3454.396190137592022449410671930246546493975948528909973849008333333333",
+      "policy_paired_seed_min_usd_per_h": "3433.488430948172966798339182531199891044445237136076766297925",
+      "policy_paired_seed_max_usd_per_h": "3473.922445770826361779353529279187239489788190265641632224775",
+      "pi_increment_lower_usd_per_h": "3830.87",
+      "pi_increment_upper_usd_per_h": "3916.465",
+      "scope": "Historical paired difference quotient; not a derivative or future-year expected marginal value"
+    },
+    {
+      "from_h": 16,
+      "to_h": 20,
+      "added_hours": 4,
+      "policy_gain_valid": true,
+      "policy_paired_mean_usd_per_h": "3040.117074039287266202138294419950764733276088632367667344000",
+      "policy_paired_seed_min_usd_per_h": "3004.99368372586099685938055729054439724749459890542693273085",
+      "policy_paired_seed_max_usd_per_h": "3099.525888547439923586448792658368701438627650852167042413025",
+      "pi_increment_lower_usd_per_h": "2805.745",
+      "pi_increment_upper_usd_per_h": "2903.525",
+      "scope": "Historical paired difference quotient; not a derivative or future-year expected marginal value"
+    },
+    {
+      "from_h": 20,
+      "to_h": 24,
+      "added_hours": 4,
+      "policy_gain_valid": true,
+      "policy_paired_mean_usd_per_h": "1768.009792684063404651900392521159446990237304091102978938291666666667",
+      "policy_paired_seed_min_usd_per_h": "1727.5566059772624704741812983047701364913833878450460704199",
+      "policy_paired_seed_max_usd_per_h": "1789.070189204370287380795490985111436562180909074968264717075",
+      "pi_increment_lower_usd_per_h": "1910.7075",
+      "pi_increment_upper_usd_per_h": "2017.62",
+      "scope": "Historical paired difference quotient; not a derivative or future-year expected marginal value"
+    },
+    {
+      "from_h": 24,
+      "to_h": 36,
+      "added_hours": 12,
+      "policy_gain_valid": true,
+      "policy_paired_mean_usd_per_h": "748.3380334676426960762282203123073831981336178076590636195555555555553",
+      "policy_paired_seed_min_usd_per_h": "745.94996361470943915040883855102686958718314276764762095775",
+      "policy_paired_seed_max_usd_per_h": "753.0442661631669925404872776029788548731608600967240605703333333333333",
+      "pi_increment_lower_usd_per_h": "783.1633333333333333333333333333333333333333333333333333333333333333333",
+      "pi_increment_upper_usd_per_h": "823.2991666666666666666666666666666666666666666666666666666666666666667",
+      "scope": "Historical paired difference quotient; not a derivative or future-year expected marginal value"
+    },
+    {
+      "from_h": 36,
+      "to_h": 48,
+      "added_hours": 12,
+      "policy_gain_valid": true,
+      "policy_paired_mean_usd_per_h": "737.5071877983877802549526536240394399367058731006065711620277777777777",
+      "policy_paired_seed_min_usd_per_h": "713.5032998536895569447568384169701821236792852230575840245",
+      "policy_paired_seed_max_usd_per_h": "754.27508136619190980039956645271681498613071282946144018425",
+      "pi_increment_lower_usd_per_h": "878.4891666666666666666666666666666666666666666666666666666666666666667",
+      "pi_increment_upper_usd_per_h": "922.8016666666666666666666666666666666666666666666666666666666666666667",
+      "scope": "Historical paired difference quotient; not a derivative or future-year expected marginal value"
+    }
+  ],
+  "anchor": [
+    {
+      "seed": "20260920",
+      "rerun_saving_usd": "105565.665461720178697561378921126792683643302037807681592227",
+      "primary_24h_saving_usd": "105565.665461720178697561378921126792683643302037807681592227",
+      "difference_usd": "0E-54",
+      "source_path": "../audit/policy_s20260920_w24.json"
+    },
+    {
+      "seed": "20260921",
+      "rerun_saving_usd": "105003.517378305962492078358151388594301981511935279196555424",
+      "primary_24h_saving_usd": "105003.517378305962492078358151388594301981511935279196555424",
+      "difference_usd": "0E-54",
+      "source_path": "../audit/policy_s20260921_w24.json"
+    },
+    {
+      "seed": "20260922",
+      "rerun_saving_usd": "105244.002684870200071253020837612004473238866058436059162816",
+      "primary_24h_saving_usd": "105244.002684870200071253020837612004473238866058436059162816",
+      "difference_usd": "0E-54",
+      "source_path": "../audit/policy_s20260922_w24.json"
+    }
+  ],
+  "scope": "Historical-path policy response and independently certified PI opportunities; no ex-ante, routing-only, or fully neural long-horizon claim."
+}

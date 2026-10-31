@@ -1,0 +1,448 @@
+{
+  "scope": "Seven matched contract windows on one recovered 2025 path. Historical 12/16/24 policy records and new 2026-10-31 evaluations are explicitly distinguished.",
+  "windows": [
+    {
+      "window_h": 8,
+      "policy_mean_usd": 50735.34352170111,
+      "policy_mean_exact": null,
+      "monetary_scope": "raw floating cash account with substantive service failure",
+      "policy_range_usd": [
+        50629.013648929635,
+        50947.4511869629
+      ],
+      "policy_evidence_origin": "new_20261031",
+      "pi_lower_usd": "78751.60",
+      "pi_upper_usd": "78882.41",
+      "service_feasible": false,
+      "late_it_mwh_mean": 3.0114919954466033,
+      "remaining_opportunity_usd": null,
+      "capture_percent_approx": null,
+      "capture_percent_outward": null,
+      "certificate_width_up_cents": "130.80"
+    },
+    {
+      "window_h": 12,
+      "policy_mean_usd": 72220.96961418835,
+      "policy_mean_exact": "844408522726093210344253244488230622434727071033267511/11692013098647223345629478661730264157247460343808",
+      "monetary_scope": "exact feasible numerical account",
+      "policy_range_usd": [
+        72099.9785881276,
+        72361.64570053807
+      ],
+      "policy_evidence_origin": "recovered_historical",
+      "pi_lower_usd": "97639.33",
+      "pi_upper_usd": "97796.41",
+      "service_feasible": true,
+      "late_it_mwh_mean": 0.0,
+      "remaining_opportunity_usd": [
+        25418.36,
+        25575.44
+      ],
+      "capture_percent_approx": [
+        73.84828505865286,
+        73.96708453252012
+      ],
+      "capture_percent_outward": [
+        73.84,
+        73.97
+      ],
+      "certificate_width_up_cents": "157.08"
+    },
+    {
+      "window_h": 16,
+      "policy_mean_usd": 86038.55437473871,
+      "policy_mean_exact": "1508945857107174556764196246503096218374016374165563575/17538019647970835018444217992595396235871190515712",
+      "monetary_scope": "exact feasible numerical account",
+      "policy_range_usd": [
+        85833.93231192029,
+        86257.33548362137
+      ],
+      "policy_evidence_origin": "recovered_historical",
+      "pi_lower_usd": "113119.89",
+      "pi_upper_usd": "113305.19",
+      "service_feasible": true,
+      "late_it_mwh_mean": 0.0,
+      "remaining_opportunity_usd": [
+        27081.33,
+        27266.64
+      ],
+      "capture_percent_approx": [
+        75.93522943965799,
+        76.05961503142431
+      ],
+      "capture_percent_outward": [
+        75.93,
+        76.06
+      ],
+      "certificate_width_up_cents": "185.30"
+    },
+    {
+      "window_h": 20,
+      "policy_mean_usd": 98199.02267089587,
+      "policy_mean_exact": "287036064835617510020817730397598311385243239253286993/2923003274661805836407369665432566039311865085952",
+      "monetary_scope": "exact feasible numerical account",
+      "policy_range_usd": [
+        97853.90704682373,
+        98655.43903781113
+      ],
+      "policy_evidence_origin": "new_20261031",
+      "pi_lower_usd": "124528.17",
+      "pi_upper_usd": "124733.99",
+      "service_feasible": true,
+      "late_it_mwh_mean": 1.9031497472800903e-09,
+      "remaining_opportunity_usd": [
+        26329.15,
+        26534.97
+      ],
+      "capture_percent_approx": [
+        78.72675800677277,
+        78.8568719943811
+      ],
+      "capture_percent_outward": [
+        78.72,
+        78.86
+      ],
+      "certificate_width_up_cents": "205.82"
+    },
+    {
+      "window_h": 24,
+      "policy_mean_usd": 105271.06184163211,
+      "policy_mean_exact": "615415316980432282273993768801445412847025904724567045/5846006549323611672814739330865132078623730171904",
+      "monetary_scope": "exact feasible numerical account",
+      "policy_range_usd": [
+        105003.51737830596,
+        105565.66546172019
+      ],
+      "policy_evidence_origin": "recovered_historical",
+      "pi_lower_usd": "132376.82",
+      "pi_upper_usd": "132598.65",
+      "service_feasible": true,
+      "late_it_mwh_mean": 0.0,
+      "remaining_opportunity_usd": [
+        27105.76,
+        27327.58
+      ],
+      "capture_percent_approx": [
+        79.39075445615364,
+        79.52378473699667
+      ],
+      "capture_percent_outward": [
+        79.39,
+        79.53
+      ],
+      "certificate_width_up_cents": "221.82"
+    },
+    {
+      "window_h": 36,
+      "policy_mean_usd": 114251.11824324382,
+      "policy_mean_exact": "1001869178276324666877500707536761764869227039998835099/8769009823985417509222108996297698117935595257856",
+      "monetary_scope": "exact feasible numerical account",
+      "policy_range_usd": [
+        113954.91694168247,
+        114602.19665567818
+      ],
+      "policy_evidence_origin": "new_20261031",
+      "pi_lower_usd": "141996.61",
+      "pi_upper_usd": "142256.41",
+      "service_feasible": true,
+      "late_it_mwh_mean": 7.151009016436848e-10,
+      "remaining_opportunity_usd": [
+        27745.49,
+        28005.3
+      ],
+      "capture_percent_approx": [
+        80.31351171415777,
+        80.46045121760118
+      ],
+      "capture_percent_outward": [
+        80.31,
+        80.47
+      ],
+      "certificate_width_up_cents": "259.80"
+    },
+    {
+      "window_h": 48,
+      "policy_mean_usd": 123101.20449682447,
+      "policy_mean_exact": "4317902686308366860373324496990642151732308937764064909/35076039295941670036888435985190792471742381031424",
+      "monetary_scope": "exact feasible numerical account",
+      "policy_range_usd": [
+        122891.83512778586,
+        123247.54210876512
+      ],
+      "policy_evidence_origin": "new_20261031",
+      "pi_lower_usd": "152798.28",
+      "pi_upper_usd": "153070.23",
+      "service_feasible": true,
+      "late_it_mwh_mean": 8.478279629336112e-10,
+      "remaining_opportunity_usd": [
+        29697.08,
+        29969.02
+      ],
+      "capture_percent_approx": [
+        80.42139197338415,
+        80.56451894319551
+      ],
+      "capture_percent_outward": [
+        80.42,
+        80.57
+      ],
+      "certificate_width_up_cents": "271.94"
+    }
+  ],
+  "adjacent": [
+    {
+      "from_h": 8,
+      "to_h": 12,
+      "added_deadline_hours": 4,
+      "policy_mean_increment_usd": null,
+      "paired_policy_increment_range_usd": null,
+      "mean_policy_increment_per_deadline_hour": null,
+      "policy_increment_eligible": false,
+      "pi_increment_interval_usd": [
+        18756.93,
+        19044.8
+      ],
+      "pi_increment_per_deadline_hour_usd": [
+        4689.23,
+        4761.2
+      ],
+      "exact_policy_mean_increment": null,
+      "pi_lower_exact": "12466118444375194352995047236210683507100638461/664613997892457936451903530140172288000000",
+      "pi_upper_exact": "197772498477090767336863713273688155420409607516699/10384593717069655257060992658440192000000000000"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "added_deadline_hours": 4,
+      "policy_mean_increment_usd": 13817.584760550368,
+      "paired_policy_increment_range_usd": [
+        13733.953723792692,
+        13895.689783083306
+      ],
+      "mean_policy_increment_per_deadline_hour": 3454.396190137592,
+      "policy_increment_eligible": true,
+      "pi_increment_interval_usd": [
+        15323.48,
+        15665.86
+      ],
+      "pi_increment_per_deadline_hour_usd": [
+        3830.87,
+        3916.47
+      ],
+      "exact_policy_mean_increment": "484666146036069482495632759541500569443851535231324617/35076039295941670036888435985190792471742381031424",
+      "pi_lower_exact": "159128163242147317162697828975474844892198978162149/10384593717069655257060992658440192000000000000",
+      "pi_upper_exact": "32536703010550364987647122938254499179974410167199/2076918743413931051412198531688038400000000000"
+    },
+    {
+      "from_h": 16,
+      "to_h": 20,
+      "added_deadline_hours": 4,
+      "policy_mean_increment_usd": 12160.468296157149,
+      "paired_policy_increment_range_usd": [
+        12019.974734903444,
+        12398.10355418976
+      ],
+      "mean_policy_increment_per_deadline_hour": 3040.117074039287,
+      "policy_increment_eligible": true,
+      "pi_increment_interval_usd": [
+        11222.98,
+        11614.1
+      ],
+      "pi_increment_per_deadline_hour_usd": [
+        2805.74,
+        2903.53
+      ],
+      "exact_policy_mean_increment": "213270531906530503360710135882493649937443061354158383/17538019647970835018444217992595396235871190515712",
+      "pi_lower_exact": "116546149990909619093127748502524278199610050055653/10384593717069655257060992658440192000000000000",
+      "pi_upper_exact": "24121527841296014132235993882110094743611059790751/2076918743413931051412198531688038400000000000"
+    },
+    {
+      "from_h": 20,
+      "to_h": 24,
+      "added_deadline_hours": 4,
+      "policy_mean_increment_usd": 7072.039170736253,
+      "paired_policy_increment_range_usd": [
+        6910.22642390905,
+        7156.280756817481
+      ],
+      "mean_policy_increment_per_deadline_hour": 1768.0097926840633,
+      "policy_increment_eligible": true,
+      "pi_increment_interval_usd": [
+        7642.84,
+        8070.47
+      ],
+      "pi_increment_per_deadline_hour_usd": [
+        1910.71,
+        2017.62
+      ],
+      "exact_policy_mean_increment": "41343187309197262232358308006248790076539426217993059/5846006549323611672814739330865132078623730171904",
+      "pi_lower_exact": "79367792654728782869676809639925631740245736132069/10384593717069655257060992658440192000000000000",
+      "pi_upper_exact": "83808526801363114695671747689613846764910553362971/10384593717069655257060992658440192000000000000"
+    },
+    {
+      "from_h": 24,
+      "to_h": 36,
+      "added_deadline_hours": 12,
+      "policy_mean_increment_usd": 8980.056401611713,
+      "paired_policy_increment_range_usd": [
+        8951.399563376513,
+        9036.531193958004
+      ],
+      "mean_policy_increment_per_deadline_hour": 748.3380334676427,
+      "policy_increment_eligible": true,
+      "pi_increment_interval_usd": [
+        9397.97,
+        9879.59
+      ],
+      "pi_increment_per_deadline_hour_usd": [
+        783.16,
+        823.3
+      ],
+      "exact_policy_mean_increment": "157492405611352486933020108669187291197376365823969063/17538019647970835018444217992595396235871190515712",
+      "pi_lower_exact": "97594151338441631589478542863820326293214928539109/10384593717069655257060992658440192000000000000",
+      "pi_upper_exact": "102595466516697424578036444491796544536127048020507/10384593717069655257060992658440192000000000000"
+    },
+    {
+      "from_h": 36,
+      "to_h": 48,
+      "added_deadline_hours": 12,
+      "policy_mean_increment_usd": 8850.086253580654,
+      "paired_policy_increment_range_usd": [
+        8562.039598244275,
+        9051.300976394303
+      ],
+      "mean_policy_increment_per_deadline_hour": 737.5071877983878,
+      "policy_increment_eligible": true,
+      "pi_increment_interval_usd": [
+        10541.87,
+        11073.61
+      ],
+      "pi_increment_per_deadline_hour_usd": [
+        878.48,
+        922.81
+      ],
+      "exact_policy_mean_increment": "103475324401022730954440555614531697418466925922908171/11692013098647223345629478661730264157247460343808",
+      "pi_lower_exact": "109473108228392796913540077783617230902135422422501/10384593717069655257060992658440192000000000000",
+      "pi_upper_exact": "22998982368555241300537863953342500826075743708063/2076918743413931051412198531688038400000000000"
+    }
+  ],
+  "policy_by_seed_exact": {
+    "8": null,
+    "12": {
+      "20260920": "423026654685180286275939259426027251920636613974717137/5846006549323611672814739330865132078623730171904",
+      "20260921": "105374236758071524824375253038723519472680841720751169/1461501637330902918203684832716283019655932542976",
+      "20260922": "844178364743346859885879190302849207681461251384358907/11692013098647223345629478661730264157247460343808"
+    },
+    "16": {
+      "20260920": "31516309260278405421748331644590246118083155269667663/365375409332725729550921208179070754913983135744",
+      "20260921": "1003571460899371161620738370624151345225015229160409851/11692013098647223345629478661730264157247460343808",
+      "20260922": "1005798356986068978411707509755153215744356550541352083/11692013098647223345629478661730264157247460343808"
+    },
+    "20": {
+      "20260920": "9011567855335002645949324632582538068887450341984801/91343852333181432387730302044767688728495783936",
+      "20260921": "143013645368158864343684155107988717610347377459212777/1461501637330902918203684832716283019655932542976",
+      "20260922": "286710732399814716704706492734176280730636551897921793/2923003274661805836407369665432566039311865085952"
+    },
+    "24": {
+      "20260920": "308568785836460777531631265083724343637481077605093193/2923003274661805836407369665432566039311865085952",
+      "20260921": "613851250295592331164663586911102287637771557797577377/5846006549323611672814739330865132078623730171904",
+      "20260922": "153814282243195740148513797331446315907086000291484343/1461501637330902918203684832716283019655932542976"
+    },
+    "36": {
+      "20260920": "167491298053991790532762431689807283180417001416124641/1461501637330902918203684832716283019655932542976",
+      "20260921": "333090595384351972839732936210403648637954299551841723/2923003274661805836407369665432566039311865085952",
+      "20260922": "166897993391994556486121453973371774935219368807372047/1461501637330902918203684832716283019655932542976"
+    },
+    "48": {
+      "20260920": "90002366472858912098585884758777891345368674450538189/730750818665451459101842416358141509827966271488",
+      "20260921": "1436852946030867223081522545905223500177668114240051829/11692013098647223345629478661730264157247460343808",
+      "20260922": "180126484588969630464303474368121548753592754039425257/1461501637330902918203684832716283019655932542976"
+    }
+  },
+  "pi_12_to_24_interval_usd": [
+    34580.41,
+    34959.31
+  ],
+  "new_policy_run_count": 15,
+  "historical_policy_rows_retained": 9,
+  "anchor_complete_book_bitwise_equal": {
+    "scope": "One full-year three-checkpoint reduction check after shared runner extension",
+    "rows": [
+      {
+        "seed": 20260920,
+        "historical_saving_usd": 105565.66546172019,
+        "new_anchor_saving_usd": 105565.66546172019,
+        "saving_difference_usd": 0.0,
+        "checkpoint_hash_equal": true,
+        "array_equal": {
+          "_complete_book.npz": {
+            "compute": true,
+            "reference": true
+          },
+          "_trajectory.npz": {
+            "compute": true,
+            "grid": true,
+            "daily": true,
+            "value": true,
+            "mtm": true,
+            "service_debt": true
+          }
+        },
+        "all_arrays_bitwise_equal": true
+      },
+      {
+        "seed": 20260921,
+        "historical_saving_usd": 105003.51737830597,
+        "new_anchor_saving_usd": 105003.51737830597,
+        "saving_difference_usd": 0.0,
+        "checkpoint_hash_equal": true,
+        "array_equal": {
+          "_complete_book.npz": {
+            "compute": true,
+            "reference": true
+          },
+          "_trajectory.npz": {
+            "compute": true,
+            "grid": true,
+            "daily": true,
+            "value": true,
+            "mtm": true,
+            "service_debt": true
+          }
+        },
+        "all_arrays_bitwise_equal": true
+      },
+      {
+        "seed": 20260922,
+        "historical_saving_usd": 105244.00268487021,
+        "new_anchor_saving_usd": 105244.00268487021,
+        "saving_difference_usd": 0.0,
+        "checkpoint_hash_equal": true,
+        "array_equal": {
+          "_complete_book.npz": {
+            "compute": true,
+            "reference": true
+          },
+          "_trajectory.npz": {
+            "compute": true,
+            "grid": true,
+            "daily": true,
+            "value": true,
+            "mtm": true,
+            "service_debt": true
+          }
+        },
+        "all_arrays_bitwise_equal": true
+      }
+    ],
+    "all_three_anchors_bitwise_equal": true
+  },
+  "max_new_policy_repair_cost_bound_usd": 1.0975058273910549e-08,
+  "no_new_training": true,
+  "new_policy_runs_passing_exact_service": 12,
+  "new_policy_service_failures": 3,
+  "source_hashes": {
+    "old_exact_results": "4ccaba55bfcc37f8f6bf2c8fe2173f6430fdf8a4ad6770956c9a21d4851631f7",
+    "seven_window_certificate": "ef526e94f5fc196b41e4b8f3fe5c6f60168fc0d599e72dca3e8b854406ae1a6c"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "arithmetic": "exact rational; float inputs interpreted as binary64 values",
+  "scope": "release/deadline/conservation/fixed service capacity only; no ramp guarantee",
+  "slots": 4,
+  "candidate_release_error_exact": "1/1000000000000",
+  "candidate_deadline_error_exact": "0",
+  "correction_l1_exact": "1/500000000000",
+  "correction_l1_bound_exact": "1/250000000000",
+  "repaired_release_error_exact": "0",
+  "repaired_deadline_error_exact": "0",
+  "repaired_capacity_error_exact": "0",
+  "repaired_nonnegative_error_exact": "0",
+  "initial_executed_work_exact": "0",
+  "final_executed_work_exact": "1",
+  "repaired_exact": [
+    "1/2",
+    "1/2",
+    "0",
+    "0"
+  ]
+}

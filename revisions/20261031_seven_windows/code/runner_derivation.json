@@ -1,0 +1,15 @@
+{
+  "original_source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\ExecutableServiceCommitments_Revision_20260928\\engine\\scripts\\run_service_window.py",
+  "original_sha256": "ecd378787e1073b382fbf08540ea17a20578eeb95597387c03cb083b7eb32044",
+  "extension_sha256": "b375a9ffb4260d4942164c182b952d8baa81924e8abc247de1cbe4a9870b69c0",
+  "source_preserved": true,
+  "target_windows_h": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    36,
+    48
+  ]
+}

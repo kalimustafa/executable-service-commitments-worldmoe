@@ -1,0 +1,8 @@
+WorldMoE operating mechanism. Available information feeds valuation and constrained execution; current service updates the ledger and the common financial account.
+
+Contract-value identification. With common admissions, realised prices, physics and accounting, H_B>U_A certifies a positive historical opportunity premium between nested rights.
+
+Placement notes for the authoring workflow, not caption text
+Mechanism: Section 3.2 after WorldMoE's operating role. The 7.2-by-4-inch design may be placed at 6.5 inches; minimum type remains 8.125 pt. Keep the original detailed architecture in the supplement.
+Identification: Section 2.4 after the cross-contract identification proposition. The symbolic illustration contains no numerical certificate version.
+Longer information-boundary and 36/48 h continuation qualifications belong in the methods, as recorded in manuscript_framework.txt.

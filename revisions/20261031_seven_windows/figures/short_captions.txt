@@ -1,0 +1,14 @@
+WorldMoE operating mechanism. Available information feeds valuation and constrained execution; current service updates the ledger and the common financial account.
+
+Contract-value identification. With common admissions, realised prices, physics and accounting, H_B>U_A certifies a positive historical opportunity premium between nested rights.
+
+Operating cash-flow reconciliation. Three-seed 24 h means include recovery-import costs, deviation charges and curtailment benefits before arriving at net saving.
+
+Remaining 24 h opportunity. Exact actual-admission certificates bound the gap and capture rate; displayed interval endpoints are rounded outward.
+
+Seven-window contract value. Whiskers show three-seed ranges; PI intervals are certified. The 8 h cash-only failure is excluded from feasible-policy increments.
+
+Figure placement
+Cash-flow reconciliation: Section 4.1 alongside Table 1.
+Remaining opportunity: the subsection reporting the new actual-admission 24 h certificate and captured opportunity.
+Seven-window contract value: the expanded deadline-sensitivity results subsection, with full service status in the adjacent table.

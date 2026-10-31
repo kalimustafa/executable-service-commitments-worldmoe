@@ -1,0 +1,42 @@
+{
+  "scope": "Read-only extension feasibility screen using exact prefixes; no new value optimisation or new WorldMoE policy replay",
+  "site_streams_identical": true,
+  "windows": [
+    {
+      "hours": 8,
+      "exact_earliest_max_deadline_violation": "0",
+      "source_arrivals_feasible_by_earliest": true
+    },
+    {
+      "hours": 12,
+      "exact_earliest_max_deadline_violation": "0",
+      "source_arrivals_feasible_by_earliest": true
+    },
+    {
+      "hours": 16,
+      "exact_earliest_max_deadline_violation": "0",
+      "source_arrivals_feasible_by_earliest": true
+    },
+    {
+      "hours": 20,
+      "exact_earliest_max_deadline_violation": "0",
+      "source_arrivals_feasible_by_earliest": true
+    },
+    {
+      "hours": 24,
+      "exact_earliest_max_deadline_violation": "0",
+      "source_arrivals_feasible_by_earliest": true
+    },
+    {
+      "hours": 36,
+      "exact_earliest_max_deadline_violation": "0",
+      "source_arrivals_feasible_by_earliest": true
+    },
+    {
+      "hours": 48,
+      "exact_earliest_max_deadline_violation": "0",
+      "source_arrivals_feasible_by_earliest": true
+    }
+  ],
+  "uniform_envelope_8h_note": "A compatible stream can concentrate a 35-saturated-slot-plus-clearing busy block at its first slot, requiring more than 32 slots; the existing universal nonempty-corridor premise cannot cover every compatible admission array at 8 h. Use recovered actual admissions for 8 h evaluation."
+}

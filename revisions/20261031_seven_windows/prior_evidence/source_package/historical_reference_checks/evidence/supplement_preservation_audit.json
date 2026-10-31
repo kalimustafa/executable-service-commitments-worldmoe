@@ -1,0 +1,93 @@
+{
+  "output": "/workspace/scratch/4efe13799b83/deliverables/EnergyEconomics_Supplementary_Verification_20261030.docx",
+  "source": "/workspace/scratch/4efe13799b83/restore_originals/AppliedEnergy_WorldMoE_Supplementary_Revised_20261023.docx",
+  "protected_tables": [
+    9,
+    10,
+    29
+  ],
+  "protected_table_xml_identical": true,
+  "original_images_byte_identical": true,
+  "original_image_count": 6,
+  "original_tables": 31,
+  "final_tables": 37,
+  "new_sections": [
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24"
+  ],
+  "native_equation_count": 152,
+  "frontier_30h_overdue_jobs": "27",
+  "preserved_image_hashes": {
+    "image1.png": "030b517eb2ba7130d99f779c9f40bd5837cc5b5c572bcd5370276dfda5e2f458",
+    "image2.png": "6d524be5adb2bd7b7a6f6a79a01c090b5828a756e97283f0c5b29a4f4d6f22a1",
+    "image3.png": "992b7960c32d73823281dac5d26c99389282cf8f31f0bf459e132d105343494a",
+    "image4.png": "1066dded013ff6b4a93fdfc7b72e94fc9f7415b8d70cb9c06e784e1289c23172",
+    "image5.png": "a566cae02cb8b81f0729c99cc3a435e3aa4da1b92054a3a86116fae1d2826c83",
+    "image6.png": "d03bad9c8e26163700929ccbd886e6e942e1b4ead1f8f63c9cee81ee7849b3a7"
+  },
+  "docx_sha256": "1377538707baf888bf2a5ec88eb1dfdee5775f43294f596ce3d51f167bfb47ed",
+  "docx_size": 1495309,
+  "pdf": "/workspace/scratch/4efe13799b83/qa/supplement/EnergyEconomics_Supplementary_Verification_20261030.pdf",
+  "pdf_sha256": "bae5bd86fafb9cd36888ee7508005cd9aaef6405043be9875fe67c172719be5a",
+  "page_count": 33,
+  "qa_scope": "All 33 pages inspected at original resolution in the first render; all changed pages inspected again after corrections.",
+  "visual_qa": {
+    "result": "PASS",
+    "first_render_all_pages": [
+      1,
+      33
+    ],
+    "unchanged_pages_verified_by_hash": [
+      1,
+      23,
+      24,
+      25,
+      30
+    ],
+    "final_changed_pages_math_audit": [
+      2,
+      7,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "final_changed_pages_restore_content": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11
+    ],
+    "final_changed_pages_certificate_audit": [
+      26,
+      27,
+      28,
+      29,
+      31,
+      32,
+      33
+    ],
+    "inspection_detail": "original resolution",
+    "resolved_defects": [
+      "sum-group brace conversion",
+      "conservative-capacity qualifier",
+      "scientific notation exponents",
+      "source-cell typography"
+    ]
+  }
+}

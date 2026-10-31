@@ -1,0 +1,1912 @@
+{
+  "title": "Evidence manifest template for twelve annual site contract certificates",
+  "status": "Template only; null entries and false verification flags are unresolved evidence requirements",
+  "audit_date": "2026-10-30",
+  "repository": {
+    "url": "https://github.com/kalimustafa/executable-service-commitments-worldmoe",
+    "commit": "323c2084e7ee668ba512fb1e33dd56b8394b32d4",
+    "inspected_sources": [
+      {
+        "path": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc"
+      },
+      {
+        "path": "research/ServiceCommitment_1to5_20260927/src/context.py",
+        "sha256": "57dafebc539db39ea45103c2d10ae68ed54350cfccf4f82247b1e8eec857a47b"
+      },
+      {
+        "path": "research/ServiceCommitment_1to5_20260927/configs/protocol.json",
+        "sha256": "60476b6d393c9c4c475f862f716acf25ab0c3b24f9d36742711afefa3a6d4d96"
+      },
+      {
+        "path": "research/ServiceCommitment_1to5_20260927/vendor/economic_core.py",
+        "sha256": "80ef98685031f744103c26a7d8e1955df03ae737148675fe465a155804589cce"
+      },
+      {
+        "path": "research/ServiceCommitment_1to5_20260927/vendor/reservation.py",
+        "sha256": "3a9b4091abc141b9a8da6f05f9913fa849b7fcef6fdeaf4c936ec96d399b7949"
+      },
+      {
+        "path": "research/R2_PAPER_INTEGRATION_20260923/configs/economic_constraints.json",
+        "sha256": "7836fae0736bde2a8b7aed499d48033b803dff9c09532bd42bc6321f7024ed58"
+      },
+      {
+        "path": "source_data/current/extensions/certified_value_bounds.csv",
+        "sha256": "438b5bf9fe3a3df46165b34d6a40f1214b96d8d7282c90c5d65e1cfcf997d024"
+      },
+      {
+        "path": "source_data/current/certificates/cost_bound_zone_diagnostics.csv",
+        "sha256": "e7e0c876179d63746f997e250d79ba7b5ad4f48731cb462c05770cc8f73cc81a"
+      }
+    ]
+  },
+  "units": {
+    "time_step_hours": "0.25",
+    "price": "USD per MWh",
+    "grid_power": "MW",
+    "energy": "MWh",
+    "service": "work units",
+    "deadline": "inclusive final service slot"
+  },
+  "matching_requirements": [
+    "same admissions",
+    "same initial service state",
+    "same original physical feasible domain",
+    "same fixed baseline",
+    "same settlement rates and reference imports",
+    "same terminal obligation ledger",
+    "common fixed charges counted once",
+    "same exact scalar interpretation"
+  ],
+  "instances": [
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 12,
+      "window_slots": 48,
+      "zone": "WEST",
+      "zone_index": 0,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 12,
+      "window_slots": 48,
+      "zone": "CAPITL",
+      "zone_index": 1,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 12,
+      "window_slots": 48,
+      "zone": "NYC",
+      "zone_index": 2,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 12,
+      "window_slots": 48,
+      "zone": "LONGIL",
+      "zone_index": 3,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 16,
+      "window_slots": 64,
+      "zone": "WEST",
+      "zone_index": 0,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 16,
+      "window_slots": 64,
+      "zone": "CAPITL",
+      "zone_index": 1,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 16,
+      "window_slots": 64,
+      "zone": "NYC",
+      "zone_index": 2,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 16,
+      "window_slots": 64,
+      "zone": "LONGIL",
+      "zone_index": 3,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 24,
+      "window_slots": 96,
+      "zone": "WEST",
+      "zone_index": 0,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 24,
+      "window_slots": 96,
+      "zone": "CAPITL",
+      "zone_index": 1,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 24,
+      "window_slots": 96,
+      "zone": "NYC",
+      "zone_index": 2,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    },
+    {
+      "calendar_year": 2025,
+      "trace": "Eagle",
+      "window_hours": 24,
+      "window_slots": 96,
+      "zone": "LONGIL",
+      "zone_index": 3,
+      "number_intervals": 35040,
+      "domain": {
+        "release_rule": "cohort r is eligible in r,...,r+D-1",
+        "arrival_representation": "exact stored binary64 or declared rationals",
+        "service_type": "divisible homogeneous workload",
+        "initial_backlog": null,
+        "terminal_rule": null,
+        "ramp_constraints_retained": null,
+        "boundary_recovery_plan_hash": null
+      },
+      "input_files": [
+        {
+          "role": "admissions",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "RT settlement prices",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "PV and PUE forcing",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "facility limits and work conversion",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "reference book and imports",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "terminal-price data",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        {
+          "role": "common DA charges",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        }
+      ],
+      "lagrangian_formulation": {
+        "implementation_sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc",
+        "program_file": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+        "multiplier_file": {
+          "role": "complete equality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "global_breakpoint_minima": {
+          "role": "exact original-cost minima",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_quantum_usd": "0.000000000001",
+        "arithmetic_loss_upper_usd": null,
+        "model_allowance_usd": null
+      },
+      "independent_epigraph_formulation": {
+        "program_file": null,
+        "implementation_sha256": null,
+        "independent_assembly_assertion": null,
+        "constraint_matrix": {
+          "role": "all sparse rows and finite bounds",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_file": {
+          "role": "all exact hull facets and original breakpoints",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "multiplier_file": {
+          "role": "complete equality and inequality multipliers",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "facet_dominance_report": {
+          "role": "every endpoint and breakpoint check",
+          "path": null,
+          "sha256": null,
+          "available": false,
+          "verification_status": "not supplied"
+        },
+        "exact_lower_bound": null,
+        "arithmetic_allowance_usd": null,
+        "model_allowance_usd": null
+      },
+      "solver_record": {
+        "solver_name": null,
+        "solver_version": null,
+        "scipy_version": null,
+        "termination_status": null,
+        "primal_objective": null,
+        "global_dual_bound": null,
+        "primal_feasibility_tolerance": null,
+        "dual_feasibility_tolerance": null,
+        "retained_solver_log": null
+      },
+      "verification_record": {
+        "raw_and_sign_corrected_multipliers_retained": false,
+        "all_finite_bounds_verified": false,
+        "cost_minorant_verified": false,
+        "original_feasible_set_embedding_proved": false,
+        "terminal_cost_dominance_verified": false,
+        "exact_primal_residuals": null,
+        "exact_dual_evaluation": null,
+        "outward_money_rounding": null,
+        "passed": false
+      }
+    }
+  ],
+  "annual_witness": {
+    "raw_full_book": {
+      "role": "raw full-year plus recovery witness",
+      "path": null,
+      "sha256": null,
+      "available": false,
+      "verification_status": "not supplied"
+    },
+    "repaired_full_book": {
+      "role": "exact feasible repaired book",
+      "path": null,
+      "sha256": null,
+      "available": false,
+      "verification_status": "not supplied"
+    },
+    "cohort_assignment": {
+      "role": "release-deadline assignment",
+      "path": null,
+      "sha256": null,
+      "available": false,
+      "verification_status": "not supplied"
+    },
+    "complete_recovery": {
+      "role": "post-year service schedule",
+      "path": null,
+      "sha256": null,
+      "available": false,
+      "verification_status": "not supplied"
+    },
+    "repair_l1_bound": null,
+    "repair_currency_upper_bound": null,
+    "exact_ledger_revaluation": null,
+    "safe_saving_lower_bound": null,
+    "strict_two_method_exclusion_verified": false
+  },
+  "information_scope": {
+    "certificate_type": "realised-calendar perfect-information outer relaxation",
+    "policy_first_release_receipt_records": {
+      "role": "numerical first-release vintages with receipt and processing times",
+      "path": null,
+      "sha256": null,
+      "available": false,
+      "verification_status": "not supplied"
+    },
+    "fixed_checkpoint_replay": {
+      "role": "adapted decision replay",
+      "path": null,
+      "sha256": null,
+      "available": false,
+      "verification_status": "not supplied"
+    },
+    "first_release_policy_validation_inferred_from_bound": false
+  },
+  "reporting": {
+    "primal_residuals_are_diagnostics_not_repairs": true,
+    "round_savings_ceilings": "upward",
+    "round_cost_lower_bounds": "downward",
+    "round_witness_saving_lower_bounds": "downward",
+    "combine_two_bounds": "minimum savings ceiling",
+    "strict_against_both": "repaired witness lower bound exceeds maximum of both savings ceilings"
+  }
+}

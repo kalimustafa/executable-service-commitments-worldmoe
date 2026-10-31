@@ -1,0 +1,25 @@
+{
+  "palette": {
+    "purple": "#a34fbe",
+    "pink": "#e563a0",
+    "lightpink": "#edacd0",
+    "lavender": "#e6d5ed",
+    "text": "#38223f",
+    "axis": "#5d5662",
+    "grid": "#eeeaf0",
+    "white": "#ffffff"
+  },
+  "source_economics": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\source_package\\verification_20261031\\economics\\economic_value_results.json",
+  "values": {
+    "policy_saving_usd": "105271.061841632123333333",
+    "24h_lower_usd": "130931.31",
+    "24h_upper_usd": "134437.85",
+    "gap_lower_usd": "25660.248158367876666667",
+    "gap_upper_usd": "29166.788158367876666667",
+    "capture_lower_percent": "78.30463060933518598618841346",
+    "capture_upper_percent": "80.40174794068135676129185601"
+  },
+  "scope": "Historical calendar; matched admissions, original 24 h service constraints and common financial account; exact numerical repair. All nine recovered historical trajectories have exact service/account repairs; the 24 h mean enclosure is [105271.061841632,105271.061841633] USD and the maximum repair cost is below 1.66e-8 USD. Graph labels use nearest whole dollars or two decimal percentages, not outward-rounded certificates. The opportunity interval is deterministic and not statistical. Historical refinement bands are not confidence intervals.",
+  "figure2": "Historical paired policy results and hypothetical additional-cost sensitivity; values unchanged.",
+  "figure3": "Difference and ratio derived from the published 24 h opportunity endpoints and WorldMoE historical mean."
+}

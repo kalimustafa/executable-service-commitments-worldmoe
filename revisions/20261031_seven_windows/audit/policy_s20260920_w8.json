@@ -1,0 +1,20 @@
+{
+  "run_name": "WindowExtension20261031_CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w8",
+  "seed": 20260920,
+  "window_h": 8,
+  "source_book_sha256": "57383ee5613d0e13c19b0960c969e5b7b5ecc91255de306d5a6d899bdca1bc90",
+  "source_result_sha256": "2bc46fdaf42d713b9cdea9c44125bea221042bc41b9d86612d0de517e40e0666",
+  "forcing_sha256": "c600c9e01e8236bd2e1cb4e2dc08591e3ee264d05f1c26b4c785ec355c3147c8",
+  "checkpoint_sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab",
+  "evidence_type": "new frozen-checkpoint evaluation with substantive original-deadline failure",
+  "recorded_raw_saving_usd": 50947.4511869629,
+  "independently_resettled_cash_saving_usd": 50947.4511869629,
+  "late_IT_mwh": 3.011988508252982,
+  "max_deadline_deficit_work": 1.4573842525501277,
+  "service_feasible": false,
+  "all_exact_checks": false,
+  "repair_applied": false,
+  "terminal_policy_and_reference_cost_difference_exact": "0/1",
+  "eligible_as_feasible_value_or_capture": false,
+  "repair_cost_bound_usd": null
+}

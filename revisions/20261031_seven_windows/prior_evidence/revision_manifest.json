@@ -1,0 +1,14 @@
+{
+  "revision_date": "2026-10-31",
+  "main_pages": 15,
+  "supplement_pages": 59,
+  "proof": "Uniform admission-dependent existence plus materialised exact original-admission witness",
+  "recovered_original_policy_books": 9,
+  "exact_policy_witnesses": 9,
+  "exact_opportunity_site_witnesses": 4,
+  "original_supplement_tables_preserved": 42,
+  "original_supplement_figures_preserved": 12,
+  "new_policy_runs": false,
+  "new_contract_window_results": false,
+  "source_base_commit": "323c2084e7ee668ba512fb1e33dd56b8394b32d4"
+}

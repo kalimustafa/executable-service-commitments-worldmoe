@@ -1,0 +1,66 @@
+{
+  "palette": {
+    "purple": "#a34fbe",
+    "pink": "#e563a0",
+    "lavender": "#e6d5ed",
+    "text": "#38223f",
+    "axis": "#5d5662",
+    "grid": "#eeeaf0"
+  },
+  "cashflow_source": "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\historical_extension\\results\\historical_settlement.csv",
+  "cashflow_means_usd": {
+    "gross_avoided_import": "172510.1075550115",
+    "recovery_import_cost": "64971.81595273670666666666666666666666666666666666666666666666666666667",
+    "net_energy_reduction": "107538.2916022747933333333333333333333333333333333333333333333333333333",
+    "import_deviation_charge": "3348.7567679851375",
+    "pv_curtailment_benefit": "1081.527007342450666666666666666666666666666666666666666666666666666667",
+    "net_saving_from_components": "105271.0618416321065000000000000000000000000000000000000000000000000000",
+    "mean_recorded_saving": "105271.0618416321333333333333333333333333333333333333333333333333333333",
+    "reconciliation_residual": "-2.68333333333333333333333333333333333333333333333333333E-11"
+  },
+  "actual_admission_gap": {
+    "scope": "New exact actual-admission PI bounds compared with the previously recovered and exactly repaired three-seed 24 h WorldMoE executions; new policy anchors are checked separately",
+    "historical_policy_record_sha256": "4ccaba55bfcc37f8f6bf2c8fe2173f6430fdf8a4ad6770956c9a21d4851631f7",
+    "mean_worldmoe_saving_exact": "615415316980432282273993768801445412847025904724567045/5846006549323611672814739330865132078623730171904",
+    "24h_remaining_opportunity_lower_exact": "38686638800785282095037520590387207732149287842160973034874987/1427247692705959881058285969449495136382746624000000000000",
+    "24h_remaining_opportunity_upper_exact": "39003224935851474757896148607788395036398337190296052011165803/1427247692705959881058285969449495136382746624000000000000",
+    "24h_remaining_opportunity_lower_down_cents": "27105.76",
+    "24h_remaining_opportunity_upper_up_cents": "27327.58",
+    "24h_capture_percent_lower_exact": "536599571864913750587675928433179942842342620609450897216796875/6758968037786690175801621734609956394009081105747939401138176",
+    "24h_capture_percent_upper_exact": "536599571864913750587675928433179942842342620609450897216796875/6747661390105754723556670733988485418857329343314543723413504",
+    "24h_capture_percent_lower_down_2dp": "79.39",
+    "24h_capture_percent_upper_up_2dp": "79.53",
+    "12_to_24_PI_premium_lower_exact": "359103595103356170693554608025950950350500013247973/10384593717069655257060992658440192000000000000",
+    "12_to_24_PI_premium_upper_exact": "363038191845024558727035110883410620864392654254619/10384593717069655257060992658440192000000000000",
+    "12_to_24_PI_premium_lower_down_cents": "34580.41",
+    "12_to_24_PI_premium_upper_up_cents": "34959.31",
+    "24h_witness_ceiling_gap_up_cents": "221.82"
+  },
+  "24h_certificate_source_row": {
+    "window_hours": "24",
+    "raw_witness_savings_floor_exact": "132376825612346763/1000000000000",
+    "raw_ceiling_exact": "1376983018839581381489154654039002918814762022236699/10384593717069655257060992658440192000000000000",
+    "raw_witness_savings_floor_usd": "132376.82561234676",
+    "raw_ceiling_usd": "132598.64144479416",
+    "raw_witness_floor_down_cents": "132376.82",
+    "raw_ceiling_up_cents": "132598.65",
+    "witness_repair_l1_total_exact": "6792411072519/147573952589676412928",
+    "witness_terminal_backlog_exact": "0/1",
+    "outer_terminal_forced_complete": "False",
+    "combined_floor_exact": "132376825612346763/1000000000000",
+    "combined_ceiling_exact": "1376983018839581381489154654039002918814762022236699/10384593717069655257060992658440192000000000000",
+    "combined_floor_usd": "132376.82561234676",
+    "combined_ceiling_usd": "132598.64144479416",
+    "combined_floor_down_cents": "132376.82",
+    "combined_ceiling_up_cents": "132598.65",
+    "inherited_floor_window_hours": "24",
+    "inherited_ceiling_window_hours": "24",
+    "interval_width_up_cents": "221.82"
+  },
+  "source_sha256": {
+    "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Revision_20261031\\historical_extension\\results\\historical_settlement.csv": "6e2729d9e8da13f0422c37edea547b2ae9e653aa8b8f88e886f2904addaae934",
+    "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Window_Extension_20261031\\certificates\\results\\key_economic_comparisons.json": "e0f6177a06401cafa2aaa249ce870ec0b487664b4c682579f4350f6a8516856b",
+    "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Window_Extension_20261031\\certificates\\results\\seven_window_bounds.csv": "fc0c3e2d487ebdb6f63d2a32f8e69268ba37fd1f6390f5a9ab9b4ec59b9147a1"
+  },
+  "scope": "Historical three-seed 24 h reconciled cash flows and actual-admission exact certificates. No additional tenant compensation or implementation cost is included. The earlier uniform-admission certificate remains in the historical package, not in these main figures."
+}

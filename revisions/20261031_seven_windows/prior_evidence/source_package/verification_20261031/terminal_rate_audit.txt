@@ -1,0 +1,165 @@
+Independent terminal liability sign verification
+31 October 2026
+
+Purpose and source
+
+The new outer relaxation may drop a terminal charge only after establishing
+that it is nonnegative on nonnegative unfinished work. The public physical
+NPZ alone does not identify historical terminal prices. The released daily
+mark-to-market ledger supplies additional independent equations.
+
+The documented source is
+research/ServiceCommitment_1to5_20260927/vendor/economic_core.py, record().
+The aggregation in
+research/R2_JointDecision_20260927/scripts/summarize_worldmoe_final.py
+selects mtm_value_usd for worldmoe_daily_by_seed.csv. Both refer to the same
+three published seed trajectories. The source assigns each interval to its
+America/New_York date. The calculation pins repository commit
+323c2084e7ee668ba512fb1e33dd56b8394b32d4 and records both input hashes.
+
+This verification conditions on the documented matched-account provenance,
+the per-zone service-debt branch, no migration or fee/grid overrides,
+binary64 round-to-nearest operations without overflow, shortest round-trip
+CSV rendering, and the single intervening Pandas default high-precision CSV
+parse present in summarize_worldmoe_final.py. These are model/data lineage conditions,
+not parameters estimated by a regression. It does not recover the original
+training-price file.
+
+Known constants and unknown rates
+
+Reproduce the source cash-value array v_t and its binary64 cumulative work
+difference q_tz = fl(0.25*cumsum((reference-compute)*k)_tz). These floating
+outputs are known constants of the inverse problem. It is unnecessary to
+replace the source cumulative array with an exact mathematical cumsum.
+
+Let rho_z = PUEmax*historical_RT_median_z. The exact mathematical debt
+corresponding to the remaining source multiplications is D_t=sum_z q_tz*rho_z.
+The terminal dollar coefficient per work unit is 0.25*k_z*rho_z.
+The source evaluates debt with two multiplications and a four-term reduction,
+then mtm_t = fl(v_t - fl(debt_t-debt_(t-1))), then sums mtm_t within each day.
+
+For a day running from index s through e, set
+M_dz=q_ez-q_(s-1),z and
+d_d=sum_(t=s)^e v_t-y_d,
+where y_d is the exact binary64 value obtained by round-tripping the final CSV
+field. This final value need not equal the original daily sum, because the
+aggregation script reads and re-exports the first daily CSV. The additional
+conversion error is explicitly bounded below.
+All displayed constants entering M and d are converted to exact Fractions.
+The ideal equation is M_d rho=d_d; the following enclosure accounts for the
+remaining floating operations.
+
+Rounding enclosure
+
+Write u=2^-53, gamma_n=n*u/(1-n*u), T=max_z |rho_z|,
+L_t=sum_z |q_tz|, V_d=sum_(t=s)^e |v_t|,
+J_d=sum_(t=s)^e (L_t+L_(t-1)), m=e-s+1.
+
+The computed debt differs from D_t by at most gamma_6 L_t T.
+Summing the ideal differences telescopes, so only the two endpoint debt
+errors remain. The rounded debt differences, rounded mtm subtractions and
+at-most-m additions in bincount give
+
+  |d_d-M_d rho| <= a_d+b_d T,
+
+  a_d = [u+gamma_m(1+u)] V_d + epsilon_CSV,d + 10^-100,
+
+  b_d = gamma_6(L_e+L_(s-1))
+        + [u(2+u)(1+gamma_6)
+           +gamma_m(1+u)^2(1+gamma_6)] J_d.
+
+The additive reserve is larger than any cumulative subnormal rounding
+contribution in these finite nominal-account operations. PUEmax has its
+declared positive, order-one nominal value. The enclosure remains conservative
+if a reduction uses fewer rounding steps or fused arithmetic. The inverse
+problem does not apply a feasibility tolerance to the sign of rho.
+
+CSV conversion enclosure
+
+The official Pandas parsers.pyx selects precise_xstrtod for float_precision=None.
+The tokenizer.c implementation retains at most 17 digits, evaluates them by
+Horner operations, and scales by a cached decimal power. At most 34 Horner
+operations, one rounded power constant and two divisions are needed. gamma_40
+conservatively bounds their relative arithmetic error. Default shortest decimal
+export uses at most 17 significant digits and round-trips its input; its decimal
+value is within gamma_2 times the magnitude of the source binary64 value.
+
+Leading zeros count toward the parser's 17-digit limit. This can truncate the
+fractional part of a fixed-notation number below one, by strictly less than
+10^-16 in absolute value. Scientific notation has no extra significant-digit
+loss; omitted trailing integer zeros do not change the scaled value. A 10^-300
+absolute reserve covers tiny and subnormal conversions. Thus with
+
+  eta = (1+gamma_2)(1+gamma_40)-1,
+  delta = (1+gamma_40)10^-16 + 10^-300,
+
+the original daily sum y0 and intermediate parsed value y obey
+|y-y0| <= eta |y0|+delta. The final export round-trips y, so eliminating the
+unknown y0 gives the explicit usable allowance
+
+  epsilon_CSV,d = (eta |y_d|+delta)/(1-eta).
+
+The four selected rows have maximum CSV allowance below 3.686e-11 dollars.
+It is added to a_d, without inferring that a default parser is correctly rounded.
+The proof uses the documented default parser algorithm; the official Pandas
+v2.2.3 source and selection logic are retained in parser_provenance, with URLs
+and exact rational eta/delta in the JSON. This names the algorithm assumption;
+it does not infer a historical installed package version from the CSV itself.
+
+Exact inverse and self-bound
+
+Choose four well-conditioned daily rows by pivoted QR as a discovery step.
+Rebuild their M and d exactly and verify the inverse with rational arithmetic.
+Let rho_hat=M^-1 d, kappa=||M^-1||_infinity,
+a=max a_d and b=max b_d. If kappa*b<1, then every compatible rate vector obeys
+
+  ||rho||_infinity <=
+      (||rho_hat||_infinity+kappa*a)/(1-kappa*b) = T_upper,
+
+  ||rho-rho_hat||_infinity <= kappa*(a+b*T_upper) = radius.
+
+This self-bound does not assume a prior magnitude or sign for the unknown
+historical prices. The discovery QR does not enter the certificate: the
+selected exact matrix, exact inverse, exact RHS, coefficients and resulting
+intervals are stored in terminal_rate_audit.json.
+
+Computed result
+
+The selected rows are seed 20260922 on 2025-07-25, 2025-01-06, 2025-06-27 and
+seed 20260921 on 2025-08-18. The inverse infinity norm is approximately 0.748489,
+a is 1.41055e-10 and b is 4.31381e-11. The uniform enclosure radius is below
+1.728e-9. The four rho lower endpoints exceed
+
+  [31.0069471485, 44.8218153888, 44.3299885923, 50.2319101507].
+
+All are strictly positive. The corresponding terminal dollars-per-work upper
+endpoints are less than
+
+  [12.7055544656, 18.3664007270, 18.1648674345, 20.5832669449].
+
+Dividing the central rho values by the published maximum PUE gives
+28.37, 41.01, 40.56 and 45.96 dollars/MWh. These descriptive centers are not
+substituted for a recovered historical file. The entire 1095-row descriptive
+residual check is below 4.33e-12 dollars; sign validity follows from the exact
+four-row enclosure, not from that least-squares residual.
+
+Implication and boundary
+
+Under the documented matched account, every nonnegative terminal work vector
+has nonnegative terminal charge. Omitting that charge therefore lowers the
+objective and is valid in an outer cost relaxation for an absolute backlog
+account. The archived source, however, uses the signed fixed-reference term
+sum_z tau_z*(R_z,N-X_z,N). The companion reference proof establishes
+|R_z,N-A_z,N| <= E_z, with E_z=2.412e-12. For an original feasible schedule,
+A_z,N-X_z,N >= 0, so its source terminal term is bounded below by
+-delta_T, where delta_T=sum_z 21*E_z=2.02608e-10 dollars. The new outer cost
+floors subtract delta_T. An exactly completed true-admission schedule X_N=A_N
+can still have a signed source terminal offset; its cost upper bound adds
+delta_T. These two allowances are explicitly included in the new annual
+records, even though they do not change any displayed cent. The reference
+expense and import-deviation anchor remain frozen. This proof does not make
+a relaxed primal trajectory executable or establish nonanticipative inputs.
+
+Run
+
+python terminal_rate_audit.py --repo /path/to/pinned/repository --output terminal_rate_audit.json

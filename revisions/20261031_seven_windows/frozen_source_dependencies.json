@@ -1,0 +1,95 @@
+{
+  "purpose": "Frozen source and cache identity for the new window evaluations; no model fitting",
+  "files": [
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/scripts/run_service_window.py",
+      "bytes": 31466,
+      "sha256": "ecd378787e1073b382fbf08540ea17a20578eeb95597387c03cb083b7eb32044"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/src/models/scenario_recourse.py",
+      "bytes": 11352,
+      "sha256": "e2f450d1bec715870069f38797a999c1b23cbdef17bc3aad9b3211cc8b785a22"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/src/models/continuous_cost.py",
+      "bytes": 3733,
+      "sha256": "9826353e3c20b33052dc88a0834e5123ddf012168b266d92bb40c8f31ddb06be"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/cache/structured_market2025_s20260920_ep10.npz",
+      "bytes": 34733833,
+      "sha256": "126eab19a44abbf3e8b85b757cb99db1faae75406fe5c3bc070d860170ee1485"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/cache/causal_observer.npz",
+      "bytes": 5793,
+      "sha256": "cecf583329bb16087a5be56033cf94da63106510f5f26ecf96de70ccb3278a0b"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/cache/solar_seasonal_envelope.npz",
+      "bytes": 276538,
+      "sha256": "c9301f62f4db3ec69b9b70b43b3a7f9b0325747cd57267fbf911dd1a61dec335"
+    },
+    {
+      "workspace_relative_path": "external_validation/data/forcing_2025.npz",
+      "bytes": 1047504,
+      "sha256": "c600c9e01e8236bd2e1cb4e2dc08591e3ee264d05f1c26b4c785ec355c3147c8"
+    },
+    {
+      "workspace_relative_path": "R2_PAPER_INTEGRATION_20260923/cache/final_physical_priors.npz",
+      "bytes": 257886,
+      "sha256": "5bddcfbaf8b3d3c2e7785ad8df8b9a2cab732a8267ac5788b6603a113acb1ddf"
+    },
+    {
+      "workspace_relative_path": "R2_PAPER_INTEGRATION_20260923/configs/economic_constraints.json",
+      "bytes": 1294,
+      "sha256": "7836fae0736bde2a8b7aed499d48033b803dff9c09532bd42bc6321f7024ed58"
+    },
+    {
+      "workspace_relative_path": "ServiceCommitment_1to5_20260927/src/context.py",
+      "bytes": 7950,
+      "sha256": "57dafebc539db39ea45103c2d10ae68ed54350cfccf4f82247b1e8eec857a47b"
+    },
+    {
+      "workspace_relative_path": "ServiceCommitment_1to5_20260927/vendor/economic_core.py",
+      "bytes": 3301,
+      "sha256": "80ef98685031f744103c26a7d8e1955df03ae737148675fe465a155804589cce"
+    },
+    {
+      "workspace_relative_path": "ServiceCommitment_1to5_20260927/vendor/reservation.py",
+      "bytes": 3741,
+      "sha256": "3a9b4091abc141b9a8da6f05f9913fa849b7fcef6fdeaf4c936ec96d399b7949"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/checkpoints/CdfR2_seed20260920_epoch06.pt",
+      "bytes": 2829355,
+      "sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/cdf_selection.json",
+      "bytes": 1555,
+      "sha256": "a223f9b9bcc500e70440a14247f5327ebd480b5c8b755f58fc0fca801f20ba7b"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/checkpoints/CdfR2_seed20260921_epoch02.pt",
+      "bytes": 2829355,
+      "sha256": "2f281002e8ccafb859c197c7745c366e945e1b9ce8568e5ccd514ebdebf78448"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/cdf_selection_s20260921.json",
+      "bytes": 1555,
+      "sha256": "0852f56858e0ea219fa9d09bd08ccda08d69ee0b412ee06fe9380b6313a70d58"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/checkpoints/CdfR2_seed20260922_epoch00.pt",
+      "bytes": 939815,
+      "sha256": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17"
+    },
+    {
+      "workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/cdf_selection_s20260922.json",
+      "bytes": 1555,
+      "sha256": "c37a35b0fe2e0a1b2a323594ce6a57a5d1b814b8ce3a2eb0c7d9e2d991b69a3b"
+    }
+  ]
+}

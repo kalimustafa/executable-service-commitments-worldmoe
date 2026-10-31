@@ -1,0 +1,31 @@
+{
+  "status": "conditional_theorem_evaluation_not_an_annual_witness_repair",
+  "conditions": [
+    "prefix error bounds verified in exact arithmetic including terminal endpoints",
+    "candidate increments satisfy exact nonnegativity and fixed service-capacity bounds",
+    "homogeneous service corridor is feasible",
+    "repair respects all additional original physical constraints",
+    "unchanged terminal liabilities or a separately added terminal allowance",
+    "reference and witness cost evaluation allowance added separately"
+  ],
+  "slots_per_site": 35040,
+  "sites": 4,
+  "coefficient_exact": "9797809849948858407060978535/4835703278458516698824704",
+  "coefficient_usd_per_work": 2026.1395883396963,
+  "correction_l1_bound_exact": "411205569/312500000000000",
+  "correction_l1_bound_work": 1.3158578208e-06,
+  "cost_correction_bound_exact": "805782794860404988435188659236292283/302231454903657293676544000000000000000",
+  "cost_correction_bound_usd": 0.0026661116233492816,
+  "terminal_allowance_included": false,
+  "numerical_cost_evaluation_allowance_included": false,
+  "source_npz": "/workspace/scratch/4efe13799b83/repository_audit/repo/source_data/grid_metrics_inputs_2025.npz",
+  "source_sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72",
+  "source_maxima": {
+    "max_abs_rt": 4522.13,
+    "max_pue": 1.0929484367370605,
+    "max_work_power": 1.639059066772461
+  },
+  "prefix_error_source": "Manuscript-reported diagnostic maxima; not certified on missing witness arrays",
+  "strong_floor_allowed_extra_loss_usd": "0.0079185550",
+  "rounding_note": "No allowance for numerical residual evaluation is inferred from printed diagnostics. Conditions must be verified on the actual witness."
+}

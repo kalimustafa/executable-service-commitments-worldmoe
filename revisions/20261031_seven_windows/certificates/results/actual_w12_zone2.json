@@ -1,0 +1,49 @@
+{
+  "window_hours": 12,
+  "site": 2,
+  "input_sha256": {
+    "forcing": "c600c9e01e8236bd2e1cb4e2dc08591e3ee264d05f1c26b4c785ec355c3147c8",
+    "published_arrays": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72",
+    "constraints": "7836fae0736bde2a8b7aed499d48033b803dff9c09532bd42bc6321f7024ed58",
+    "core": "a80dcb0735170de89ef924cb7d13d0197282e7906948f6000b34bdfc8b267c5b"
+  },
+  "outer_year_end_completion_enforced": false,
+  "terminal_rate_exact": "1405438544034501960575816653/77371252455336267181195264",
+  "source_total_arrival_work_exact": "62503696175303/34359738368",
+  "source_reference_minus_arrival_total_exact": "0/1",
+  "outer_cost_lower_exact": "15318379531154249577997107042831675671699723365519/129807421463370690713262408230502400000000000",
+  "witness_cost_lower_exact": "11805440908830199/100000000000",
+  "witness_cost_upper_exact": "11805440908833703/100000000000",
+  "reference_cost_lower_exact": "145421203270270699/1000000000000",
+  "reference_cost_upper_exact": "145421203270305739/1000000000000",
+  "witness_repair_l1_exact": "1077819798537/590295810358705651712",
+  "witness_all_prefixes_and_capacity_exact": true,
+  "witness_all_import_limits_exact": true,
+  "minimum_import_slack_mw": 0.10667255015231802,
+  "witness_terminal_backlog_exact": "0/1",
+  "dual_arithmetic_loss_strict_upper_exact": "219/3125000000",
+  "witness_cost_rounding_width_exact": "219/6250000000",
+  "dual_sha256": "5e82f85e066585edf648a1c3d291e1b40e731523b9c2280b0a0e7203a844a435",
+  "witness_sha256": "4a095af399dda31f6121b2e3ae5c8664c6bccf88c53f7f6daa48cc128bb44df9",
+  "outer_solver_diagnostics": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_seconds": 1.8055346999990434,
+    "objective_float_excluding_terminal_constant": 84964.84792862953,
+    "variables": 95899,
+    "equalities": 35040,
+    "max_balance_residual_float": 2.2737367544323206e-13,
+    "solver_threads": 1
+  },
+  "witness_solver_diagnostics": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_seconds": 1.7038290000000416,
+    "objective_float_excluding_terminal_constant": 118054.40908830255,
+    "variables": 95899,
+    "equalities": 35040,
+    "max_balance_residual_float": 4.547473508864641e-13,
+    "solver_threads": 1
+  },
+  "elapsed_seconds": 8.479490499999883
+}

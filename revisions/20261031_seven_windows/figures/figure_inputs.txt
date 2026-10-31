@@ -1,0 +1,33 @@
+Seven-window figure input contract
+
+The figure builder accepts final evidence only. Header-only templates contain no invented values. It refuses to render until all seven windows and the same three matched seeds are present, and until all seven PI lower/upper bounds have actual source paths.
+
+Policy CSV columns
+window_h,seed,annual_saving_usd,evidence_origin,service_feasible,late_it_mwh,run_id,source_path
+
+window_h must be 8,12,16,20,24,36,48. Use recovered_historical for the original recovered runs and new_20261031 for new evaluations. Each window has exactly three identical seed IDs. annual_saving_usd should be the reconciled/repaired saving used by the revised manuscript; raw numerical results belong in their original evidence files.
+
+Certificates CSV columns
+window_h,pi_lower_usd,pi_upper_usd,source_path
+
+Each window requires actual finite conservative endpoints. Do not substitute the policy mean, an interpolated number, or an unverified solver objective as a certified endpoint.
+
+service_feasible is explicitly true or false and late_it_mwh is the audited overdue volume. Failed windows remain cash-only failure observations: pink crosses, no feasible-policy connecting line, no capture percentage and no policy rights increment across either adjacent edge. PI intervals remain valid independent evidence. Rational fractions such as numerator/denominator are accepted in all numeric input columns, so exact certificate endpoints need not be reduced to printed decimals before marginal calculations.
+
+Optional 24 h rerun-anchor CSV columns
+window_h,seed,annual_saving_usd,source_path
+
+The anchor contains the same three seeds at 24 h, with an independently stored rerun value. It is plotted with a plus symbol at the same 24 h x coordinate. It does not create an eighth contract window. The builder exports each paired rerun-minus-original discrepancy.
+
+Command
+python build_window_extension_figure.py --policy FINAL_POLICY.csv --certificates FINAL_CERTIFICATES.csv --anchor FINAL_24H_ANCHOR.csv
+
+Outputs
+figure_seven_window_contract_value.png/.svg/.pdf
+seven_window_summary.csv
+adjacent_window_marginal_values.csv
+anchor_24h_comparison.csv (if provided)
+seven_window_table.md
+figure_provenance.json
+
+Marginal policy values are matched-seed adjacent difference quotients divided by added hours. They are neither derivatives nor future-year expectations. A decreasing policy point is retained; the program never forces monotonicity on policy performance. PI difference intervals in the CSV are [max(0,LB_next-UB_prev), UB_next-LB_prev]/added_hours, using nested service rights and a common financial account.

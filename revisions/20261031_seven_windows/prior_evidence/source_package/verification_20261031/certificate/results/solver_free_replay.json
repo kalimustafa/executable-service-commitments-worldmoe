@@ -1,0 +1,112 @@
+{
+  "scope": "Solver-free exact replay of saved NEW annual envelope certificates and exact robust schedules; unknown-admission repair remains a uniform constructive proof",
+  "solver_called": false,
+  "dual_records": [
+    {
+      "site": 0,
+      "window_hours": 12,
+      "exact_reproduction": true,
+      "cost_lower_exact": "24224564697958858587/250000000000000"
+    },
+    {
+      "site": 0,
+      "window_hours": 16,
+      "exact_reproduction": true,
+      "cost_lower_exact": "23607507297680647837/250000000000000"
+    },
+    {
+      "site": 0,
+      "window_hours": 24,
+      "exact_reproduction": true,
+      "cost_lower_exact": "22680094356893233837/250000000000000"
+    },
+    {
+      "site": 1,
+      "window_hours": 12,
+      "exact_reproduction": true,
+      "cost_lower_exact": "29327991052167283837/250000000000000"
+    },
+    {
+      "site": 1,
+      "window_hours": 16,
+      "exact_reproduction": true,
+      "cost_lower_exact": "28381234960587026337/250000000000000"
+    },
+    {
+      "site": 1,
+      "window_hours": 24,
+      "exact_reproduction": true,
+      "cost_lower_exact": "27112478564080074337/250000000000000"
+    },
+    {
+      "site": 2,
+      "window_hours": 12,
+      "exact_reproduction": true,
+      "cost_lower_exact": "29301255006076808337/250000000000000"
+    },
+    {
+      "site": 2,
+      "window_hours": 16,
+      "exact_reproduction": true,
+      "cost_lower_exact": "28200860695013915337/250000000000000"
+    },
+    {
+      "site": 2,
+      "window_hours": 24,
+      "exact_reproduction": true,
+      "cost_lower_exact": "26991971690557621337/250000000000000"
+    },
+    {
+      "site": 3,
+      "window_hours": 12,
+      "exact_reproduction": true,
+      "cost_lower_exact": "30179425444052062587/250000000000000"
+    },
+    {
+      "site": 3,
+      "window_hours": 16,
+      "exact_reproduction": true,
+      "cost_lower_exact": "29066194806804228587/250000000000000"
+    },
+    {
+      "site": 3,
+      "window_hours": 24,
+      "exact_reproduction": true,
+      "cost_lower_exact": "27795598191447286337/250000000000000"
+    }
+  ],
+  "robust_schedule_records": [
+    {
+      "site": 0,
+      "all_35040_service_boxes_and_prefixes_exact": true,
+      "surrogate_final_conservation_exact": true,
+      "original_nonlinear_cost_reproduced": true,
+      "source_compatible_actual_admission_feasibility": "Uniform exact-repair proof; original admissions not materialized"
+    },
+    {
+      "site": 1,
+      "all_35040_service_boxes_and_prefixes_exact": true,
+      "surrogate_final_conservation_exact": true,
+      "original_nonlinear_cost_reproduced": true,
+      "source_compatible_actual_admission_feasibility": "Uniform exact-repair proof; original admissions not materialized"
+    },
+    {
+      "site": 2,
+      "all_35040_service_boxes_and_prefixes_exact": true,
+      "surrogate_final_conservation_exact": true,
+      "original_nonlinear_cost_reproduced": true,
+      "source_compatible_actual_admission_feasibility": "Uniform exact-repair proof; original admissions not materialized"
+    },
+    {
+      "site": 3,
+      "all_35040_service_boxes_and_prefixes_exact": true,
+      "surrogate_final_conservation_exact": true,
+      "original_nonlinear_cost_reproduced": true,
+      "source_compatible_actual_admission_feasibility": "Uniform exact-repair proof; original admissions not materialized"
+    }
+  ],
+  "input_sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72",
+  "source_admissions_recovered": false,
+  "original_29oct_certificates_reproduced": false,
+  "all_passed": true
+}

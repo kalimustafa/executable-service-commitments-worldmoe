@@ -1,0 +1,22 @@
+from_h,to_h,assumed_incremental_F_plus_K_usd,mean_historical_net_usd,minimum_seed_historical_net_usd,maximum_seed_historical_net_usd,scenario_status
+12,16,0,13817.584760550363333333,13733.95372379268,13895.6897830833,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,16,5000,8817.584760550363333333,8733.95372379268,8895.6897830833,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,16,10000,3817.584760550363333333,3733.95372379268,3895.6897830833,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,16,15000,-1182.415239449636666667,-1266.04627620732,-1104.3102169167,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,16,20000,-6182.415239449636666667,-6266.04627620732,-6104.3102169167,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,16,30000,-16182.415239449636666667,-16266.04627620732,-16104.3102169167,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,16,35000,-21182.415239449636666667,-21266.04627620732,-21104.3102169167,analytical cost sensitivity; no observed fees or ex-ante probability claim
+16,24,0,19232.507466893386666667,19169.58506638567,19308.32997809879,analytical cost sensitivity; no observed fees or ex-ante probability claim
+16,24,5000,14232.507466893386666667,14169.58506638567,14308.32997809879,analytical cost sensitivity; no observed fees or ex-ante probability claim
+16,24,10000,9232.507466893386666667,9169.58506638567,9308.32997809879,analytical cost sensitivity; no observed fees or ex-ante probability claim
+16,24,15000,4232.507466893386666667,4169.58506638567,4308.32997809879,analytical cost sensitivity; no observed fees or ex-ante probability claim
+16,24,20000,-767.492533106613333333,-830.41493361433,-691.67002190121,analytical cost sensitivity; no observed fees or ex-ante probability claim
+16,24,30000,-10767.492533106613333333,-10830.41493361433,-10691.67002190121,analytical cost sensitivity; no observed fees or ex-ante probability claim
+16,24,35000,-15767.492533106613333333,-15830.41493361433,-15691.67002190121,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,24,0,33050.09222744375,32903.53879017835,33204.01976118209,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,24,5000,28050.09222744375,27903.53879017835,28204.01976118209,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,24,10000,23050.09222744375,22903.53879017835,23204.01976118209,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,24,15000,18050.09222744375,17903.53879017835,18204.01976118209,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,24,20000,13050.09222744375,12903.53879017835,13204.01976118209,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,24,30000,3050.09222744375,2903.53879017835,3204.01976118209,analytical cost sensitivity; no observed fees or ex-ante probability claim
+12,24,35000,-1949.90777255625,-2096.46120982165,-1795.98023881791,analytical cost sensitivity; no observed fees or ex-ante probability claim

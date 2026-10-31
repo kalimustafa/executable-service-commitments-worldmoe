@@ -1,0 +1,68 @@
+{
+  "canvas_inches": [
+    7.2,
+    4.0
+  ],
+  "recommended_main_width_inches": 6.5,
+  "minimum_designed_font_pt": 9.0,
+  "minimum_at_recommended_width_pt": 8.125,
+  "palette": {
+    "purple": "#a34fbe",
+    "pink": "#e563a0",
+    "lightpink": "#edacd0",
+    "lavender": "#e6d5ed",
+    "pale": "#f6eff8",
+    "text": "#38223f",
+    "axis": "#5d5662",
+    "grid": "#eeeaf0",
+    "white": "#ffffff"
+  },
+  "mechanism": {
+    "input_boxes": [
+      0.14,
+      1.37,
+      1.4,
+      1.79
+    ],
+    "forecast_box": [
+      1.91,
+      2.45,
+      2.91,
+      0.77
+    ],
+    "valuation_box": [
+      1.91,
+      1.37,
+      2.91,
+      0.8
+    ],
+    "executor_box": [
+      5.21,
+      1.37,
+      1.82,
+      1.55
+    ],
+    "ledger_box": [
+      0.14,
+      0.2,
+      3.0,
+      0.73
+    ],
+    "account_box": [
+      3.77,
+      0.2,
+      3.26,
+      0.73
+    ]
+  },
+  "facts_preserved": [
+    "Frozen W0/W1 sparse MoE market representation",
+    "R2/APIC price distributions",
+    "Physical and queue-dependent valuation",
+    "Original release/deadline and capacity executor",
+    "Current 15-minute action only",
+    "Persistent service ledger and common terminal financial account"
+  ],
+  "conceptual_figure": "Pure symbols. No 12/24 or seven-window numeric certificate version is embedded.",
+  "scope": "Main-text mechanism simplification; detailed original architecture remains unchanged in supplement."
+}

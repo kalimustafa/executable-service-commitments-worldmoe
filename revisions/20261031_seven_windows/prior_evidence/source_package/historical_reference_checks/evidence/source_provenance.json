@@ -1,0 +1,26 @@
+{
+  "public_repository": "https://github.com/kalimustafa/executable-service-commitments-worldmoe",
+  "commit": "323c2084e7ee668ba512fb1e33dd56b8394b32d4",
+  "inspected_on_utc": "2026-10-30",
+  "source_license": "MIT; included as inputs/LICENSE.source",
+  "published_inputs": [
+    {
+      "archive_path": "inputs/grid_metrics_inputs_2025.npz",
+      "repository_path": "source_data/grid_metrics_inputs_2025.npz",
+      "sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72"
+    },
+    {
+      "archive_path": "inputs/cost_bound_zone_diagnostics.csv",
+      "repository_path": "source_data/certificates/cost_bound_zone_diagnostics.csv",
+      "sha256": "e7e0c876179d63746f997e250d79ba7b5ad4f48731cb462c05770cc8f73cc81a"
+    },
+    {
+      "archive_path": "inputs/certified_value_bounds.csv",
+      "repository_path": "source_data/extensions/certified_value_bounds.csv",
+      "sha256": "438b5bf9fe3a3df46165b34d6a40f1214b96d8d7282c90c5d65e1cfcf997d024"
+    }
+  ],
+  "full_repository_included": false,
+  "large_inference_archive_included": false,
+  "new_verifiers_are_independent_reference_implementations": true
+}

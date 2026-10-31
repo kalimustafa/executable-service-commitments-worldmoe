@@ -1,0 +1,8 @@
+{
+  "scope": "New small exact reference regressions only; annual evidence is in the separately replayed certificates and schedules",
+  "tests_run": 7,
+  "successful": true,
+  "failures": 0,
+  "errors": 0,
+  "log": "test_both_duals_below_enumerated_original_primal (test_envelope_certificates.EnvelopeRegression.test_both_duals_below_enumerated_original_primal) ... ok\ntest_every_compatible_small_arrival_has_admission_envelope (test_envelope_certificates.EnvelopeRegression.test_every_compatible_small_arrival_has_admission_envelope) ... ok\ntest_exact_robust_witness_clamp_with_terminal_endpoint (test_envelope_certificates.EnvelopeRegression.test_exact_robust_witness_clamp_with_terminal_endpoint) ... ok\ntest_explicit_reference_nonidentification (test_envelope_certificates.EnvelopeRegression.test_explicit_reference_nonidentification) ... ok\ntest_negative_outward_currency_format (test_envelope_certificates.EnvelopeRegression.test_negative_outward_currency_format) ... ok\ntest_negative_price_cost_and_exact_facets (test_envelope_certificates.EnvelopeRegression.test_negative_price_cost_and_exact_facets) ... ok\ntest_zero_initial_and_open_final_reference_are_guarded (test_envelope_certificates.EnvelopeRegression.test_zero_initial_and_open_final_reference_are_guarded) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.121s\n\nOK\n"
+}

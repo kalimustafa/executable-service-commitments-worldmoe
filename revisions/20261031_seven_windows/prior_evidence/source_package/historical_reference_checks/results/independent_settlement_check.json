@@ -1,0 +1,68 @@
+{
+  "scope": "Independent re-settlement of published annual arrays. Before terminal-cost difference. Not training, admission/deadline, first-release, tail feasibility or annual hindsight-witness validation.",
+  "source_commit": "323c2084e7ee668ba512fb1e33dd56b8394b32d4",
+  "data_file": "repository_audit/repo/source_data/grid_metrics_inputs_2025.npz",
+  "data_sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72",
+  "intervals": 35040,
+  "sites": 4,
+  "rows": [
+    {
+      "seed": 20260920,
+      "reference_cost_usd": "555168.20505569697804",
+      "observed_year_saving_before_terminal_difference_usd": "105565.66546172019212",
+      "gross_avoided_energy_usd": "172496.17405704493194",
+      "recovery_energy_usd": "64667.755555840777408",
+      "import_deviation_fee_usd": "3344.4474830941499732",
+      "curtailment_benefit_usd": "1081.6944436101875547",
+      "import_reduction_mwh": "1013.90954867170733733",
+      "curtailment_reduction_mwh": "1081.6944436101875547",
+      "facility_demand_increase_mwh": "67.78489493848021742",
+      "compute_total_difference_inyear": "1.0388391535887109285e-14",
+      "max_exported_import_reconstruction_error": "2.7115896333862465895e-16"
+    },
+    {
+      "seed": 20260921,
+      "reference_cost_usd": "555168.20505569697804",
+      "observed_year_saving_before_terminal_difference_usd": "105003.517378305975875",
+      "gross_avoided_energy_usd": "172557.40823294381724",
+      "recovery_energy_usd": "65271.835059573635387",
+      "import_deviation_fee_usd": "3357.0460833758351824",
+      "curtailment_benefit_usd": "1074.9902883116292077",
+      "import_reduction_mwh": "1007.4670866676991201",
+      "curtailment_reduction_mwh": "1074.9902883116292077",
+      "facility_demand_increase_mwh": "67.523201643930087584",
+      "compute_total_difference_inyear": "9.997211392054339285e-15",
+      "max_exported_import_reconstruction_error": "2.7462841029057827313e-16"
+    },
+    {
+      "seed": 20260922,
+      "reference_cost_usd": "555168.20505569697804",
+      "observed_year_saving_before_terminal_difference_usd": "105244.002684870212846",
+      "gross_avoided_energy_usd": "172476.74037504580113",
+      "recovery_energy_usd": "64975.857242795696287",
+      "import_deviation_fee_usd": "3344.776737485427248",
+      "curtailment_benefit_usd": "1087.8962901055352517",
+      "import_reduction_mwh": "1020.50593616565208854",
+      "curtailment_reduction_mwh": "1087.8962901055352517",
+      "facility_demand_increase_mwh": "67.39035393988316312",
+      "compute_total_difference_inyear": "-7.9103390504542403505e-16",
+      "max_exported_import_reconstruction_error": "3.2309224740068032133e-16"
+    }
+  ],
+  "means": {
+    "reference_cost_usd": "555168.20505569697804",
+    "observed_year_saving_before_terminal_difference_usd": "105271.06184163212695",
+    "gross_avoided_energy_usd": "172510.10755501151677",
+    "recovery_energy_usd": "64971.815952736703025",
+    "import_deviation_fee_usd": "3348.7567679851374678",
+    "curtailment_benefit_usd": "1081.5270073424506714",
+    "import_reduction_mwh": "1013.9608571683528487",
+    "curtailment_reduction_mwh": "1081.5270073424506714",
+    "facility_demand_increase_mwh": "67.56615017409782271",
+    "compute_total_difference_inyear": "6.5315230076320081784e-15",
+    "max_exported_import_reconstruction_error": "2.896265403432944178e-16"
+  },
+  "published_max_abs_rt": "4522.130000000000109",
+  "published_max_pue": "1.0929484367370605469",
+  "uniform_lipschitz_usd_per_work": "2026.1395883396962165"
+}

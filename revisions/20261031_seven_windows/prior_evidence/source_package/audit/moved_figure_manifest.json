@@ -1,0 +1,50 @@
+[
+  {
+    "new_figure": 7,
+    "original_figure": 1,
+    "source_body_index": 36,
+    "source_part": "/word/media/image1.png",
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/supplement_work/moved_figures/supplement_figure_7.png",
+    "sha256": "e971d0761d7e5f0dcfc82d1c517511c53eed2045bfb4b2365e5bbe744ab12b1d"
+  },
+  {
+    "new_figure": 8,
+    "original_figure": 2,
+    "source_body_index": 143,
+    "source_part": "/word/media/image8.png",
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/supplement_work/moved_figures/supplement_figure_8.png",
+    "sha256": "6cda4e5a5ec92b791fc59c7e1cfe27c586cdb9c1c76450514dcc7b9f11db9dd8"
+  },
+  {
+    "new_figure": 9,
+    "original_figure": 3,
+    "source_body_index": 158,
+    "source_part": "/word/media/image3.png",
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/supplement_work/moved_figures/supplement_figure_9.png",
+    "sha256": "28161354ea39e399de15c99377892ede86c02d1d9073dfb1b14ea195987bd17b"
+  },
+  {
+    "new_figure": 10,
+    "original_figure": 4,
+    "source_body_index": 164,
+    "source_part": "/word/media/image4.png",
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/supplement_work/moved_figures/supplement_figure_10.png",
+    "sha256": "acd323e9d4caa23090fe1eaaa668970be7a1aa7737d91574c2d67c3cbfc6b6f4"
+  },
+  {
+    "new_figure": 11,
+    "original_figure": 5,
+    "source_body_index": 172,
+    "source_part": "/word/media/image5.png",
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/supplement_work/moved_figures/supplement_figure_11.png",
+    "sha256": "b0befc675341c5ab0aa9df4d1aa224732c5dc59ca7d192fc18f1da2743d8808b"
+  },
+  {
+    "new_figure": 12,
+    "original_figure": 6,
+    "source_body_index": 179,
+    "source_part": "/word/media/image7.png",
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/supplement_work/moved_figures/supplement_figure_12.png",
+    "sha256": "0c21e9d807d71f579009305f991a578eb1320e26dd0dbc0262afb266c5734f90"
+  }
+]

@@ -1,0 +1,56 @@
+Contract-window expansion protocol
+Status: proposed follow-up; no additional model evaluation has been run.
+
+Purpose
+Add intermediate and more distant contract windows to describe the curvature
+and saturation of the service-rights value curve. The current verified 12 h,
+16 h and 24 h results establish two paired contrasts; they do not identify the
+full response curve or an optimal contractual deadline.
+
+Existing matching assets
+The Eagle archive has current-model results for 12 h, 16 h and 24 h only.
+Seeds/checkpoints are 20260920/epoch06, 20260921/epoch02, 20260922/epoch00.
+The 30 h and 48 h Frontier records belong to a different workload trace and
+must not be inserted as Eagle points on the same contract curve.
+
+First extension: 8 h and 20 h
+Use the same three checkpoints, 2025 forcing/admissions, reference book,
+static electrical and compute caps, fee terms, no migration and terminal rule.
+The original planner has a 96-slot (24 h) forecast horizon. Keep that horizon
+fixed. The existing implementation can represent 8 h and 20 h deadlines by
+extending its command-line choices while retaining its fixed state dimensions.
+No retraining or forecast-horizon change is needed for these two windows.
+Before accepting a point, export its complete book, original admissions hash,
+checkpoint hash, quarter-hour settlement, deadline audit and terminal liability.
+Name these new evaluations by their actual run date; do not call them restored
+historical observations. Repeat the original 12/16/24 settings only if a code
+change affects shared executor behavior, rather than duplicating checks.
+
+Longer extension: 36 h and 48 h
+The current program has a 96-slot queue and 96-slot state/forecast tensor. Merely
+adding 36 or 48 to the CLI choices would index outside its queue; it is not a
+valid protocol. A longer contractual queue must be represented explicitly.
+Declare the treatment of known obligations beyond the 24 h forecast horizon,
+including tail capacity, terminal cost and deadline guards. One defensible
+protocol keeps the 24 h predictive horizon and uses an explicitly defined,
+unchanged conservative continuation rule for later obligations. Another changes
+the forecasting/planning horizon, but then that design change must be isolated
+and reported, not interpreted as a pure contract-rights effect. Decide and
+freeze the rule before evaluating the new windows. Additional state bins or
+forecast extrapolation may change what the neural policy receives and must be
+documented. Retain the same actual admissions and monetary account throughout.
+
+Computational planning only
+Archived current-model evaluations take approximately 228 to 287 seconds per
+annual seed/run in their recorded hardware environment. Six extra 8/20 h runs
+therefore correspond to roughly 23 to 29 minutes at that old observed rate,
+excluding setup and audit. This is not a benchmark or guarantee for the current
+machine. The 36/48 h extension needs implementation work before a runtime can
+be estimated. No long-running evaluation was started for this revision.
+
+Reporting
+Display raw historical and newly evaluated points with their true provenance.
+Report same-seed increments and all three seed results, preserving the common
+calendar interpretation. Keep policy outcomes, perfect-information upper/lower
+bounds, and ex-ante contract value separate. A denser policy curve alone does
+not certify optimal contract value for the new windows.

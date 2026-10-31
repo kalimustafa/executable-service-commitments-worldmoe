@@ -1,0 +1,37 @@
+{
+  "access_date": "2026-10-31",
+  "evidence_scope": "Publisher article pages, abstracts, highlights and available introduction/section previews. No claim that inaccessible full texts were completely reviewed.",
+  "sources": [
+    {
+      "reference": 12,
+      "title": "Don't forget flexibility contracts when redesigning short-term electricity markets",
+      "doi": "10.1016/j.eneco.2025.108980",
+      "publisher_url": "https://www.sciencedirect.com/science/article/pii/S0140988325008102",
+      "author_preprint": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4955045",
+      "verified_metadata": "Energy Economics 151, 108980, November 2025; five named authors",
+      "used_claim": "Complete bilateral flexibility contracts in sequential clearing can deliver look-ahead benefits comparable to integrated dispatch.",
+      "not_claimed": "No claim that the paper contains no bounds or no duality; the distinction concerns the economic object and common-service counterfactual."
+    },
+    {
+      "reference": 13,
+      "title": "The price of flexibility in electricity markets",
+      "doi": "10.1016/j.eneco.2025.108769",
+      "publisher_url": "https://www.sciencedirect.com/science/article/abs/pii/S0140988325005961",
+      "author_preprint": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5165940",
+      "verified_metadata": "Energy Economics 150, 108769, October 2025; Subhojit Biswas, Bahar Çavdar, Alfredo Garcia, Joseph Geunes",
+      "used_claim": "A two-settlement strategic model links persistent day-ahead premiums to flexibility, disruption risk and constrained arbitrage.",
+      "not_claimed": "No inference that a market equilibrium premium directly identifies our fixed-path contract-rights increment."
+    },
+    {
+      "reference": 14,
+      "title": "Energy flexibility procurement strategy in competitive demand response markets: Dual-channel supply chain perspective",
+      "doi": "10.1016/j.eneco.2026.109542",
+      "publisher_url": "https://www.sciencedirect.com/science/article/pii/S0140988326004226",
+      "institution_metadata": "https://scholars.ln.edu.hk/en/organisations/wu-jieh-yee-school-of-interdisciplinary-studies/publications/",
+      "verified_metadata": "Xinyue Fei, Cheng Lyu, Yibo Ding; Energy Economics 161, 109542, 2026; publisher online date 5 August, institutional issue date September",
+      "used_claim": "Dual-channel demand-response procurement is modelled as strategic interaction; direct procurement can reduce double marginalisation.",
+      "not_claimed": "No use of the paper's case-study percentages as calibration for the present computing workload."
+    }
+  ],
+  "novelty_boundary": "The contrast is an inference from the explicitly defined economic objects, not an exhaustive priority claim. The paper contributes a controller-independent, service-matched, account-matched monetary enclosure and exclusion comparison; it does not invent weak duality or a new equilibrium-pricing theory."
+}

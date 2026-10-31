@@ -1,0 +1,416 @@
+{
+  "scope": "New independently assembled epigraph formulation of the public-reference admission-envelope relaxation; not the missing original certificate",
+  "input_sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72",
+  "verify_only": false,
+  "site_results": [
+    {
+      "site": 0,
+      "window_hours": 12,
+      "lower_cost_exact": "24224564697965997337/250000000000000",
+      "lower_cost_usd": 96898.25879186399,
+      "lower_cost_down_cents": "96898.25",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 172768,
+        "max_x_stationarity_residual_exact": "5050321433320494776219911321/19342813113834066795298816",
+        "max_eta_stationarity_residual_exact": "1/1",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 96898.25879189775,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 7.105427357601002e-15,
+        "equalities": 35040,
+        "inequalities": 60167,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "6de3577f2493c5e913884fde0ca1af5808cb52131cee947f59fd31dbac5d368f",
+      "exact_physics_sha256": "2abedb0977260133dbb2a7c9f8fa14c24bdb5f722b02b77a6a48ea16fea20fd8",
+      "slot_cost_lower_exact": "2422456469796601/25000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 0,
+      "window_hours": 16,
+      "lower_cost_exact": "23607507297684517837/250000000000000",
+      "lower_cost_usd": 94430.02919073807,
+      "lower_cost_down_cents": "94430.02",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 172768,
+        "max_x_stationarity_residual_exact": "5051574411786731917674071193/19342813113834066795298816",
+        "max_eta_stationarity_residual_exact": "1/1",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 94430.02919077115,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 4.275690912436403e-12,
+        "equalities": 35040,
+        "inequalities": 60167,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "990fdf2ceff8cd74814d40e7a827b57d4ef3170fd81232f8936612eefbff64f2",
+      "exact_physics_sha256": "2abedb0977260133dbb2a7c9f8fa14c24bdb5f722b02b77a6a48ea16fea20fd8",
+      "slot_cost_lower_exact": "47215014595369061/500000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 0,
+      "window_hours": 24,
+      "lower_cost_exact": "22680094356893750087/250000000000000",
+      "lower_cost_usd": 90720.377427575,
+      "lower_cost_down_cents": "90720.37",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 172768,
+        "max_x_stationarity_residual_exact": "5381856423937794556282061977/19342813113834066795298816",
+        "max_eta_stationarity_residual_exact": "1/1",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 90720.37742760745,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 1.130833204854298e-09,
+        "equalities": 35040,
+        "inequalities": 60167,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "654ca128d6e41e431e58b1864e9008f149b759b300c2173d0634df5f1ac3c934",
+      "exact_physics_sha256": "2abedb0977260133dbb2a7c9f8fa14c24bdb5f722b02b77a6a48ea16fea20fd8",
+      "slot_cost_lower_exact": "90720377427575051/1000000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 1,
+      "window_hours": 12,
+      "lower_cost_exact": "29327991052175651087/250000000000000",
+      "lower_cost_usd": 117311.9642087026,
+      "lower_cost_down_cents": "117311.96",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 174846,
+        "max_x_stationarity_residual_exact": "17613374416128640402557047757/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "1/1",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 117311.96420873566,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 4.470868120165505e-12,
+        "equalities": 35040,
+        "inequalities": 60639,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "e805a0c86e9d9a3e7068c45a6b21ce01c510a489c31675ba2b805d11a337962d",
+      "exact_physics_sha256": "7d1e188d442f460c5be0bf23eafebfeb50ffd31f6e24091b310df218a12a35db",
+      "slot_cost_lower_exact": "23462392841740531/200000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 1,
+      "window_hours": 16,
+      "lower_cost_exact": "28381234960592149837/250000000000000",
+      "lower_cost_usd": 113524.93984236859,
+      "lower_cost_down_cents": "113524.93",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 174846,
+        "max_x_stationarity_residual_exact": "16486894964191157127251563469/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "1/1",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 113524.93984240115,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 4.442224366130176e-12,
+        "equalities": 35040,
+        "inequalities": 60639,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "01c23a997dcd7fe2a97328f7f122cf97bc482b916109a44f9955f909ce20b855",
+      "exact_physics_sha256": "7d1e188d442f460c5be0bf23eafebfeb50ffd31f6e24091b310df218a12a35db",
+      "slot_cost_lower_exact": "2270498796847373/20000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 1,
+      "window_hours": 24,
+      "lower_cost_exact": "27112478564081561087/250000000000000",
+      "lower_cost_usd": 108449.91425632624,
+      "lower_cost_down_cents": "108449.91",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 174846,
+        "max_x_stationarity_residual_exact": "17613374416128640402557047757/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "2718798366594359/2251799813685248",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 108449.91425635746,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 1.4210854715202004e-14,
+        "equalities": 35040,
+        "inequalities": 60639,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "be52bfb03569e8865c8ad8e4c5549f0a43d7c1108b45235be8c2dec517a8e6de",
+      "exact_physics_sha256": "7d1e188d442f460c5be0bf23eafebfeb50ffd31f6e24091b310df218a12a35db",
+      "slot_cost_lower_exact": "21689982851265259/200000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 2,
+      "window_hours": 12,
+      "lower_cost_exact": "29301255006085937087/250000000000000",
+      "lower_cost_usd": 117205.02002434374,
+      "lower_cost_down_cents": "117205.02",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 175688,
+        "max_x_stationarity_residual_exact": "10180208778344254739029133979/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "5843881440708773/2251799813685248",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 117205.02002437727,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 4.32631708235931e-12,
+        "equalities": 35040,
+        "inequalities": 60859,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "693a0799cce9a9e0be594698b4ebb48514c27204f4605a361dff2c5d81366998",
+      "exact_physics_sha256": "22a9e858235f0814a4fd0779858b94fcd3f79bbe30d1b7ba1f01103737b551c8",
+      "slot_cost_lower_exact": "117205020024343799/1000000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 2,
+      "window_hours": 16,
+      "lower_cost_exact": "28200860695019224337/250000000000000",
+      "lower_cost_usd": 112803.4427800769,
+      "lower_cost_down_cents": "112803.44",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 175688,
+        "max_x_stationarity_residual_exact": "10182326019656276439750904475/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "5843881440708773/2251799813685248",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 112803.44278010912,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 9.769962616701378e-15,
+        "equalities": 35040,
+        "inequalities": 60859,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "405cb6610e0b89d9a2964ea878bea264a667c1510421448a10351073f7c066f5",
+      "exact_physics_sha256": "22a9e858235f0814a4fd0779858b94fcd3f79bbe30d1b7ba1f01103737b551c8",
+      "slot_cost_lower_exact": "28200860695019237/250000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 2,
+      "window_hours": 24,
+      "lower_cost_exact": "26991971690559029587/250000000000000",
+      "lower_cost_usd": 107967.88676223611,
+      "lower_cost_down_cents": "107967.88",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 175688,
+        "max_x_stationarity_residual_exact": "10881701822948202318405536411/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "5843881440708773/2251799813685248",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 107967.8867622669,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 9.769962616701378e-15,
+        "equalities": 35040,
+        "inequalities": 60859,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "7d6e1f2022bb8453f150f3feecc6a7e70a336453bf0518da22780bd0886120a0",
+      "exact_physics_sha256": "22a9e858235f0814a4fd0779858b94fcd3f79bbe30d1b7ba1f01103737b551c8",
+      "slot_cost_lower_exact": "107967886762236169/1000000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 3,
+      "window_hours": 12,
+      "lower_cost_exact": "30179425444061748087/250000000000000",
+      "lower_cost_usd": 120717.70177624699,
+      "lower_cost_down_cents": "120717.70",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 175088,
+        "max_x_stationarity_residual_exact": "13338498844690364226567496449/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "1/1",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 120717.70177627963,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 4.11581879689038e-12,
+        "equalities": 35040,
+        "inequalities": 60738,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "646e7c2c732d36631da307475fc4a024e4b5391b33085fb4287ae4ff4ca96614",
+      "exact_physics_sha256": "8cd8dd300700ba083d052aa85c121237994530f4e58af7a4adec2cce5c216e41",
+      "slot_cost_lower_exact": "120717701776247043/1000000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 3,
+      "window_hours": 16,
+      "lower_cost_exact": "29066194806810000337/250000000000000",
+      "lower_cost_usd": 116264.77922724,
+      "lower_cost_down_cents": "116264.77",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 175088,
+        "max_x_stationarity_residual_exact": "13553802560698144521671762689/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "1/1",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 116264.7792272708,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 4.479527859757582e-12,
+        "equalities": 35040,
+        "inequalities": 60738,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "d6f59698d5f9653c69ee14bdd0a1abb96b3cdee9b22a01653b54a2ff52c22af7",
+      "exact_physics_sha256": "8cd8dd300700ba083d052aa85c121237994530f4e58af7a4adec2cce5c216e41",
+      "slot_cost_lower_exact": "29066194806810013/250000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    },
+    {
+      "site": 3,
+      "window_hours": 24,
+      "lower_cost_exact": "27795598191449445587/250000000000000",
+      "lower_cost_usd": 111182.39276579778,
+      "lower_cost_down_cents": "111182.39",
+      "checks": {
+        "arithmetic_loss_strict_upper_exact": "219/1562500000",
+        "clipped_negative_inequality_multipliers": 0,
+        "every_exact_breakpoint_facet_check_passed": true,
+        "facet_breakpoint_checks": 175088,
+        "max_x_stationarity_residual_exact": "13636669423374212479158674177/38685626227668133590597632",
+        "max_eta_stationarity_residual_exact": "2617651719880029/2251799813685248",
+        "all_finite_boxes_evaluated_exactly": true,
+        "finite_epigraph_embedding": "eta=f_original(x), with global original-cost min/max finite bounds"
+      },
+      "solver_diagnostics": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "float_objective": 111182.39276582713,
+        "max_equality_residual": 5.002220859751105e-12,
+        "max_inequality_violation": 7.105427357601002e-15,
+        "equalities": 35040,
+        "inequalities": 60738,
+        "variables": 105120,
+        "raw_negative_mu_count": 0
+      },
+      "multiplier_sha256": "2b085bb18dbcc9db725e4fbcb1314b1715e4428bcf8aa4658838ac1301bfb018",
+      "exact_physics_sha256": "8cd8dd300700ba083d052aa85c121237994530f4e58af7a4adec2cce5c216e41",
+      "slot_cost_lower_exact": "111182392765797833/1000000000000",
+      "terminal_offset_allowance_exact": "12663/250000000000000"
+    }
+  ],
+  "baseline_cost_upper_exact": "111033641011153381/200000000000",
+  "contract_aggregates": [
+    {
+      "window_hours": 12,
+      "lower_cost_exact": "56817841126932866799/125000000000000",
+      "savings_ceiling_exact": "6289092252518998163/62500000000000",
+      "savings_ceiling_usd": 100625.47604030397,
+      "savings_ceiling_up_cents": "100625.48"
+    },
+    {
+      "window_hours": 16,
+      "lower_cost_exact": "27464560953420573087/62500000000000",
+      "savings_ceiling_exact": "14466903725129716951/125000000000000",
+      "savings_ceiling_usd": 115735.22980103774,
+      "savings_ceiling_up_cents": "115735.23"
+    },
+    {
+      "window_hours": 24,
+      "lower_cost_exact": "26295647214140046587/62500000000000",
+      "savings_ceiling_exact": "16804731203690769951/125000000000000",
+      "savings_ceiling_usd": 134437.84962952617,
+      "savings_ceiling_up_cents": "134437.85"
+    }
+  ],
+  "terminal_rule": "Source signed fixed-reference MTM term bounded below by -21*E per site, using independently proved 0<tau<=21"
+}

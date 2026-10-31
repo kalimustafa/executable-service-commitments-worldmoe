@@ -1,0 +1,72 @@
+{
+  "scope": "One full-year three-checkpoint reduction check after shared runner extension",
+  "rows": [
+    {
+      "seed": 20260920,
+      "historical_saving_usd": 105565.66546172019,
+      "new_anchor_saving_usd": 105565.66546172019,
+      "saving_difference_usd": 0.0,
+      "checkpoint_hash_equal": true,
+      "array_equal": {
+        "_complete_book.npz": {
+          "compute": true,
+          "reference": true
+        },
+        "_trajectory.npz": {
+          "compute": true,
+          "grid": true,
+          "daily": true,
+          "value": true,
+          "mtm": true,
+          "service_debt": true
+        }
+      },
+      "all_arrays_bitwise_equal": true
+    },
+    {
+      "seed": 20260921,
+      "historical_saving_usd": 105003.51737830597,
+      "new_anchor_saving_usd": 105003.51737830597,
+      "saving_difference_usd": 0.0,
+      "checkpoint_hash_equal": true,
+      "array_equal": {
+        "_complete_book.npz": {
+          "compute": true,
+          "reference": true
+        },
+        "_trajectory.npz": {
+          "compute": true,
+          "grid": true,
+          "daily": true,
+          "value": true,
+          "mtm": true,
+          "service_debt": true
+        }
+      },
+      "all_arrays_bitwise_equal": true
+    },
+    {
+      "seed": 20260922,
+      "historical_saving_usd": 105244.00268487021,
+      "new_anchor_saving_usd": 105244.00268487021,
+      "saving_difference_usd": 0.0,
+      "checkpoint_hash_equal": true,
+      "array_equal": {
+        "_complete_book.npz": {
+          "compute": true,
+          "reference": true
+        },
+        "_trajectory.npz": {
+          "compute": true,
+          "grid": true,
+          "daily": true,
+          "value": true,
+          "mtm": true,
+          "service_debt": true
+        }
+      },
+      "all_arrays_bitwise_equal": true
+    }
+  ],
+  "all_three_anchors_bitwise_equal": true
+}

@@ -1,0 +1,21 @@
+{
+  "all_requested_new_policy_runs_complete": true,
+  "new_run_count": 15,
+  "new_windows_h": [
+    8,
+    20,
+    24,
+    36,
+    48
+  ],
+  "historical_reused_windows_h": [
+    12,
+    16
+  ],
+  "three_24h_anchors_bitwise_identical": true,
+  "eight_hour_service_violation_preserved": true,
+  "new_training_performed": false,
+  "service_certification": "separate independent exact audit; raw 8 h row remains infeasible",
+  "summary_table": "results/seven_window_raw_summary.csv",
+  "methods_and_results": "S32_window_extension_methods.md"
+}

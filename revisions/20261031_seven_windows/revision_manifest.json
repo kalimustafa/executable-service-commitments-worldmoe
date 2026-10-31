@@ -1,0 +1,15 @@
+{
+  "revision_date": "2026-10-31",
+  "main_pages": 18,
+  "supplement_pages": 65,
+  "main_figures": 6,
+  "supplement_figures": 12,
+  "main_caption_max_words": 25,
+  "supplement_caption_max_words": 23,
+  "new_policy_evaluations": 15,
+  "new_policy_service_valid": 12,
+  "eight_hour_failures_retained": 3,
+  "actual_admission_site_window_certificates": 28,
+  "model_training_performed": false,
+  "prior_revision_commit": "822aac606a47c6be2639371f90ef2444c8320267"
+}

@@ -1,0 +1,8 @@
+window_h,pi_lower_usd,pi_upper_usd,source_path
+8,78751.60,78882.41,../certificates/results/seven_window_summary.json
+12,97639.33,97796.41,../certificates/results/seven_window_summary.json
+16,113119.89,113305.19,../certificates/results/seven_window_summary.json
+20,124528.17,124733.99,../certificates/results/seven_window_summary.json
+24,132376.82,132598.65,../certificates/results/seven_window_summary.json
+36,141996.61,142256.41,../certificates/results/seven_window_summary.json
+48,152798.28,153070.23,../certificates/results/seven_window_summary.json

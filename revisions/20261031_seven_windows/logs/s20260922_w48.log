@@ -1,0 +1,97 @@
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+WAITING FOR EXISTING RUN WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48
+REUSING COMPLETE NEW RUN C:\Users\Kali\Desktop\电力市场\EnergyEconomics_Window_Extension_20261031\results\WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48.json
+{
+  "name": "WindowExtension20261031_CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w48",
+  "route": "extension",
+  "experiment": "ScenarioRecourse",
+  "year": 2025,
+  "trace": "Eagle",
+  "seed": 20260922,
+  "window_h": 48,
+  "role": "exploratory_frozen_evaluation",
+  "value_usd": 123247.54210876515,
+  "loss_days": 60,
+  "daily_loss_cvar95_usd": 852.7598204497554,
+  "max_drawdown_usd": 2842.6373661624275,
+  "cash_value_usd": 123247.54210876515,
+  "terminal_liability_difference_usd": 0.0,
+  "final_queue_IT_mwh": 0.0,
+  "reference_final_queue_IT_mwh": 0.0,
+  "IT_energy_mwh": 2981.6073925153337,
+  "shifted_IT_mwh": 2201.965423889119,
+  "migrated_IT_mwh": 0.0,
+  "late_IT_mwh": 8.669588123266824e-10,
+  "fee_usd": 3279.57198882844,
+  "migration_cost_usd": 0.0,
+  "grid_import_mwh": 6857.789943762304,
+  "max_compute": 1.0,
+  "max_grid_mw": 2.0435499897494154,
+  "electrical_shortage_mwh": 0.0,
+  "mtm_value_usd": 123247.54210876516,
+  "mtm_loss_days": 29,
+  "mtm_daily_loss_cvar95_usd": 334.0970319316568,
+  "mtm_max_drawdown_usd": 1480.9355441573025,
+  "adjusted_cost_usd": 431920.6629469317,
+  "reference_cost_usd": 555168.2050556969,
+  "saving_usd": 123247.54210876515,
+  "saving_pct": 22.200036130743552,
+  "cvar95_usd": 334.0970319316568,
+  "closing_it_mwh": 0.0,
+  "max_fleet_recovery_mw": 7.165628178994666,
+  "max_upward_site_ramp_mw": 1.8776004019539747,
+  "max_fleet_grid_mw": 8.174199958997661,
+  "pv_curtailment_mwh": 955.9346621552171,
+  "common_da_component_usd": 2409.7842143056027,
+  "seconds": 352.50128179999956,
+  "recourse_fraction": 0.0,
+  "safety_capacity_fraction": 0.9,
+  "physical_observation_lag_quarters": 1,
+  "forecast_scenarios": 7,
+  "forecast_epoch": 0,
+  "forecast_parameters_updated": false,
+  "forecast_checkpoint_sha256": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17",
+  "controller_training_scope": "R2 trained through differentiable Gaussian-CDF marginal costs and conserved 16-cohort QP rollouts; deployment uses analytic continuation costs and the deterministic current-action feasibility layer",
+  "nonanticipativity": "one common current action; hypothetical future continuations use only forecast scenarios",
+  "independent_future_RT_shocks_revealed": false,
+  "known_reference": "causal earliest-service queue from already arrived work",
+  "terminal_guard": "earliest service for known work in the final hour",
+  "adaptive_lock_rule": false,
+  "parameters_updated_during_evaluation": false,
+  "prepublication_pathway_suppressed": false,
+  "information_intervention": "native publication-aware pathway",
+  "opportunity_weight": 1.0,
+  "cost_bias_weight": 1.0,
+  "exact_action": false,
+  "current_coupling": true,
+  "continuous_cost": true,
+  "mass_aware": false,
+  "native_mean": false,
+  "action_search": "0.025 grid plus current physical and reference knots",
+  "future_cost_integration": "analytic clipped-Gaussian grid and price-PV cross moments; piecewise convex planning approximation",
+  "cdf_training_epoch": 0,
+  "run_date": "2026-10-31",
+  "evidence_type": "new frozen-checkpoint evaluation",
+  "forecast_horizon_slots": 96,
+  "planning_horizon_slots": 192,
+  "tail_rule": "after slot 95: frozen pre-2024 zonal median RT, zero PV, declared maximum PUE, zero learned opportunity, unchanged service capacity",
+  "neural_state_rule": "original 96x22 coordinates and 4/8/12/24 h deadline bins; total backlog includes distant obligations",
+  "new_training_performed": false,
+  "new_fitting_performed": false,
+  "original_source_checkpoint_hash": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17"
+}

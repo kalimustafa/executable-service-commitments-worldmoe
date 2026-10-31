@@ -1,0 +1,122 @@
+PROPOSED MAIN-TEXT SECTION: MATHEMATICAL CERTIFICATES AND NUMERICAL STATUS
+
+Theoretical validity and numerical verification are separate statements. Fix
+the admissions, initial cohorts, physical limits, reference account and terminal
+rule, collected in theta. Let X_W(theta) denote the original feasible schedules
+under a W-hour right and let J_theta(x) be their original total cost. A relaxation
+P_W is valid only if every x in X_W has an embedding T(x) in P_W and its relaxed
+cost satisfies J_rel(T(x)) <= J_theta(x). Consequently, a verified lower cost
+bound L_W for P_W implies the savings ceiling U_W=C0-L_W for the original
+contract. This implication does not require a relaxed optimum to be executable.
+
+For the nominal wholesale account, the exact slot cost is
+
+    f_t(x)=Delta t [p_t G_t(x)+V_t(x)+|G_t(x)-G_t^0|],
+    G_t(x)=[PUE_t(Pidle+kx)-PV_t]_+,
+    V_t(x)=[PV_t-PUE_t(Pidle+kx)]_+.
+
+The zero-import point, reference-import point and both capacity endpoints
+partition the full service interval into affine pieces. Thus the global minimum
+of f_t(x)-lambda_t x is obtained by evaluating those exact breakpoints, including
+negative-price intervals. It is unnecessary to assume that f_t is convex.
+
+For a homogeneous D=4W-slot contract with zero initial backlog, write
+x_t+q_t-q_(t-1)=a_t and 0<=q_t<=Q_t=A_t-A_(t-D+1), where A_s=0 for s<=0.
+The terminal cost is tau q_N. For arbitrary equality multipliers lambda and
+lambda_(N+1)=0, weak duality gives the original-cost lower bound
+
+    L_W(lambda)=K+sum_t [lambda_t a_t
+      +min_(0<=x<=c_t)(f_t(x)-lambda_t x)
+      +Q_t min{0,lambda_(t+1)-lambda_t+tau 1_(t=N)}].             (C1)
+
+A fixed nonzero initial backlog contributes lambda_1 q_0 and retains its own
+deadline requirements. A fixed closing queue is represented by a singleton
+bound. A nonlinear terminal rule requires its own exact box minimum or a proved
+minorant; it cannot silently be dropped. Minimisation over independent service
+and backlog boxes can only lower the Lagrangian, proving (C1).
+
+The independent epigraph formulation admits the general finite-box proof. For
+min c0+c'y subject to Ay=b, My<=h and l<=y<=u, let lambda be unrestricted and
+mu>=0, and define
+
+    r=c-A'lambda+M'mu,
+    L=c0+lambda'b-mu'h+sum_i min{l_i r_i,u_i r_i}.                (C2)
+
+On any feasible point, the equality multiplier term vanishes and
+mu'(My-h)<=0. Minimising the resulting affine expression over its finite box
+proves (C2), including nonzero lower bounds and imperfect stationarity. After
+clipping inequality multipliers to their permitted signs, every term is
+recomputed. A minimisation incumbent is not a lower bound. Facet dominance is
+checked at every original breakpoint and endpoint; affine interpolation then
+proves dominance between them. The finite epigraph bounds must retain the
+embedding of every original feasible schedule. Original terminal liabilities,
+common charges and any omitted physical coupling require the same containment
+and cost-domination checks.
+
+All stored binary64 coefficients used by the verifier are interpreted as their
+exact binary rationals. Each complete exact scalar term is rounded downward
+before accumulation, with a recorded total arithmetic loss. Any proved input
+or model allowance is subtracted separately. If the baseline is enclosed by
+[C0_minus,C0_plus], use U_W=C0_plus-L_W. A feasible candidate cost upper bound
+J_B_plus gives H_B=C0_minus-J_B_plus. Savings ceilings round upward; cost floors
+and witness savings floors round downward. With two valid cost bounds, the
+tighter ceiling is min(U_W^(1),U_W^(2)); exclusion simultaneously against both
+requires H_B>max(U_W^(1),U_W^(2)).
+
+VERIFIED REPLACEMENT CALCULATION AND REMAINING ORIGINAL-EVIDENCE GAP
+
+The inspected public release supplies complete annual prices, physical inputs,
+reference execution and three policy execution arrays, but not the original
+admissions, the 29 October multiplier archives, or the reported hindsight
+assignment. The original annual cost floors and US$117,000.2387599464 candidate
+therefore remain unreproduced. We do not infer admissions by equating them to
+the reference execution: the reference is capacity limited and contains 639
+saturated intervals per site. Instead, the new calculation constructs an
+explicitly broader admission-envelope relaxation from the reference recurrence.
+Let R_t be exact cumulative published reference execution and e(t) its next
+unsaturated interval. The original floating queue recurrence and its observed
+clearing boundaries imply
+
+    A_t^- = max(0,R_t-E) <= A_t <= R_(e(t))+E = A_t^+,
+    E=2.412 x 10^-12 work units per site, A_0^-=A_0^+=0.
+
+Every original W-feasible schedule therefore satisfies
+A_(t-D+1)^- <= X_t <= A_t^+. Independently assembled incremental-service and
+cost-epigraph programmes relax this corridor. For the first, exact weak duality
+is evaluated directly as
+
+    L_W=K-delta_T+sum_t min_(0<=x<=c_t)[f_t(x)-lambda_t x]
+         +sum_t min{(lambda_t-lambda_(t+1))A_(t-D+1)^-,
+                     (lambda_t-lambda_(t+1))A_t^+},
+    lambda_(N+1)=0.                                             (C3)
+
+For the second, all cost facets, finite epigraph bounds and multiplier signs
+are checked by (C2). The source MTM terminal term is tau(R_N-X_N), whereas true
+closing-work liability is tau(A_N-X_N). The independent terminal audit proves
+0<tau<21 dollars per work unit. Hence its signed reference offset is covered
+by delta_T=sum_z 21E=US$2.02608e-10, subtracted from each cost floor and added
+to the repaired witness's cost upper bound. Closing service is not artificially
+fixed to zero in either outer programme. The common DA charge US$2409.7842143056 is counted
+once in both baseline and site-aggregated cost. Both verified formulations give
+conservative savings ceilings under the source's fixed published reference
+ledger and deviation-fee anchor. That benchmark is not promoted to an exact
+feasible schedule for the unknown admissions. The resulting ceilings are
+US$100625.48, US$115735.23 and US$134437.85 for
+12/16/24-hour rights, respectively. Their unrounded ceilings differ by less
+than US$0.000000138.
+
+An exact 24-hour schedule in the stricter corridor
+R_(e(t-D+1)) <= X_t <= R_t, with X_N=R_N, supplies a conservative witness-value
+guarantee. For every actual admission vector compatible with the original
+reference recurrence, exact cumulative repair restores its true prefixes and
+endpoint A_N with at most 2NE work adjustment per site. The longest reference
+busy period clears within 36 slots, and the smallest clearing-capacity margin
+exceeds E, proving the required exact original corridor is feasible. Original
+nonlinear re-settlement plus the uniform repair allowance of less than
+US$0.000837 gives H_24 >= US$130931.31. Hence the broader-rights value exceeds
+both 12-hour ceilings by at least US$30305.84 and both 16-hour ceilings by at
+least US$15196.08. These are newly verified conservative bounds and a uniform
+constructive existence guarantee. The original missing admission vector and
+US$117000.2387599464 hindsight assignment have not been recovered or replaced
+by an asserted numerical reconstruction. All statements are retrospective
+pathwise opportunities; they do not identify an information-adapted profit gain.

@@ -6,18 +6,33 @@ Author and contact: **Xiang Yi**, Northwest Minzu University, Lanzhou, Gansu, Ch
 
 Current manuscript and evidence revision: **31 October 2026**, on top of software archive v1.3.0. This is a research archive associated with a manuscript; it does not imply journal acceptance or publication.
 
-## Current manuscript and complete contract-value evidence
+## Current manuscript and completed seven-window evidence
 
-- [Revised main manuscript](revisions/20261031_contract_value/manuscript/EnergyEconomics_Contract_Value_Revised_20261031.docx), 15 pages, including the restored original WorldMoE architecture and economic figures in the original palette.
-- [Revised Supplementary Information](revisions/20261031_contract_value/manuscript/EnergyEconomics_Supplementary_Revised_20261031.docx), 59 pages, retaining the original 42 tables and 12 images and adding S29–S30.
-- [Evidence guide and reproduction commands](revisions/20261031_contract_value/README.md), with complete inputs, original trajectories, exact witnesses and hashes.
-- [Figure files and drawing source](revisions/20261031_contract_value/figures/).
+- [Current main manuscript](revisions/20261031_seven_windows/manuscript/EnergyEconomics_Seven_Window_Revision_20261031.docx), **18 pages**, with six readable figures in the original purple/pink palette and a concise economic literature comparison.
+- [Current Supplementary Information](revisions/20261031_seven_windows/manuscript/EnergyEconomics_Seven_Window_Supplement_20261031.docx), **65 pages**, with S31–S32 and twelve retained original images. All current figure captions are short: at most 25 words in the main text and 23 in the supplement.
+- [Complete evidence guide and reproduction commands](revisions/20261031_seven_windows/README.md).
+- [Current figures and drawing source](revisions/20261031_seven_windows/figures/).
+- [Previous recovered-admission revision](revisions/20261031_contract_value/), retained as a separate evidence vintage.
 
-The current 24 h perfect-information opportunity is enclosed by **US$130,931.31–134,437.85**; the minimum optimal 12→24 h rights premium is **US$30,305.84**. The uniform admission-dependent existence proof is accompanied by four complete exact witnesses for the recovered original admissions. All nine historical 12/16/24 h service books and original admissions are supplied, with independently reconstructed settlement and separate exact numerical repairs. The historical same-checkpoint 12→24 h policy increment remains **US$33,050.09**.
+The extension completes **15 new annual policy evaluations** with the original three frozen checkpoints, including three 24 h anchors that reproduce the historical complete books and settlement trajectories bit for bit. It also computes **28 site–deadline certificates** for 8/12/16/20/24/36/48 h on the same recovered actual admissions and account. No new training or fitting was performed.
 
-The mean 24 h operating saving remains **US$105,271.06**. On the common service and financial account, remaining annual opportunity is **US$25,660.24–29,166.79**, and the captured fraction is approximately **78.30%–80.40%**. These are historical-calendar results and distinct value objects, not promised future profit. This revision recovers and verifies archived executions; it does not rerun training or add new service-window results. Proposed 8/20 h extensions and the requirements for 36/48 h are documented separately.
+| Deadline | Mean policy cash saving US$ | Service status | Certified PI opportunity US$ |
+|---:|---:|---|---:|
+| 8 h | 50,735.34 | Substantive failure; about 3.01 IT MWh late | 78,751.60–78,882.41 |
+| 12 h | 72,220.97 | Exact feasible counterpart | 97,639.33–97,796.41 |
+| 16 h | 86,038.55 | Exact feasible counterpart | 113,119.89–113,305.19 |
+| 20 h | 98,199.02 | Exact feasible counterpart | 124,528.17–124,733.99 |
+| 24 h | 105,271.06 | Exact feasible counterpart | 132,376.82–132,598.65 |
+| 36 h | 114,251.12 | Exact feasible counterpart | 141,996.61–142,256.41 |
+| 48 h | 123,101.20 | Exact feasible counterpart | 152,798.28–153,070.23 |
 
-The earlier archive instructions below describe the retained historical software and figures. Their older certified-ceiling labels are superseded for the current manuscript by S27–S30 and the linked evidence guide.
+The 8 h cash-only outcomes are retained without repair and are excluded from feasible policy value, capture and headroom. The other new executions have separately saved exact numerical witnesses. The 36/48 h implementation retains a fixed 24 h neural horizon and complete longer queues, with an explicitly declared deterministic continuation; it does not claim a new 48 h neural forecast or conservative price bound.
+
+The current actual-admission 24 h remaining opportunity is **US$27,105.76–27,327.58**, capture is **79.39%–79.53%**, and the optimal 12→24 h rights increment is **US$34,580.41–34,959.31**. The historical same-checkpoint policy increment remains **US$33,050.09**. These are distinct economic objects. Earlier bounds uniform over all reference-compatible admissions remain valid robustness results in S27–S29.
+
+Certified incremental opportunity per extra deadline hour rises from **US$783.16–823.30** over 24→36 h to **US$878.48–922.81** over 36→48 h, while the policy increments fall from **US$748.34** to **US$737.51**. Thus the operating curve alone does not identify the shape of the contractual opportunity curve. These results describe the observed simulation calendar, not promised future profit.
+
+The earlier software-archive instructions below retain their historical scope and figure labels. The current manuscripts and S31–S32 supersede the previous status that additional windows had not yet been evaluated.
 
 ## Contents
 
@@ -56,7 +71,7 @@ The `research/` tree preserves the original sibling-directory names used by the 
 
 The recorded experiment environment was Windows, Python 3.13, PyTorch 2.9 and an NVIDIA RTX 3080. Some archived training scripts use `msvcrt` and CUDA directly. The upstream `power-dc-vpp/pyproject.toml` describes an older package environment, not a fully pinned environment for every later research stage. Figure dependencies above are separate from the original GPU environment.
 
-This release includes the selected **decision-module** checkpoints, but does not bundle all frozen W0/W1/R2 backbone weights, pretrained initialization checkpoints, multi-year feature caches, complete raw provider archives or all quarter-hour replay books. The model files alone therefore do not provide a standalone inference service. Their roles and hashes are in `source_data/current_provenance.json`. Full retraining and full-calendar replay are not self-contained in this release; access to the unbundled research inputs can be requested from the contact above. Provider data remain subject to their source terms. No claim is made that full replay was rerun during packaging.
+The original v1.3 release includes the selected **decision-module** checkpoints, but does not bundle all frozen W0/W1/R2 backbone weights, pretrained initialization checkpoints, multi-year feature caches, complete raw provider archives or all quarter-hour replay books. The model files alone therefore do not provide a standalone inference service. Their roles and hashes are in `source_data/current_provenance.json`. In that original release, full retraining and full-calendar replay are not self-contained; access to the unbundled research inputs can be requested from the contact above. Provider data remain subject to their source terms. No claim is made that full replay was rerun during packaging.
 
 Main additional inputs used by the archived runners include `external_validation/data/forcing_2024.npz`, `forcing_2025.npz`, Frontier mapped arrivals, `R2_PAPER_INTEGRATION_20260923/results/predictions_*/`, frozen feature caches under `R2_JointDecision_20260927/cache/`, physical priors and the shared pretrained QPR2 initialization. Original provenance paths are retained as source identifiers, not as downloadable links. Local absolute paths must be configured when restoring these archives on another machine.
 

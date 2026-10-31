@@ -1,0 +1,41 @@
+{
+  "manuscript": {
+    "file": "EnergyEconomics_Restored_Contracts_WorldMoE_20261030.docx",
+    "pages": 23,
+    "native_equations": 201,
+    "sha256": "d168a0165a1b899539d12ac0469eb315fdfe51a5da34c36068cefd18260213fc",
+    "all_pages_visually_checked": true
+  },
+  "supplement": {
+    "file": "EnergyEconomics_Supplementary_Verification_20261030.docx",
+    "pages": 33,
+    "native_equations": 152,
+    "sha256": "1377538707baf888bf2a5ec88eb1dfdee5775f43294f596ce3d51f167bfb47ed",
+    "all_pages_visually_checked": true
+  },
+  "preservation": {
+    "original_three_panel_ablation_image_sha256": "6cda4e5a5ec92b791fc59c7e1cfe27c586cdb9c1c76450514dcc7b9f11db9dd8",
+    "original_ablation_data_unchanged": true,
+    "supplement_tables_9_10_29_xml_identical": true,
+    "all_six_original_supplement_images_byte_identical": true
+  },
+  "completed_verification": {
+    "new_small_model_certificate_tests": 17,
+    "exact_repair_algorithm_tests": 13,
+    "rational_paths_in_one_repair_test": 729,
+    "actual_source_boundary_fixtures": 16,
+    "published_scalar_rows_audited": 48,
+    "published_annual_settlement_intervals_per_site": 35040,
+    "published_annual_settlement_sites": 4,
+    "published_annual_settlement_seeds": 3,
+    "mean_observed_year_saving_before_terminal_difference_usd": "105271.06184163212695"
+  },
+  "not_completed_without_missing_original_inputs": [
+    "Exact repair and full feasibility verification of the original annual 24-hour witness",
+    "Reconstruction and exact evaluation of all original annual certificate multipliers and epigraph/cut records",
+    "Full recovery-tail and immutable first-release replay"
+  ],
+  "conditional_24h_repair_allowance_usd": "0.002667",
+  "conditional_allowance_is_actual_measured_repair_cost": false,
+  "conditional_allowance_excludes_separate_terminal_and_cost_evaluation_allowances": true
+}

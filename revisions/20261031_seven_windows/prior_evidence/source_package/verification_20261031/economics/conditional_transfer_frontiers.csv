@@ -1,0 +1,10 @@
+from_h,to_h,assumed_operator_implementation_cost_usd,mean_historical_operator_transfer_ceiling_usd,all_three_seeds_transfer_ceiling_usd,tenant_transfer_floor,scope
+12,16,0,13817.584760550363333333,13733.95372379268,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+12,16,5000,8817.584760550363333333,8733.95372379268,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+12,16,10000,3817.584760550363333333,3733.95372379268,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+16,24,0,19232.507466893386666667,19169.58506638567,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+16,24,5000,14232.507466893386666667,14169.58506638567,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+16,24,10000,9232.507466893386666667,9169.58506638567,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+12,24,0,33050.09222744375,32903.53879017835,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+12,24,5000,28050.09222744375,27903.53879017835,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+12,24,10000,23050.09222744375,22903.53879017835,D_tenant + K_tenant (unobserved),"Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"

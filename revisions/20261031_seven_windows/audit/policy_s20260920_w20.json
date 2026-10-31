@@ -1,0 +1,66 @@
+{
+  "run_name": "WindowExtension20261031_CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w20",
+  "seed": 20260920,
+  "window_h": 20,
+  "source_book_sha256": "afb295bf9b8b21016319ba8073c5e75ee7808b6e6d0f2d7945dcae60a69b94cd",
+  "source_result_sha256": "c9acf51ad49c1f86b2125501daa5030094fd0c15f6c4b1ba47c1fe2ca2db3664",
+  "forcing_sha256": "c600c9e01e8236bd2e1cb4e2dc08591e3ee264d05f1c26b4c785ec355c3147c8",
+  "checkpoint_sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab",
+  "evidence_type": "new 2026-10-31 frozen-checkpoint evaluation with separate exact numerical witness",
+  "recorded_raw_saving_usd": 98655.43903781114,
+  "exact_raw_saving": "18023135710670007998509502463645426894740760472650971/182687704666362864775460604089535377456991567872",
+  "exact_repaired_saving": "9011567855335002645949324632582538068887450341984801/91343852333181432387730302044767688728495783936",
+  "repaired_saving_enclosure": {
+    "lower_integer": 98655439037811,
+    "upper_integer": 98655439037812,
+    "scale": 1000000000,
+    "lower": 98655.439037811,
+    "upper": 98655.439037812
+  },
+  "repair_l1_work_exact": "2790290597/590295810358705651712",
+  "repair_cost_bound_exact": "106790260229792833474153509751999033377/22835963083295358096932575511191922182123945984",
+  "repair_cost_bound_usd": 4.676407114526759e-09,
+  "terminal_policy_and_reference_cost_difference_exact": "0/1",
+  "all_exact_checks": true,
+  "repaired_witness_sha256": "b427d18f1799eca74e25dc17653de277b6b0d1c8a482e0f7e4e2466cb367db4e",
+  "sites": [
+    {
+      "site": 0,
+      "raw_release_excess_exact": "437691/73786976294838206464",
+      "raw_deadline_deficit_exact": "0/1",
+      "raw_mass_error_exact": "432187/73786976294838206464",
+      "repair_l1_exact": "131763011/73786976294838206464",
+      "repair_cost_bound_exact": "5515594770110814012853919461379492573/5708990770823839524233143877797980545530986496",
+      "all_exact_release_deadline_capacity_import_terminal_checks": true
+    },
+    {
+      "site": 1,
+      "raw_release_excess_exact": "3428705/590295810358705651712",
+      "raw_deadline_deficit_exact": "715/9223372036854775808",
+      "raw_mass_error_exact": "3183793/590295810358705651712",
+      "repair_l1_exact": "867371235/590295810358705651712",
+      "repair_cost_bound_exact": "32638747817275621345431497748987510765/22835963083295358096932575511191922182123945984",
+      "all_exact_release_deadline_capacity_import_terminal_checks": true
+    },
+    {
+      "site": 2,
+      "raw_release_excess_exact": "1328839/295147905179352825856",
+      "raw_deadline_deficit_exact": "67/576460752303423488",
+      "raw_mass_error_exact": "991991/295147905179352825856",
+      "repair_l1_exact": "346043753/295147905179352825856",
+      "repair_cost_bound_exact": "2400318565946544056244272139729516085/1427247692705959881058285969449495136382746624",
+      "all_exact_release_deadline_capacity_import_terminal_checks": true
+    },
+    {
+      "site": 3,
+      "raw_release_excess_exact": "82499/73786976294838206464",
+      "raw_deadline_deficit_exact": "166055/73786976294838206464",
+      "raw_mass_error_exact": "26833/73786976294838206464",
+      "repair_l1_exact": "22090971/73786976294838206464",
+      "repair_cost_bound_exact": "855252267308078198587373745113830935/1427247692705959881058285969449495136382746624",
+      "all_exact_release_deadline_capacity_import_terminal_checks": true
+    }
+  ],
+  "service_feasible": true,
+  "late_IT_mwh": 1.3121877937831048e-09
+}

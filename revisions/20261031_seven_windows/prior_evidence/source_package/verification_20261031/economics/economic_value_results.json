@@ -1,0 +1,516 @@
+{
+  "status": "Historical numerical evidence and explicitly analytical sensitivities; ex-ante value and actual contract net value not identified",
+  "source_commit": "323c2084e7ee668ba512fb1e33dd56b8394b32d4",
+  "sources": {
+    "paired_contract_summary": {
+      "path": "repository_audit/repo/source_data/current/fig3_service_windows.csv",
+      "sha256": "7501e33c2d98a62ae4f555aefed585303e8735a99cc2bac9de0bb189334600d9"
+    },
+    "published_mean_contrasts": {
+      "path": "repository_audit/repo/source_data/current/0927_adapted_window_contrasts.csv",
+      "sha256": "aa9e74fe7e3a165c71adf8462d325f17e38bf0467666f937d9766ca8e3b646bc"
+    },
+    "checkpoint_provenance": {
+      "path": "repository_audit/repo/source_data/current/current_provenance.json",
+      "sha256": "91ae9cc093c742a917407b365642d937e4b3e22ff7c0847cd3b54cb57376eb12"
+    },
+    "annual_24h_arrays": {
+      "path": "repository_audit/repo/source_data/grid_metrics_inputs_2025.npz",
+      "sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72"
+    },
+    "public_Lagrangian_summaries": {
+      "path": "repository_audit/repo/source_data/current/extensions/certified_value_bounds.csv",
+      "sha256": "438b5bf9fe3a3df46165b34d6a40f1214b96d8d7282c90c5d65e1cfcf997d024"
+    },
+    "manuscript_reported_certificates": {
+      "path": "/workspace/scratch/4efe13799b83/revision_20261031/economics/reported_certificate_scalars.json",
+      "sha256": "b5fc70501b9f5499a2a83c0316cd4d5bc720166bc8a6472435e954093287ac54"
+    }
+  },
+  "checks": {
+    "complete_3_by_3_paired_grid": true,
+    "same_checkpoint_within_seed_across_rights": true,
+    "same_reference_cost_across_all_rows": true,
+    "maximum_recorded_saving_identity_error_usd": "0.00000000004",
+    "24h_array_vs_summary_maximum_difference_usd": "0.00000000000588",
+    "12h_16h_full_trajectories_available": false,
+    "complete_admission_deadline_replay_done": false,
+    "complete_first_release_replay_done": false,
+    "observed_fee_or_tenant_cost_data_available": false,
+    "ex_ante_scenario_law_supplied": false,
+    "original_annual_PI_witness_or_dual_reverified": false
+  },
+  "contract_means_usd": {
+    "12": "72220.969614188373333333",
+    "16": "86038.554374738736666667",
+    "24": "105271.061841632123333333"
+  },
+  "paired_upgrade_summary": [
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "mean_increment_usd": "13817.584760550363333333",
+      "minimum_seed_increment_usd": "13733.95372379268",
+      "maximum_seed_increment_usd": "13895.6897830833",
+      "mean_saving_A_usd": "72220.969614188373333333",
+      "mean_saving_B_usd": "86038.554374738736666667",
+      "scope": "Historical same-checkpoint paired annual summary; seed range is not a future-year confidence interval"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "mean_increment_usd": "19232.507466893386666667",
+      "minimum_seed_increment_usd": "19169.58506638567",
+      "maximum_seed_increment_usd": "19308.32997809879",
+      "mean_saving_A_usd": "86038.554374738736666667",
+      "mean_saving_B_usd": "105271.061841632123333333",
+      "scope": "Historical same-checkpoint paired annual summary; seed range is not a future-year confidence interval"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "mean_increment_usd": "33050.09222744375",
+      "minimum_seed_increment_usd": "32903.53879017835",
+      "maximum_seed_increment_usd": "33204.01976118209",
+      "mean_saving_A_usd": "72220.969614188373333333",
+      "mean_saving_B_usd": "105271.061841632123333333",
+      "scope": "Historical same-checkpoint paired annual summary; seed range is not a future-year confidence interval"
+    }
+  ],
+  "conditional_PI_increment_intervals": [
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "nominal_combined_lower_usd": "0",
+      "nominal_both_methods_lower_usd": "0",
+      "nominal_upper_usd": "40943.5651408533",
+      "A_witness_source": "primary fixed seed 20260920 historical summary, not yet exact repaired",
+      "B_witness_source": "primary fixed seed 20260920 historical summary",
+      "correction_rule": "lower=max(0,H_B_raw-delta_B-U_A); upper=U_B-H_A_raw+delta_A, plus any additional ceiling allowance",
+      "status": "conditional mathematical interval; unavailable original witnesses/certificates prevent annual certification here"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "nominal_combined_lower_usd": "3695.027918555",
+      "nominal_both_methods_lower_usd": "3689.817918555",
+      "nominal_upper_usd": "46341.33535777",
+      "A_witness_source": "primary fixed seed 20260920 historical summary, not yet exact repaired",
+      "B_witness_source": "raw perfect-information annual scalar",
+      "correction_rule": "lower=max(0,H_B_raw-delta_B-U_A); upper=U_B-H_A_raw+delta_A, plus any additional ceiling allowance",
+      "status": "conditional mathematical interval; unavailable original witnesses/certificates prevent annual certification here"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "nominal_combined_lower_usd": "19203.817918555",
+      "nominal_both_methods_lower_usd": "19197.817918555",
+      "nominal_upper_usd": "60237.0251408533",
+      "A_witness_source": "primary fixed seed 20260920 historical summary, not yet exact repaired",
+      "B_witness_source": "raw perfect-information annual scalar",
+      "correction_rule": "lower=max(0,H_B_raw-delta_B-U_A); upper=U_B-H_A_raw+delta_A, plus any additional ceiling allowance",
+      "status": "conditional mathematical interval; unavailable original witnesses/certificates prevent annual certification here"
+    }
+  ],
+  "historical_fee_scenarios": [
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_incremental_F_plus_K_usd": 0,
+      "mean_historical_net_usd": "13817.584760550363333333",
+      "minimum_seed_historical_net_usd": "13733.95372379268",
+      "maximum_seed_historical_net_usd": "13895.6897830833",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_incremental_F_plus_K_usd": 5000,
+      "mean_historical_net_usd": "8817.584760550363333333",
+      "minimum_seed_historical_net_usd": "8733.95372379268",
+      "maximum_seed_historical_net_usd": "8895.6897830833",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_incremental_F_plus_K_usd": 10000,
+      "mean_historical_net_usd": "3817.584760550363333333",
+      "minimum_seed_historical_net_usd": "3733.95372379268",
+      "maximum_seed_historical_net_usd": "3895.6897830833",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_incremental_F_plus_K_usd": 15000,
+      "mean_historical_net_usd": "-1182.415239449636666667",
+      "minimum_seed_historical_net_usd": "-1266.04627620732",
+      "maximum_seed_historical_net_usd": "-1104.3102169167",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_incremental_F_plus_K_usd": 20000,
+      "mean_historical_net_usd": "-6182.415239449636666667",
+      "minimum_seed_historical_net_usd": "-6266.04627620732",
+      "maximum_seed_historical_net_usd": "-6104.3102169167",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_incremental_F_plus_K_usd": 30000,
+      "mean_historical_net_usd": "-16182.415239449636666667",
+      "minimum_seed_historical_net_usd": "-16266.04627620732",
+      "maximum_seed_historical_net_usd": "-16104.3102169167",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_incremental_F_plus_K_usd": 35000,
+      "mean_historical_net_usd": "-21182.415239449636666667",
+      "minimum_seed_historical_net_usd": "-21266.04627620732",
+      "maximum_seed_historical_net_usd": "-21104.3102169167",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 0,
+      "mean_historical_net_usd": "19232.507466893386666667",
+      "minimum_seed_historical_net_usd": "19169.58506638567",
+      "maximum_seed_historical_net_usd": "19308.32997809879",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 5000,
+      "mean_historical_net_usd": "14232.507466893386666667",
+      "minimum_seed_historical_net_usd": "14169.58506638567",
+      "maximum_seed_historical_net_usd": "14308.32997809879",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 10000,
+      "mean_historical_net_usd": "9232.507466893386666667",
+      "minimum_seed_historical_net_usd": "9169.58506638567",
+      "maximum_seed_historical_net_usd": "9308.32997809879",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 15000,
+      "mean_historical_net_usd": "4232.507466893386666667",
+      "minimum_seed_historical_net_usd": "4169.58506638567",
+      "maximum_seed_historical_net_usd": "4308.32997809879",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 20000,
+      "mean_historical_net_usd": "-767.492533106613333333",
+      "minimum_seed_historical_net_usd": "-830.41493361433",
+      "maximum_seed_historical_net_usd": "-691.67002190121",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 30000,
+      "mean_historical_net_usd": "-10767.492533106613333333",
+      "minimum_seed_historical_net_usd": "-10830.41493361433",
+      "maximum_seed_historical_net_usd": "-10691.67002190121",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 35000,
+      "mean_historical_net_usd": "-15767.492533106613333333",
+      "minimum_seed_historical_net_usd": "-15830.41493361433",
+      "maximum_seed_historical_net_usd": "-15691.67002190121",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 0,
+      "mean_historical_net_usd": "33050.09222744375",
+      "minimum_seed_historical_net_usd": "32903.53879017835",
+      "maximum_seed_historical_net_usd": "33204.01976118209",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 5000,
+      "mean_historical_net_usd": "28050.09222744375",
+      "minimum_seed_historical_net_usd": "27903.53879017835",
+      "maximum_seed_historical_net_usd": "28204.01976118209",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 10000,
+      "mean_historical_net_usd": "23050.09222744375",
+      "minimum_seed_historical_net_usd": "22903.53879017835",
+      "maximum_seed_historical_net_usd": "23204.01976118209",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 15000,
+      "mean_historical_net_usd": "18050.09222744375",
+      "minimum_seed_historical_net_usd": "17903.53879017835",
+      "maximum_seed_historical_net_usd": "18204.01976118209",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 20000,
+      "mean_historical_net_usd": "13050.09222744375",
+      "minimum_seed_historical_net_usd": "12903.53879017835",
+      "maximum_seed_historical_net_usd": "13204.01976118209",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 30000,
+      "mean_historical_net_usd": "3050.09222744375",
+      "minimum_seed_historical_net_usd": "2903.53879017835",
+      "maximum_seed_historical_net_usd": "3204.01976118209",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_incremental_F_plus_K_usd": 35000,
+      "mean_historical_net_usd": "-1949.90777255625",
+      "minimum_seed_historical_net_usd": "-2096.46120982165",
+      "maximum_seed_historical_net_usd": "-1795.98023881791",
+      "scenario_status": "analytical cost sensitivity; no observed fees or ex-ante probability claim"
+    }
+  ],
+  "conditional_transfer_frontiers": [
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_operator_implementation_cost_usd": 0,
+      "mean_historical_operator_transfer_ceiling_usd": "13817.584760550363333333",
+      "all_three_seeds_transfer_ceiling_usd": "13733.95372379268",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_operator_implementation_cost_usd": 5000,
+      "mean_historical_operator_transfer_ceiling_usd": "8817.584760550363333333",
+      "all_three_seeds_transfer_ceiling_usd": "8733.95372379268",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "assumed_operator_implementation_cost_usd": 10000,
+      "mean_historical_operator_transfer_ceiling_usd": "3817.584760550363333333",
+      "all_three_seeds_transfer_ceiling_usd": "3733.95372379268",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_operator_implementation_cost_usd": 0,
+      "mean_historical_operator_transfer_ceiling_usd": "19232.507466893386666667",
+      "all_three_seeds_transfer_ceiling_usd": "19169.58506638567",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_operator_implementation_cost_usd": 5000,
+      "mean_historical_operator_transfer_ceiling_usd": "14232.507466893386666667",
+      "all_three_seeds_transfer_ceiling_usd": "14169.58506638567",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "assumed_operator_implementation_cost_usd": 10000,
+      "mean_historical_operator_transfer_ceiling_usd": "9232.507466893386666667",
+      "all_three_seeds_transfer_ceiling_usd": "9169.58506638567",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_operator_implementation_cost_usd": 0,
+      "mean_historical_operator_transfer_ceiling_usd": "33050.09222744375",
+      "all_three_seeds_transfer_ceiling_usd": "32903.53879017835",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_operator_implementation_cost_usd": 5000,
+      "mean_historical_operator_transfer_ceiling_usd": "28050.09222744375",
+      "all_three_seeds_transfer_ceiling_usd": "27903.53879017835",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "assumed_operator_implementation_cost_usd": 10000,
+      "mean_historical_operator_transfer_ceiling_usd": "23050.09222744375",
+      "all_three_seeds_transfer_ceiling_usd": "22903.53879017835",
+      "tenant_transfer_floor": "D_tenant + K_tenant (unobserved)",
+      "scope": "Retrospective conditional IR interval; not a market quote, IC proof, or ex-ante procurement price"
+    }
+  ],
+  "optional_energy_normalization": [
+    {
+      "from_h": 12,
+      "to_h": 16,
+      "mean_historical_budget_usd_per_reference_IT_MWh": "4.634273712641158726",
+      "denominator_mwh": "2981.6073925153343935",
+      "scope": "Optional normalization by common annual variable-IT execution; not shifted work, avoided MWh, or an observed tariff"
+    },
+    {
+      "from_h": 16,
+      "to_h": 24,
+      "mean_historical_budget_usd_per_reference_IT_MWh": "6.450382272049747732",
+      "denominator_mwh": "2981.6073925153343935",
+      "scope": "Optional normalization by common annual variable-IT execution; not shifted work, avoided MWh, or an observed tariff"
+    },
+    {
+      "from_h": 12,
+      "to_h": 24,
+      "mean_historical_budget_usd_per_reference_IT_MWh": "11.084655984690906458",
+      "denominator_mwh": "2981.6073925153343935",
+      "scope": "Optional normalization by common annual variable-IT execution; not shifted work, avoided MWh, or an observed tariff"
+    }
+  ],
+  "independent_24h_settlement": {
+    "method": "Independent longdouble settlement of supplied binary64 execution and physical arrays",
+    "scope": "Observed-year ledger only. Reported zero terminal difference is not independently proved from admissions/recovery records.",
+    "intervals": 35040,
+    "sites": 4,
+    "reference_variable_IT_energy_mwh": "2981.6073925153343935",
+    "reference_cost_usd": "555168.20505569697804",
+    "rows": [
+      {
+        "seed": 20260920,
+        "observed_year_saving_before_terminal_difference_usd": "105565.66546172019212",
+        "energy_cost_reduction_usd": "107828.41850120415454",
+        "import_deviation_charge_usd": "3344.4474830941499732",
+        "curtailment_value_usd": "1081.6944436101875547",
+        "maximum_reconstructed_grid_difference_mw": "2.7115896333862465895e-16"
+      },
+      {
+        "seed": 20260921,
+        "observed_year_saving_before_terminal_difference_usd": "105003.51737830597588",
+        "energy_cost_reduction_usd": "107285.573173370181856",
+        "import_deviation_charge_usd": "3357.0460833758351824",
+        "curtailment_value_usd": "1074.9902883116292077",
+        "maximum_reconstructed_grid_difference_mw": "2.7462841029057827313e-16"
+      },
+      {
+        "seed": 20260922,
+        "observed_year_saving_before_terminal_difference_usd": "105244.00268487021285",
+        "energy_cost_reduction_usd": "107500.88313225010485",
+        "import_deviation_charge_usd": "3344.776737485427248",
+        "curtailment_value_usd": "1087.8962901055352517",
+        "maximum_reconstructed_grid_difference_mw": "3.2309224740068032133e-16"
+      }
+    ],
+    "mean_saving_before_terminal_difference_usd": "105271.06184163212695"
+  },
+  "analytical_information_gap_counterexamples": [
+    {
+      "label": "PI_increment_exceeds_adapted_increment",
+      "probabilities": [
+        "1/2",
+        "1/2"
+      ],
+      "A_action_payoffs": [
+        [
+          0,
+          0
+        ]
+      ],
+      "B_action_payoffs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "expected_PI_increment": "1",
+      "adapted_expected_increment": "0",
+      "information_gap_A": "0",
+      "information_gap_B": "1"
+    },
+    {
+      "label": "adapted_increment_exceeds_PI_increment",
+      "probabilities": [
+        "1/2",
+        "1/2"
+      ],
+      "A_action_payoffs": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "B_action_payoffs": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "expected_PI_increment": "0",
+      "adapted_expected_increment": "1",
+      "information_gap_A": "1",
+      "information_gap_B": "0"
+    }
+  ],
+  "arithmetic_note": "Published CSV strings are treated as exact decimals for descriptive recomputation, not as certified exact physical observations. Annual array settlement is longdouble numerical arithmetic."
+}

@@ -1,0 +1,22 @@
+{
+  "pid": 48188,
+  "started_epoch": 1793436394.9894438,
+  "command": [
+    "C:\\Users\\Kali\\anaconda3\\python.exe",
+    "C:\\Users\\Kali\\Desktop\\\u7535\u529b\u5e02\u573a\\EnergyEconomics_Window_Extension_20261031\\code\\run_window_extension.py",
+    "--year",
+    "2025",
+    "--window",
+    "36",
+    "--seed",
+    "20260920",
+    "--cdf-epoch",
+    "6",
+    "--eta",
+    "0",
+    "--safety",
+    "0.9",
+    "--current-coupling",
+    "--continuous-cost"
+  ]
+}
