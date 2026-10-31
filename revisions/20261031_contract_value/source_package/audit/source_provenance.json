@@ -1,0 +1,96 @@
+{
+  "repository": "https://github.com/kalimustafa/executable-service-commitments-worldmoe",
+  "commit": "323c2084e7ee668ba512fb1e33dd56b8394b32d4",
+  "full_repository_included": false,
+  "original_paths_preserved": true,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "source_data/grid_metrics_inputs_2025.npz",
+      "sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72"
+    },
+    {
+      "path": "source_data/current/fig3_service_windows.csv",
+      "sha256": "7501e33c2d98a62ae4f555aefed585303e8735a99cc2bac9de0bb189334600d9"
+    },
+    {
+      "path": "source_data/current/0927_adapted_window_contrasts.csv",
+      "sha256": "aa9e74fe7e3a165c71adf8462d325f17e38bf0467666f937d9766ca8e3b646bc"
+    },
+    {
+      "path": "source_data/current/current_provenance.json",
+      "sha256": "91ae9cc093c742a917407b365642d937e4b3e22ff7c0847cd3b54cb57376eb12"
+    },
+    {
+      "path": "source_data/current/worldmoe_daily_by_seed.csv",
+      "sha256": "e2646bb3814b0adc34b1bbd2be83d904a1d892648e772149152a66dcca8e6eda"
+    },
+    {
+      "path": "source_data/current/extensions/certified_value_bounds.csv",
+      "sha256": "438b5bf9fe3a3df46165b34d6a40f1214b96d8d7282c90c5d65e1cfcf997d024"
+    },
+    {
+      "path": "source_data/certificates/cost_bound_zone_diagnostics.csv",
+      "sha256": "e7e0c876179d63746f997e250d79ba7b5ad4f48731cb462c05770cc8f73cc81a"
+    },
+    {
+      "path": "source_data/extensions/certified_value_bounds.csv",
+      "sha256": "438b5bf9fe3a3df46165b34d6a40f1214b96d8d7282c90c5d65e1cfcf997d024"
+    },
+    {
+      "path": "research/R2_PAPER_INTEGRATION_20260923/configs/economic_constraints.json",
+      "sha256": "7836fae0736bde2a8b7aed499d48033b803dff9c09532bd42bc6321f7024ed58"
+    },
+    {
+      "path": "research/R2_PAPER_INTEGRATION_20260923/src/data/r2_data.py",
+      "sha256": "b1c4a3dfa1282db984caebee63b4ef9f06b259453f03c5562f025978380fddf4"
+    },
+    {
+      "path": "research/ServiceCommitment_1to5_20260927/vendor/reservation.py",
+      "sha256": "3a9b4091abc141b9a8da6f05f9913fa849b7fcef6fdeaf4c936ec96d399b7949"
+    },
+    {
+      "path": "research/ServiceCommitment_1to5_20260927/vendor/economic_core.py",
+      "sha256": "80ef98685031f744103c26a7d8e1955df03ae737148675fe465a155804589cce"
+    },
+    {
+      "path": "research/ServiceCommitment_1to5_20260927/src/context.py",
+      "sha256": "57dafebc539db39ea45103c2d10ae68ed54350cfccf4f82247b1e8eec857a47b"
+    },
+    {
+      "path": "research/ServiceCommitment_1to5_20260927/src/controllers.py",
+      "sha256": "d9d0c3af87daa356ceb01a898fff633e5b9dd8d12bf03a5e02db4658ebd35a6a"
+    },
+    {
+      "path": "research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py",
+      "sha256": "0e1765abfe7a02835f85118c382f13ee6470826cd526c6023ebc843bad519dfc"
+    },
+    {
+      "path": "research/R2_JointDecision_20260927/scripts/summarize_worldmoe_final.py",
+      "sha256": "2da9830378ff7540a645e6d43ec0f9fe9393f0214f3358e35118b52d6999c50e"
+    },
+    {
+      "path": "research/external_validation/scripts/prepare_years.py",
+      "sha256": "b9aafd75516fa07c3e55d55a7c22b9c7e0f44b758ef37e89813664317a57b67a"
+    },
+    {
+      "path": "research/ExecutableServiceCommitments_Revision_20260928/experiments/E03_heterogeneous_deadlines/audit_hetero_book.py",
+      "sha256": "42d017a069872c0e3c8070786134e552d8ecb9fcdf5a2908bbe9f21991d7178e"
+    },
+    {
+      "path": "research/ExecutableServiceCommitments_Revision_20260928/experiments/E04_frontier_nonpreemptive/run_frontier_jobs.py",
+      "sha256": "ca31a4708d76614736a95e5225e6d1fd2f3c94c8e5e2bd53bf42dd6632a49515"
+    }
+  ],
+  "parser_algorithm_reference": {
+    "version": "Pandas v2.2.3",
+    "historical_runtime_version_recovered": false,
+    "urls": [
+      "https://github.com/pandas-dev/pandas/blob/v2.2.3/pandas/_libs/src/parser/tokenizer.c",
+      "https://github.com/pandas-dev/pandas/blob/v2.2.3/pandas/_libs/parsers.pyx"
+    ]
+  }
+}

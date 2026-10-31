@@ -1,0 +1,124 @@
+{
+  "revised_on": "2026-10-31",
+  "main": {
+    "path": "/workspace/scratch/4efe13799b83/deliverables/EnergyEconomics_Contract_Value_20261031.docx",
+    "sha256": "ed8d06e559f4196c1d26c70319b410028bab54e24cf42aac1c7cc9acf7dd8871",
+    "pages": 12,
+    "all_pages_visually_checked": true,
+    "native_math_objects": 131,
+    "tables": 4,
+    "figures": 1,
+    "review": "Pages 1\u20136 independently reviewed; non-round OMML delimiter fix rechecked. Root reviewed final changed pages 1,8,9,10,11 plus tables7 and references12; unchanged pages compared by raster hashes.",
+    "known_layout_defects": []
+  },
+  "supplement": {
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/deliverables/EnergyEconomics_Supplementary_Verification_20261031.docx",
+    "sha256": "a511527c2392acc3426459c13cb54edaa6deaceda85155aa14cd4b298001c664",
+    "bytes": 5413789,
+    "pages": 53,
+    "all_pages_visually_checked": true,
+    "native_equation_objects": 389,
+    "tables": 42,
+    "images": 12,
+    "all_original_37_table_xml_identical": true,
+    "protected_ablation_tables": [
+      9,
+      10,
+      28,
+      29
+    ],
+    "original_6_images_byte_identical": true,
+    "moved_6_main_images_byte_identical": true,
+    "body_math_delimiter_rendering_fixes": 21,
+    "visual_review_coverage": [
+      {
+        "reviewer": "restore_content",
+        "pages": "1\u201320",
+        "resolution": "original",
+        "status": "pass"
+      },
+      {
+        "reviewer": "certificate_audit",
+        "pages": "21\u201339",
+        "resolution": "original",
+        "status": "pass",
+        "final_changed_page_rechecks": [
+          25,
+          27,
+          28
+        ]
+      },
+      {
+        "reviewer": "math_audit",
+        "pages": "40\u201353",
+        "resolution": "original",
+        "status": "pass",
+        "final_changed_page_rechecks": [
+          47,
+          48,
+          52
+        ]
+      }
+    ],
+    "final_pdf": {
+      "path": "/workspace/scratch/4efe13799b83/revision_20261031/deliverables/EnergyEconomics_Supplementary_Verification_20261031.pdf",
+      "sha256": "4a85155b25b9da19fd69d483087ea7dcdeb10c3b7649782b7dad5af2a983b590",
+      "bytes": 4318005,
+      "pages": 53
+    },
+    "package_integrity": {
+      "zip_crc_test": "pass",
+      "zip_parts": 30,
+      "save_method": "temporary file, fsync, complete ZIP CRC test, atomic replace, directory fsync",
+      "previously_rendered_complete_parts_identical": 23,
+      "document_xml_sha256": "e6a64605827898b52b71295cfc34f875fd8b47b3c94d650d98a1b59578220612",
+      "document_xml_matches_final_reviewed_pdf_source": true,
+      "all_png_files_validated": true,
+      "active_build_or_render_processes": []
+    },
+    "last_render_change_scope": {
+      "delimiter_and_heading_fix_pages": [
+        25,
+        27,
+        28,
+        47,
+        48
+      ],
+      "subsequent_caption_only_change_pages": [
+        52
+      ],
+      "all_other_pdf_pages_pixel_identical": true
+    },
+    "new_sections": [
+      "S25",
+      "S26",
+      "S27",
+      "S28"
+    ],
+    "status": "final; no pending content or layout edits"
+  },
+  "original_tables_retained_without_xml_changes": 37,
+  "preserved_images_without_pixel_changes": 12,
+  "new_certificate_instances_per_method": 12,
+  "independently_assembled_methods": 2,
+  "exact_facet_breakpoint_checks": 2095170,
+  "explicit_rational_surrogate_schedules": 4,
+  "solver_free_saved_file_replays_complete": true,
+  "uniform_actual_admission_repair_existence_proved": true,
+  "actual_admissions_recovered": false,
+  "actual_admission_specific_repaired_schedule_materialized": false,
+  "original_29oct_certificate_archives_recovered": false,
+  "original_117000_dollar_hindsight_assignment_recovered": false,
+  "ex_ante_profit_identified_from_single_historical_year": false,
+  "fees_are_analytical_scenarios": true,
+  "current_headline_usd": {
+    "ceiling_12h": "100625.48",
+    "ceiling_16h": "115735.23",
+    "ceiling_24h": "134437.85",
+    "uniform_24h_value_floor": "130931.31",
+    "premium_12_to_24_floor": "30305.84",
+    "premium_16_to_24_floor": "15196.08",
+    "remaining_24h_gap_upper": "3506.54",
+    "complete_uniform_repair_upper": "0.000836658044037"
+  }
+}

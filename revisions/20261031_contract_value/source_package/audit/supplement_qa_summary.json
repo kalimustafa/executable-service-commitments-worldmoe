@@ -1,0 +1,86 @@
+{
+  "path": "/workspace/scratch/4efe13799b83/revision_20261031/deliverables/EnergyEconomics_Supplementary_Verification_20261031.docx",
+  "sha256": "a511527c2392acc3426459c13cb54edaa6deaceda85155aa14cd4b298001c664",
+  "bytes": 5413789,
+  "pages": 53,
+  "all_pages_visually_checked": true,
+  "native_equation_objects": 389,
+  "tables": 42,
+  "images": 12,
+  "all_original_37_table_xml_identical": true,
+  "protected_ablation_tables": [
+    9,
+    10,
+    28,
+    29
+  ],
+  "original_6_images_byte_identical": true,
+  "moved_6_main_images_byte_identical": true,
+  "body_math_delimiter_rendering_fixes": 21,
+  "visual_review_coverage": [
+    {
+      "reviewer": "restore_content",
+      "pages": "1–20",
+      "resolution": "original",
+      "status": "pass"
+    },
+    {
+      "reviewer": "certificate_audit",
+      "pages": "21–39",
+      "resolution": "original",
+      "status": "pass",
+      "final_changed_page_rechecks": [
+        25,
+        27,
+        28
+      ]
+    },
+    {
+      "reviewer": "math_audit",
+      "pages": "40–53",
+      "resolution": "original",
+      "status": "pass",
+      "final_changed_page_rechecks": [
+        47,
+        48,
+        52
+      ]
+    }
+  ],
+  "final_pdf": {
+    "path": "/workspace/scratch/4efe13799b83/revision_20261031/deliverables/EnergyEconomics_Supplementary_Verification_20261031.pdf",
+    "sha256": "4a85155b25b9da19fd69d483087ea7dcdeb10c3b7649782b7dad5af2a983b590",
+    "bytes": 4318005,
+    "pages": 53
+  },
+  "package_integrity": {
+    "zip_crc_test": "pass",
+    "zip_parts": 30,
+    "save_method": "temporary file, fsync, complete ZIP CRC test, atomic replace, directory fsync",
+    "previously_rendered_complete_parts_identical": 23,
+    "document_xml_sha256": "e6a64605827898b52b71295cfc34f875fd8b47b3c94d650d98a1b59578220612",
+    "document_xml_matches_final_reviewed_pdf_source": true,
+    "all_png_files_validated": true,
+    "active_build_or_render_processes": []
+  },
+  "last_render_change_scope": {
+    "delimiter_and_heading_fix_pages": [
+      25,
+      27,
+      28,
+      47,
+      48
+    ],
+    "subsequent_caption_only_change_pages": [
+      52
+    ],
+    "all_other_pdf_pages_pixel_identical": true
+  },
+  "new_sections": [
+    "S25",
+    "S26",
+    "S27",
+    "S28"
+  ],
+  "status": "final; no pending content or layout edits"
+}

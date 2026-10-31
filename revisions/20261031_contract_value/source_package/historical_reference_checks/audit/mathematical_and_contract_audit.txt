@@ -1,0 +1,90 @@
+EXACT WITNESS REPAIR AND CONTRACT PROGRAMME AUDIT
+
+Scope
+
+The public source snapshot inspected is repository commit 323c2084e7ee668ba512fb1e33dd56b8394b32d4 at repository_audit/repo. The source was not modified. The source boundary checks extract the original functions with AST and run explicit small fixtures; they do not re-run annual forecasts or reconstruct the missing US$117,000.2387599464 hindsight allocation. The script source_contract_checks.py passes 16 boundary fixtures. The exact repair module passes 13 checks, including 729 exhaustive small rational paths. The certificate auditor independently reviewed its mathematical construction and guards.
+
+Exact homogeneous repair theorem
+
+Number the service slots 0,...,N-1 and cumulative boundaries 0,...,N. An arrival in slot r has exclusive deadline r+D and may execute only in r,...,r+D-1. Let Xhat_t be cumulative candidate service after t slots, c_s the available service in slot s, and C_t=sum_{s=0}^{t-1} c_s. Let L_t and U_t be the exact nondecreasing deadline and release prefix boundaries. Initial work is available at boundary zero but retains each original deadline; cumulative service itself starts at Xhat_0=0. A fixed terminal total is imposed by L_N=U_N. Exact raw increments satisfy 0<=Xhat_{t+1}-Xhat_t<=c_t.
+
+Define the propagated corridor
+
+    ell_t = max_{s>=t} { L_s - (C_s-C_t) },
+    u_t   = min_{s<=t} { U_s + (C_t-C_s) }.
+
+The corridor is feasible only if ell_t<=u_t at every boundary. Both envelopes are nondecreasing and their slot increments lie in [0,c_t]. They are obtained in O(N) exact arithmetic by
+
+    ell_N=L_N; ell_t=max(L_t,ell_{t+1}-c_t),
+    u_0=U_0; u_{t+1}=min(U_{t+1},u_t+c_t).
+
+Set Xtilde_t=min(u_t,max(ell_t,Xhat_t)) and xtilde_t=Xtilde_{t+1}-Xtilde_t. Pointwise min/max preserves nondecreasing paths with the same capacity bounds, so xtilde satisfies every original service prefix, nonnegativity, service capacity and fixed endpoint exactly.
+
+Proof of perturbation bound
+
+Suppose the exact residual bounds are L_t-Xhat_t<=epsilon_d and Xhat_t-U_t<=epsilon_r. For s>=t, the raw capacity bound gives Xhat_s-Xhat_t<=C_s-C_t, whence L_s-(C_s-C_t)<=Xhat_t+epsilon_d. Taking the maximum proves ell_t-Xhat_t<=epsilon_d. For s<=t, the same capacity inequality gives U_s+(C_t-C_s)>=Xhat_t-epsilon_r; taking the minimum proves Xhat_t-u_t<=epsilon_r. Therefore
+
+    -epsilon_r <= delta_t=Xtilde_t-Xhat_t <= epsilon_d.
+
+Since delta_0=0, each change delta_{t+1}-delta_t has absolute value at most epsilon_r+epsilon_d. Thus
+
+    sum_{t=0}^{N-1} |xtilde_t-xhat_t| <= N(epsilon_r+epsilon_d).
+
+The module independently recomputes all repaired prefix and increment conditions using Fraction arithmetic. It rejects raw capacity/nonnegativity violations, infeasible propagated corridors, an inconsistent terminal state, and initial cohorts whose deadlines do not fit the homogeneous pre-origin contract. It never silently treats a floating-point tolerance as exact feasibility. More general electrical ramps, mixed deadlines and nonpreemptive jobs require the original coupled repair programme.
+
+Monetary correction
+
+For the actual public accounting function, cash(book)=Delta t sum[RT*G+PVcurtail], with a separate Delta t*|G-Greference| import-deviation charge; both supplementary rates equal one dollar/MWh. For repaired versus candidate service, a safe correction is
+
+    B_R=sum Delta t[(|RT|+1)|Delta G|+|Delta PVcurtail|]+|Delta Psi|.
+
+Because both positive-part physical maps are PUE*k-Lipschitz,
+
+    B_R <= sum Delta t*k*PUE*(|RT|+2)|Delta x| + |Delta Psi|.
+
+The corrected witness floor is Hsafe=Hraw-evaluation_allowance-B_R. This does not require the repair to be optimal, only exactly feasible. Negative RT prices are covered by the absolute price coefficient. Tail service is priced once under the declared terminal convention.
+
+Conditional numerical evaluation
+
+The public source_data/grid_metrics_inputs_2025.npz has SHA256 5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72. Its binary64 extrema are max|RT|=4522.13 dollars/MWh, maxPUE=1.0929484367370605 and max k=1.639059066772461 MW/work. Their exact stored rational values give a uniform coefficient 2026.1395883396963 dollars/work. If the manuscript's displayed prefix residuals 3.006750e-12 and 6.381505e-12 are independently validated as exact bounds over all 4*35040 boundary paths including terminal endpoints, the theorem gives
+
+    L1 correction <= 1.3158578208e-6 work units,
+    electricity correction <= 0.0026661116233492816 dollars.
+
+This is a conditional theorem evaluation, not an executed repair of the annual witness. It excludes any changed terminal liability and reference/witness monetary evaluation allowance. No allowance for floating-point residual computation can be inferred merely from the printed digits. The manuscript's strong cent floor survives if all additional corrections together are <=0.0079185550 dollars. If the conditional electricity allowance applies, 0.0052524433766507184 dollars of that budget remains for other verified corrections. Arrays and certified prefix evaluations are required to invoke this result.
+
+Source programme findings
+
+1. Homogeneous 12/16/24 h deployment
+   research/ExecutableServiceCommitments_Revision_20260928/engine/scripts/run_service_window.py
+   Lines 189,195-197 initialise and shift the deadline queue. Offset 4W-1 correctly represents D eligible slots including the current one. Line197 additionally uses min(4W-1,n-1-t), a year-end dispatch deadline tightening. Lines263 and278-281 force final-hour/after-year clearing. This is admissible as an early-service policy, but it must not silently redefine the full-W rights set used by an upper certificate. The shared ex-post check in src/context.py95-99 uses the true extended deadline t+4W-1.
+
+2. Homogeneous 8/48 h sensitivity
+   research/generalization_transportability_20260928/scripts/run_g4_window.py
+   Lines206,214 enlarge the queue to max(96,4W) and use the unclamped 4W-1 offset. The neural valuation horizon remains96 at line85; lines283-284 supply queue[:h] to that horizon. A48h service right is consequently evaluated by a controller with a24h valuation horizon. Lines300-304 correctly leave the certificate unavailable when no corresponding I1 bound file exists. Sensitivity policies are not new contract-wide optimality certificates.
+
+3. Mixed 4/12/24 h contracts
+   research/ExecutableServiceCommitments_Revision_20260928/engine/scripts/run_mixed_deadlines.py200-202 fixes the 25/50/25 split, uses each class's own queue deadline and applies the same year-end dispatch tightening. Lines279-282 allocate current service by deadline order. Lines289-294 run an independent EDF attribution audit and replace the homogeneous lateness statistic.
+   experiments/E03_heterogeneous_deadlines/audit_hetero_book.py33-38 creates cohorts with their real release and inclusive due t+4W-1, and lines46-55 assign service and classify lateness through the full extended book. This is materially stronger than aggregate total deadline prefixes for a mixed contract. Lines33,42,44,58,60 use numerical thresholds from1e-12 to1e-5, so it is a floating-point compliance diagnostic rather than an exact feasibility proof.
+
+4. Shared release, conservation and monetary ledger
+   research/ServiceCommitment_1to5_20260927/src/context.py95-99 checks every cohort's full deadline, including deadlines beyond the reporting year. Lines102-104 check global work conservation, pre-release service and lateness; their thresholds are1e-5 and1e-7 work units. A fresh exact verifier should additionally check conservation separately at each site, with no cross-site cancellation.
+   vendor/economic_core.py22-24 evaluates the original import/curtailment cost; line34 charges absolute import deviations; lines37-39 retain year-end work and price it at frozen historical RT medians and maximum PUE. This is an explicit terminal valuation, not RT settlement at actual tail prices. Lines54-55 check nonnegativity, compute capacity and grid limits numerically. These exact functions justify the monetary Lipschitz factor |RT|+2.
+
+5. Legacy reservation-tail diagnostic
+   research/ServiceCommitment_1to5_20260927/vendor/reservation.py39 uses the correct inclusive last slot. Lines45-48 complete overflow after its deadline, but line49 increments the late-work counter only when deadline<c.N. Therefore that returned legacy counter can hide deadline misses in the tail. A direct fixture with an end-year cohort yields legacy lateness0 and the independent full-deadline audit0.25 IT MWh. Current workflows must use context.fifo_lateness or an exact cohort audit for all deadlines, not the legacy counter alone.
+
+6. Electrical stress and information boundary
+   research/ServiceCommitment_1to5_20260927/scripts/run_grid_guard.py15-18 calls src/controllers.py project_grid. That implementation initialises previous import from current realised PV/PUE at line17 and reads c.pue[t],c.pv[t] at line23; lines27-30 compute current capacity from these same-interval physical values. The deadline guard's future capacity at lines18-19 is conservative, and lines33-36 implement a correct inclusive-deadline prefix minimum. The current physical projection is not the unrevealed-physics-invariant rule written in manuscript Eq.(11). A fixture holding requests and arrivals fixed changes current service when current PV changes. The paper should distinguish this archived projection experiment from a newly specified robust ex-ante executor unless a matching corrected run is supplied. The routine records idle/import excess at line29; clipping service capacity to zero cannot eliminate an infeasible idle load.
+
+7. Frontier nonpreemptive service
+   experiments/E04_frontier_nonpreemptive/prepare_frontier_jobs.py19-20 rounds release and runtime upward to quarter-hour slots; lines21-24 retain a fixed site and deterministic release ordering.
+   run_frontier_jobs.py67 computes latest start floor((submit+W*3600)/900)-duration, and lines78-81 use exclusive completion and count completion>deadline. These interval calculations are consistent. However choose_start36-37 returns earliest feasible even when it is later than latest; this deliberately records an infeasible case rather than proving a contract feasible. The archived summaries report977884 jobs:24h has1764 late jobs/41.0519892774 IT MWh;30h has27/0.7941964930;48h has0/0 and savings60673.0370314991 dollars. The24h immediate-reference schedule itself has1744 late jobs/38.0523646173 IT MWh. The48h result supports the feasible job-level extension;24/30h are infeasibility evidence. No fluid theorem certifies all nonpreemptive24h jobs.
+
+8. Artifact interfaces and orchestration
+   research/power-dc-vpp/src/dcvpp/research_branch/contracts.py106-171 defines FrozenForecastArtifact and checks array shape, finiteness and unique timestamps. It stores issue_time_utc, source_hashes and locked_test but these checks alone do not establish immutable first-release numerical values or receipt-plus-processing eligibility. The physical interface explicitly delegates freezing/hashing to its caller at lines34-38. These are software artifact contracts, not the service-deadline optimiser.
+   research/power-dc-vpp/src/dcvpp/paper_execution.py orchestrates frozen forecast/DART/optimisation manifests and recovery lineage (e.g.1267-1269 and1435-1469). Its presence is not a replacement for the first-release snapshot series and per-action receipt-time evidence required by Eq.(3a).
+
+Consequences for manuscript editing
+
+Restore Eq.(1b) with an exclusive deadline; retain every WorldMoE ablation as originally reported; use original mixed and Frontier results with their actual eligibility labels. Add the exact repair theorem, executable verifier and conditional monetary calculation without declaring an annual repair complete. Preserve distinctions among a policy's early year-end scheduling heuristic, contractual rights, a relaxed terminal liability, and a feasible recovery witness. Address the document compression by restoring these distinct mathematical and computational records.

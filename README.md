@@ -1,10 +1,23 @@
 # Executable service commitments and WorldMoE
 
-Code and derived source data for **Executable service commitments bound the electricity-market value of computing flexibility**.
+Code and derived source data for **Contract rights and the economic value of data centre flexibility**, with the earlier WorldMoE research archive retained.
 
-Author and contact: **Xiang Yi**, Northwest Minzu University, Lanzhou, Gansu, China. Email: **a1130575372@gmail.com**.
+Author and contact: **Xiang Yi**, Northwest Minzu University, Lanzhou, Gansu, China. Email: **mohamwdkali@gmail.com**.
 
-Version: **v1.3.0**, 10 October 2026. This is a research software archive associated with a manuscript; it does not imply journal acceptance or publication.
+Current manuscript and evidence revision: **31 October 2026**, on top of software archive v1.3.0. This is a research archive associated with a manuscript; it does not imply journal acceptance or publication.
+
+## Current manuscript and complete contract-value evidence
+
+- [Revised main manuscript](revisions/20261031_contract_value/manuscript/EnergyEconomics_Contract_Value_Revised_20261031.docx), 15 pages, including the restored original WorldMoE architecture and economic figures in the original palette.
+- [Revised Supplementary Information](revisions/20261031_contract_value/manuscript/EnergyEconomics_Supplementary_Revised_20261031.docx), 59 pages, retaining the original 42 tables and 12 images and adding S29–S30.
+- [Evidence guide and reproduction commands](revisions/20261031_contract_value/README.md), with complete inputs, original trajectories, exact witnesses and hashes.
+- [Figure files and drawing source](revisions/20261031_contract_value/figures/).
+
+The current 24 h perfect-information opportunity is enclosed by **US$130,931.31–134,437.85**; the minimum optimal 12→24 h rights premium is **US$30,305.84**. The uniform admission-dependent existence proof is accompanied by four complete exact witnesses for the recovered original admissions. All nine historical 12/16/24 h service books and original admissions are supplied, with independently reconstructed settlement and separate exact numerical repairs. The historical same-checkpoint 12→24 h policy increment remains **US$33,050.09**.
+
+The mean 24 h operating saving remains **US$105,271.06**. On the common service and financial account, remaining annual opportunity is **US$25,660.24–29,166.79**, and the captured fraction is approximately **78.30%–80.40%**. These are historical-calendar results and distinct value objects, not promised future profit. This revision recovers and verifies archived executions; it does not rerun training or add new service-window results. Proposed 8/20 h extensions and the requirements for 36/48 h are documented separately.
+
+The earlier archive instructions below describe the retained historical software and figures. Their older certified-ceiling labels are superseded for the current manuscript by S27–S30 and the linked evidence guide.
 
 ## Contents
 
@@ -33,7 +46,7 @@ python tools/reproduce_figures.py
 
 The second command checks the release hashes and recalculates the nominal saving and certified capture fraction from the included result tables. The third writes figures to `reproduced_figures/`, preserving the released figures. Figure 1 is a Python-drawn mechanism figure with configured model-site coordinates on Census state outlines, archived three-refinement outcomes and full-year mean diurnal imports. The updated landscape figure centres the WorldMoE architecture: portfolio, market/weather observations, queue and service conditions enter as parallel inputs, followed by slot-cost decoding and a separate deterministic executor. Layer folds, stacked matrices and expert blocks depict structure rather than numerical observations. Three output groups retain measured 12/16/24 h outcomes and five archived pipeline comparisons, using the author's original eight-colour palette. A separate enlarged model architecture is included as `figures/main/WorldMoE_architecture_detail.{png,svg,pdf}`. Self-contained drawing source and inputs are in `figure_source/Fig1_reference_20261010_v3/`. Submission Extended Data Figure 1 is workload feasibility and Figure 2 is monthly savings; the original builder used the opposite numbering, which the wrapper maps explicitly.
 
-The retained nominal results are a three-refinement mean saving of approximately US$105,271, or 18.96% of the matched immediate-execution bill, and 79.39% of a US$132,605 certified ceiling. These are results from included records. Rebuilding the figures or summaries does **not** rerun training or independently validate the experiments.
+The earlier figure archive records a three-refinement mean saving of approximately US$105,271, or 18.96% of the matched immediate-execution bill, and 79.39% of a US$132,605 certified ceiling. Those older ceiling and capture labels describe the earlier evidence vintage; the current opportunity interval and capture calculation are reported above. Rebuilding the historical figures or summaries does **not** rerun training or independently validate the experiments.
 
 Repository cleanup removed two superseded Figure 1 source directories and the old Figure 1 artwork they replaced. The direct figure-builder entry points now use the same final WorldMoE-centred builder as the reproduction wrapper. Paper results, provenance data, research code, selected checkpoints and current figures are retained. This cleanup adds no new figures.
 

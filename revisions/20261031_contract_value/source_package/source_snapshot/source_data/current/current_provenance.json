@@ -1,0 +1,144 @@
+{
+  "checkpoints": [
+    {
+      "seed": 20260920,
+      "epoch": 6,
+      "sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab",
+      "result": "CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf.json"
+    },
+    {
+      "seed": 20260921,
+      "epoch": 2,
+      "sha256": "2f281002e8ccafb859c197c7745c366e945e1b9ce8568e5ccd514ebdebf78448",
+      "result": "CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf.json"
+    },
+    {
+      "seed": 20260922,
+      "epoch": 0,
+      "sha256": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17",
+      "result": "CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf.json"
+    }
+  ],
+  "shared_initialization": {
+    "shared_initial_checkpoint": "QPR2_seed20260920_epoch10.pt",
+    "shared_initial_checkpoint_sha256": "97637a07f6b6fbb3b1d3336c66920dbbb4d297a9efb624b4e65f5dec874e285c",
+    "replication_scope": "Independent CdfR2 optimization seeds from the identical pretrained QPR2 initialization and frozen WorldMoE/R2 feature cache; not independent backbone training.",
+    "training_years": [
+      2021,
+      2022,
+      2023
+    ],
+    "physical_training_years": [
+      2022,
+      2023
+    ],
+    "selection_year": 2024,
+    "evaluation_year": 2025,
+    "epochs_max": 12,
+    "batch": 32,
+    "qp_regularization": 2.0,
+    "early_stopping": "2024 annual savings every two epochs; patience three; min_delta 50 USD; minimum six epochs; restore actual eligible maximum; price-score guard two percent",
+    "controller": {
+      "eta": 0.0,
+      "safety": 0.9,
+      "current_coupling": true,
+      "continuous_cost": true,
+      "exact_action": false,
+      "mass_aware": false,
+      "native_mean": false
+    }
+  },
+  "figure_scope": "All main figures redrawn around the current WorldMoE and innovations 1,2,3,5. No old-versus-new WorldMoE mechanism comparison. External frozen baselines compare complete pipelines under common physics and settlement.",
+  "data_files": [
+    "source_data\\external_benchmarks_24h.csv",
+    "source_data\\market_state_definition_inputs.csv",
+    "source_data\\monthly_savings.csv",
+    "source_data\\paired_daily_comparisons.csv",
+    "source_data\\paired_financial_intervals.csv",
+    "source_data\\worldmoe_daily_by_seed.csv",
+    "source_data\\worldmoe_event_block_intervals.csv",
+    "source_data\\worldmoe_event_sensitivity.csv",
+    "source_data\\worldmoe_event_summary.json",
+    "source_data\\worldmoe_financial_exclusions.csv",
+    "source_data\\worldmoe_forecast_scores.csv",
+    "source_data\\worldmoe_grid_raw.csv",
+    "source_data\\worldmoe_grid_summary.csv",
+    "source_data\\worldmoe_information_by_seed.csv",
+    "source_data\\worldmoe_information_raw.json",
+    "source_data\\worldmoe_post_publication_daily_by_seed.csv",
+    "source_data\\worldmoe_three_seed_results.csv",
+    "source_data\\worldmoe_training_history.csv",
+    "source_data\\certificates\\cost_bound_zone_diagnostics.csv",
+    "source_data\\certificates\\I1_Eagle_2024_w12_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w12_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w12_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w12_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w16_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w16_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w16_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w16_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w24_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w24_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w24_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2024_w24_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w12_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w12_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w12_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w12_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w16_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w16_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w16_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w16_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w24_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w24_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w24_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Eagle_2025_w24_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w12_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w12_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w12_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w12_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w16_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w16_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w16_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w16_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w24_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w24_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w24_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2024_w24_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w12_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w12_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w12_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w12_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w16_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w16_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w16_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w16_zone3_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w24_zone0_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w24_zone1_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w24_zone2_certificate.npz",
+    "source_data\\certificates\\I1_Frontier_2025_w24_zone3_certificate.npz",
+    "source_data\\extensions\\certified_value_bounds.csv",
+    "source_data\\original\\apic_and_forecast_controls.csv",
+    "source_data\\original\\Fig2_capacity_floor.csv",
+    "source_data\\original\\Fig2_hourly_workload.csv",
+    "source_data\\original\\fluid_model_window_summary.csv"
+  ],
+  "model_name": "WorldMoE",
+  "internal_run_family": "CdfR2",
+  "evaluation_scope": "Author-corrected chronology: the complete 2025 market calendar and its outcomes remained sealed throughout architecture development, parameter fitting, hyperparameter selection and 2024-only checkpoint selection; the first 2025 evaluation followed final architecture and checkpoint freeze.",
+  "module_checkpoints": [
+    {
+      "path": "models\\CdfR2_seed20260920_epoch06.pt",
+      "sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab"
+    },
+    {
+      "path": "models\\CdfR2_seed20260921_epoch02.pt",
+      "sha256": "2f281002e8ccafb859c197c7745c366e945e1b9ce8568e5ccd514ebdebf78448"
+    },
+    {
+      "path": "models\\CdfR2_seed20260922_epoch00.pt",
+      "sha256": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17"
+    }
+  ],
+  "chronology_correction": "Author correction in the active manuscript revision; original metadata retained in source_data/superseded_metadata"
+}

@@ -1,0 +1,204 @@
+CERTIFICATE AND CONTRACT PROGRAM AUDIT
+Audit date 30 October 2026
+
+SOURCE SCOPE
+
+The two uploaded manuscripts have the same mathematical text and numerical
+tables. Their differences concern the strength of first-release-information
+claims, not the certificate implementations. The public repository inspected
+is kalimustafa/executable-service-commitments-worldmoe, commit
+323c2084e7ee668ba512fb1e33dd56b8394b32d4. The source archive and the subsequently
+inspected full-inference release do not provide forcing_2025.npz, the original
+annual admission arrays, complete beyond-year books, the annual hindsight
+witness, or the twelve second-formulation NPZ certificates described in the
+uploaded manuscript. This audit therefore separates source-code inspection,
+published-scalar reaggregation, and new reference-verifier tests from a full
+annual rerun.
+
+ACTUAL FIRST FORMULATION
+
+The authoritative inspected source is
+research/ServiceCommitment_1to5_20260927/scripts/run_bounds.py.
+Its cost function is
+
+  f_t(x) = dt [p_t G_t(x) + V_t(x) + fee |G_t(x)-G0_t|],
+  G_t(x) = [PUE_t (idle + k x) - PV_t]_+,
+  V_t(x) = [PV_t - PUE_t (idle + k x)]_+.
+
+The code builds lower-convex-hull segments using the endpoints of the permitted
+execution interval and the breakpoints G=0 and G=G0. Segment quantities and
+end-of-slot backlog are the primal variables. Each slot imposes
+
+  x_t + q_t - q_(t-1) = a_t,     q_(-1)=0,
+  0 <= q_t <= Q_t,
+  Q_t = sum_(r=max(0,t-D+2))^t a_r,     D=4W.
+
+Thus the permitted cohort interval is r,...,r+D-1, inclusive. The source's
+lag=4W-1 implements this convention correctly. The first formulation already
+uses a convex-hull relaxation; its Lagrangian is the dual evaluation of that
+LP. A separately assembled epigraph/cumulative formulation is an independent
+implementation, not automatically a different mathematical relaxation.
+
+The original program uses floating-point cumulative sums, hull construction
+and dual evaluation. It then reports floor(dual)-1 for each site. This is a
+conservative numerical convention, but the one-dollar subtraction alone is
+not a proved upper bound on coefficient, hull or arithmetic error.
+
+The imported configuration specifies no intertemporal ramp constraints in
+this bound program. The source protocol explicitly describes terminal
+relaxation: in-year deadlines are enforced, but closing work receives the
+archived terminal liability without a required feasible beyond-year execution
+plan. Dropping those constraints can give a valid cost lower bound. It must be
+described as an outer relaxation and must use a terminal cost that matches or
+lower-bounds the original accounting rule. It cannot certify that the relaxed
+primal solution is a complete feasible recovery schedule.
+
+The primal diagnostic accepts balance residual up to 1e-6, primal-dual gap
+down to -1e-5, and true-relaxed-cost minus LP-primal down to -1e-5. These checks
+are useful diagnostics, not exact feasibility or dual-validity proofs. The
+CSV contains true-relaxed-cost minus primal as low as -0.00000287457 dollars,
+consistent with that numerical tolerance. The code's reuse of an existing
+JSON summary checks no current input hash, and reused groups are not appended
+to the reconstructed zone diagnostics. A rerun should bind cached results to
+the full input/configuration/code manifest and preserve all per-site rows.
+
+VALID FINITE-BOX DUAL EVALUATION
+
+For a relaxation min c0+c' y subject to Ay=b, Gy<=h and finite l<=y<=u,
+let lambda be unrestricted and mu>=0, and define
+
+  r = c - A'lambda + G'mu,
+  L = c0 + lambda'b - mu'h + sum_i min(l_i r_i, u_i r_i).
+
+For any feasible y, lambda'(b-Ay)=0 and mu'(Gy-h)<=0. Minimising the
+Lagrangian over the box therefore gives L <= the relaxed optimum. To transfer
+that bound to the original contract, every original feasible schedule must
+have an embedding in the relaxation and the relaxed objective must be no
+greater than its original settled cost. All inequality multipliers must have
+the correct sign. If clipping is used, the entire bound must be recomputed
+after clipping; retaining the old dual objective is not valid.
+
+Any proved modeling or input allowance is subtracted from L. A small solver
+stationarity residual is not a dollar allowance unless it is multiplied by
+valid finite variable bounds with the correct signs. The finite-box formula
+performs that correction directly. A feasible incumbent of a minimisation
+subproblem is an upper cost bound and cannot substitute for a globally valid
+lower bound. A MIP dual bound may be used only with its bound direction,
+termination status, domain and numerical validation recorded.
+
+EXACT ORIGINAL-COST REVALUATION OF THE FIRST METHOD
+
+The uploaded manuscript proposes re-evaluating first-method multipliers at
+every original nonconvex breakpoint. The following equation makes that
+procedure explicit. Let lambda_N=0, with t=0,...,N-1, and let tau be the common
+per-unit terminal price. Then
+
+  L_Lag(lambda) = Ccommon + sum_t lambda_t a_t
+    + sum_t min_(0<=x<=cap_t) [f_t(x)-lambda_t x]
+    + sum_t Q_t min(0, lambda_(t+1)-lambda_t+tau*1_(t=N-1)).
+
+Every scalar minimum is attained at an endpoint or an original piecewise
+linear breakpoint, including when the RT price is negative. This formula
+does not trust the computed floating-point hull. It is a valid Lagrangian
+lower bound even for the original nonconvex slot cost over this outer domain.
+For homogeneous divisible workloads, the cumulative queue constraints are
+equivalent to release/deadline feasibility inside the year. General mixed
+deadlines require cohort-flow variables or all necessary interval-demand
+constraints; a homogeneous FIFO-prefix reduction cannot be assumed to apply.
+
+annual_dual_revaluation.py implements this formula. Every binary64 input is
+interpreted as an exact binary rational. It evaluates each scalar summand
+exactly and then rounds that exact term downward to a declared dollar quantum
+before integer accumulation. With M terms and quantum delta, the downward
+evaluation loss is strictly below M*delta. This avoids the invalid practice
+of rounding every intermediate signed arithmetic operation in one direction.
+At N=35040 and three terms per slot, delta=1e-12 gives a strict arithmetic
+loss bound of 0.00000010512 dollars per site, exclusive of separate modeling
+or input allowances. The annual inputs and multipliers were not supplied, so
+this evaluator has not been applied to the original annual certificates.
+
+SECOND FORMULATION AND INDEPENDENCE
+
+An independently assembled epigraph LP may use execution x_t, backlog q_t,
+and cost epigraph eta_t. It must construct its own rows directly from the
+immutable admission/physics/settlement arrays, use the same in-year queue and
+terminal convention, and impose every exact lower-hull facet
+
+  eta_t >= alpha_(t,j) x_t + beta_(t,j).
+
+Every facet must lie below f_t at every original breakpoint and both domain
+endpoints. For a continuous piecewise-linear original cost, this proves
+dominance over the whole interval by linearity on each segment. Checking
+only selected grid points or only nonnegative-price intervals is inadequate.
+All finite epigraph bounds must preserve an embedding of each original
+feasible schedule. Numerical inequality multipliers and stationarity
+residuals are handled by the exact finite-box formula above.
+
+Incremental-segment and supporting-facet descriptions of the same complete
+lower convex envelope are mathematically equivalent. Different corrected
+reported bounds may reflect different numerical tolerances, outward domain
+expansions and rounding. Such a comparison is a useful independent numerical
+audit; it should not be attributed to two unrelated economic mechanisms or
+two distinct theoretical relaxations without a proved difference in domains.
+
+ACTUAL NUMERICAL CHECKS COMPLETED
+
+The published CSV contains 48 site rows, grouped into twelve four-site
+programmes: years 2024/2025, traces Eagle/Frontier, and rights 12/16/24 h.
+Every conservative site cost equals floor(dual)-1. Group reaggregation agrees
+with the published raw total within 6.5e-11 dollars. Reference-cost minus
+lower-bound agrees with each published ceiling within 1e-11 dollars. The
+2025 common DA charge is 2409.7842143056 dollars and is included once per
+four-site group. Results and source SHA-256 hashes are in
+published_bound_scalar_audit.json. These are consistency checks on supplied
+summary numbers, not reconstructions of the annual LPs.
+
+The newly written reference_verifier.py passed 12 synthetic regression tests:
+equality signs, inequality signs, nonzero lower bounds, multiplier clipping,
+finite-box stationarity correction, negative-price facets, interior
+breakpoints, exact primal feasibility, binary64 identity, outward monetary
+rounding, published-scalar aggregation, and witness-loss propagation. These
+tests do not validate the unpublished second-formulation annual inputs. Five
+additional tiny-contract tests passed for annual_dual_revaluation.py, including
+one-slot and two-slot deadlines, negative prices, exact physical breakpoints,
+and an infeasible idle-load case. Seventeen new reference tests passed in total.
+
+MONETARY PRESENTATION
+
+The unrounded values supplied by the manuscript imply these safe cent bounds:
+
+  Right     Lag savings ceiling       Cut savings ceiling
+  12 h      97802.43                   97796.43
+  16 h      113310.43                  113305.22
+  24 h      132605.43                  132598.68
+
+Savings ceilings must round upward; cost lower bounds and feasible-witness
+savings lower bounds round downward. The stated witness scalar
+117000.2387599464 has a pre-repair cent lower bound of 117000.23. Its strong
+two-method 12-to-24 h margin before repair is 19197.8179185550; its 16-to-24 h
+margin is 3689.8179185550. The advertised guaranteed cent floors 19197.81 and
+3689.81 survive only if the proved combined witness-repair and evaluation
+loss is at most 0.0079185550 dollars. Without the repaired complete annual
+book or a proved loss bound, those exact cent floors are not newly verified.
+
+For independent sites, aggregate corrected cost lower bounds, add common fixed
+charges once, and form U=C0-L. If sites are network-coupled, separate site LPs
+are an outer relaxation only when every coupling is safely omitted or dualised;
+independent feasible site schedules do not automatically make a feasible joint
+witness. The tighter combined ceiling is min(U_Lag,U_cut). Exceeding that
+minimum proves exclusion using at least one valid method. Claiming exclusion
+against both methods requires H_repaired > max(U_Lag,U_cut).
+
+INFORMATION AND EVIDENCE SCOPE
+
+The annual programs use perfect-information realised price and physics arrays.
+Because every realised nonanticipative trajectory is contained in that
+larger feasible schedule set, a valid retrospective ceiling bounds such
+trajectories too. It does not by itself prove first-release data provenance,
+nonanticipativity of a particular policy replay, ex-ante availability of the
+hindsight witness, or expected profit under a probability law. Those require
+the separately specified receipt-time vintage records and adapted replay.
+
+The complete manifest template records the missing evidence for twelve
+2025-Eagle site-contract instances. A blank or null entry is not a passed
+check. It identifies exactly what is required for an actual annual rerun.

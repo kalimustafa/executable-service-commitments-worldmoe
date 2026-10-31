@@ -1,0 +1,10 @@
+seed,window_h,evidence_label,passes_numeric_tolerance,max_release_excess_work,max_deadline_deficit_work,max_total_work_error,exactly_feasible_as_stored,tail_IT_mwh,saving_difference_usd
+20260920,12,historical paired policy results with recovered trajectory audit,True,2.8925361997104992e-15,7.839140849039833e-15,7.686485183153874e-15,False,0.0,0.0
+20260920,16,historical paired policy results with recovered trajectory audit,True,5.177902242170171e-15,5.231736268165865e-15,4.184166576583215e-15,False,0.0,0.0
+20260920,24,historical paired policy results with recovered trajectory audit,True,8.452812831193784e-15,4.398906369371125e-15,7.195395809126565e-15,False,0.0,1.4551915228366852e-11
+20260921,12,historical paired policy results with recovered trajectory audit,True,4.350008851392029e-15,3.28547139580998e-15,2.889954443287268e-15,False,0.0,0.0
+20260921,16,historical paired policy results with recovered trajectory audit,True,4.7372045522409145e-15,1.3337041974287311e-15,3.7933150815339794e-15,False,0.0,0.0
+20260921,24,historical paired policy results with recovered trajectory audit,True,5.182906512822549e-15,2.6771526618826758e-15,3.4627926611199844e-15,False,0.0,0.0
+20260922,12,historical paired policy results with recovered trajectory audit,True,2.116254220474456e-15,6.276617053657457e-15,5.566559498369544e-15,False,0.0,2.9103830456733704e-11
+20260922,16,historical paired policy results with recovered trajectory audit,True,7.065034050412339e-15,4.9176428987968146e-15,7.065034050412339e-15,False,0.0,0.0
+20260922,24,historical paired policy results with recovered trajectory audit,True,4.691441056166659e-15,5.934932856581018e-15,3.586242630984615e-15,False,0.0,1.4551915228366852e-11

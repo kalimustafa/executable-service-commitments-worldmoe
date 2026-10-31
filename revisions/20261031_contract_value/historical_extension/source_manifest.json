@@ -1,0 +1,374 @@
+{
+  "scope": "Original historical trajectory recovery plus separate exact numerical witnesses",
+  "created_date_local": "2026-10-31",
+  "inputs": [
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12.json",
+      "bytes": 3168,
+      "sha256": "f9e5570b176d67369af518f62897287ae17bc42d3fc59dda57724e9700db2204",
+      "original_last_modified_epoch": 1790574775.5866802,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12_complete_book.npz",
+      "bytes": 301632,
+      "sha256": "5d6fef447d2ca6c5b5e6ee3bfc07e5f9f732bbf59120a7d215baf0a7843a8adb",
+      "original_last_modified_epoch": 1790574775.5746493,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12_daily.csv",
+      "bytes": 35427,
+      "sha256": "ae7b711c67e9e5ab5ddd15225602d4edde74415e4ddb3c41527c740b5f61f532",
+      "original_last_modified_epoch": 1790574775.5851705,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w12_trajectory.npz",
+      "bytes": 1157081,
+      "sha256": "a36f9e07b8b59512fa79e99a87e6e59208f001fafb72a1b07341080b116ecf8b",
+      "original_last_modified_epoch": 1790574775.527178,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16.json",
+      "bytes": 3169,
+      "sha256": "49b0413c1a6097ec5cdc4081e136c812aa7d079a904da123aa59b9a9883ad06f",
+      "original_last_modified_epoch": 1790574779.2264833,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16_complete_book.npz",
+      "bytes": 310012,
+      "sha256": "13d3611358213b91c0e9b69f827de67a9c3f343dfe4c2d97e25aa6c60083ec8b",
+      "original_last_modified_epoch": 1790574779.214483,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16_daily.csv",
+      "bytes": 35390,
+      "sha256": "0cc514ce179c44b396b4680d6bc700e87f8407b084ff95dc56cd734a39b78429",
+      "original_last_modified_epoch": 1790574779.2244844,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w16_trajectory.npz",
+      "bytes": 1169006,
+      "sha256": "7a14b400de627f80b53b9730b4da0aa2e359f89941c3840c3b77c6b6a2a8a21d",
+      "original_last_modified_epoch": 1790574779.1693347,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24.json",
+      "bytes": 3172,
+      "sha256": "aecc6e8b4f508e89a0584fa30393280a3788088e106483044b04a6939ac831cc",
+      "original_last_modified_epoch": 1790574486.0601463,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_complete_book.npz",
+      "bytes": 320199,
+      "sha256": "43bfde2c5a55c6c38be6924296815342e58468575f05208c907323f6c74aba89",
+      "original_last_modified_epoch": 1790574486.0491457,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_daily.csv",
+      "bytes": 35385,
+      "sha256": "a4dbca988ef0a6b58d6c470c3d9abf43f94f92f0dc65f59fa316b557c4ad3ff7",
+      "original_last_modified_epoch": 1790574486.0581472,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260920_ep06_coupled_cdf_w24_trajectory.npz",
+      "bytes": 1190702,
+      "sha256": "7e17a6959601360e81da1e160a306226f1613535263d4fd307ec09e0fe755293",
+      "original_last_modified_epoch": 1790574486.0095859,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12.json",
+      "bytes": 3171,
+      "sha256": "bd2f6bcda2a0fcd665f9ee952e24fb4268bb9e85440746ca5abdda0a5cdc060e",
+      "original_last_modified_epoch": 1790575063.022054,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12_complete_book.npz",
+      "bytes": 299429,
+      "sha256": "0f7b3e5c97893eb6758f959e741d8dd763450617b3a8dc6f37d863eff5e8e79f",
+      "original_last_modified_epoch": 1790575063.0093403,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12_daily.csv",
+      "bytes": 35394,
+      "sha256": "79fbf855226afa7be5898a079b4c29ea5c19ac4ef1b5cf698cf80944abc630f9",
+      "original_last_modified_epoch": 1790575063.0198767,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w12_trajectory.npz",
+      "bytes": 1155733,
+      "sha256": "0aa63c7830c6902e79bef22d823cbfb73eeb6b221eddfd0d5ec2dd99df5dcb99",
+      "original_last_modified_epoch": 1790575062.9600348,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16.json",
+      "bytes": 3162,
+      "sha256": "5a61d7f398feb79a61a580d575379c81aa72ae986ab2a47a9f79a2bb2ffc8f94",
+      "original_last_modified_epoch": 1790575068.820047,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16_complete_book.npz",
+      "bytes": 307960,
+      "sha256": "88114367657135899cec39a045ba3517a1bbeb60bcbfb919c08488cf45779422",
+      "original_last_modified_epoch": 1790575068.8037574,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16_daily.csv",
+      "bytes": 35395,
+      "sha256": "a7be1847e041b59e07fbb35ac4717f212b9c088a0349c480f091be513b243498",
+      "original_last_modified_epoch": 1790575068.8170476,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w16_trajectory.npz",
+      "bytes": 1168779,
+      "sha256": "c6db19852dd865c35d4adac247fb3ece035f3f645e68f681a7df3726129321f4",
+      "original_last_modified_epoch": 1790575068.7488606,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24.json",
+      "bytes": 3168,
+      "sha256": "c781feadf7cc7632ee61834e9858e8c0d7b6251946e06d1d65f7aa36fd94c38e",
+      "original_last_modified_epoch": 1790688071.9970255,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24_complete_book.npz",
+      "bytes": 318559,
+      "sha256": "7f62405acd74b442b5d14697fc4cebc0abf5d2c28efb64da3b2c8490231afa50",
+      "original_last_modified_epoch": 1790688071.9742925,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24_daily.csv",
+      "bytes": 35412,
+      "sha256": "9da4010f602652fd0a3125832591040eef59be0294796d0ab86bb98eb47b7a28",
+      "original_last_modified_epoch": 1790688071.9875069,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260921_ep02_coupled_cdf_w24_trajectory.npz",
+      "bytes": 1192989,
+      "sha256": "216aa6c17e01f4253ea4d99d3b3bb4371bfc4f9c1e4064277b8bd5162cd7761c",
+      "original_last_modified_epoch": 1790688071.9354584,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12.json",
+      "bytes": 3170,
+      "sha256": "57ed7af12ae786ac29d90cbe242c612c4ec8d052059117e04f3ea724d40e5d18",
+      "original_last_modified_epoch": 1790575352.1605973,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12_complete_book.npz",
+      "bytes": 301907,
+      "sha256": "462f9dbfad948cf5b487cab558f22bed302608ca442d890e403d4d26eb016c18",
+      "original_last_modified_epoch": 1790575352.1475925,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12_daily.csv",
+      "bytes": 35419,
+      "sha256": "08ccfb4ab9dc30cc07986488783332ef89961ea1aac77de073b305f3b7075f77",
+      "original_last_modified_epoch": 1790575352.1575987,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w12_trajectory.npz",
+      "bytes": 1160953,
+      "sha256": "cf5645433f637b3d9ad2b0b38560f041dae4aae29b92c133370fd773c3138c11",
+      "original_last_modified_epoch": 1790575352.0922904,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16.json",
+      "bytes": 3172,
+      "sha256": "4394c5783e1a1291530199c6c9df32ce31371b00f466183ac9bdf3ed75fb197a",
+      "original_last_modified_epoch": 1790575361.7601418,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16_complete_book.npz",
+      "bytes": 309877,
+      "sha256": "e11c7216010c9d0727798c7e4d732f5df9a8933f86c1e5b7567e48316612f1ed",
+      "original_last_modified_epoch": 1790575361.7491355,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16_daily.csv",
+      "bytes": 35421,
+      "sha256": "ed909019148d5a893a1e0f62e2feae9253cdbfb3bd4d1bdc385a22dad3c26d22",
+      "original_last_modified_epoch": 1790575361.7581458,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w16_trajectory.npz",
+      "bytes": 1172069,
+      "sha256": "0a3445a013c43017f4e6185745c890f0f264fa6c41334ae610091ee249c35de1",
+      "original_last_modified_epoch": 1790575361.6925683,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24.json",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24.json",
+      "bytes": 3178,
+      "sha256": "862665789070e7f92edc08ae2b056851852f52c55292261e65e768049f3d0523",
+      "original_last_modified_epoch": 1790688301.3358107,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24_complete_book.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24_complete_book.npz",
+      "bytes": 320065,
+      "sha256": "1df10db173188024444249663aa89243379b847c3b82b2bee24be11b8b6930cd",
+      "original_last_modified_epoch": 1790688301.3262758,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24_daily.csv",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24_daily.csv",
+      "bytes": 35381,
+      "sha256": "b3dfd71cf186f0ee139d1fbe68bda1185fa15ff3602977f6379e286dd2805621",
+      "original_last_modified_epoch": 1790688301.334532,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24_trajectory.npz",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/results/trajectories/CdfR2_Eagle_2025_s20260922_ep00_coupled_cdf_w24_trajectory.npz",
+      "bytes": 1193698,
+      "sha256": "d69adf0518f68342c0e1e91b4680ecc99072967492b91cea2258575ee69e78c7",
+      "original_last_modified_epoch": 1790688301.28381,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/economic_constraints.json",
+      "original_workspace_relative_path": "R2_PAPER_INTEGRATION_20260923/configs/economic_constraints.json",
+      "bytes": 1294,
+      "sha256": "7836fae0736bde2a8b7aed499d48033b803dff9c09532bd42bc6321f7024ed58",
+      "original_last_modified_epoch": 1790169763.5418534,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/forcing_2025.npz",
+      "original_workspace_relative_path": "external_validation/data/forcing_2025.npz",
+      "bytes": 1047504,
+      "sha256": "c600c9e01e8236bd2e1cb4e2dc08591e3ee264d05f1c26b4c785ec355c3147c8",
+      "original_last_modified_epoch": 1790147061.1108773,
+      "copied_without_modification": true
+    },
+    {
+      "package_path": "inputs/published_grid_metrics_inputs_2025.npz",
+      "original_workspace_relative_path": "EnergyEconomics_Revision_20261031/source_package/historical_reference_checks/inputs/grid_metrics_inputs_2025.npz",
+      "bytes": 2786467,
+      "sha256": "5be123c40f01b111cf6503b07882e703a4c2cc29a03dde3cfb7aa4321ce2cf72",
+      "original_last_modified_epoch": 1793389654.0,
+      "copied_without_modification": true
+    }
+  ],
+  "checkpoints": [
+    {
+      "seed": 20260920,
+      "selected_epoch": 6,
+      "source_path": "ExecutableServiceCommitments_Revision_20260928/engine/checkpoints/CdfR2_seed20260920_epoch06.pt",
+      "bytes": 2829355,
+      "sha256": "0cf04e11318184a2f064a1cf571cffe25cb3a78b77f2dc95bb30b01fceba14ab",
+      "all_historical_summaries_match_checkpoint_file": true,
+      "checkpoint_included_here": false
+    },
+    {
+      "seed": 20260921,
+      "selected_epoch": 2,
+      "source_path": "ExecutableServiceCommitments_Revision_20260928/engine/checkpoints/CdfR2_seed20260921_epoch02.pt",
+      "bytes": 2829355,
+      "sha256": "2f281002e8ccafb859c197c7745c366e945e1b9ce8568e5ccd514ebdebf78448",
+      "all_historical_summaries_match_checkpoint_file": true,
+      "checkpoint_included_here": false
+    },
+    {
+      "seed": 20260922,
+      "selected_epoch": 0,
+      "source_path": "ExecutableServiceCommitments_Revision_20260928/engine/checkpoints/CdfR2_seed20260922_epoch00.pt",
+      "bytes": 939815,
+      "sha256": "e6e031bbd9757baee3fbaed4fbad587652fe84d0a27394ac05965f3a096f9e17",
+      "all_historical_summaries_match_checkpoint_file": true,
+      "checkpoint_included_here": false
+    }
+  ],
+  "historical_source": [
+    {
+      "package_path": "historical_source/context.py",
+      "original_workspace_relative_path": "ServiceCommitment_1to5_20260927/src/context.py",
+      "sha256": "57dafebc539db39ea45103c2d10ae68ed54350cfccf4f82247b1e8eec857a47b",
+      "purpose": "provenance only; independent audit scripts do not import historical runtime"
+    },
+    {
+      "package_path": "historical_source/economic_core.py",
+      "original_workspace_relative_path": "ServiceCommitment_1to5_20260927/vendor/economic_core.py",
+      "sha256": "80ef98685031f744103c26a7d8e1955df03ae737148675fe465a155804589cce",
+      "purpose": "provenance only; independent audit scripts do not import historical runtime"
+    },
+    {
+      "package_path": "historical_source/reservation.py",
+      "original_workspace_relative_path": "ServiceCommitment_1to5_20260927/vendor/reservation.py",
+      "sha256": "3a9b4091abc141b9a8da6f05f9913fa849b7fcef6fdeaf4c936ec96d399b7949",
+      "purpose": "provenance only; independent audit scripts do not import historical runtime"
+    },
+    {
+      "package_path": "historical_source/run_service_window.py",
+      "original_workspace_relative_path": "ExecutableServiceCommitments_Revision_20260928/engine/scripts/run_service_window.py",
+      "sha256": "ecd378787e1073b382fbf08540ea17a20578eeb95597387c03cb083b7eb32044",
+      "purpose": "provenance only; independent audit scripts do not import historical runtime"
+    }
+  ],
+  "portable_reproduction": "code/audit_historical_books.py and code/exact_repair_historical_books.py require only the sibling inputs folder and Python with NumPy; they have no external workspace or source_package dependencies."
+}

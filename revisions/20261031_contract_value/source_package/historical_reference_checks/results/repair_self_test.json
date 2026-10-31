@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "tests": [
+    {
+      "test": "release_prefix_repair",
+      "passed": true,
+      "correction_l1_exact": "1/500000000000"
+    },
+    {
+      "test": "deadline_prefix_repair",
+      "passed": true,
+      "correction_l1_exact": "1/500000000000"
+    },
+    {
+      "test": "exact_final_total_repair",
+      "passed": true,
+      "correction_l1_exact": "1/1000000000000"
+    },
+    {
+      "test": "initial_cohort_retains_deadline",
+      "passed": true,
+      "correction_l1_exact": "1/500000000000"
+    },
+    {
+      "test": "variable_capacity",
+      "passed": true,
+      "correction_l1_exact": "0"
+    },
+    {
+      "test": "exact_nonzero_terminal_state",
+      "passed": true,
+      "correction_l1_exact": "0"
+    },
+    {
+      "test": "terminal_endpoint_propagates_backward",
+      "passed": true,
+      "correction_l1_exact": "0"
+    },
+    {
+      "test": "negative_candidate_rejected",
+      "passed": true
+    },
+    {
+      "test": "capacity_violation_rejected",
+      "passed": true
+    },
+    {
+      "test": "infeasible_corridor_rejected",
+      "passed": true
+    },
+    {
+      "test": "unmatched_initial_deadline_rejected",
+      "passed": true
+    },
+    {
+      "test": "exhaustive_small_rational_paths",
+      "passed": true,
+      "instances": 729
+    },
+    {
+      "test": "binary_float_semantics_preserved",
+      "passed": true
+    }
+  ],
+  "empirical_annual_witness_repaired": false,
+  "note": "These are algorithmic boundary fixtures, not new paper experiments."
+}

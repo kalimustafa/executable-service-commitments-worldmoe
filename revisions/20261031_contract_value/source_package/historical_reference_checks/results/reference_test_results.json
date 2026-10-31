@@ -1,0 +1,8 @@
+{
+  "scope": "New independent reference verifier tests on small synthetic models only; not original annual replay",
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "successful": true,
+  "log": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.002s\n\nOK\n"
+}

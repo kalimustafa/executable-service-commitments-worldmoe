@@ -1,0 +1,19 @@
+{
+  "status": "manuscript-reported scalars; not independently reconstructed annual certificates",
+  "source": "EnergyEconomics_Restored_Contracts_WorldMoE_20261030.docx, Table 3 and paragraphs accompanying Eq. (6d); original 29 October calculation report",
+  "reference_cost_usd": "555168.2050556970",
+  "raw_24h_hindsight_saving_usd": "117000.2387599464",
+  "lag_savings_ceiling_usd": {
+    "12": "97802.4208413914",
+    "16": "113310.4208413914",
+    "24": "132605.4208413914"
+  },
+  "cut_savings_ceiling_usd": {
+    "12": "97796.4208413914",
+    "16": "113305.2108413914",
+    "24": "132598.6708413914"
+  },
+  "annual_certificate_verified": false,
+  "raw_24h_hindsight_exactly_repaired": false,
+  "required_corrections": "Subtract Delta_B from the raw 24 h witness. A primary policy used as H_A requires its own feasibility and original-cost allowance delta_A. Any further certificate error allowance expands the corresponding ceiling."
+}

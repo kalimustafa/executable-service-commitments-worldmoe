@@ -1,0 +1,4 @@
+from_h,to_h,mean_increment_usd,minimum_seed_increment_usd,maximum_seed_increment_usd,mean_saving_A_usd,mean_saving_B_usd,scope
+12,16,13817.584760550363333333,13733.95372379268,13895.6897830833,72220.969614188373333333,86038.554374738736666667,Historical same-checkpoint paired annual summary; seed range is not a future-year confidence interval
+16,24,19232.507466893386666667,19169.58506638567,19308.32997809879,86038.554374738736666667,105271.061841632123333333,Historical same-checkpoint paired annual summary; seed range is not a future-year confidence interval
+12,24,33050.09222744375,32903.53879017835,33204.01976118209,72220.969614188373333333,105271.061841632123333333,Historical same-checkpoint paired annual summary; seed range is not a future-year confidence interval

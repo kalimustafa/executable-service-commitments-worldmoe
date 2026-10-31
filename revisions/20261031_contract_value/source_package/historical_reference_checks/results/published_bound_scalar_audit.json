@@ -1,0 +1,146 @@
+{
+  "scope": "Internal arithmetic consistency of published CSV summaries; not recomputation of annual certificates",
+  "source_sha256": {
+    "source_data/current/certificates/cost_bound_zone_diagnostics.csv": "e7e0c876179d63746f997e250d79ba7b5ad4f48731cb462c05770cc8f73cc81a",
+    "source_data/current/extensions/certified_value_bounds.csv": "438b5bf9fe3a3df46165b34d6a40f1214b96d8d7282c90c5d65e1cfcf997d024"
+  },
+  "rows": [
+    {
+      "year": 2024,
+      "trace": "Eagle",
+      "window_h": 12,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "8256.6901964583",
+      "raw_total_minus_reported_usd": "2E-11",
+      "ceiling_identity_residual_usd": "1E-11",
+      "max_balance_residual": "1.7763568394002505E-15"
+    },
+    {
+      "year": 2024,
+      "trace": "Eagle",
+      "window_h": 16,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "8256.6901964583",
+      "raw_total_minus_reported_usd": "-6.5E-11",
+      "ceiling_identity_residual_usd": "1E-11",
+      "max_balance_residual": "3.552713678800501E-15"
+    },
+    {
+      "year": 2024,
+      "trace": "Eagle",
+      "window_h": 24,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "8256.6901964583",
+      "raw_total_minus_reported_usd": "-4E-12",
+      "ceiling_identity_residual_usd": "1E-11",
+      "max_balance_residual": "3.552713678800501E-15"
+    },
+    {
+      "year": 2024,
+      "trace": "Frontier",
+      "window_h": 12,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "8256.6901964583",
+      "raw_total_minus_reported_usd": "3.4E-11",
+      "ceiling_identity_residual_usd": "0E-11",
+      "max_balance_residual": "1.4885315202661786E-13"
+    },
+    {
+      "year": 2024,
+      "trace": "Frontier",
+      "window_h": 16,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "8256.6901964583",
+      "raw_total_minus_reported_usd": "-1E-11",
+      "ceiling_identity_residual_usd": "1E-11",
+      "max_balance_residual": "3.2297775565126585E-13"
+    },
+    {
+      "year": 2024,
+      "trace": "Frontier",
+      "window_h": 24,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "8256.6901964583",
+      "raw_total_minus_reported_usd": "-1.9E-11",
+      "ceiling_identity_residual_usd": "1E-11",
+      "max_balance_residual": "4.263056921360864E-13"
+    },
+    {
+      "year": 2025,
+      "trace": "Eagle",
+      "window_h": 12,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "2409.7842143056",
+      "raw_total_minus_reported_usd": "4E-11",
+      "ceiling_identity_residual_usd": "-1E-11",
+      "max_balance_residual": "1.7763568394002505E-15"
+    },
+    {
+      "year": 2025,
+      "trace": "Eagle",
+      "window_h": 16,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "2409.7842143056",
+      "raw_total_minus_reported_usd": "2E-11",
+      "ceiling_identity_residual_usd": "-1E-11",
+      "max_balance_residual": "1.7763568394002505E-15"
+    },
+    {
+      "year": 2025,
+      "trace": "Eagle",
+      "window_h": 24,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "2409.7842143056",
+      "raw_total_minus_reported_usd": "5E-11",
+      "ceiling_identity_residual_usd": "-1E-11",
+      "max_balance_residual": "1.7763568394002505E-15"
+    },
+    {
+      "year": 2025,
+      "trace": "Frontier",
+      "window_h": 12,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "2409.7842143056",
+      "raw_total_minus_reported_usd": "-3E-11",
+      "ceiling_identity_residual_usd": "0E-10",
+      "max_balance_residual": "1.3017018019034765E-13"
+    },
+    {
+      "year": 2025,
+      "trace": "Frontier",
+      "window_h": 16,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "2409.7842143056",
+      "raw_total_minus_reported_usd": "0E-11",
+      "ceiling_identity_residual_usd": "0E-10",
+      "max_balance_residual": "7.239590871233048E-13"
+    },
+    {
+      "year": 2025,
+      "trace": "Frontier",
+      "window_h": 24,
+      "zone_count": 4,
+      "all_floor_minus_one": true,
+      "common_da_implied_usd": "2409.7842143056",
+      "raw_total_minus_reported_usd": "4E-11",
+      "ceiling_identity_residual_usd": "0E-10",
+      "max_balance_residual": "5.6751478516581244E-15"
+    }
+  ],
+  "site_rows": 48,
+  "group_count": 12,
+  "maximum_absolute_reaggregation_residual_usd": "6.5E-11",
+  "maximum_absolute_ceiling_identity_residual_usd": "1E-11",
+  "max_negative_true_minus_relaxed_usd": "-0.00000287457"
+}

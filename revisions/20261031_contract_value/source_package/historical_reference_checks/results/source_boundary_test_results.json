@@ -1,0 +1,155 @@
+{
+  "status": "passed",
+  "test_count": 16,
+  "tests": [
+    {
+      "test": "homogeneous_8h_last_slot_included",
+      "passed": true,
+      "detail": {
+        "last_eligible_slot_zero_based": 31
+      }
+    },
+    {
+      "test": "homogeneous_8h_deadline_boundary_excluded",
+      "passed": true,
+      "detail": {
+        "first_ineligible_slot_zero_based": 32,
+        "late_it_mwh_fixture": 0.25
+      }
+    },
+    {
+      "test": "homogeneous_12h_last_slot_included",
+      "passed": true,
+      "detail": {
+        "last_eligible_slot_zero_based": 47
+      }
+    },
+    {
+      "test": "homogeneous_12h_deadline_boundary_excluded",
+      "passed": true,
+      "detail": {
+        "first_ineligible_slot_zero_based": 48,
+        "late_it_mwh_fixture": 0.25
+      }
+    },
+    {
+      "test": "homogeneous_16h_last_slot_included",
+      "passed": true,
+      "detail": {
+        "last_eligible_slot_zero_based": 63
+      }
+    },
+    {
+      "test": "homogeneous_16h_deadline_boundary_excluded",
+      "passed": true,
+      "detail": {
+        "first_ineligible_slot_zero_based": 64,
+        "late_it_mwh_fixture": 0.25
+      }
+    },
+    {
+      "test": "homogeneous_24h_last_slot_included",
+      "passed": true,
+      "detail": {
+        "last_eligible_slot_zero_based": 95
+      }
+    },
+    {
+      "test": "homogeneous_24h_deadline_boundary_excluded",
+      "passed": true,
+      "detail": {
+        "first_ineligible_slot_zero_based": 96,
+        "late_it_mwh_fixture": 0.25
+      }
+    },
+    {
+      "test": "homogeneous_48h_last_slot_included",
+      "passed": true,
+      "detail": {
+        "last_eligible_slot_zero_based": 191
+      }
+    },
+    {
+      "test": "homogeneous_48h_deadline_boundary_excluded",
+      "passed": true,
+      "detail": {
+        "first_ineligible_slot_zero_based": 192,
+        "late_it_mwh_fixture": 0.25
+      }
+    },
+    {
+      "test": "mixed_class_deadline_endpoints",
+      "passed": true,
+      "detail": {
+        "priority": "edf",
+        "total_it_mwh": 0.25,
+        "late_work_it_mwh": 0.0,
+        "late_backlog_mwh_quarters": 0.0,
+        "closing_it_mwh": 0.25,
+        "4h_completion_rate": 1.0,
+        "12h_completion_rate": 1.0,
+        "24h_completion_rate": 1.0,
+        "4h_late_work_it_mwh": 0.0,
+        "12h_late_work_it_mwh": 0.0,
+        "24h_late_work_it_mwh": 0.0,
+        "p50_delay_h": 11.75,
+        "p90_delay_h": 23.75,
+        "p95_delay_h": 23.75,
+        "p99_delay_h": 23.75
+      }
+    },
+    {
+      "test": "homogeneous_24h_book_fails_mixed_contract",
+      "passed": true,
+      "detail": {
+        "late_it_mwh_fixture": 0.1875
+      }
+    },
+    {
+      "test": "legacy_tail_lateness_censor_confirmed",
+      "passed": true,
+      "detail": {
+        "legacy_late_it_mwh": 0.0,
+        "full_deadline_audit_it_mwh": 0.25
+      }
+    },
+    {
+      "test": "frontier_infeasible_earliest_fallback_confirmed",
+      "passed": true,
+      "detail": {
+        "latest_start": 0,
+        "returned_start": 1,
+        "late_requires_outcome_gate": true
+      }
+    },
+    {
+      "test": "legacy_grid_projection_reads_current_physics",
+      "passed": true,
+      "detail": {
+        "current_service_no_pv": [
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "current_service_with_pv": [
+          0.9,
+          0.9,
+          0.9,
+          0.9
+        ]
+      }
+    },
+    {
+      "test": "legacy_year_end_deadline_clamp_confirmed",
+      "passed": true,
+      "detail": {
+        "clamped_due_offset": 0,
+        "true_contract_due_offset": 95
+      }
+    }
+  ],
+  "annual_model_replay_performed": false,
+  "original_source_modified": false,
+  "meaning": "Expected source behavior verified on explicit fixtures; identified limitations are not repaired annual results."
+}
